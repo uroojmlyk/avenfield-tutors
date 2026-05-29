@@ -1,0 +1,257 @@
+
+
+
+// import Link from 'next/link'
+
+// const WHATSAPP = '923304785145'
+
+// const platformLinks: [string, string][] = [
+//   ['/', 'Home'],
+//   ['/tutors', 'Browse Tutors'],
+//   ['/services', 'Services'],
+//   ['/become-tutor', 'Become a Tutor'],
+// ]
+
+// const subjects = [
+//   'Mathematics', 'Physics', 'English',
+//   'O Level', 'A Level', 'IELTS',
+//   'Computer Science', 'Quran',
+// ]
+
+// export default function Footer() {
+//   return (
+//     <footer className="bg-[#0F0D1F] text-[#7A7890]">
+//       <div className="max-w-6xl mx-auto px-5 sm:px-8 pt-14 pb-8">
+//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+
+//           {/* ── Brand ── */}
+//           <div className="sm:col-span-2 lg:col-span-1">
+//             <Link href="/" className="flex items-center gap-2 mb-5" aria-label="Learnova Home">
+//               <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+//                 <rect width="32" height="32" rx="9" fill="#6C5CE7" />
+//                 <path d="M9 8h3.5v12H20v3H9V8Z" fill="white" />
+//                 <path d="M15.5 8H19v9h4v3h-7.5V8Z" fill="white" fillOpacity="0.45" />
+//               </svg>
+//               <span className="font-semibold text-white tracking-[-0.02em] text-[1rem]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+//                 Learnova
+//               </span>
+//             </Link>
+//             <p className="text-[0.84rem] leading-relaxed text-[#4E4C62] max-w-xs mb-5">
+//               Connecting students with verified tutors for personalised learning — online and at home.
+//             </p>
+//             <a
+//               href={`https://wa.me/${WHATSAPP}`}
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               className="inline-flex items-center gap-2 text-[0.84rem] text-[#A89EC6] hover:text-white transition-colors"
+//             >
+//               <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0" aria-hidden="true">
+//                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+//                 <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.116 1.532 5.845L.057 23.882a.5.5 0 0 0 .61.61l6.037-1.475A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 0 1-5.032-1.38l-.36-.214-3.733.913.929-3.622-.235-.373A9.86 9.86 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z" />
+//               </svg>
+//               WhatsApp Us
+//             </a>
+//           </div>
+
+//           {/* ── Platform ── */}
+//           <div>
+//             <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.2em] mb-5">Platform</h4>
+//             <ul className="flex flex-col gap-3 text-[0.84rem]">
+//               {platformLinks.map(([href, label]) => (
+//                 <li key={href}>
+//                   <Link href={href} className="hover:text-white transition-colors duration-150">{label}</Link>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* ── Subjects ── */}
+//           <div>
+//             <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.2em] mb-5">Subjects</h4>
+//             <ul className="flex flex-col gap-3 text-[0.84rem]">
+//               {subjects.map((s) => (
+//                 <li key={s}>
+//                   <Link
+//                     href={`/tutors?subject=${encodeURIComponent(s)}`}
+//                     className="hover:text-white transition-colors duration-150"
+//                   >
+//                     {s}
+//                   </Link>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* ── Contact ── */}
+//           <div>
+//             <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.2em] mb-5">Contact</h4>
+//             <p className="text-[0.84rem] text-[#4E4C62] mb-5 leading-relaxed">
+//               Have questions? Reach out and we'll get back to you within an hour.
+//             </p>
+//             <a
+//               href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi! I visited Learnova and have a question.')}`}
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] hover:bg-[#25D366]/18 rounded-xl text-[0.84rem] font-medium transition-all duration-150"
+//             >
+//               <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0" aria-hidden="true">
+//                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+//                 <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.116 1.532 5.845L.057 23.882a.5.5 0 0 0 .61.61l6.037-1.475A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 0 1-5.032-1.38l-.36-.214-3.733.913.929-3.622-.235-.373A9.86 9.86 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z" />
+//               </svg>
+//               Chat on WhatsApp
+//             </a>
+//           </div>
+//         </div>
+
+//         {/* ── Divider ── */}
+//         <div className="h-px bg-gradient-to-r from-transparent via-[#6C5CE7]/25 to-transparent mb-6" />
+
+//         {/* ── Bottom ── */}
+//         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+//           <p className="text-[11px] text-[#2E2C3E]">
+//             © {new Date().getFullYear()} Learnova. All rights reserved.
+//           </p>
+//           <Link href="/admin/login" className="text-[11px] text-[#2E2C3E] hover:text-[#7A7890] transition-colors">
+//             Admin Portal
+//           </Link>
+//         </div>
+//       </div>
+//     </footer>
+//   )
+// }
+
+
+
+import Link from 'next/link'
+
+const WHATSAPP = '923304785145'
+
+const platformLinks: [string, string][] = [
+  ['/', 'Home'],
+  ['/tutors', 'Browse Tutors'],
+  ['/services', 'Services'],
+  ['/become-tutor', 'Become a Tutor'],
+]
+
+const subjects = [
+  'Mathematics', 'Physics', 'English',
+  'O Level', 'A Level', 'IELTS',
+  'Computer Science', 'Quran',
+]
+
+export default function Footer() {
+  return (
+    <footer
+      className="bg-[#2E4F5E] text-[#a8c5d0]"
+      style={{ fontFamily: "'Nunito', sans-serif" }}
+    >
+      {/* Wavy top border */}
+      <div className="w-full overflow-hidden leading-[0]">
+        <svg viewBox="0 0 1440 48" preserveAspectRatio="none" className="w-full h-10 sm:h-12 block" fill="#FFFDF7" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,24 C180,48 360,0 540,24 C720,48 900,0 1080,24 C1260,48 1350,12 1440,24 L1440,0 L0,0 Z"/>
+        </svg>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 pt-4 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+
+          {/* ── Brand ── */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <Link href="/" className="flex items-center gap-2.5 mb-5 group" aria-label="Learnova Home">
+              <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"
+                className="group-hover:rotate-[-6deg] transition-transform duration-300" aria-hidden="true">
+                <rect width="38" height="38" rx="12" fill="#E8C86A" />
+                <path d="M19 27V13" stroke="#2E4F5E" strokeWidth="2" strokeLinecap="round"/>
+                <path d="M11 13.5C13.5 13 16.5 13.5 19 15C21.5 13.5 24.5 13 27 13.5V26C24.5 25.5 21.5 26 19 27.5C16.5 26 13.5 25.5 11 26V13.5Z" fill="#3A9E8F" stroke="#2E4F5E" strokeWidth="1.2"/>
+                <path d="M27 10L27.6 11.4L29 12L27.6 12.6L27 14L26.4 12.6L25 12L26.4 11.4L27 10Z" fill="#E05C42"/>
+              </svg>
+              <span className="font-black tracking-[-0.01em] text-[1.1rem] leading-none text-white">
+                Learnova
+              </span>
+            </Link>
+            <p className="text-[0.84rem] leading-relaxed text-[#7da8b8] max-w-xs mb-5">
+              Connecting students with verified tutors for personalised learning — online and at home across Pakistan, UAE & UK. 🌍
+            </p>
+            <a
+              href={`https://wa.me/${WHATSAPP}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[0.84rem] text-[#3A9E8F] hover:text-[#E8C86A] transition-colors font-bold"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.116 1.532 5.845L.057 23.882a.5.5 0 0 0 .61.61l6.037-1.475A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 0 1-5.032-1.38l-.36-.214-3.733.913.929-3.622-.235-.373A9.86 9.86 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z" />
+              </svg>
+              WhatsApp Us
+            </a>
+          </div>
+
+          {/* ── Platform ── */}
+          <div>
+            <h4 className="text-[#E8C86A] text-[0.78rem] font-black uppercase tracking-[0.2em] mb-5">Platform</h4>
+            <ul className="flex flex-col gap-3 text-[0.85rem]">
+              {platformLinks.map(([href, label]) => (
+                <li key={href}>
+                  <Link href={href} className="hover:text-[#E8C86A] transition-colors duration-150 font-semibold">{label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ── Subjects ── */}
+          <div>
+            <h4 className="text-[#E8C86A] text-[0.78rem] font-black uppercase tracking-[0.2em] mb-5">Subjects</h4>
+            <ul className="flex flex-col gap-3 text-[0.85rem]">
+              {subjects.map((s) => (
+                <li key={s}>
+                  <Link
+                    href={`/tutors?subject=${encodeURIComponent(s)}`}
+                    className="hover:text-[#E8C86A] transition-colors duration-150 font-semibold"
+                  >
+                    {s}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ── Contact ── */}
+          <div>
+            <h4 className="text-[#E8C86A] text-[0.78rem] font-black uppercase tracking-[0.2em] mb-5">Contact</h4>
+            <p className="text-[0.84rem] text-[#7da8b8] mb-5 leading-relaxed font-medium">
+              Have a question? We reply within an hour — promise! 🤝
+            </p>
+            <a
+              href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi! I visited Learnova and have a question.')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#3A9E8F] border-2 border-[#E8C86A] text-white hover:bg-[#2d8a7c] rounded-xl text-[0.84rem] font-black shadow-[0_3px_0_0_#2a7a6e] hover:shadow-[0_1px_0_0_#2a7a6e] hover:translate-y-[2px] transition-all duration-150"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.116 1.532 5.845L.057 23.882a.5.5 0 0 0 .61.61l6.037-1.475A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 0 1-5.032-1.38l-.36-.214-3.733.913.929-3.622-.235-.373A9.86 9.86 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z" />
+              </svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        {/* ── Divider ── */}
+        <div className="h-[2px] bg-[#3A9E8F]/40 rounded-full mb-6" />
+
+        {/* ── Bottom ── */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-[0.78rem] text-[#5a7f8e] font-semibold">
+            © {new Date().getFullYear()} Learnova. All rights reserved. Made with 💛
+          </p>
+          <Link href="/admin/login" className="text-[0.78rem] text-[#5a7f8e] hover:text-[#E8C86A] transition-colors font-bold flex items-center gap-1.5">
+            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+            Admin Portal
+          </Link>
+        </div>
+      </div>
+    </footer>
+  )
+}
