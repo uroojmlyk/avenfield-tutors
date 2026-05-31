@@ -31,6 +31,10 @@
 //   { name: 'Spoken English',   icon: '💬',   bg: 'bg-[#E8C86A]',  text: 'text-[#2E4F5E]' },
 //   { name: 'O Level',          icon: 'O/L',  bg: 'bg-[#2E4F5E]',  text: 'text-[#E8C86A]' },
 //   { name: 'A Level',          icon: 'A/L',  bg: 'bg-[#E05C42]',  text: 'text-white'     },
+//   { name: 'CSS / PMS',        icon: '🏛️',  bg: 'bg-[#2E4F5E]',  text: 'text-[#E8C86A]' },
+//   { name: 'PPSC / FPSC',      icon: '📋',  bg: 'bg-[#E8934A]',  text: 'text-white'     },
+//   { name: 'MDCAT',            icon: '🏥',  bg: 'bg-[#E05C42]',  text: 'text-white'     },
+//   { name: 'Cadet College',    icon: '🎖️',  bg: 'bg-[#3A9E8F]',  text: 'text-white'     },
 //   { name: 'Entry Test Prep',  icon: '📝',   bg: 'bg-[#3A9E8F]',  text: 'text-white'     },
 //   { name: 'Quran',            icon: 'ق',    bg: 'bg-[#E8C86A]',  text: 'text-[#2E4F5E]' },
 // ]
@@ -453,10 +457,6 @@
 
 
 
-
-
-
-
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import TutorCard from '@/components/tutor/TutorCard'
@@ -542,11 +542,15 @@ export default async function HomePage() {
               {/* Social proof pill */}
               <div className="inline-flex items-center gap-2 bg-[#E8C86A]/30 border-2 border-[#E8C86A] text-[#2E4F5E] text-[0.72rem] font-black px-3.5 py-1.5 rounded-full mb-6 shadow-[2px_2px_0_0_#c9ab4a]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E05C42] animate-pulse flex-shrink-0" />
-                Trusted by 8,000+ students in 15 countries 🌍
+                🌎 Trusted by 8,000+ students across the UK, USA, Canada, Australia, UAE & Europe
               </div>
 
               {/* Hero headline — outcome-first */}
-              <h1 className="text-[2.35rem] sm:text-[3.2rem] lg:text-[3.7rem] font-black leading-[1.07] tracking-[-0.025em] text-[#2E4F5E] mb-5">
+              <div className="mb-2">
+                <p className="text-[0.72rem] font-black uppercase tracking-[0.18em] text-[#3A9E8F] mb-1">Expert Tutors for Students Worldwide</p>
+                <p className="text-[0.65rem] font-bold text-[#4a6a78]">Supporting overseas, Pakistani &amp; international students with personalised online tutoring</p>
+              </div>
+              <h1 className="text-[2.35rem] sm:text-[3.2rem] lg:text-[3.7rem] font-black leading-[1.07] tracking-[-0.025em] text-[#2E4F5E] mb-5 mt-3">
                 Stop Struggling.<br/>
                 <span className="relative inline-block">
                   <span className="relative z-10">Start Excelling.</span>
@@ -557,7 +561,7 @@ export default async function HomePage() {
               {/* Empathetic sub — names the pain then the fix */}
               <p className="text-[#4a6a78] text-[0.95rem] sm:text-[1.02rem] leading-[1.8] mb-8 font-semibold">
                 Falling behind feels terrible — but one great tutor changes everything.
-                Find verified educators for online &amp; home sessions across Pakistan, UAE &amp; UK.
+                Serving students in the USA, UK, Canada, Australia, UAE, Germany, Switzerland, Spain and across Europe.
               </p>
 
               {/* CTAs — full-width on mobile */}
@@ -585,6 +589,31 @@ export default async function HomePage() {
                     <p className="text-[#4a6a78] text-[0.64rem] font-bold mt-0.5">{l}</p>
                   </div>
                 ))}
+              </div>
+
+              {/* Country flags row */}
+              <div className="mt-5 pt-4 border-t-2 border-dashed border-[#E8C86A]/40">
+                <p className="text-[0.62rem] font-black uppercase tracking-widest text-[#4a6a78] mb-2.5">We serve students in</p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { flag:'🇺🇸', name:'USA'          },
+                    { flag:'🇬🇧', name:'UK'           },
+                    { flag:'🇨🇦', name:'Canada'       },
+                    { flag:'🇦🇺', name:'Australia'    },
+                    { flag:'🇩🇪', name:'Germany'      },
+                    { flag:'🇨🇭', name:'Switzerland'  },
+                    { flag:'🇵🇱', name:'Poland'       },
+                    { flag:'🇦🇪', name:'UAE'          },
+                    { flag:'🇪🇸', name:'Spain'        },
+                    { flag:'🇫🇷', name:'France'       },
+                    { flag:'🇵🇰', name:'Pakistan'     },
+                  ].map(({ flag, name }) => (
+                    <span key={name} className="inline-flex items-center gap-1 text-[0.68rem] font-bold text-[#2E4F5E] bg-[#E8C86A]/20 border border-[#E8C86A]/50 px-2 py-1 rounded-lg">
+                      <span className="text-base leading-none">{flag}</span>
+                      <span>{name}</span>
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -642,16 +671,27 @@ export default async function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          §2 TRUST STRIP — dark teal
-          Psychology: instant proof, zero friction to scroll past.
+          §2 CURRICULUM STRIP — dark teal — logo-style badges
       ═══════════════════════════════════════════════════ */}
-      <div className="bg-[#2E4F5E] py-3.5 px-4 sm:px-8">
-        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-          {['CAIE Aligned','Edexcel Tutors','MDCAT & ECAT Prep','IELTS Band 7+','Online & At-Home'].map(t => (
-            <span key={t} className="flex items-center gap-1.5 text-[0.75rem] font-bold text-[#E8C86A] whitespace-nowrap">
-              <span className="w-4 h-4 rounded-full bg-[#3A9E8F] flex items-center justify-center text-white text-[0.55rem] font-black flex-shrink-0">✓</span>
-              {t}
-            </span>
+      <div className="bg-[#2E4F5E] py-4 px-4 sm:px-8 border-y border-white/10">
+        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          {[
+            { label:'Cambridge IGCSE / GCSE', abbr:'IGCSE', color:'bg-[#E8C86A] text-[#2E4F5E]' },
+            { label:'CAIE A-Level',           abbr:'A-LVL', color:'bg-[#3A9E8F] text-white'     },
+            { label:'Edexcel',                abbr:'EDX',   color:'bg-[#E8934A] text-white'     },
+            { label:'IB Diploma',             abbr:'IB',    color:'bg-[#E05C42] text-white'     },
+            { label:'O Level',                abbr:'O/LVL', color:'bg-[#2E4F5E] text-[#E8C86A] border border-[#E8C86A]/40' },
+            { label:'AP Courses',             abbr:'AP',    color:'bg-[#E8C86A] text-[#2E4F5E]' },
+            { label:'SAT',                    abbr:'SAT',   color:'bg-[#3A9E8F] text-white'     },
+            { label:'IELTS',                  abbr:'IELTS', color:'bg-[#E8934A] text-white'     },
+            { label:'MDCAT & ECAT',           abbr:'MDCAT', color:'bg-[#E05C42] text-white'     },
+          ].map(({ label, abbr, color }) => (
+            <div key={label} className="flex items-center gap-2 group">
+              <div className={`w-9 h-9 rounded-xl ${color} flex items-center justify-center text-[0.56rem] font-black leading-none text-center shadow-[2px_2px_0_0_rgba(0,0,0,0.2)] group-hover:scale-110 transition-transform duration-150 flex-shrink-0`}>
+                {abbr}
+              </div>
+              <span className="text-[0.73rem] font-bold text-[#E8C86A] whitespace-nowrap hidden sm:block">{label}</span>
+            </div>
           ))}
         </div>
       </div>
@@ -667,7 +707,7 @@ export default async function HomePage() {
           <div className="text-center mb-10 sm:mb-12">
             <Eyebrow text="Why Choose Us" light center />
             <h2 className="text-[1.75rem] sm:text-[2.4rem] font-black tracking-[-0.02em] text-white mb-3">
-              Why 8,000 Families Trust Learnova
+              Trusted by Families Across 15+ Countries
             </h2>
             <p className="text-[#c5e8e3] text-[0.88rem] sm:text-[0.95rem] max-w-sm sm:max-w-md mx-auto font-semibold leading-relaxed">
               Not just a tutor list — real verification, genuine flexibility, outcomes that matter.
@@ -799,10 +839,7 @@ export default async function HomePage() {
       )}
 
       {/* ═══════════════════════════════════════════════════
-          §7 TESTIMONIALS — white cards on cream
-          Psychology: emotion-first quotes ("I finally…",
-          "went from D to A") are more credible than vague praise.
-          Specific = believable.
+          §7 TESTIMONIALS — subject-specific per category
       ═══════════════════════════════════════════════════ */}
       <section className="bg-[#E8934A] py-14 sm:py-24 px-4 sm:px-8 border-y-2 border-[#2E4F5E]">
         <div className="max-w-6xl mx-auto">
@@ -811,14 +848,24 @@ export default async function HomePage() {
             <h2 className="text-[1.75rem] sm:text-[2.4rem] font-black tracking-[-0.02em] text-white">
               Real Students. Real Transformations. 🏆
             </h2>
+            <p className="text-white/70 text-[0.88rem] font-semibold mt-2 max-w-md mx-auto">
+              From O Levels to IELTS to CSS — verified feedback from real learners
+            </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {[
-              { quote:"My son went from a D to an A in O Level Maths in just three months. The tutor was patient and genuinely invested.", name:'Sara M.', role:'Parent · Islamabad', init:'SM', bg:'bg-[#E8C86A]', t:'text-[#2E4F5E]' },
-              { quote:"I struggled with IELTS for two years. Eight weeks with my tutor and I finally achieved the band score I needed for university!", name:'Ahmed R.', role:'Student · Lahore', init:'AR', bg:'bg-[#3A9E8F]', t:'text-white' },
-              { quote:"Finding a Quran teacher in Dubai was always hard. I connected with a wonderful teacher within 24 hours on Learnova.", name:'Fatima K.', role:'Parent · Dubai, UAE', init:'FK', bg:'bg-[#2E4F5E]', t:'text-[#E8C86A]' },
+              { subject:'O Level Mathematics', badge:'bg-[#E8C86A] text-[#2E4F5E]', flag:'🇵🇰', quote:'My son went from a D to an A in O Level Maths in just three months. The tutor explained every concept clearly — finally the grades we hoped for.', name:'Sara M.', role:'Parent · Islamabad', init:'SM', bg:'bg-[#E8C86A]', t:'text-[#2E4F5E]' },
+              { subject:'IELTS Preparation',   badge:'bg-[#3A9E8F] text-white',     flag:'🇬🇧', quote:'I struggled with IELTS for two years. Eight weeks with my tutor and I finally achieved the 7.5 band score I needed — now studying in the UK!', name:'Ahmed R.', role:'Student · Lahore → UK', init:'AR', bg:'bg-[#3A9E8F]', t:'text-white' },
+              { subject:'Quran & Arabic',       badge:'bg-[#2E4F5E] text-[#E8C86A]', flag:'🇦🇪', quote:'Finding a qualified Quran teacher in Dubai was always hard. Connected with a wonderful teacher within 24 hours — my children love every lesson.', name:'Fatima K.', role:'Parent · Dubai, UAE', init:'FK', bg:'bg-[#2E4F5E]', t:'text-[#E8C86A]' },
+              { subject:'CSS English Essay',    badge:'bg-[#E8C86A] text-[#2E4F5E]', flag:'🇵🇰', quote:'My CSS essay score improved dramatically. The structured feedback and past-paper practice made all the difference. Cleared CSS on my second attempt!', name:'Bilal A.', role:'CSS Aspirant · Karachi', init:'BA', bg:'bg-[#E8934A]', t:'text-white' },
+              { subject:'MDCAT Biology',         badge:'bg-[#E05C42] text-white',     flag:'🇵🇰', quote:'MDCAT score jumped 40 points in 5 weeks. The tutor focused on exactly the high-yield topics. Got into my first-choice medical college.', name:'Hina N.', role:'MBBS Student · Lahore', init:'HN', bg:'bg-[#E05C42]', t:'text-white' },
+              { subject:'A Level Physics',       badge:'bg-[#3A9E8F] text-white',     flag:'🇨🇦', quote:'I was failing A Level Physics while living in Canada. Online sessions three times a week turned everything around — got an A* in my final exam.', name:'Zara S.', role:'Student · Toronto, Canada', init:'ZS', bg:'bg-[#3A9E8F]', t:'text-white' },
             ].map(r => (
               <div key={r.name} className="bg-white rounded-2xl border-2 border-[#2E4F5E] p-5 sm:p-6 flex flex-col shadow-[4px_4px_0_0_#2E4F5E] hover:-translate-y-1 hover:shadow-[4px_6px_0_0_#2E4F5E] transition-all duration-200">
+                <div className="flex items-center justify-between mb-3">
+                  <span className={`text-[0.62rem] font-black px-2.5 py-1 rounded-full border-2 border-[#2E4F5E] ${r.badge}`}>{r.subject}</span>
+                  <span className="text-xl">{r.flag}</span>
+                </div>
                 <div className="flex gap-0.5 mb-3">
                   {Array.from({length:5}).map((_,i) => (
                     <svg key={i} className="w-3.5 h-3.5 text-[#E8C86A]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -835,9 +882,9 @@ export default async function HomePage() {
               </div>
             ))}
           </div>
+          <p className="text-center text-white/50 text-[0.72rem] font-semibold mt-8">Based on verified student feedback across all subjects</p>
         </div>
       </section>
-
       {/* ═══════════════════════════════════════════════════
           §8 FOR EDUCATORS — orange bg
           Psychology: separate audience gets separate CTA so
