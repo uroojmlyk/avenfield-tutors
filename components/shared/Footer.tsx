@@ -170,7 +170,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-[0.84rem] leading-relaxed text-[#7da8b8] max-w-xs mb-5">
-              Connecting students with verified tutors for personalised learning — online and at home across Pakistan, UAE & UK. 🌍
+              Connecting students with verified tutors for personalised learning online and at home across Pakistan, UAE & UK. 🌍
             </p>
             <a
               href={`https://wa.me/${WHATSAPP}`}
@@ -219,7 +219,7 @@ export default function Footer() {
           <div>
             <h4 className="text-[#E8C86A] text-[0.78rem] font-black uppercase tracking-[0.2em] mb-5">Contact</h4>
             <p className="text-[0.84rem] text-[#7da8b8] mb-5 leading-relaxed font-medium">
-              Have a question? We reply within an hour — promise! 🤝
+              Have a question? We reply within an hour promise! 🤝
             </p>
             <a
               href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi! I visited Learnova and have a question.')}`}

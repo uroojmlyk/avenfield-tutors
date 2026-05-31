@@ -1,16 +1,13 @@
 
 
-// import type { Metadata } from 'next'
-// import Link from 'next/link'
+// 'use client'
 
-// export const metadata: Metadata = {
-//   title: 'Learnova — Our Tutoring Services | Online & Home Tutoring',
-//   description: 'Online and home tutoring services across Pakistan, UAE, and UK. Covering O Levels, A Levels, IELTS, Mathematics, Science, and 30+ subjects.',
-// }
+// import React from 'react'
+// import Link from 'next/link'
+// import { useState, useMemo } from 'react'
 
 // const SUBJECTS = [
 //   { label: 'O & A Level',        icon: '📖', bg: 'bg-[#2E4F5E]',  t: 'text-[#E8C86A]' },
-//   { label: 'IELTS / TOEFL',      icon: '🌍', bg: 'bg-[#E8934A]',  t: 'text-white'     },
 //   { label: 'Mathematics',        icon: '📐', bg: 'bg-[#E8C86A]',  t: 'text-[#2E4F5E]' },
 //   { label: 'Physics',            icon: '⚗️', bg: 'bg-[#3A9E8F]',  t: 'text-white'     },
 //   { label: 'Chemistry',          icon: '🧪', bg: 'bg-[#E05C42]',  t: 'text-white'     },
@@ -21,6 +18,51 @@
 //   { label: 'Accounting',         icon: '🧾', bg: 'bg-[#E05C42]',  t: 'text-white'     },
 //   { label: 'Quran & Arabic',     icon: '📿', bg: 'bg-[#3A9E8F]',  t: 'text-white'     },
 //   { label: 'History & Geography',icon: '🗺️', bg: 'bg-[#E8C86A]',  t: 'text-[#2E4F5E]' },
+//   { label: 'CSS / PMS',          icon: '🏛️', bg: 'bg-[#2E4F5E]',  t: 'text-[#E8C86A]' },
+//   { label: 'PPSC / FPSC',        icon: '📋', bg: 'bg-[#E8934A]',  t: 'text-white'     },
+//   { label: 'MDCAT',              icon: '🏥', bg: 'bg-[#E05C42]',  t: 'text-white'     },
+//   { label: 'IELTS',              icon: '🌍', bg: 'bg-[#3A9E8F]',  t: 'text-white'     },
+//   { label: 'Cadet College Prep', icon: '🎖️', bg: 'bg-[#E8C86A]',  t: 'text-[#2E4F5E]' },
+// ]
+
+// // ── Category data for expanded detail cards ──
+// const CSS_COMPULSORY = [
+//   'English Essay','Precis & Composition','General Science & Ability',
+//   'Current Affairs','Pakistan Affairs','Islamic Studies',
+// ]
+// const CSS_OPTIONAL = [
+//   'Accountancy & Auditing','Economics','Computer Science','Political Science',
+//   'International Relations','Physics','Chemistry','Applied Mathematics',
+//   'Pure Mathematics','Statistics','Geology','Business Administration',
+//   'Public Administration','Governance & Public Policies',
+//   'Town Planning & Urban Management','History of Pakistan & India',
+//   'Islamic History & Culture','British History','European History',
+//   'History of USA','Gender Studies','Environmental Sciences',
+//   'Agriculture & Forestry','Botany','Zoology','English Literature',
+//   'Urdu Literature','Law','Constitutional Law','International Law',
+//   'Muslim Law & Jurisprudence','Mercantile Law','Criminology','Philosophy',
+//   'Journalism & Mass Communication','Psychology','Geography','Sociology',
+//   'Anthropology','Punjabi','Sindhi','Pashto','Balochi','Persian','Arabic',
+// ]
+// const CADET_COLLEGES = [
+//   'Cadet College Hasanabdal','Cadet College Petaro','Cadet College Kohat',
+//   'Cadet College Jhelum Valley','Cadet College Larkana',
+//   'Cadet College Uch Sharif','Cadet College Fateh Jang',
+//   'Cadet College Warsak','PAF College Sargodha',
+//   'PAF College Lower Topa','Pakistan Navy College Ormara',
+// ]
+// const ATCHISON_LEVELS = ['KG-1 (K1)','KG-2 (K2)','Entry-2 (E2)']
+// const ENGLISH_PROFICIENCY = [
+//   'IELTS','TOEFL','PTE Academic','Duolingo English Test',
+//   'Cambridge B2 First','Cambridge C1 Advanced','Cambridge C2 Proficiency',
+//   'OET','LanguageCert International ESOL','Trinity ISE',
+//   'Michigan English Test','CELPIP',
+// ]
+// const MEDICAL_EXAMS = ['MDCAT','PLAB-I','PLAB-II','ALS','MRCEM','MBBS Entry Test']
+// const PMS_SUBJECTS = [
+//   'English Essay','General Knowledge','Current Affairs',
+//   'Pakistan Affairs','Islamiat','Economics',
+//   'Political Science','History','Geography',
 // ]
 
 // function Eyebrow({ text, light = false }: { text: string; light?: boolean }) {
@@ -38,6 +80,233 @@
 //     <svg viewBox="0 0 160 10" fill="none" className="absolute -bottom-1.5 left-0 w-full h-3 pointer-events-none" aria-hidden="true">
 //       <path d="M2 5 C20 1, 38 9, 56 5 C74 1, 92 9, 110 5 C128 1, 146 9, 158 5" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none"/>
 //     </svg>
+//   )
+// }
+
+// // ─────────────────────────────────────────────────────────────────────────────
+// // SubjectsSection — search + all subject categories
+// // ─────────────────────────────────────────────────────────────────────────────
+// // All categories for the tab-based subject explorer
+// const EXAM_CATEGORIES = [
+//   {
+//     id: 'css',
+//     label: 'CSS',
+//     emoji: '🏛️',
+//     title: 'CSS — Civil Services of Pakistan',
+//     subtitle: 'Compulsory & Optional Subjects',
+//     accentBg: 'bg-[#1a2f3a]',
+//     accentText: 'text-[#E8C86A]',
+//     sections: [
+//       { heading: 'Compulsory Subjects', items: CSS_COMPULSORY },
+//       { heading: `Optional Subjects (${CSS_OPTIONAL.length})`, items: CSS_OPTIONAL },
+//     ],
+//   },
+//   {
+//     id: 'pms',
+//     label: 'PMS',
+//     emoji: '📋',
+//     title: 'PMS / PPSC / FPSC',
+//     subtitle: 'Provincial & Federal Service Preparation',
+//     accentBg: 'bg-[#E8934A]',
+//     accentText: 'text-white',
+//     sections: [
+//       { heading: 'PMS Core Subjects', items: PMS_SUBJECTS },
+//       { heading: 'PPSC / FPSC Topics', items: ['General Knowledge','English','Pakistan Studies','Islamic Studies','Arithmetic','Computer Basics','Current Affairs','Past Papers Practice'] },
+//     ],
+//   },
+//   {
+//     id: 'english',
+//     label: 'English Proficiency',
+//     emoji: '🌍',
+//     title: 'English Proficiency Exams',
+//     subtitle: 'International Language Certifications',
+//     accentBg: 'bg-[#3A9E8F]',
+//     accentText: 'text-white',
+//     sections: [
+//       { heading: 'All Supported Exams', items: ENGLISH_PROFICIENCY },
+//     ],
+//   },
+//   {
+//     id: 'medical',
+//     label: 'Medical',
+//     emoji: '🏥',
+//     title: 'Medical Exams',
+//     subtitle: 'Entry & Licensing Examinations',
+//     accentBg: 'bg-[#E05C42]',
+//     accentText: 'text-white',
+//     sections: [
+//       { heading: 'Supported Exams', items: MEDICAL_EXAMS },
+//     ],
+//   },
+//   {
+//     id: 'cadet',
+//     label: 'Cadet College',
+//     emoji: '🎖️',
+//     title: 'Cadet College Entry Tests',
+//     subtitle: 'Top Military & Cadet Institutions',
+//     accentBg: 'bg-[#2E4F5E]',
+//     accentText: 'text-[#E8C86A]',
+//     sections: [
+//       { heading: 'Cadet Colleges', items: CADET_COLLEGES },
+//       { heading: 'Atchison College Levels', items: ATCHISON_LEVELS },
+//     ],
+//   },
+// ]
+
+// function SubjectsSection() {
+//   const [search, setSearch] = useState('')
+//   const [activeTab, setActiveTab] = useState('css')
+
+//   const ALL_FLAT: { label: string; category: string }[] = [
+//     ...SUBJECTS.map(s => ({ label: s.label, category: 'General Subjects' })),
+//     ...CSS_COMPULSORY.map(s => ({ label: s, category: 'CSS Compulsory' })),
+//     ...CSS_OPTIONAL.map(s => ({ label: s, category: 'CSS Optional' })),
+//     ...PMS_SUBJECTS.map(s => ({ label: s, category: 'PMS' })),
+//     ...CADET_COLLEGES.map(s => ({ label: s, category: 'Cadet College' })),
+//     ...ATCHISON_LEVELS.map(s => ({ label: s, category: 'Atchison Entry Test' })),
+//     ...ENGLISH_PROFICIENCY.map(s => ({ label: s, category: 'English Proficiency' })),
+//     ...MEDICAL_EXAMS.map(s => ({ label: s, category: 'Medical Exams' })),
+//   ]
+
+//   const filtered = useMemo(() => {
+//     if (!search.trim()) return []
+//     const q = search.toLowerCase()
+//     return ALL_FLAT.filter(i => i.label.toLowerCase().includes(q) || i.category.toLowerCase().includes(q))
+//   // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, [search])
+
+//   const activeCategory = EXAM_CATEGORIES.find(c => c.id === activeTab)!
+
+//   const SubPill = ({ label }: { label: string }) => (
+//     <Link
+//       href={`/tutors?subject=${encodeURIComponent(label)}`}
+//       className="inline-flex items-center px-3.5 py-2 bg-white/10 hover:bg-[#E8C86A] hover:text-[#2E4F5E] text-white text-[0.75rem] font-bold rounded-xl border border-white/20 hover:border-[#E8C86A] transition-all duration-150"
+//     >
+//       {label}
+//     </Link>
+//   )
+
+//   return (
+//     <section className="bg-[#2E4F5E] py-16 sm:py-24 px-4 sm:px-8">
+//       <div className="max-w-6xl mx-auto">
+
+//         {/* Header + search */}
+//         <div className="text-center mb-10">
+//           <Eyebrow text="Academic Coverage" light />
+//           <h2 className="text-[1.9rem] sm:text-[2.4rem] font-black tracking-[-0.02em] text-white mb-4">
+//             Find Tutors for Any Subject 📚
+//           </h2>
+//           <p className="text-[#7da8b8] text-[0.93rem] max-w-md mx-auto font-semibold mb-8">
+//             From school fundamentals to CSS, medical exams, and international certifications.
+//           </p>
+
+//           {/* Search */}
+//           <div className="relative max-w-xl mx-auto">
+//             <input
+//               type="text"
+//               value={search}
+//               onChange={e => setSearch(e.target.value)}
+//               placeholder="Search any subject — IELTS, CSS, MDCAT, Cadet College..."
+//               className="w-full px-5 py-3.5 pl-12 rounded-xl border-2 border-white/20 bg-white/10 text-white placeholder:text-white/40 font-semibold text-[0.88rem] focus:outline-none focus:border-[#E8C86A] focus:bg-white/15 transition-all"
+//             />
+//             <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+//               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+//             </svg>
+//             {search && (
+//               <button onClick={() => setSearch('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-xl leading-none transition-colors">×</button>
+//             )}
+//           </div>
+
+//           {/* Search results dropdown */}
+//           {search.trim() && (
+//             <div className="max-w-xl mx-auto mt-2 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 text-left">
+//               {filtered.length === 0 ? (
+//                 <p className="text-white/50 text-[0.82rem] font-semibold text-center py-2">No subjects found. Try a different keyword.</p>
+//               ) : (
+//                 <>
+//                   <p className="text-[#E8C86A] text-[0.65rem] font-black uppercase tracking-widest mb-3">{filtered.length} result{filtered.length !== 1 ? 's' : ''}</p>
+//                   <div className="flex flex-col gap-2">
+//                     {filtered.map((item, i) => (
+//                       <Link key={i} href={`/tutors?subject=${encodeURIComponent(item.label)}`}
+//                         className="flex items-center justify-between px-3.5 py-2.5 bg-white/8 hover:bg-[#E8C86A]/20 rounded-lg border border-white/10 hover:border-[#E8C86A]/50 transition-all">
+//                         <span className="text-white text-[0.82rem] font-bold">{item.label}</span>
+//                         <span className="text-white/40 text-[0.65rem] font-bold">{item.category} →</span>
+//                       </Link>
+//                     ))}
+//                   </div>
+//                 </>
+//               )}
+//             </div>
+//           )}
+//         </div>
+
+//         {/* General subjects grid */}
+//         {!search.trim() && (
+//           <>
+//             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-14">
+//               {SUBJECTS.map(({ label, icon, bg, t }) => (
+//                 <Link key={label} href={`/tutors?subject=${encodeURIComponent(label)}`}
+//                   className="group flex items-center gap-3 p-3.5 bg-white/8 rounded-xl border-2 border-white/10 hover:border-[#E8C86A] hover:bg-white/15 hover:shadow-[3px_3px_0_0_#E8C86A] hover:-translate-y-0.5 transition-all duration-150">
+//                   <span className={`w-9 h-9 rounded-lg ${bg} ${t} border-2 border-white/30 flex items-center justify-center text-base flex-shrink-0 group-hover:rotate-[-8deg] transition-transform duration-150`}>{icon}</span>
+//                   <span className="text-[0.8rem] font-black text-white group-hover:text-[#E8C86A] transition-colors leading-tight">{label}</span>
+//                 </Link>
+//               ))}
+//             </div>
+
+//             {/* Specialised exams — tab layout */}
+//             <div>
+//               <p className="text-[#E8C86A] text-[0.68rem] font-black uppercase tracking-[0.22em] mb-5 text-center">Specialised Exam Preparation</p>
+
+//               {/* Tab buttons */}
+//               <div className="flex flex-wrap justify-center gap-2 mb-6">
+//                 {EXAM_CATEGORIES.map(cat => (
+//                   <button key={cat.id} onClick={() => setActiveTab(cat.id)}
+//                     className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-[0.75rem] font-black border-2 transition-all duration-150 ${
+//                       activeTab === cat.id
+//                         ? 'bg-[#E8C86A] text-[#2E4F5E] border-[#2E4F5E] shadow-[2px_2px_0_0_#2E4F5E]'
+//                         : 'bg-white/8 text-white border-white/15 hover:border-[#E8C86A]/60 hover:bg-white/15'
+//                     }`}>
+//                     <span>{cat.emoji}</span>
+//                     <span>{cat.label}</span>
+//                   </button>
+//                 ))}
+//               </div>
+
+//               {/* Active tab panel */}
+//               <div className="bg-white/8 rounded-2xl border-2 border-white/15 overflow-hidden">
+//                 {/* Panel header */}
+//                 <div className={`${activeCategory.accentBg} px-6 py-4 flex items-center gap-3`}>
+//                   <span className="text-2xl">{activeCategory.emoji}</span>
+//                   <div>
+//                     <p className={`font-black text-[0.95rem] ${activeCategory.accentText}`}>{activeCategory.title}</p>
+//                     <p className="text-white/60 text-[0.7rem] font-bold mt-0.5">{activeCategory.subtitle}</p>
+//                   </div>
+//                 </div>
+
+//                 {/* Sections */}
+//                 <div className="p-5 flex flex-col gap-6">
+//                   {activeCategory.sections.map(section => (
+//                     <div key={section.heading}>
+//                       <p className="text-[#E8C86A] text-[0.65rem] font-black uppercase tracking-wider mb-3">{section.heading}</p>
+//                       <div className="flex flex-wrap gap-2">
+//                         {section.items.map(s => <SubPill key={s} label={s} />)}
+//                       </div>
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+//           </>
+//         )}
+
+//         <div className="text-center mt-12">
+//           <Link href="/tutors"
+//             className="inline-flex items-center gap-2 text-[0.88rem] font-black text-[#2E4F5E] bg-[#E8C86A] border-2 border-[#2E4F5E] px-6 py-3 rounded-xl shadow-[3px_3px_0_0_#2E4F5E] hover:shadow-[1px_1px_0_0_#2E4F5E] hover:translate-y-[2px] transition-all duration-150">
+//             Browse All Tutors by Subject →
+//           </Link>
+//         </div>
+//       </div>
+//     </section>
 //   )
 // }
 
@@ -174,36 +443,9 @@
 //       </section>
 
 //       {/* ══════════════════════════════════════════════════════
-//           § 4  SUBJECTS — bg: dark teal
+//           § 4  SUBJECTS + SEARCH — bg: dark teal
 //       ══════════════════════════════════════════════════════ */}
-//       <section className="bg-[#2E4F5E] py-16 sm:py-24 px-4 sm:px-8">
-//         <div className="max-w-6xl mx-auto">
-//           <div className="text-center mb-10">
-//             <Eyebrow text="Academic Coverage" light />
-//             <h2 className="text-[1.9rem] sm:text-[2.4rem] font-black tracking-[-0.02em] text-white mb-4">
-//               Expert Tutors for Every Subject 📚
-//             </h2>
-//             <p className="text-[#7da8b8] text-[0.93rem] max-w-md mx-auto font-semibold">
-//               From school fundamentals to professional certifications — we have the right tutor for every need.
-//             </p>
-//           </div>
-//           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-//             {SUBJECTS.map(({ label, icon, bg, t }) => (
-//               <Link key={label} href={`/tutors?subject=${encodeURIComponent(label)}`}
-//                 className="group flex items-center gap-3 p-3.5 bg-white/8 rounded-xl border-2 border-white/10 hover:border-[#E8C86A] hover:bg-white/15 hover:shadow-[3px_3px_0_0_#E8C86A] hover:-translate-y-0.5 transition-all duration-150">
-//                 <span className={`w-9 h-9 rounded-lg ${bg} ${t} border-2 border-white/30 flex items-center justify-center text-[0.78rem] font-mono font-black flex-shrink-0 group-hover:rotate-[-8deg] transition-transform duration-150`}>{icon}</span>
-//                 <span className="text-[0.8rem] font-black text-white group-hover:text-[#E8C86A] transition-colors leading-tight">{label}</span>
-//               </Link>
-//             ))}
-//           </div>
-//           <div className="text-center mt-10">
-//             <Link href="/tutors"
-//               className="inline-flex items-center gap-2 text-[0.88rem] font-black text-[#2E4F5E] bg-[#E8C86A] border-2 border-[#2E4F5E] px-6 py-3 rounded-xl shadow-[3px_3px_0_0_#2E4F5E] hover:shadow-[1px_1px_0_0_#2E4F5E] hover:translate-y-[2px] transition-all duration-150">
-//               Browse All Tutors by Subject →
-//             </Link>
-//           </div>
-//         </div>
-//       </section>
+//       <SubjectsSection />
 
 //       {/* ══════════════════════════════════════════════════════
 //           § 5  OUR PROMISE — bg: yellow
@@ -353,31 +595,41 @@
 
 
 
-'use client'
 
+
+
+'use client'
+ 
 import React from 'react'
 import Link from 'next/link'
 import { useState, useMemo } from 'react'
-
+ 
 const SUBJECTS = [
   { label: 'O & A Level',        icon: '📖', bg: 'bg-[#2E4F5E]',  t: 'text-[#E8C86A]' },
   { label: 'Mathematics',        icon: '📐', bg: 'bg-[#E8C86A]',  t: 'text-[#2E4F5E]' },
   { label: 'Physics',            icon: '⚗️', bg: 'bg-[#3A9E8F]',  t: 'text-white'     },
   { label: 'Chemistry',          icon: '🧪', bg: 'bg-[#E05C42]',  t: 'text-white'     },
   { label: 'Biology',            icon: '🧬', bg: 'bg-[#3A9E8F]',  t: 'text-white'     },
+  { label: 'Science',            icon: '🔬', bg: 'bg-[#E8934A]',  t: 'text-white'     },
   { label: 'English',            icon: '✍️', bg: 'bg-[#E8C86A]',  t: 'text-[#2E4F5E]' },
+  { label: 'Urdu',               icon: 'اردو', bg: 'bg-[#2E4F5E]', t: 'text-[#E8C86A]' },
+  { label: 'Pakistan Studies',   icon: '🇵🇰', bg: 'bg-[#3A9E8F]',  t: 'text-white'     },
+  { label: 'Islamic Studies',    icon: '☪️',  bg: 'bg-[#E8C86A]',  t: 'text-[#2E4F5E]' },
   { label: 'Computer Science',   icon: '💻', bg: 'bg-[#2E4F5E]',  t: 'text-[#E8C86A]' },
   { label: 'Economics',          icon: '📊', bg: 'bg-[#E8934A]',  t: 'text-white'     },
+  { label: 'Statistics',         icon: '📈', bg: 'bg-[#E05C42]',  t: 'text-white'     },
   { label: 'Accounting',         icon: '🧾', bg: 'bg-[#E05C42]',  t: 'text-white'     },
+  { label: 'Political Science',  icon: '🏛️', bg: 'bg-[#3A9E8F]',  t: 'text-white'     },
+  { label: 'Law',                icon: '⚖️', bg: 'bg-[#E8C86A]',  t: 'text-[#2E4F5E]' },
+  { label: 'History & Geography',icon: '🗺️', bg: 'bg-[#2E4F5E]',  t: 'text-[#E8C86A]' },
   { label: 'Quran & Arabic',     icon: '📿', bg: 'bg-[#3A9E8F]',  t: 'text-white'     },
-  { label: 'History & Geography',icon: '🗺️', bg: 'bg-[#E8C86A]',  t: 'text-[#2E4F5E]' },
-  { label: 'CSS / PMS',          icon: '🏛️', bg: 'bg-[#2E4F5E]',  t: 'text-[#E8C86A]' },
+  { label: 'CSS / PMS',          icon: '🎓', bg: 'bg-[#2E4F5E]',  t: 'text-[#E8C86A]' },
   { label: 'PPSC / FPSC',        icon: '📋', bg: 'bg-[#E8934A]',  t: 'text-white'     },
   { label: 'MDCAT',              icon: '🏥', bg: 'bg-[#E05C42]',  t: 'text-white'     },
   { label: 'IELTS',              icon: '🌍', bg: 'bg-[#3A9E8F]',  t: 'text-white'     },
   { label: 'Cadet College Prep', icon: '🎖️', bg: 'bg-[#E8C86A]',  t: 'text-[#2E4F5E]' },
 ]
-
+ 
 // ── Category data for expanded detail cards ──
 const CSS_COMPULSORY = [
   'English Essay','Precis & Composition','General Science & Ability',
@@ -417,7 +669,7 @@ const PMS_SUBJECTS = [
   'Pakistan Affairs','Islamiat','Economics',
   'Political Science','History','Geography',
 ]
-
+ 
 function Eyebrow({ text, light = false }: { text: string; light?: boolean }) {
   return (
     <div className="flex items-center gap-2 mb-4">
@@ -427,7 +679,7 @@ function Eyebrow({ text, light = false }: { text: string; light?: boolean }) {
     </div>
   )
 }
-
+ 
 function Wiggle({ color = '#E8C86A' }: { color?: string }) {
   return (
     <svg viewBox="0 0 160 10" fill="none" className="absolute -bottom-1.5 left-0 w-full h-3 pointer-events-none" aria-hidden="true">
@@ -435,7 +687,7 @@ function Wiggle({ color = '#E8C86A' }: { color?: string }) {
     </svg>
   )
 }
-
+ 
 // ─────────────────────────────────────────────────────────────────────────────
 // SubjectsSection — search + all subject categories
 // ─────────────────────────────────────────────────────────────────────────────
@@ -505,11 +757,11 @@ const EXAM_CATEGORIES = [
     ],
   },
 ]
-
+ 
 function SubjectsSection() {
   const [search, setSearch] = useState('')
   const [activeTab, setActiveTab] = useState('css')
-
+ 
   const ALL_FLAT: { label: string; category: string }[] = [
     ...SUBJECTS.map(s => ({ label: s.label, category: 'General Subjects' })),
     ...CSS_COMPULSORY.map(s => ({ label: s, category: 'CSS Compulsory' })),
@@ -520,16 +772,16 @@ function SubjectsSection() {
     ...ENGLISH_PROFICIENCY.map(s => ({ label: s, category: 'English Proficiency' })),
     ...MEDICAL_EXAMS.map(s => ({ label: s, category: 'Medical Exams' })),
   ]
-
+ 
   const filtered = useMemo(() => {
     if (!search.trim()) return []
     const q = search.toLowerCase()
     return ALL_FLAT.filter(i => i.label.toLowerCase().includes(q) || i.category.toLowerCase().includes(q))
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search])
-
+ 
   const activeCategory = EXAM_CATEGORIES.find(c => c.id === activeTab)!
-
+ 
   const SubPill = ({ label }: { label: string }) => (
     <Link
       href={`/tutors?subject=${encodeURIComponent(label)}`}
@@ -538,11 +790,11 @@ function SubjectsSection() {
       {label}
     </Link>
   )
-
+ 
   return (
     <section className="bg-[#2E4F5E] py-16 sm:py-24 px-4 sm:px-8">
       <div className="max-w-6xl mx-auto">
-
+ 
         {/* Header + search */}
         <div className="text-center mb-10">
           <Eyebrow text="Academic Coverage" light />
@@ -552,7 +804,7 @@ function SubjectsSection() {
           <p className="text-[#7da8b8] text-[0.93rem] max-w-md mx-auto font-semibold mb-8">
             From school fundamentals to CSS, medical exams, and international certifications.
           </p>
-
+ 
           {/* Search */}
           <div className="relative max-w-xl mx-auto">
             <input
@@ -569,7 +821,7 @@ function SubjectsSection() {
               <button onClick={() => setSearch('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-xl leading-none transition-colors">×</button>
             )}
           </div>
-
+ 
           {/* Search results dropdown */}
           {search.trim() && (
             <div className="max-w-xl mx-auto mt-2 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 text-left">
@@ -592,7 +844,7 @@ function SubjectsSection() {
             </div>
           )}
         </div>
-
+ 
         {/* General subjects grid */}
         {!search.trim() && (
           <>
@@ -605,11 +857,11 @@ function SubjectsSection() {
                 </Link>
               ))}
             </div>
-
+ 
             {/* Specialised exams — tab layout */}
             <div>
               <p className="text-[#E8C86A] text-[0.68rem] font-black uppercase tracking-[0.22em] mb-5 text-center">Specialised Exam Preparation</p>
-
+ 
               {/* Tab buttons */}
               <div className="flex flex-wrap justify-center gap-2 mb-6">
                 {EXAM_CATEGORIES.map(cat => (
@@ -624,7 +876,7 @@ function SubjectsSection() {
                   </button>
                 ))}
               </div>
-
+ 
               {/* Active tab panel */}
               <div className="bg-white/8 rounded-2xl border-2 border-white/15 overflow-hidden">
                 {/* Panel header */}
@@ -635,7 +887,7 @@ function SubjectsSection() {
                     <p className="text-white/60 text-[0.7rem] font-bold mt-0.5">{activeCategory.subtitle}</p>
                   </div>
                 </div>
-
+ 
                 {/* Sections */}
                 <div className="p-5 flex flex-col gap-6">
                   {activeCategory.sections.map(section => (
@@ -651,7 +903,7 @@ function SubjectsSection() {
             </div>
           </>
         )}
-
+ 
         <div className="text-center mt-12">
           <Link href="/tutors"
             className="inline-flex items-center gap-2 text-[0.88rem] font-black text-[#2E4F5E] bg-[#E8C86A] border-2 border-[#2E4F5E] px-6 py-3 rounded-xl shadow-[3px_3px_0_0_#2E4F5E] hover:shadow-[1px_1px_0_0_#2E4F5E] hover:translate-y-[2px] transition-all duration-150">
@@ -662,11 +914,11 @@ function SubjectsSection() {
     </section>
   )
 }
-
+ 
 export default function ServicesPage() {
   return (
     <div className="text-[#2E4F5E] overflow-x-hidden" style={{ fontFamily: "'Nunito', sans-serif" }}>
-
+ 
       {/* ══════════════════════════════════════════════════════
           § 1  HERO — bg: cream
           Psychological: headline makes the benefit crystal clear.
@@ -675,16 +927,16 @@ export default function ServicesPage() {
       <section className="bg-[#FFFDF7] relative pt-14 sm:pt-20 pb-16 sm:pb-24 px-4 sm:px-8 overflow-hidden">
         <div aria-hidden="true" className="absolute top-0 right-0 w-72 h-72 sm:w-[450px] sm:h-[450px] rounded-full opacity-25 pointer-events-none"
           style={{ background: 'radial-gradient(circle, #3A9E8F, transparent 70%)', transform: 'translate(35%,-25%)' }} />
-
+ 
         <div className="relative max-w-4xl mx-auto text-center">
           <Eyebrow text="What We Do" />
-
+ 
           {/* Social proof pill */}
           <div className="inline-flex items-center gap-2 bg-[#E8C86A]/30 border-2 border-[#E8C86A] text-[#2E4F5E] text-[0.74rem] font-black px-4 py-1.5 rounded-full mb-6 shadow-[2px_2px_0_0_#d4b558]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#E05C42] animate-pulse" />
             500+ Verified Tutors · 30+ Subjects · 15+ Countries
           </div>
-
+ 
           <h1 className="text-[2.5rem] sm:text-[3.4rem] lg:text-[3.8rem] font-black leading-[1.07] tracking-[-0.025em] text-[#2E4F5E] mb-6">
             Tutoring That Fits
             <br />
@@ -694,9 +946,9 @@ export default function ServicesPage() {
             </span>
           </h1>
           <p className="text-[#4a6a78] text-[1rem] sm:text-[1.06rem] leading-[1.75] mb-10 max-w-2xl mx-auto font-semibold">
-            Personalised tutoring built around your curriculum, schedule, and learning style — online or in person. From exam prep to concept mastery, every student deserves the right support.
+            Personalised tutoring built around your curriculum, schedule, and learning style online or in person. From exam prep to concept mastery, every student deserves the right support.
           </p>
-
+ 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link href="/tutors"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#E05C42] text-white font-black rounded-xl border-2 border-[#a83c2a] shadow-[0_4px_0_0_#a83c2a] hover:shadow-[0_2px_0_0_#a83c2a] hover:translate-y-[2px] transition-all duration-150 text-[0.92rem]">
@@ -709,7 +961,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
+ 
       {/* ══════════════════════════════════════════════════════
           § 2  TRUST STRIP — bg: dark teal
       ══════════════════════════════════════════════════════ */}
@@ -723,7 +975,7 @@ export default function ServicesPage() {
           ))}
         </div>
       </div>
-
+ 
       {/* ══════════════════════════════════════════════════════
           § 3  ONLINE vs HOME — bg: cream
           Psychological: present choice = control → reduces resistance.
@@ -733,7 +985,7 @@ export default function ServicesPage() {
           <div className="text-center mb-12">
             <Eyebrow text="How We Help" />
             <h2 className="text-[1.9rem] sm:text-[2.4rem] font-black tracking-[-0.02em] text-[#2E4F5E] mb-4">
-              Two Ways to Learn — Both Excellent 🎓
+              Two Ways to Learn Both Excellent 🎓
             </h2>
             <p className="text-[#4a6a78] text-[0.93rem] max-w-lg mx-auto font-semibold leading-relaxed">
               Choose the mode that works for you. Both include verified tutors and personalised lesson plans.
@@ -750,7 +1002,7 @@ export default function ServicesPage() {
                 </div>
               </div>
               <p className="text-[#4a6a78] text-[0.86rem] font-semibold leading-relaxed mb-6">
-                Live one-on-one sessions built around your curriculum. Whether you're in Pakistan, UAE, UK or Canada — distance is no barrier to quality education.
+                Live one-on-one sessions built around your curriculum. Whether you're in Pakistan, UAE, UK or Canada distance is no barrier to quality education.
               </p>
               <ul className="flex flex-col gap-2.5 mb-7">
                 {['Live video sessions (Zoom, Google Meet, etc.)', 'Interactive whiteboard & screen sharing', 'Session recordings available on request', 'Flexible scheduling — morning, evening, weekends', 'Progress tracking & study materials provided'].map((f) => (
@@ -765,7 +1017,7 @@ export default function ServicesPage() {
                 Find Online Tutors →
               </Link>
             </div>
-
+ 
             {/* Home */}
             <div className="group bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-7 hover:-translate-y-1 hover:shadow-[5px_7px_0_0_#2E4F5E] transition-all duration-200">
               <div className="flex items-center gap-4 mb-6">
@@ -776,7 +1028,7 @@ export default function ServicesPage() {
                 </div>
               </div>
               <p className="text-[#4a6a78] text-[0.86rem] font-semibold leading-relaxed mb-6">
-                Prefer face-to-face learning? Our home tutors visit your residence and deliver hands-on, personalised sessions in a familiar, distraction-free environment.
+                Prefer face-to-face learning? Our home tutors visit your residence and deliver hands-on, personalised sessions in a familiar, distraction free environment.
               </p>
               <ul className="flex flex-col gap-2.5 mb-7">
                 {['Available in Islamabad, Rawalpindi, Lahore, Karachi', 'Tutor selected based on your area & subject', 'Consistent weekly schedule', 'Parents can sit in on sessions', 'Textbook-aligned teaching'].map((f) => (
@@ -794,12 +1046,12 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
+ 
       {/* ══════════════════════════════════════════════════════
           § 4  SUBJECTS + SEARCH — bg: dark teal
       ══════════════════════════════════════════════════════ */}
       <SubjectsSection />
-
+ 
       {/* ══════════════════════════════════════════════════════
           § 5  OUR PROMISE — bg: yellow
           Psychological: "promise" language = accountability = trust.
@@ -831,7 +1083,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
+ 
       {/* ══════════════════════════════════════════════════════
           § 6  HOW IT WORKS (Services-specific) — bg: cream
           Psychological: "Tell us → Get matched → Start" removes
@@ -867,7 +1119,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
+ 
       {/* ══════════════════════════════════════════════════════
           § 7  TESTIMONIALS — bg: teal
           Psychological: specific outcomes ("band 7.5 in 6 weeks")
@@ -908,7 +1160,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
+ 
       {/* ══════════════════════════════════════════════════════
           § 8  FINAL CTA — bg: dark teal
       ══════════════════════════════════════════════════════ */}
@@ -928,7 +1180,7 @@ export default function ServicesPage() {
             </span>
           </h2>
           <p className="text-white/55 text-[0.97rem] mb-10 max-w-lg mx-auto font-semibold leading-relaxed">
-            Choose your subject, pick your mode, and connect with your ideal tutor — starting today.
+            Choose your subject, pick your mode, and connect with your ideal tutor starting today.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/tutors"
