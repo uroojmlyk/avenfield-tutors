@@ -18,7 +18,7 @@ const SUBJECT_GROUPS = [
   {
     group: 'O Level / A Level',
     emoji: '🎓',
-    subjects: ['O Level','A Level','Arabic','Quran'],
+    subjects: ['O Level','A Level','Arabic','Quran',"English Literature","Mathematics","Additional Mathematics","Urdu","Islamiat / Islamic Studies","Pakistan Studies","Physics","Chemistry","Biology","Computer Science / ICT","Economics","Business Studies","Accounting","Sociology","Psychology","History","Geography","Law","Media Studies","Art & Design","Further Mathematics"],
   },
   {
     group: 'CSS Preparation',

@@ -1058,7 +1058,7 @@ export default async function HomePage() {
               {/* Social proof pill */}
               <div className="inline-flex items-center gap-2 bg-[#E8C86A]/25 border-2 border-[#E8C86A] text-[#2E4F5E] text-[0.7rem] font-black px-3 py-1.5 rounded-full mb-5 shadow-[2px_2px_0_0_#c9ab4a]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E05C42] animate-pulse flex-shrink-0" />
-                <span className="truncate">🌎 Trusted by 8,000+ students worldwide</span>
+                <span className="truncate">🌎 Trusted by 8,000+ students across UK , USA , Canada , Australia , UAE & Europe ⭐</span>
               </div>
 
               {/* Headline */}
@@ -1073,7 +1073,7 @@ export default async function HomePage() {
               {/* Sub text */}
               <p className="text-[#4a6a78] text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] leading-[1.7] md:leading-[1.75] mb-6 md:mb-8 font-semibold">
                 Verified tutors for O Level, A Level, IELTS, MDCAT, CSS and 50+ subjects.
-                Online worldwide · Home visits in Pakistan & UAE.
+                Online worldwide · Home visits in Pakistan.
               </p>
 
               {/* CTAs */}
@@ -1167,12 +1167,12 @@ export default async function HomePage() {
               { abbr: 'IGCSE',  label: 'Cambridge IGCSE', bg: 'bg-[#E8C86A]',  t: 'text-[#2E4F5E]' },
               { abbr: 'A-LVL',  label: 'CAIE A-Level',    bg: 'bg-[#3A9E8F]',  t: 'text-white'     },
               { abbr: 'EDX',    label: 'Edexcel',          bg: 'bg-[#E8934A]',  t: 'text-white'     },
-              { abbr: 'IB',     label: 'IB Diploma',       bg: 'bg-[#E05C42]',  t: 'text-white'     },
+              { abbr: 'IB',     label: 'IB ',       bg: 'bg-[#E05C42]',  t: 'text-white'     },
               { abbr: 'O/LVL',  label: 'O Level',          bg: 'bg-[#2E4F5E]',  t: 'text-[#E8C86A]', border: 'border border-[#E8C86A]/40' },
               { abbr: 'AP',     label: 'AP Courses',       bg: 'bg-[#E8C86A]',  t: 'text-[#2E4F5E]' },
               { abbr: 'SAT',    label: 'SAT',              bg: 'bg-[#3A9E8F]',  t: 'text-white'     },
-              { abbr: 'IELTS',  label: 'IELTS',            bg: 'bg-[#E8934A]',  t: 'text-white'     },
-              { abbr: 'MDCAT',  label: 'MDCAT & ECAT',     bg: 'bg-[#E05C42]',  t: 'text-white'     },
+              { abbr: 'CAIE',  label: 'CAIE',            bg: 'bg-[#E8934A]',  t: 'text-white'     },
+              { abbr: 'Oxford',  label: 'Oxford',     bg: 'bg-[#E05C42]',  t: 'text-white'     },
             ].map(({ abbr, label, bg, t, border = '' }) => (
               <div key={abbr} className="flex items-center gap-1 sm:gap-2">
                 <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl ${bg} ${t} ${border} flex items-center justify-center text-[0.5rem] sm:text-[0.55rem] font-black text-center shadow-[2px_2px_0_0_rgba(0,0,0,0.18)] flex-shrink-0`}>
@@ -1196,7 +1196,7 @@ export default async function HomePage() {
               Trusted by Families Across 15+ Countries
             </h2>
             <p className="text-[#c5e8e3] text-[0.85rem] md:text-[0.88rem] max-w-sm md:max-w-md mx-auto font-semibold leading-relaxed">
-              Not just a tutor list — real verification, genuine flexibility, outcomes that matter.
+              Not just a tutor list real verification, genuine flexibility, outcomes that matter.
             </p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
@@ -1323,7 +1323,7 @@ export default async function HomePage() {
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
             <Eyebrow text="Student Feedback" center />
             <h2 className="text-[1.5rem] sm:text-[2rem] md:text-[2.4rem] font-black tracking-[-0.02em] text-white">
-              What Students Say About Our Tutors ⭐⭐⭐⭐⭐
+              What students say about our tutors ⭐⭐⭐⭐⭐
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
