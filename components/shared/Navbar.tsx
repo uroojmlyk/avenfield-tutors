@@ -416,9 +416,6 @@
 
 
 
-
-
-
 'use client'
 
 import Link from 'next/link'
@@ -472,39 +469,34 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-8 h-[66px] flex items-center justify-between gap-4">
 
-        {/* ── Logo ── */}
+        {/* Logo - prominent, no square border */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 flex-shrink-0 group"
+          className="flex items-center gap-3 flex-shrink-0 group"
           aria-label="Avenfield Tutors – Expert Online & Home Tutoring"
         >
-          {/* Logo image — shows full logo, zoomed to top so tree+book visible */}
-          <div className="relative flex-shrink-0 w-[42px] h-[42px] sm:w-[50px] sm:h-[50px] rounded-xl overflow-hidden border-2 border-[#2E4F5E] shadow-[2px_2px_0_0_#2E4F5E] group-hover:shadow-[3px_3px_0_0_#E8C86A] transition-all duration-300">
+          {/* Logo image - no square border, just clean logo */}
+          <div className="relative flex-shrink-0 w-[48px] h-[48px] sm:w-[56px] sm:h-[56px] overflow-hidden group-hover:scale-105 transition-transform duration-300">
             <Image
               src="/avenfield-logo.jpeg"
               alt="Avenfield Tutors Logo"
               fill
-              sizes="(max-width: 640px) 42px, 50px"
-              className="object-cover object-top scale-[1.15] origin-top"
+              sizes="(max-width: 640px) 48px, 56px"
+              className="object-contain object-center"
               priority
             />
           </div>
 
-          {/* Brand text — always visible on all screens */}
-          <div className="flex flex-col leading-none">
-            <span
-              className="text-[#2E4F5E] font-black tracking-[-0.02em] text-[0.82rem] sm:text-[1rem] leading-tight"
-              style={{ fontFamily: "'Nunito', sans-serif" }}
-            >
-              Avenfield Tutors
-            </span>
-            <span className="text-[#3A9E8F] text-[0.48rem] sm:text-[0.54rem] font-bold tracking-[0.1em] uppercase">
-              Expert · Verified · Trusted
-            </span>
-          </div>
+          {/* Brand name - prominent, no tagline */}
+          <span
+            className="text-[#2E4F5E] font-black tracking-[-0.02em] text-[1.1rem] sm:text-[1.25rem] leading-tight"
+            style={{ fontFamily: "'Nunito', sans-serif" }}
+          >
+            Avenfield Tutors
+          </span>
         </Link>
 
-        {/* ── Desktop nav ── */}
+        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
           {navLinks.map((l) => (
             <Link
@@ -523,7 +515,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* ── Desktop right ── */}
+        {/* Desktop right */}
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="/become-tutor"
@@ -534,7 +526,7 @@ export default function Navbar() {
             Join as Tutor ✨
           </Link>
 
-          {/* Admin — subtle icon-only ghost button, visible to admin but not prominent to users */}
+          {/* Admin - subtle icon button */}
           <div className="relative">
             <button
               id="admin-btn"
@@ -593,9 +585,9 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* ── Mobile right ── */}
+        {/* Mobile right */}
         <div className="md:hidden flex items-center gap-2">
-          {/* Admin mobile — subtle icon only */}
+          {/* Admin mobile - subtle icon */}
           <div className="relative">
             <button
               id="admin-btn"
@@ -652,7 +644,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ── Mobile dropdown ── */}
+      {/* Mobile dropdown */}
       <div
         id="mobile-nav"
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
