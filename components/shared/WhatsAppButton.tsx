@@ -47,7 +47,7 @@ export default function WhatsAppButton() {
   const pathname = usePathname()
   if (pathname?.startsWith('/admin')) return null
 
-  const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi! I visited Learnova and I need help finding a tutor.')}`
+  const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi! I visited Avenfield tutors and I need help finding a tutor.')}`
 
   return (
     <a href={url} target="_blank" rel="noopener noreferrer"
