@@ -318,7 +318,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Find Verified Tutors | Avenfield Tutors',
-    description: 'O Level, A Level, IELTS, MDCAT, CSS tutors — all manually verified.',
+    description: 'O Level, A Level, IELTS, MDCAT, CSS tutors all manually verified.',
   },
   alternates: {
     canonical: 'https://www.avenfieldtutors.com/tutors',

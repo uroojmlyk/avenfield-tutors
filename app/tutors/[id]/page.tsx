@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const tutor = await getTutor(id)
   if (!tutor) return { title: 'Tutor Not Found' }
   return {
-    title: `${tutor.name} — ${tutor.subjects[0]} Tutor | Learnova`,
+    title: `${tutor.name} — ${tutor.subjects[0]} Tutor | Avenfield`,
     description: tutor.bio.slice(0, 155),
   }
 }
@@ -47,7 +47,7 @@ const modeBadge: Record<string, string> = {
 function buildWhatsAppURL(phone: string, name: string, subject: string) {
   const number = phone.replace(/\D/g, '')
   const message = encodeURIComponent(
-    `Hi! I found your profile on Learnova and I'd like to book a session.\n\nTutor: ${name}\nSubject: ${subject}\n\nPlease let me know your availability. Thank you!`
+    `Hi! I found your profile on Avenfield and I'd like to book a session.\n\nTutor: ${name}\nSubject: ${subject}\n\nPlease let me know your availability. Thank you!`
   )
   return `https://wa.me/${number}?text=${message}`
 }
@@ -363,7 +363,7 @@ export default async function TutorDetailPage({ params }: Props) {
                 <div className="flex items-start gap-2.5">
                   <span className="text-[#3A9E8F] text-lg flex-shrink-0">✓</span>
                   <p className="text-[0.72rem] font-semibold text-[#2E4F5E] leading-relaxed">
-                    <span className="font-black text-[#E05C42]">Verified tutor</span> — manually reviewed and approved by the Learnova team before going live.
+                    <span className="font-black text-[#E05C42]">Verified tutor</span> manually reviewed and approved by the Avenfield team before going live.
                   </p>
                 </div>
               </div>
