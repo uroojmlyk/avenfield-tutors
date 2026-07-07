@@ -1,20 +1,14 @@
 
 
-
-
-
-
- 
- 
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
 // import { notFound } from 'next/navigation'
 // import { ITutor } from '@/types'
- 
+
 // interface Props {
 //   params: Promise<{ id: string }>
 // }
- 
+
 // async function getTutor(id: string): Promise<ITutor | null> {
 //   try {
 //     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tutors/${id}`, { cache: 'no-store' })
@@ -22,17 +16,36 @@
 //     return res.json()
 //   } catch { return null }
 // }
- 
+
 // export async function generateMetadata({ params }: Props): Promise<Metadata> {
 //   const { id } = await params
 //   const tutor = await getTutor(id)
 //   if (!tutor) return { title: 'Tutor Not Found' }
+
+//   const title = `${tutor.name} — ${tutor.subjects[0]} Tutor | Avenfield`
+//   const description = tutor.bio.slice(0, 155)
+//   const url = `https://avenfield-tutors.vercel.app/tutors/${id}`
+
 //   return {
-//     title: `${tutor.name} — ${tutor.subjects[0]} Tutor | Avenfield`,
-//     description: tutor.bio.slice(0, 155),
+//     title,
+//     description,
+//     alternates: { canonical: url },
+//     openGraph: {
+//       title,
+//       description,
+//       type: 'profile',
+//       url,
+//       siteName: 'Avenfield Tutors',
+//       images: tutor.imageUrl ? [{ url: tutor.imageUrl }] : undefined,
+//     },
+//     twitter: {
+//       card: 'summary_large_image',
+//       title,
+//       description,
+//     },
 //   }
 // }
- 
+
 // const modeLabel: Record<string, string> = {
 //   online: 'Online Only',
 //   onsite: 'Home Visit Only',
@@ -43,7 +56,7 @@
 //   onsite: 'bg-[#E05C42] text-white border-[#2E4F5E]',
 //   both:   'bg-[#E8C86A] text-[#2E4F5E] border-[#2E4F5E]',
 // }
- 
+
 // function buildWhatsAppURL(phone: string, name: string, subject: string) {
 //   const number = phone.replace(/\D/g, '')
 //   const message = encodeURIComponent(
@@ -51,7 +64,7 @@
 //   )
 //   return `https://wa.me/${number}?text=${message}`
 // }
- 
+
 // function Eyebrow({ text, light = false }: { text: string; light?: boolean }) {
 //   return (
 //     <div className="flex items-center gap-2 mb-3">
@@ -61,24 +74,24 @@
 //     </div>
 //   )
 // }
- 
+
 // export default async function TutorDetailPage({ params }: Props) {
 //   const { id } = await params
 //   const tutor = await getTutor(id)
 //   if (!tutor) notFound()
- 
+
 //   const whatsappURL = buildWhatsAppURL(
 //     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || tutor.whatsapp,
 //     tutor.name,
 //     tutor.subjects[0]
 //   )
- 
+
 //   const topSubjects  = tutor.subjects.slice(0, 3)
 //   const restSubjects = tutor.subjects.slice(3)
- 
+
 //   return (
 //     <div className="text-[#2E4F5E] overflow-x-hidden bg-[#FFFDF7]" style={{ fontFamily: "'Nunito', sans-serif" }}>
- 
+
 //       {/* ═══════════════════════════════════════════════════
 //           HERO BANNER — dark teal
 //           Psychology: name + location + badges above the fold
@@ -91,7 +104,7 @@
 //           style={{ background: 'radial-gradient(circle,#3A9E8F,transparent 70%)', transform: 'translate(35%,-25%)' }} />
 //         <div aria-hidden="true" className="absolute bottom-0 left-0 w-48 sm:w-72 h-48 sm:h-72 rounded-full opacity-15 pointer-events-none"
 //           style={{ background: 'radial-gradient(circle,#E8C86A,transparent 70%)', transform: 'translate(-25%,25%)' }} />
- 
+
 //         <div className="max-w-5xl mx-auto relative">
 //           {/* Back link */}
 //           <Link href="/tutors"
@@ -101,7 +114,7 @@
 //             </svg>
 //             Back to tutors
 //           </Link>
- 
+
 //           <div className="flex flex-col sm:flex-row items-start gap-5 sm:gap-8">
 //             {/* Avatar */}
 //             <div className="relative flex-shrink-0">
@@ -118,7 +131,7 @@
 //                 Active
 //               </div>
 //             </div>
- 
+
 //             {/* Name & meta */}
 //             <div className="flex-1 min-w-0">
 //               <h1 className="text-white text-[1.8rem] sm:text-[2.5rem] lg:text-[3rem] font-black tracking-tight leading-tight mb-2">
@@ -127,7 +140,7 @@
 //               <p className="text-[#7da8b8] text-[0.88rem] mb-4 flex items-center gap-1.5 font-semibold">
 //                 <span>📍</span> {tutor.city}, {tutor.country}
 //               </p>
- 
+
 //               {/* Badges */}
 //               <div className="flex flex-wrap gap-2 mb-4">
 //                 <span className={`text-[0.7rem] font-black px-3 py-1.5 rounded-full border-2 shadow-[2px_2px_0_0_#1a3a44] ${modeBadge[tutor.mode]}`}>
@@ -142,7 +155,7 @@
 //                   </span>
 //                 )}
 //               </div>
- 
+
 //               {/* Trust row */}
 //               <div className="flex flex-wrap gap-3 sm:gap-5">
 //                 {[
@@ -160,16 +173,16 @@
 //           </div>
 //         </div>
 //       </div>
- 
+
 //       {/* ═══════════════════════════════════════════════════
 //           MAIN CONTENT — overlaps hero with -mt
 //       ═══════════════════════════════════════════════════ */}
 //       <div className="max-w-5xl mx-auto px-4 sm:px-8 -mt-12 sm:-mt-16 pb-16 sm:pb-24 relative z-10">
 //         <div className="grid lg:grid-cols-3 gap-5 sm:gap-6">
- 
+
 //           {/* ── LEFT COLUMN ── */}
 //           <div className="lg:col-span-2 space-y-4 sm:space-y-5">
- 
+
 //             {/* About */}
 //             <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
 //               <Eyebrow text="About" />
@@ -181,7 +194,7 @@
 //               </div>
 //               <p className="text-[#4a6a78] text-[0.88rem] font-semibold leading-relaxed">{tutor.bio}</p>
 //             </div>
- 
+
 //             {/* Subjects */}
 //             <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
 //               <Eyebrow text="Subjects Taught" />
@@ -198,7 +211,7 @@
 //                 ))}
 //               </div>
 //             </div>
- 
+
 //             {/* Education */}
 //             <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
 //               <Eyebrow text="Education" />
@@ -209,7 +222,7 @@
 //                 <p className="text-[#2E4F5E] text-[0.88rem] font-black leading-snug">{tutor.education}</p>
 //               </div>
 //             </div>
- 
+
 //             {/* What you will gain — outcomes section */}
 //             {/* Psychology: students care about RESULTS, not features */}
 //             <div className="bg-[#3A9E8F] rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
@@ -231,7 +244,7 @@
 //                 ))}
 //               </div>
 //             </div>
- 
+
 //             {/* What Students Say */}
 //             {/* What Students Say — dynamic per tutor subject */}
 //             <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
@@ -276,7 +289,7 @@
 //                 Based on verified student feedback
 //               </p>
 //             </div>
- 
+
 //             {/* Session Experience */}
 //             {/* Psychology: removing "what will it actually be like?" uncertainty */}
 //             <div className="bg-[#E8C86A] rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
@@ -299,11 +312,11 @@
 //               </div>
 //             </div>
 //           </div>
- 
+
 //           {/* ── RIGHT COLUMN — Sticky ── */}
 //           <div className="lg:col-span-1">
 //             <div className="sticky top-24 space-y-4">
- 
+
 //               {/* Booking Card */}
 //               {/* Psychology: urgency + zero-risk framing removes the final hesitation */}
 //               <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[6px_6px_0_0_#2E4F5E] overflow-hidden">
@@ -313,7 +326,7 @@
 //                   <p className="text-[#7da8b8] text-[0.72rem] font-semibold mb-5 leading-relaxed">
 //                     Send a WhatsApp message to check availability and schedule your first lesson.
 //                   </p>
- 
+
 //                   <a href={whatsappURL} target="_blank" rel="noopener noreferrer"
 //                     className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#3A9E8F] hover:bg-[#2d7a6e] text-white font-black text-[0.88rem] rounded-xl border-2 border-[#2E4F5E] shadow-[3px_3px_0_0_#2E4F5E] hover:shadow-[1px_1px_0_0_#2E4F5E] hover:translate-y-[2px] active:translate-y-[2px] transition-all duration-150">
 //                     <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
@@ -322,7 +335,7 @@
 //                     </svg>
 //                     Book Your First Session
 //                   </a>
- 
+
 //                   <div className="mt-4 flex flex-col gap-1.5">
 //                     <p className="text-center text-[0.67rem] font-black text-[#3A9E8F]">
 //                       No advance payment required
@@ -338,7 +351,7 @@
 //                   </div>
 //                 </div>
 //               </div>
- 
+
 //               {/* Quick Info */}
 //               <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5">
 //                 <Eyebrow text="Quick Info" />
@@ -357,7 +370,7 @@
 //                   ))}
 //                 </div>
 //               </div>
- 
+
 //               {/* Verified badge */}
 //               <div className="bg-[#FFFDF7] rounded-xl p-4 border-2 border-[#3A9E8F] shadow-[3px_3px_0_0_#2E4F5E]">
 //                 <div className="flex items-start gap-2.5">
@@ -367,7 +380,7 @@
 //                   </p>
 //                 </div>
 //               </div>
- 
+
 //               {/* Popular tag */}
 //               {(tutor.subjects.includes('Mathematics') || tutor.subjects.includes('O Level') || tutor.subjects.includes('A Level')) && (
 //                 <div className="bg-[#E8C86A] rounded-xl p-3 text-center border-2 border-[#2E4F5E] shadow-[3px_3px_0_0_#2E4F5E]">
@@ -386,10 +399,19 @@
 
 
 
+
+
+
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ITutor } from '@/types'
+
+// ⚠️ SITE_URL: uses the live Vercel URL as fallback. Once your custom domain
+// is connected, just set NEXT_PUBLIC_SITE_URL in your environment variables —
+// nothing here needs to change. (Matches the same pattern used in
+// app/tutors/page.tsx for consistency.)
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfield-tutors.vercel.app'
 
 interface Props {
   params: Promise<{ id: string }>
@@ -403,30 +425,52 @@ async function getTutor(id: string): Promise<ITutor | null> {
   } catch { return null }
 }
 
+// Truncates at a word boundary instead of cutting mid-word, and adds "…"
+function truncateAtWord(str: string, maxLen: number) {
+  if (str.length <= maxLen) return str
+  const trimmed = str.slice(0, maxLen)
+  const lastSpace = trimmed.lastIndexOf(' ')
+  return (lastSpace > 40 ? trimmed.slice(0, lastSpace) : trimmed).trim() + '…'
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params
   const tutor = await getTutor(id)
   if (!tutor) return { title: 'Tutor Not Found' }
 
-  const title = `${tutor.name} — ${tutor.subjects[0]} Tutor | Avenfield`
-  const description = tutor.bio.slice(0, 155)
-  const url = `https://avenfield-tutors.vercel.app/tutors/${id}`
+  const primarySubject = tutor.subjects[0]
+  // NOTE: no "| Avenfield Tutors" suffix here — app/layout.tsx already has
+  // title.template: '%s | Avenfield Tutors', so it's appended automatically.
+  const title = `${tutor.name} — ${primarySubject} Tutor in ${tutor.city}`
+  // Front-load name + subject + city (keywords) before the tutor's own bio text
+  const description = truncateAtWord(
+    `${tutor.name} teaches ${tutor.subjects.slice(0, 2).join(' & ')} in ${tutor.city}. ${tutor.bio}`,
+    155
+  )
+  const url = `${SITE_URL}/tutors/${id}`
 
   return {
     title,
     description,
+    keywords: [
+      tutor.name,
+      `${primarySubject} tutor`,
+      `${primarySubject} tutor ${tutor.city}`,
+      `online ${primarySubject} tutor`,
+      'home tutor', 'Avenfield Tutors',
+    ],
     alternates: { canonical: url },
     openGraph: {
-      title,
+      title: `${title} | Avenfield Tutors`,
       description,
       type: 'profile',
       url,
       siteName: 'Avenfield Tutors',
-      images: tutor.imageUrl ? [{ url: tutor.imageUrl }] : undefined,
+      images: tutor.imageUrl ? [{ url: tutor.imageUrl, width: 400, height: 400, alt: tutor.name }] : undefined,
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: `${title} | Avenfield Tutors`,
       description,
     },
   }
@@ -451,13 +495,57 @@ function buildWhatsAppURL(phone: string, name: string, subject: string) {
   return `https://wa.me/${number}?text=${message}`
 }
 
-function Eyebrow({ text, light = false }: { text: string; light?: boolean }) {
+// `as` lets the same visual "eyebrow" style render as a real heading
+// (h2 for main content sections, h3 for sidebar sections) instead of a
+// plain div — same look, but now readable as page structure by Google.
+function Eyebrow({ text, light = false, as: Tag = 'h2' }: { text: string; light?: boolean; as?: 'h2' | 'h3' }) {
   return (
-    <div className="flex items-center gap-2 mb-3">
+    <Tag className={`flex items-center gap-2 mb-3 text-[0.63rem] font-black uppercase tracking-[0.22em] ${light ? 'text-[#E8C86A]' : 'text-[#E05C42]'}`}>
       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
-      <span className={`text-[0.63rem] font-black uppercase tracking-[0.22em] ${light ? 'text-[#E8C86A]' : 'text-[#E05C42]'}`}>{text}</span>
+      <span>{text}</span>
       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
-    </div>
+    </Tag>
+  )
+}
+
+// ── Person + Breadcrumb JSON-LD (same pattern as app/tutors/page.tsx) ──
+function TutorSchema({ tutor, id }: { tutor: ITutor; id: string }) {
+  const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: tutor.name,
+    description: tutor.bio,
+    image: tutor.imageUrl || undefined,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: tutor.city,
+      addressCountry: tutor.country,
+    },
+    knowsAbout: tutor.subjects,
+    hasCredential: tutor.education,
+    memberOf: {
+      '@type': 'Organization',
+      name: 'Avenfield Tutors',
+      url: SITE_URL,
+    },
+    ...(tutor.rating ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: tutor.rating, bestRating: 5 } } : {}),
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Tutors', item: `${SITE_URL}/tutors` },
+      { '@type': 'ListItem', position: 3, name: tutor.name, item: `${SITE_URL}/tutors/${id}` },
+    ],
+  }
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+    </>
   )
 }
 
@@ -477,6 +565,7 @@ export default async function TutorDetailPage({ params }: Props) {
 
   return (
     <div className="text-[#2E4F5E] overflow-x-hidden bg-[#FFFDF7]" style={{ fontFamily: "'Nunito', sans-serif" }}>
+      <TutorSchema tutor={tutor} id={id} />
 
       {/* ═══════════════════════════════════════════════════
           HERO BANNER — dark teal
@@ -506,7 +595,7 @@ export default async function TutorDetailPage({ params }: Props) {
             <div className="relative flex-shrink-0">
               <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-[#E8C86A] shadow-[4px_4px_0_0_#1a3a44]">
                 {tutor.imageUrl ? (
-                  <img src={tutor.imageUrl} alt={tutor.name} className="w-full h-full object-cover" />
+                  <img src={tutor.imageUrl} alt={`${tutor.name}, ${tutor.subjects[0]} tutor in ${tutor.city}`} className="w-full h-full object-cover" />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-[#E8C86A] to-[#c4a84a] flex items-center justify-center">
                     <span className="text-[#2E4F5E] font-black text-4xl sm:text-5xl">{tutor.name.charAt(0)}</span>
@@ -586,14 +675,16 @@ export default async function TutorDetailPage({ params }: Props) {
               <Eyebrow text="Subjects Taught" />
               <div className="flex flex-wrap gap-2">
                 {topSubjects.map(s => (
-                  <span key={s} className="px-3 py-1.5 bg-[#E8C86A] text-[#2E4F5E] text-[0.75rem] font-black rounded-full border-2 border-[#2E4F5E] shadow-[2px_2px_0_0_#2E4F5E]">
+                  <Link key={s} href={`/tutors?subject=${encodeURIComponent(s)}`}
+                    className="px-3 py-1.5 bg-[#E8C86A] text-[#2E4F5E] text-[0.75rem] font-black rounded-full border-2 border-[#2E4F5E] shadow-[2px_2px_0_0_#2E4F5E] no-underline hover:opacity-90 transition-opacity">
                     {s}
-                  </span>
+                  </Link>
                 ))}
                 {restSubjects.map(s => (
-                  <span key={s} className="px-3 py-1.5 bg-[#FFFDF7] text-[#4a6a78] text-[0.7rem] font-semibold rounded-full border-2 border-[#D4D0C5]">
+                  <Link key={s} href={`/tutors?subject=${encodeURIComponent(s)}`}
+                    className="px-3 py-1.5 bg-[#FFFDF7] text-[#4a6a78] text-[0.7rem] font-semibold rounded-full border-2 border-[#D4D0C5] no-underline hover:border-[#E8C86A] transition-colors">
                     {s}
-                  </span>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -697,6 +788,22 @@ export default async function TutorDetailPage({ params }: Props) {
                 ))}
               </div>
             </div>
+
+            {/* Explore more — internal linking for SEO + real navigation value */}
+            <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
+              <Eyebrow text="Explore More" />
+              <div className="flex flex-wrap gap-2.5">
+                <Link href="/tutors" className="px-3.5 py-2 bg-[#FFFDF7] text-[#2E4F5E] text-[0.75rem] font-black rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors no-underline">
+                  ← All Tutors
+                </Link>
+                <Link href={`/tutors?subject=${encodeURIComponent(tutor.subjects[0])}`} className="px-3.5 py-2 bg-[#FFFDF7] text-[#2E4F5E] text-[0.75rem] font-black rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors no-underline">
+                  More {tutor.subjects[0]} Tutors
+                </Link>
+                <Link href="/services" className="px-3.5 py-2 bg-[#FFFDF7] text-[#2E4F5E] text-[0.75rem] font-black rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors no-underline">
+                  Our Services
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* ── RIGHT COLUMN — Sticky ── */}
@@ -708,7 +815,7 @@ export default async function TutorDetailPage({ params }: Props) {
               <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[6px_6px_0_0_#2E4F5E] overflow-hidden">
                 <div className="h-2 bg-gradient-to-r from-[#E8C86A] via-[#E05C42] to-[#3A9E8F]" />
                 <div className="p-5">
-                  <p className="font-black text-[#2E4F5E] text-[1.05rem] mb-1">Book a Session</p>
+                  <h3 className="font-black text-[#2E4F5E] text-[1.05rem] mb-1">Book a Session</h3>
                   <p className="text-[#7da8b8] text-[0.72rem] font-semibold mb-5 leading-relaxed">
                     Send a WhatsApp message to check availability and schedule your first lesson.
                   </p>
@@ -740,7 +847,7 @@ export default async function TutorDetailPage({ params }: Props) {
 
               {/* Quick Info */}
               <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5">
-                <Eyebrow text="Quick Info" />
+                <Eyebrow text="Quick Info" as="h3" />
                 <div className="flex flex-col gap-3">
                   {[
                     { emoji: '📍', label: 'Location',   value: `${tutor.city}, ${tutor.country}` },
