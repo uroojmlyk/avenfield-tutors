@@ -1,28 +1,108 @@
-// This adds "Organization" structured data so Google understands
-// Avenfield Tutors as a real education business (helps with
-// knowledge panels, sitelinks, and how the brand shows up in search).
+
+
+
+
+// export default function StructuredData() {
+//   const jsonLd = {
+//     "@context": "https://schema.org",
+//     "@type": "EducationalOrganization",
+
+//     name: "Avenfield Tutors",
+
+//     url: "https://avenfieldtutors.com",
+
+//     logo: "https://avenfieldtutors.com/avenfield.jpeg",
+
+//     image: "https://avenfieldtutors.com/avenfield.jpeg",
+
+//     description:
+//       "Avenfield Tutors provides verified online and home tutors across Pakistan, UAE and the UK for O Level, A Level, IGCSE, IELTS, MDCAT, CSS/PMS and 50+ subjects.",
+
+//     email: "avenfieldtutors@gmail.com",
+
+//     telephone: "+923095154253",
+
+//     foundingDate: "2025",
+
+//     areaServed: [
+//       "Pakistan",
+//       "United Arab Emirates",
+//       "United Kingdom"
+//     ],
+
+//     availableLanguage: [
+//       "English",
+//       "Urdu"
+//     ],
+
+//     sameAs: [
+//       // Add social profiles later
+//       // "https://facebook.com/...",
+//       // "https://instagram.com/..."
+//     ]
+//   }
+
+//   return (
+//     <script
+//       type="application/ld+json"
+//       dangerouslySetInnerHTML={{
+//         __html: JSON.stringify(jsonLd),
+//       }}
+//     />
+//   )
+// }
+
+
+
+
+
 
 export default function StructuredData() {
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'EducationalOrganization',
-    name: 'Avenfield Tutors',
-    url: 'https://avenfield-tutors.vercel.app',
-    logo: 'https://avenfield-tutors.vercel.app/avenfield.jpeg',
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+
+    name: "Avenfield Tutors",
+
+    url: "https://avenfieldtutors.com",
+
+    logo: "https://avenfieldtutors.com/avenfieldtutors-newlogo.png",
+
+    image: "https://avenfieldtutors.com/avenfieldtutors-newlogo.png",
+
     description:
-      'Avenfield Tutors connects students with verified, expert tutors for online and home sessions across Pakistan, UAE & UK. O Level, A Level, IELTS, MDCAT, CSS/PMS and 50+ subjects.',
-    areaServed: ['Pakistan', 'United Arab Emirates', 'United Kingdom'],
-    sameAs: [
-      // Add your real social links here, e.g.:
-      // 'https://www.instagram.com/avenfield_tutors',
-      // 'https://www.facebook.com/avenfieldtutors',
+      "Avenfield Tutors provides verified online and home tutors across Pakistan, UAE and the UK for O Level, A Level, IGCSE, IELTS, MDCAT, CSS/PMS and 50+ subjects.",
+
+    email: "avenfieldtutors@gmail.com",
+
+    telephone: "+923095154253",
+
+    foundingDate: "2025",
+
+    areaServed: [
+      "Pakistan",
+      "United Arab Emirates",
+      "United Kingdom"
     ],
+
+    availableLanguage: [
+      "English",
+      "Urdu"
+    ],
+
+    sameAs: [
+      // Add social profiles later
+      // "https://facebook.com/...",
+      // "https://instagram.com/..."
+    ]
   }
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(jsonLd),
+      }}
     />
   )
 }

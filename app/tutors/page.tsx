@@ -1,24 +1,42 @@
 
 
+
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
 // import TutorCard from '@/components/tutor/TutorCard'
 // import { ITutor } from '@/types'
 
+// // ⚠️ SITE_URL: uses the live Vercel URL as fallback. Once your custom domain
+// // is connected, just set NEXT_PUBLIC_SITE_URL in your environment variables —
+// // nothing here needs to change.
+// const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.com'
+
 // export const metadata: Metadata = {
-//   title: 'Find Verified Online & Home Tutors for O Level, A Level, IELTS & MDCAT | Avenfield Tutors',
-//   description: 'Browse 500+ hand-verified online and home tutors for O Level, A Level, IGCSE, IELTS, MDCAT, CSS and 50+ subjects. Online tuition worldwide and home tutoring in Pakistan, UAE & UK. Book directly via WhatsApp.',
-//   keywords: 'online tutors Pakistan, home tutors Pakistan, private tutors, verified tutors, online tuition, home tuition, O Level tutor, A Level tutor, IELTS preparation online, MDCAT tutor, CSS coaching, GCSE tutor, find tutors online, home tutoring Pakistan, online tuition UAE',
+//   // NOTE: no "| Avenfield Tutors" suffix here — app/layout.tsx already has
+//   // title.template: '%s | Avenfield Tutors', so Next.js appends it
+//   // automatically. Adding it manually here was causing "Avenfield Tutors"
+//   // to appear twice in the actual <title> tag.
+//   title: 'Verified Online & Home Tutors — O Level, A Level, IELTS, MDCAT',
+//   description:
+//     'Browse 500+ verified online & home tutors for O Level, A Level, IELTS, MDCAT & 50+ subjects. Pakistan, UAE & UK. Book instantly via WhatsApp.',
+//   keywords: [
+//     'online tutors Pakistan', 'home tutors Pakistan', 'private tutors',
+//     'verified tutors', 'online tuition', 'home tuition', 'O Level tutor',
+//     'A Level tutor', 'IELTS preparation online', 'MDCAT tutor',
+//     'CSS coaching', 'GCSE tutor', 'find tutors online',
+//     'home tutoring Pakistan', 'online tuition UAE',
+//   ],
 //   openGraph: {
-//     title: 'Find Verified Online & Home Tutors for O Level, A Level, IELTS & MDCAT | Avenfield Tutors',
-//     description: 'Browse 500+ hand-verified online and home tutors for O Level, A Level, IGCSE, IELTS, MDCAT, CSS and 50+ subjects. Online tuition worldwide and home tutoring in Pakistan, UAE & UK.',
+//     title: 'Verified Online & Home Tutors — O Level, A Level, IELTS, MDCAT | Avenfield Tutors',
+//     description:
+//       'Browse 500+ hand-verified online and home tutors for O Level, A Level, IGCSE, IELTS, MDCAT, CSS and 50+ subjects. Online tuition worldwide and home tutoring in Pakistan, UAE & UK.',
 //     type: 'website',
 //     locale: 'en_PK',
 //     siteName: 'Avenfield Tutors',
-//     url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.avenfieldtutors.com'}/tutors`,
+//     url: `${SITE_URL}/tutors`,
 //     images: [
 //       {
-//         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.avenfieldtutors.com'}/avenfield.jpeg`,
+//         url: `${SITE_URL}/avenfield.jpeg`,
 //         width: 1200,
 //         height: 630,
 //         alt: 'Verified Tutors for O Level, A Level, IELTS, MDCAT | Avenfield Tutors',
@@ -27,12 +45,12 @@
 //   },
 //   twitter: {
 //     card: 'summary_large_image',
-//     title: 'Find Verified Online & Home Tutors | Avenfield Tutors',
-//     description: 'Browse 500+ hand-verified tutors for O Level, A Level, IELTS, MDCAT, CSS and 50+ subjects. Online tuition worldwide and home tutoring in Pakistan, UAE & UK.',
-//     images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.avenfieldtutors.com'}/avenfield.jpeg`],
+//     title: 'Verified Online & Home Tutors | Avenfield Tutors',
+//     description: 'Browse 500+ hand-verified tutors for O Level, A Level, IELTS, MDCAT, CSS and 50+ subjects.',
+//     images: [`${SITE_URL}/avenfield.jpeg`],
 //   },
 //   alternates: {
-//     canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.avenfieldtutors.com'}/tutors`,
+//     canonical: `${SITE_URL}/tutors`,
 //   },
 // }
 
@@ -64,21 +82,10 @@
 //     '@context': 'https://schema.org',
 //     '@type': 'BreadcrumbList',
 //     itemListElement: [
-//       {
-//         '@type': 'ListItem',
-//         position: 1,
-//         name: 'Home',
-//         item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.avenfieldtutors.com'}`,
-//       },
-//       {
-//         '@type': 'ListItem',
-//         position: 2,
-//         name: 'Tutors',
-//         item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.avenfieldtutors.com'}/tutors`,
-//       },
+//       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+//       { '@type': 'ListItem', position: 2, name: 'Tutors', item: `${SITE_URL}/tutors` },
 //     ],
 //   }
-
 //   return (
 //     <script
 //       type="application/ld+json"
@@ -92,9 +99,10 @@
 //   const schema = {
 //     '@context': 'https://schema.org',
 //     '@type': 'WebPage',
-//     name: 'Find Verified Online & Home Tutors for O Level, A Level, IELTS & MDCAT | Avenfield Tutors',
-//     description: 'Browse 500+ hand-verified online and home tutors for O Level, A Level, IGCSE, IELTS, MDCAT, CSS and 50+ subjects. Online tuition worldwide and home tutoring in Pakistan, UAE & UK.',
-//     url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.avenfieldtutors.com'}/tutors`,
+//     name: 'Verified Online & Home Tutors — O Level, A Level, IELTS, MDCAT | Avenfield Tutors',
+//     description:
+//       'Browse 500+ hand-verified online and home tutors for O Level, A Level, IGCSE, IELTS, MDCAT, CSS and 50+ subjects. Online tuition worldwide and home tutoring in Pakistan, UAE & UK.',
+//     url: `${SITE_URL}/tutors`,
 //     about: {
 //       '@type': 'Thing',
 //       name: 'Tutoring Services',
@@ -104,10 +112,9 @@
 //     isPartOf: {
 //       '@type': 'WebSite',
 //       name: 'Avenfield Tutors',
-//       url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.avenfieldtutors.com'}`,
+//       url: SITE_URL,
 //     },
 //   }
-
 //   return (
 //     <script
 //       type="application/ld+json"
@@ -397,6 +404,7 @@
 //             §3  TUTOR GRID SECTION
 //         ══════════════════════════════════════════════════════ */}
 //         <section aria-labelledby="tutors-heading" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
+//           <h2 id="tutors-heading" className="sr-only">Available tutors</h2>
 //           <div className="max-w-6xl mx-auto">
 //             {tutors.length > 0 ? (
 //               <>
@@ -420,7 +428,7 @@
 //                   <div className="mb-10 sm:mb-14">
 //                     <div className="flex items-center gap-3 mb-5">
 //                       <div className="h-6 w-1 bg-[#E8C86A] rounded-full border border-[#2E4F5E]" />
-//                       <h2 className="font-black text-[1.05rem] text-[#2E4F5E]">Featured Verified Tutors</h2>
+//                       <h3 className="font-black text-[1.05rem] text-[#2E4F5E]">✨ Featured Verified Tutors</h3>
 //                       <span className="text-[0.62rem] font-black text-[#7da8b8] bg-[#FFFDF7] border border-[#D4D0C5] px-2.5 py-0.5 rounded-full">5+ years experience</span>
 //                     </div>
 //                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
@@ -459,9 +467,9 @@
 //                 <div className="w-20 h-20 bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[6px_6px_0_0_#2E4F5E] flex items-center justify-center text-4xl mx-auto mb-6" aria-hidden="true">
 //                   🔍
 //                 </div>
-//                 <h2 className="font-black text-[1.25rem] sm:text-[1.5rem] text-[#2E4F5E] mb-3">
+//                 <h3 className="font-black text-[1.25rem] sm:text-[1.5rem] text-[#2E4F5E] mb-3">
 //                   No tutors found{activeSubject !== 'All' ? ` for "${activeSubject}"` : ''}
-//                 </h2>
+//                 </h3>
 //                 <p className="text-[#4a6a78] text-[0.88rem] font-semibold max-w-sm mx-auto mb-8 leading-relaxed">
 //                   We may not have added tutors for this subject yet. New tutors join every week.
 //                   Try browsing all tutors or request one for your subject.
@@ -656,7 +664,7 @@
 //               '@type': 'ItemList',
 //               name: 'Verified Tutors at Avenfield Tutors',
 //               description: 'Browse hand-verified online and home tutors for O Level, A Level, IELTS, MDCAT, CSS and 50+ subjects. Online tuition worldwide and home tutoring in Pakistan, UAE & UK.',
-//               url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.avenfieldtutors.com'}/tutors`,
+//               url: `${SITE_URL}/tutors`,
 //               numberOfItems: tutors.length,
 //               itemListElement: tutors.slice(0, 10).map((tutor, index) => ({
 //                 '@type': 'ListItem',
@@ -683,6 +691,12 @@
 
 
 
+
+
+
+
+
+
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import TutorCard from '@/components/tutor/TutorCard'
@@ -691,7 +705,7 @@ import { ITutor } from '@/types'
 // ⚠️ SITE_URL: uses the live Vercel URL as fallback. Once your custom domain
 // is connected, just set NEXT_PUBLIC_SITE_URL in your environment variables —
 // nothing here needs to change.
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfield-tutors.vercel.app'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.com'
 
 export const metadata: Metadata = {
   // NOTE: no "| Avenfield Tutors" suffix here — app/layout.tsx already has
@@ -718,7 +732,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/tutors`,
     images: [
       {
-        url: `${SITE_URL}/avenfield.jpeg`,
+        url: `${SITE_URL}/avenfieldtutors-newlogo.png`,
         width: 1200,
         height: 630,
         alt: 'Verified Tutors for O Level, A Level, IELTS, MDCAT | Avenfield Tutors',
@@ -729,7 +743,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Verified Online & Home Tutors | Avenfield Tutors',
     description: 'Browse 500+ hand-verified tutors for O Level, A Level, IELTS, MDCAT, CSS and 50+ subjects.',
-    images: [`${SITE_URL}/avenfield.jpeg`],
+    images: [`${SITE_URL}/avenfieldtutors-newlogo.png`],
   },
   alternates: {
     canonical: `${SITE_URL}/tutors`,

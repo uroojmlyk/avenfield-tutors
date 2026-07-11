@@ -411,7 +411,7 @@ import { ITutor } from '@/types'
 // is connected, just set NEXT_PUBLIC_SITE_URL in your environment variables —
 // nothing here needs to change. (Matches the same pattern used in
 // app/tutors/page.tsx for consistency.)
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfield-tutors.vercel.app'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.com'
 
 interface Props {
   params: Promise<{ id: string }>
