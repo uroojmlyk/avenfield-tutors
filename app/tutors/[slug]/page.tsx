@@ -1,9 +1,16 @@
 
 
+
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
 // import { notFound } from 'next/navigation'
 // import { ITutor } from '@/types'
+
+// // ⚠️ SITE_URL: uses the live Vercel URL as fallback. Once your custom domain
+// // is connected, just set NEXT_PUBLIC_SITE_URL in your environment variables —
+// // nothing here needs to change. (Matches the same pattern used in
+// // app/tutors/page.tsx for consistency.)
+// const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.com'
 
 // interface Props {
 //   params: Promise<{ id: string }>
@@ -17,30 +24,52 @@
 //   } catch { return null }
 // }
 
+// // Truncates at a word boundary instead of cutting mid-word, and adds "…"
+// function truncateAtWord(str: string, maxLen: number) {
+//   if (str.length <= maxLen) return str
+//   const trimmed = str.slice(0, maxLen)
+//   const lastSpace = trimmed.lastIndexOf(' ')
+//   return (lastSpace > 40 ? trimmed.slice(0, lastSpace) : trimmed).trim() + '…'
+// }
+
 // export async function generateMetadata({ params }: Props): Promise<Metadata> {
 //   const { id } = await params
 //   const tutor = await getTutor(id)
 //   if (!tutor) return { title: 'Tutor Not Found' }
 
-//   const title = `${tutor.name} — ${tutor.subjects[0]} Tutor | Avenfield`
-//   const description = tutor.bio.slice(0, 155)
-//   const url = `https://avenfield-tutors.vercel.app/tutors/${id}`
+//   const primarySubject = tutor.subjects[0]
+//   // NOTE: no "| Avenfield Tutors" suffix here — app/layout.tsx already has
+//   // title.template: '%s | Avenfield Tutors', so it's appended automatically.
+//   const title = `${tutor.name} — ${primarySubject} Tutor in ${tutor.city}`
+//   // Front-load name + subject + city (keywords) before the tutor's own bio text
+//   const description = truncateAtWord(
+//     `${tutor.name} teaches ${tutor.subjects.slice(0, 2).join(' & ')} in ${tutor.city}. ${tutor.bio}`,
+//     155
+//   )
+//   const url = `${SITE_URL}/tutors/${id}`
 
 //   return {
 //     title,
 //     description,
+//     keywords: [
+//       tutor.name,
+//       `${primarySubject} tutor`,
+//       `${primarySubject} tutor ${tutor.city}`,
+//       `online ${primarySubject} tutor`,
+//       'home tutor', 'Avenfield Tutors',
+//     ],
 //     alternates: { canonical: url },
 //     openGraph: {
-//       title,
+//       title: `${title} | Avenfield Tutors`,
 //       description,
 //       type: 'profile',
 //       url,
 //       siteName: 'Avenfield Tutors',
-//       images: tutor.imageUrl ? [{ url: tutor.imageUrl }] : undefined,
+//       images: tutor.imageUrl ? [{ url: tutor.imageUrl, width: 400, height: 400, alt: tutor.name }] : undefined,
 //     },
 //     twitter: {
 //       card: 'summary_large_image',
-//       title,
+//       title: `${title} | Avenfield Tutors`,
 //       description,
 //     },
 //   }
@@ -65,13 +94,57 @@
 //   return `https://wa.me/${number}?text=${message}`
 // }
 
-// function Eyebrow({ text, light = false }: { text: string; light?: boolean }) {
+// // `as` lets the same visual "eyebrow" style render as a real heading
+// // (h2 for main content sections, h3 for sidebar sections) instead of a
+// // plain div — same look, but now readable as page structure by Google.
+// function Eyebrow({ text, light = false, as: Tag = 'h2' }: { text: string; light?: boolean; as?: 'h2' | 'h3' }) {
 //   return (
-//     <div className="flex items-center gap-2 mb-3">
+//     <Tag className={`flex items-center gap-2 mb-3 text-[0.63rem] font-black uppercase tracking-[0.22em] ${light ? 'text-[#E8C86A]' : 'text-[#E05C42]'}`}>
 //       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
-//       <span className={`text-[0.63rem] font-black uppercase tracking-[0.22em] ${light ? 'text-[#E8C86A]' : 'text-[#E05C42]'}`}>{text}</span>
+//       <span>{text}</span>
 //       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
-//     </div>
+//     </Tag>
+//   )
+// }
+
+// // ── Person + Breadcrumb JSON-LD (same pattern as app/tutors/page.tsx) ──
+// function TutorSchema({ tutor, id }: { tutor: ITutor; id: string }) {
+//   const personSchema = {
+//     '@context': 'https://schema.org',
+//     '@type': 'Person',
+//     name: tutor.name,
+//     description: tutor.bio,
+//     image: tutor.imageUrl || undefined,
+//     address: {
+//       '@type': 'PostalAddress',
+//       addressLocality: tutor.city,
+//       addressCountry: tutor.country,
+//     },
+//     knowsAbout: tutor.subjects,
+//     hasCredential: tutor.education,
+//     memberOf: {
+//       '@type': 'Organization',
+//       name: 'Avenfield Tutors',
+//       url: SITE_URL,
+//     },
+//     ...(tutor.rating ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: tutor.rating, bestRating: 5 } } : {}),
+//   }
+
+//   const breadcrumbSchema = {
+//     '@context': 'https://schema.org',
+//     '@type': 'BreadcrumbList',
+//     itemListElement: [
+//       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+//       { '@type': 'ListItem', position: 2, name: 'Tutors', item: `${SITE_URL}/tutors` },
+//       { '@type': 'ListItem', position: 3, name: tutor.name, item: `${SITE_URL}/tutors/${id}` },
+//     ],
+//   }
+
+//   return (
+//     <>
+//       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+//       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+//     </>
 //   )
 // }
 
@@ -91,6 +164,7 @@
 
 //   return (
 //     <div className="text-[#2E4F5E] overflow-x-hidden bg-[#FFFDF7]" style={{ fontFamily: "'Nunito', sans-serif" }}>
+//       <TutorSchema tutor={tutor} id={id} />
 
 //       {/* ═══════════════════════════════════════════════════
 //           HERO BANNER — dark teal
@@ -120,7 +194,7 @@
 //             <div className="relative flex-shrink-0">
 //               <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-[#E8C86A] shadow-[4px_4px_0_0_#1a3a44]">
 //                 {tutor.imageUrl ? (
-//                   <img src={tutor.imageUrl} alt={tutor.name} className="w-full h-full object-cover" />
+//                   <img src={tutor.imageUrl} alt={`${tutor.name}, ${tutor.subjects[0]} tutor in ${tutor.city}`} className="w-full h-full object-cover" />
 //                 ) : (
 //                   <div className="w-full h-full bg-gradient-to-br from-[#E8C86A] to-[#c4a84a] flex items-center justify-center">
 //                     <span className="text-[#2E4F5E] font-black text-4xl sm:text-5xl">{tutor.name.charAt(0)}</span>
@@ -200,14 +274,16 @@
 //               <Eyebrow text="Subjects Taught" />
 //               <div className="flex flex-wrap gap-2">
 //                 {topSubjects.map(s => (
-//                   <span key={s} className="px-3 py-1.5 bg-[#E8C86A] text-[#2E4F5E] text-[0.75rem] font-black rounded-full border-2 border-[#2E4F5E] shadow-[2px_2px_0_0_#2E4F5E]">
+//                   <Link key={s} href={`/tutors?subject=${encodeURIComponent(s)}`}
+//                     className="px-3 py-1.5 bg-[#E8C86A] text-[#2E4F5E] text-[0.75rem] font-black rounded-full border-2 border-[#2E4F5E] shadow-[2px_2px_0_0_#2E4F5E] no-underline hover:opacity-90 transition-opacity">
 //                     {s}
-//                   </span>
+//                   </Link>
 //                 ))}
 //                 {restSubjects.map(s => (
-//                   <span key={s} className="px-3 py-1.5 bg-[#FFFDF7] text-[#4a6a78] text-[0.7rem] font-semibold rounded-full border-2 border-[#D4D0C5]">
+//                   <Link key={s} href={`/tutors?subject=${encodeURIComponent(s)}`}
+//                     className="px-3 py-1.5 bg-[#FFFDF7] text-[#4a6a78] text-[0.7rem] font-semibold rounded-full border-2 border-[#D4D0C5] no-underline hover:border-[#E8C86A] transition-colors">
 //                     {s}
-//                   </span>
+//                   </Link>
 //                 ))}
 //               </div>
 //             </div>
@@ -311,6 +387,22 @@
 //                 ))}
 //               </div>
 //             </div>
+
+//             {/* Explore more — internal linking for SEO + real navigation value */}
+//             <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
+//               <Eyebrow text="Explore More" />
+//               <div className="flex flex-wrap gap-2.5">
+//                 <Link href="/tutors" className="px-3.5 py-2 bg-[#FFFDF7] text-[#2E4F5E] text-[0.75rem] font-black rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors no-underline">
+//                   ← All Tutors
+//                 </Link>
+//                 <Link href={`/tutors?subject=${encodeURIComponent(tutor.subjects[0])}`} className="px-3.5 py-2 bg-[#FFFDF7] text-[#2E4F5E] text-[0.75rem] font-black rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors no-underline">
+//                   More {tutor.subjects[0]} Tutors
+//                 </Link>
+//                 <Link href="/services" className="px-3.5 py-2 bg-[#FFFDF7] text-[#2E4F5E] text-[0.75rem] font-black rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors no-underline">
+//                   Our Services
+//                 </Link>
+//               </div>
+//             </div>
 //           </div>
 
 //           {/* ── RIGHT COLUMN — Sticky ── */}
@@ -322,7 +414,7 @@
 //               <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[6px_6px_0_0_#2E4F5E] overflow-hidden">
 //                 <div className="h-2 bg-gradient-to-r from-[#E8C86A] via-[#E05C42] to-[#3A9E8F]" />
 //                 <div className="p-5">
-//                   <p className="font-black text-[#2E4F5E] text-[1.05rem] mb-1">Book a Session</p>
+//                   <h3 className="font-black text-[#2E4F5E] text-[1.05rem] mb-1">Book a Session</h3>
 //                   <p className="text-[#7da8b8] text-[0.72rem] font-semibold mb-5 leading-relaxed">
 //                     Send a WhatsApp message to check availability and schedule your first lesson.
 //                   </p>
@@ -354,7 +446,7 @@
 
 //               {/* Quick Info */}
 //               <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5">
-//                 <Eyebrow text="Quick Info" />
+//                 <Eyebrow text="Quick Info" as="h3" />
 //                 <div className="flex flex-col gap-3">
 //                   {[
 //                     { emoji: '📍', label: 'Location',   value: `${tutor.city}, ${tutor.country}` },
@@ -400,11 +492,9 @@
 
 
 
-
-
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
+import { notFound, permanentRedirect } from 'next/navigation'
 import { ITutor } from '@/types'
 
 // ⚠️ SITE_URL: uses the live Vercel URL as fallback. Once your custom domain
@@ -414,12 +504,17 @@ import { ITutor } from '@/types'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.com'
 
 interface Props {
-  params: Promise<{ id: string }>
+  // Route folder is now /tutors/[slug] — see note below on why this still
+  // accepts an ObjectId too (legacy links).
+  params: Promise<{ slug: string }>
 }
 
-async function getTutor(id: string): Promise<ITutor | null> {
+// `slugOrId` is whatever is in the URL: a real slug for every new link,
+// or (for links created/shared before this change) a raw Mongo ObjectId.
+// The API route resolves either one — see app/api/tutors/[id]/route.ts.
+async function getTutor(slugOrId: string): Promise<ITutor | null> {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tutors/${id}`, { cache: 'no-store' })
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tutors/${slugOrId}`, { cache: 'no-store' })
     if (!res.ok) return null
     return res.json()
   } catch { return null }
@@ -434,8 +529,8 @@ function truncateAtWord(str: string, maxLen: number) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params
-  const tutor = await getTutor(id)
+  const { slug } = await params
+  const tutor = await getTutor(slug)
   if (!tutor) return { title: 'Tutor Not Found' }
 
   const primarySubject = tutor.subjects[0]
@@ -447,7 +542,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     `${tutor.name} teaches ${tutor.subjects.slice(0, 2).join(' & ')} in ${tutor.city}. ${tutor.bio}`,
     155
   )
-  const url = `${SITE_URL}/tutors/${id}`
+  // Always canonicalize to the tutor's real slug — even if this request came
+  // in on a legacy ObjectId URL — so search engines only ever see one clean URL.
+  const url = `${SITE_URL}/tutors/${(tutor as any).slug || slug}`
 
   return {
     title,
@@ -550,9 +647,16 @@ function TutorSchema({ tutor, id }: { tutor: ITutor; id: string }) {
 }
 
 export default async function TutorDetailPage({ params }: Props) {
-  const { id } = await params
-  const tutor = await getTutor(id)
+  const { slug } = await params
+  const tutor = await getTutor(slug)
   if (!tutor) notFound()
+
+  // Legacy /tutors/<ObjectId> link (or a stale slug) landed here — send it
+  // permanently (308) to the real slug URL instead of serving duplicate content.
+  const canonicalSlug = (tutor as any).slug
+  if (canonicalSlug && canonicalSlug !== slug) {
+    permanentRedirect(`/tutors/${canonicalSlug}`)
+  }
 
   const whatsappURL = buildWhatsAppURL(
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || tutor.whatsapp,
@@ -565,7 +669,9 @@ export default async function TutorDetailPage({ params }: Props) {
 
   return (
     <div className="text-[#2E4F5E] overflow-x-hidden bg-[#FFFDF7]" style={{ fontFamily: "'Nunito', sans-serif" }}>
-      <TutorSchema tutor={tutor} id={id} />
+      {/* Was `id={id}` before — that variable doesn't exist here (the param
+          is `slug`), which would have crashed the page at runtime. */}
+      <TutorSchema tutor={tutor} id={slug} />
 
       {/* ═══════════════════════════════════════════════════
           HERO BANNER — dark teal
@@ -722,7 +828,6 @@ export default async function TutorDetailPage({ params }: Props) {
               </div>
             </div>
 
-            {/* What Students Say */}
             {/* What Students Say — dynamic per tutor subject */}
             <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
               <Eyebrow text="What Students Say" />
