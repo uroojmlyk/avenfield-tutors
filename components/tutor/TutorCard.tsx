@@ -1,7 +1,5 @@
 
 
-
-
 // 'use client'
 
 // import Link from 'next/link'
@@ -56,8 +54,12 @@
 //   const accent          = modeAccent[tutor.mode] ?? '#E8C86A'
 //   const initials        = tutor.name.split(' ').map((w: string) => w[0]).slice(0, 2).join('')
 
+//   // Falls back to _id only if a legacy record hasn't been assigned a
+//   // slug yet — the API backfills this automatically on first fetch.
+//   const tutorHref = `/tutors/${(tutor as any).slug || tutor._id}`
+
 //   return (
-//     <Link href={`/tutors/${tutor._id}`} className="block group">
+//     <Link href={tutorHref} className="block group">
 //       <div
 //         className="relative bg-[#FFFDF7] rounded-[20px] border-[2.5px] border-[#2E4F5E] overflow-hidden h-full transition-all duration-200 hover:-translate-y-1"
 //         style={{ boxShadow: '0 0 0 0 #2E4F5E' }}
@@ -95,7 +97,6 @@
 //                 style={{ background: `linear-gradient(135deg, ${accent}, ${accent}aa)`, boxShadow: '3px 3px 0 #2E4F5E' }}
 //               >
 //                 {tutor.imageUrl ? (
-//                   // <img src={tutor.imageUrl} alt={tutor.name} className="w-full h-full object-cover" />
 //                   <img src={tutor.imageUrl} alt={`${tutor.name} - ${tutor.subjects[0]} tutor`} className="w-full h-full object-cover" />
 //                 ) : (
 //                   <span className="text-[22px] font-black text-[#2E4F5E]">{initials}</span>
@@ -197,9 +198,16 @@
 
 
 
+
+
+
+
+
+
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ITutor } from '@/types'
 
 interface TutorCardProps {
@@ -294,7 +302,14 @@ export default function TutorCard({ tutor, featured = false }: TutorCardProps) {
                 style={{ background: `linear-gradient(135deg, ${accent}, ${accent}aa)`, boxShadow: '3px 3px 0 #2E4F5E' }}
               >
                 {tutor.imageUrl ? (
-                  <img src={tutor.imageUrl} alt={`${tutor.name} - ${tutor.subjects[0]} tutor`} className="w-full h-full object-cover" />
+                  <Image
+                    src={tutor.imageUrl}
+                    alt={`${tutor.name} - ${tutor.subjects[0]} tutor`}
+                    width={58}
+                    height={58}
+                    unoptimized
+                    className="w-full h-full object-cover"
+                  />
                 ) : (
                   <span className="text-[22px] font-black text-[#2E4F5E]">{initials}</span>
                 )}

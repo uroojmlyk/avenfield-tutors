@@ -3,7 +3,7 @@
 
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
-// import { notFound } from 'next/navigation'
+// import { notFound, permanentRedirect } from 'next/navigation'
 // import { ITutor } from '@/types'
 
 // // ⚠️ SITE_URL: uses the live Vercel URL as fallback. Once your custom domain
@@ -13,12 +13,17 @@
 // const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.com'
 
 // interface Props {
-//   params: Promise<{ id: string }>
+//   // Route folder is now /tutors/[slug] — see note below on why this still
+//   // accepts an ObjectId too (legacy links).
+//   params: Promise<{ slug: string }>
 // }
 
-// async function getTutor(id: string): Promise<ITutor | null> {
+// // `slugOrId` is whatever is in the URL: a real slug for every new link,
+// // or (for links created/shared before this change) a raw Mongo ObjectId.
+// // The API route resolves either one — see app/api/tutors/[id]/route.ts.
+// async function getTutor(slugOrId: string): Promise<ITutor | null> {
 //   try {
-//     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tutors/${id}`, { cache: 'no-store' })
+//     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tutors/${slugOrId}`, { cache: 'no-store' })
 //     if (!res.ok) return null
 //     return res.json()
 //   } catch { return null }
@@ -33,8 +38,8 @@
 // }
 
 // export async function generateMetadata({ params }: Props): Promise<Metadata> {
-//   const { id } = await params
-//   const tutor = await getTutor(id)
+//   const { slug } = await params
+//   const tutor = await getTutor(slug)
 //   if (!tutor) return { title: 'Tutor Not Found' }
 
 //   const primarySubject = tutor.subjects[0]
@@ -46,7 +51,9 @@
 //     `${tutor.name} teaches ${tutor.subjects.slice(0, 2).join(' & ')} in ${tutor.city}. ${tutor.bio}`,
 //     155
 //   )
-//   const url = `${SITE_URL}/tutors/${id}`
+//   // Always canonicalize to the tutor's real slug — even if this request came
+//   // in on a legacy ObjectId URL — so search engines only ever see one clean URL.
+//   const url = `${SITE_URL}/tutors/${(tutor as any).slug || slug}`
 
 //   return {
 //     title,
@@ -149,9 +156,16 @@
 // }
 
 // export default async function TutorDetailPage({ params }: Props) {
-//   const { id } = await params
-//   const tutor = await getTutor(id)
+//   const { slug } = await params
+//   const tutor = await getTutor(slug)
 //   if (!tutor) notFound()
+
+//   // Legacy /tutors/<ObjectId> link (or a stale slug) landed here — send it
+//   // permanently (308) to the real slug URL instead of serving duplicate content.
+//   const canonicalSlug = (tutor as any).slug
+//   if (canonicalSlug && canonicalSlug !== slug) {
+//     permanentRedirect(`/tutors/${canonicalSlug}`)
+//   }
 
 //   const whatsappURL = buildWhatsAppURL(
 //     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || tutor.whatsapp,
@@ -164,7 +178,9 @@
 
 //   return (
 //     <div className="text-[#2E4F5E] overflow-x-hidden bg-[#FFFDF7]" style={{ fontFamily: "'Nunito', sans-serif" }}>
-//       <TutorSchema tutor={tutor} id={id} />
+//       {/* Was `id={id}` before — that variable doesn't exist here (the param
+//           is `slug`), which would have crashed the page at runtime. */}
+//       <TutorSchema tutor={tutor} id={slug} />
 
 //       {/* ═══════════════════════════════════════════════════
 //           HERO BANNER — dark teal
@@ -321,7 +337,6 @@
 //               </div>
 //             </div>
 
-//             {/* What Students Say */}
 //             {/* What Students Say — dynamic per tutor subject */}
 //             <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
 //               <Eyebrow text="What Students Say" />
@@ -492,8 +507,17 @@
 
 
 
+
+
+
+
+
+
+
+
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound, permanentRedirect } from 'next/navigation'
 import { ITutor } from '@/types'
 
@@ -701,7 +725,15 @@ export default async function TutorDetailPage({ params }: Props) {
             <div className="relative flex-shrink-0">
               <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-[#E8C86A] shadow-[4px_4px_0_0_#1a3a44]">
                 {tutor.imageUrl ? (
-                  <img src={tutor.imageUrl} alt={`${tutor.name}, ${tutor.subjects[0]} tutor in ${tutor.city}`} className="w-full h-full object-cover" />
+                  <Image
+                    src={tutor.imageUrl}
+                    alt={`${tutor.name}, ${tutor.subjects[0]} tutor in ${tutor.city}`}
+                    width={128}
+                    height={128}
+                    priority
+                    unoptimized
+                    className="w-full h-full object-cover"
+                  />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-[#E8C86A] to-[#c4a84a] flex items-center justify-center">
                     <span className="text-[#2E4F5E] font-black text-4xl sm:text-5xl">{tutor.name.charAt(0)}</span>
