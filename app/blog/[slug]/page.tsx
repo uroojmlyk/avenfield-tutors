@@ -1,12 +1,22 @@
 
 
-
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
 // import { notFound } from 'next/navigation'
 // import { blogPosts, getBlogPost } from '@/lib/blog-posts'
-
+// // import BlogShare from '@/components/shared/BlogShare'
+// import BlogShare from '@/components/shared/BlogShare'
 // const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.com'
+
+// // Turns a heading into a URL-safe anchor id, e.g.
+// // "Start with past papers, not the textbook" -> "start-with-past-papers-not-the-textbook"
+// function headingToId(heading: string): string {
+//   return heading
+//     .toLowerCase()
+//     .replace(/[^a-z0-9\s-]/g, '')
+//     .trim()
+//     .replace(/\s+/g, '-')
+// }
 
 // interface Props {
 //   params: Promise<{ slug: string }>
@@ -134,27 +144,57 @@
 //           </h1>
 
 //           {/* Byline — E-E-A-T signal: who wrote this and when */}
-//           <div className="flex items-center gap-3">
-//             <div className="w-9 h-9 rounded-full bg-[#E8C86A] border-2 border-white/30 flex items-center justify-center flex-shrink-0">
-//               <span className="text-[#2E4F5E] font-black text-[0.85rem]">AT</span>
-//             </div>
-//             <div className="text-[0.78rem] font-bold text-[#7da8b8]">
-//               <p className="text-white font-black">Avenfield Tutors Team</p>
-//               <div className="flex items-center gap-2">
-//                 <span>{new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-//                 <span aria-hidden="true">·</span>
-//                 <span>{post.readTime}</span>
+//           <div className="flex items-center justify-between flex-wrap gap-3">
+//             <div className="flex items-center gap-3">
+//               <div className="w-9 h-9 rounded-full bg-[#E8C86A] border-2 border-white/30 flex items-center justify-center flex-shrink-0">
+//                 <span className="text-[#2E4F5E] font-black text-[0.85rem]">AT</span>
+//               </div>
+//               <div className="text-[0.78rem] font-bold text-[#7da8b8]">
+//                 <p className="text-white font-black">Avenfield Tutors Team</p>
+//                 <div className="flex items-center gap-2">
+//                   <span>{new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+//                   <span aria-hidden="true">·</span>
+//                   <span>{post.readTime}</span>
+//                 </div>
 //               </div>
 //             </div>
+//             <BlogShare url={`${SITE_URL}/blog/${slug}`} title={post.title} />
 //           </div>
 //         </div>
 //       </div>
 
+//       {/* ── TABLE OF CONTENTS ── */}
+//       <div className="max-w-3xl mx-auto px-4 sm:px-8 -mt-8 relative z-10">
+//         <nav aria-label="Table of contents" className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
+//           <p className="text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#E05C42] mb-3">In This Article</p>
+//           <ol className="space-y-1.5">
+//             {post.sections.map((section, i) => (
+//               <li key={i}>
+//                 <a href={`#${headingToId(section.heading)}`}
+//                   className="flex items-start gap-2 text-[0.82rem] font-bold text-[#4a6a78] hover:text-[#E05C42] transition-colors no-underline">
+//                   <span className="text-[#E8C86A] font-black flex-shrink-0">{i + 1}.</span>
+//                   {section.heading}
+//                 </a>
+//               </li>
+//             ))}
+//             {post.faqs.length > 0 && (
+//               <li>
+//                 <a href="#faqs"
+//                   className="flex items-start gap-2 text-[0.82rem] font-bold text-[#4a6a78] hover:text-[#E05C42] transition-colors no-underline">
+//                   <span className="text-[#E8C86A] font-black flex-shrink-0">{post.sections.length + 1}.</span>
+//                   Frequently Asked Questions
+//                 </a>
+//               </li>
+//             )}
+//           </ol>
+//         </nav>
+//       </div>
+
 //       {/* ── ARTICLE BODY ── */}
-//       <div className="max-w-3xl mx-auto px-4 sm:px-8 py-10 sm:py-14">
+//       <div className="max-w-3xl mx-auto px-4 sm:px-8 pb-10 sm:pb-14 pt-6">
 //         <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-6 sm:p-8 space-y-8">
 //           {post.sections.map((section, i) => (
-//             <div key={i}>
+//             <div key={i} id={headingToId(section.heading)} className="scroll-mt-24">
 //               <h2 className="text-[#2E4F5E] font-black text-[1.15rem] sm:text-[1.3rem] mb-3">
 //                 {section.heading}
 //               </h2>
@@ -188,7 +228,7 @@
 
 //         {/* FAQ — adds real content depth and FAQPage rich-snippet eligibility */}
 //         {post.faqs.length > 0 && (
-//           <div className="mt-8 bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-6 sm:p-8">
+//           <div id="faqs" className="mt-8 bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-6 sm:p-8 scroll-mt-24">
 //             <Eyebrow text="Frequently Asked Questions" />
 //             <div className="space-y-4">
 //               {post.faqs.map((faq, i) => (
@@ -251,12 +291,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { blogPosts, getBlogPost } from '@/lib/blog-posts'
-// import BlogShare from '@/components/shared/BlogShare'
 import BlogShare from '@/components/shared/BlogShare'
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.com'
 
-// Turns a heading into a URL-safe anchor id, e.g.
-// "Start with past papers, not the textbook" -> "start-with-past-papers-not-the-textbook"
+// Turns a heading into a URL-safe anchor id
 function headingToId(heading: string): string {
   return heading
     .toLowerCase()
@@ -269,7 +308,7 @@ interface Props {
   params: Promise<{ slug: string }>
 }
 
-// Pre-builds every post page at build time — fast, and great for SEO
+// Pre-builds every post page at build time
 export function generateStaticParams() {
   return blogPosts.map(post => ({ slug: post.slug }))
 }
@@ -282,12 +321,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const url = `${SITE_URL}/blog/${slug}`
 
   return {
-    title: post.title,
+    title: `${post.title} | Avenfield Tutors Blog`,
     description: post.excerpt,
-    keywords: [post.category, 'Avenfield Tutors blog', post.title],
+    keywords: [post.category, 'tutoring tips', 'exam preparation', 'online tutors Pakistan', 'home tutors Pakistan', post.title],
     alternates: { canonical: url },
     openGraph: {
-      title: `${post.title} | Avenfield Tutors`,
+      title: `${post.title} | Avenfield Tutors Blog`,
       description: post.excerpt,
       type: 'article',
       url,
@@ -363,7 +402,7 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getBlogPost(slug)
   if (!post) notFound()
 
-  const otherPosts = blogPosts.filter(p => p.slug !== slug).slice(0, 2)
+  const otherPosts = blogPosts.filter(p => p.slug !== slug).slice(0, 3)
 
   return (
     <div className="text-[#2E4F5E] overflow-x-hidden bg-[#FFFDF7]" style={{ fontFamily: "'Nunito', sans-serif" }}>
@@ -390,7 +429,6 @@ export default async function BlogPostPage({ params }: Props) {
             {post.title}
           </h1>
 
-          {/* Byline — E-E-A-T signal: who wrote this and when */}
           <div className="flex items-center justify-between flex-wrap gap-3">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-[#E8C86A] border-2 border-white/30 flex items-center justify-center flex-shrink-0">
@@ -456,12 +494,13 @@ export default async function BlogPostPage({ params }: Props) {
           ))}
         </div>
 
-        {/* Related subjects — the actual internal link from this article to
-            conversion pages (/tutors?subject=X). This was missing before:
-            posts only linked out generically to /tutors and /blog. */}
+        {/* ── RELATED SUBJECTS ── */}
         {post.relatedSubjects.length > 0 && (
           <div className="mt-8 bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-6 sm:p-8">
-            <Eyebrow text="Explore Related Subjects" />
+            <Eyebrow text="Find Tutors for These Subjects" />
+            <p className="text-[#4a6a78] text-[0.85rem] font-semibold mb-4">
+              Looking for expert tutoring in these subjects?
+            </p>
             <div className="flex flex-wrap gap-2.5">
               {post.relatedSubjects.map(s => (
                 <Link key={s} href={`/tutors?subject=${encodeURIComponent(s)}`}
@@ -473,7 +512,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         )}
 
-        {/* FAQ — adds real content depth and FAQPage rich-snippet eligibility */}
+        {/* ── FAQ ── */}
         {post.faqs.length > 0 && (
           <div id="faqs" className="mt-8 bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-6 sm:p-8 scroll-mt-24">
             <Eyebrow text="Frequently Asked Questions" />
@@ -493,23 +532,50 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         )}
 
-        {/* CTA */}
+        {/* ── INTERNAL LINKING ── */}
+        <div className="mt-8 bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-6 sm:p-8">
+          <Eyebrow text="Explore More" />
+          <div className="grid sm:grid-cols-2 gap-3">
+            <Link href="/tutors" className="group flex items-center gap-3 p-3 rounded-xl border-2 border-[#D4D0C5] hover:border-[#3A9E8F] transition-colors no-underline">
+              <span className="text-2xl">👨‍🏫</span>
+              <div>
+                <p className="text-[#2E4F5E] font-black text-[0.85rem] group-hover:text-[#3A9E8F] transition-colors">Browse All Tutors</p>
+                <p className="text-[#7da8b8] text-[0.65rem] font-bold">Find verified tutors for any subject</p>
+              </div>
+            </Link>
+            <Link href="/become-tutor" className="group flex items-center gap-3 p-3 rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors no-underline">
+              <span className="text-2xl">🎓</span>
+              <div>
+                <p className="text-[#2E4F5E] font-black text-[0.85rem] group-hover:text-[#E8C86A] transition-colors">Become a Tutor</p>
+                <p className="text-[#7da8b8] text-[0.65rem] font-bold">Share your knowledge with students</p>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* ── CTA ── */}
         <div className="mt-8 bg-[#3A9E8F] rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-6 sm:p-8 text-center">
           <p className="text-white font-black text-[1.1rem] mb-2">Ready to put this into practice?</p>
           <p className="text-[#c5e8e3] text-[0.85rem] font-semibold mb-5 max-w-md mx-auto">
-            Browse verified tutors on Avenfield and book your first session via WhatsApp no long forms, no waiting.
+            Browse verified tutors on Avenfield and book your first session via WhatsApp – no long forms, no waiting.
           </p>
-          <Link href="/tutors"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#E8C86A] text-[#2E4F5E] text-[0.85rem] font-black rounded-xl border-2 border-[#2E4F5E] shadow-[3px_3px_0_0_#2E4F5E] hover:shadow-[1px_1px_0_0_#2E4F5E] hover:translate-y-[2px] transition-all">
-            Find a Tutor
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/tutors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#E8C86A] text-[#2E4F5E] text-[0.85rem] font-black rounded-xl border-2 border-[#2E4F5E] shadow-[3px_3px_0_0_#2E4F5E] hover:shadow-[1px_1px_0_0_#2E4F5E] hover:translate-y-[2px] transition-all">
+              Find a Tutor Now →
+            </Link>
+            <Link href="/become-tutor"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#2E4F5E] text-[0.85rem] font-black rounded-xl border-2 border-[#2E4F5E] shadow-[3px_3px_0_0_#2E4F5E] hover:shadow-[1px_1px_0_0_#2E4F5E] hover:translate-y-[2px] transition-all no-underline">
+              Become a Tutor
+            </Link>
+          </div>
         </div>
 
-        {/* Other posts — internal linking */}
+        {/* ── OTHER POSTS ── */}
         {otherPosts.length > 0 && (
           <div className="mt-10">
             <Eyebrow text="Keep Reading" />
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-3 gap-4">
               {otherPosts.map(p => (
                 <Link key={p.slug} href={`/blog/${p.slug}`}
                   className="bg-white rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors p-4 no-underline">
