@@ -2,7 +2,6 @@
 
 
 
-
 // import Link from 'next/link'
 // import Image from 'next/image'
 
@@ -15,6 +14,11 @@
 //   ['/become-tutor', 'Become a Tutor'],
 //   ['/blog', 'Blog'],
 //   ['/contact', 'Contact'],
+// ]
+
+// const cityLinks: [string, string][] = [
+//   ['/home-tutor-islamabad', 'Home Tutor in Islamabad'],
+//   ['/home-tutor-rawalpindi', 'Home Tutor in Rawalpindi'],
 // ]
 
 // const subjects = [
@@ -81,6 +85,16 @@
 //             <h2 className="text-[#E8C86A] text-[0.78rem] font-black uppercase tracking-[0.2em] mb-5">Platform</h2>
 //             <ul className="flex flex-col gap-3 text-[0.85rem]">
 //               {platformLinks.map(([href, label]) => (
+//                 <li key={href}>
+//                   <Link
+//                     href={href}
+//                     className="hover:text-[#E8C86A] transition-colors duration-150 font-semibold"
+//                   >
+//                     {label}
+//                   </Link>
+//                 </li>
+//               ))}
+//               {cityLinks.map(([href, label]) => (
 //                 <li key={href}>
 //                   <Link
 //                     href={href}
@@ -171,7 +185,6 @@
 
 
 
-
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -222,11 +235,6 @@ export default function Footer() {
               className="flex items-center gap-2.5 mb-4 group"
               aria-label="Avenfield Tutors – Home"
             >
-              {/* Logo — the logo itself is dark navy/gold, same tone family as
-                  this dark footer background, so on its own it nearly
-                  disappeared (low contrast = looked "blurry"/faint). A light
-                  backdrop chip gives it the same contrast it already has
-                  against the navbar's light background. */}
               <div className="relative flex-shrink-0 h-[44px] sm:h-[52px] w-auto bg-[#FFFDF7] rounded-xl px-3 py-2 shadow-[3px_3px_0_0_#1a3240]">
                 <Image
                   src="/avenfieldtutors-newlogo.png"
@@ -239,12 +247,10 @@ export default function Footer() {
               </div>
             </Link>
 
-            {/* Brand description */}
             <p className="text-[0.84rem] leading-relaxed text-[#7da8b8] max-w-xs mb-2 font-medium">
               Avenfield Tutors connects students with verified, expert tutors for personalised online and home tuition across Pakistan, UAE &amp; UK. 🌍
             </p>
 
-            {/* Available on WhatsApp status */}
             <p className="text-[0.78rem] text-[#3A9E8F] font-semibold mt-3">
               📱 Available on WhatsApp 7 days a week
             </p>
@@ -317,14 +323,24 @@ export default function Footer() {
               Chat on WhatsApp
             </a>
 
-            {/* NAP (Name/Address/Phone) consistency — helps local SEO trust signals
-                and should match whatever you have on your Google Business Profile */}
-            <div className="mt-4 flex flex-col gap-1.5 text-[0.8rem] font-semibold">
-              <a href={`tel:+${WHATSAPP}`} className="text-[#7da8b8] hover:text-[#E8C86A] transition-colors">
-                +92 309 5154253
+            {/* Contact Icons - Only Icons, Properly Adjusted */}
+            <div className="mt-5 flex items-center gap-4">
+              {/* Phone - Icon Only */}
+              <a
+                href={`tel:+${WHATSAPP}`}
+                aria-label="Call Avenfield Tutors on +92 309 5154253"
+                className="w-11 h-11 rounded-full bg-[#3A9E8F]/20 border-2 border-[#3A9E8F]/40 flex items-center justify-center text-[#3A9E8F] text-xl hover:bg-[#3A9E8F] hover:text-white hover:border-[#3A9E8F] transition-all duration-200 hover:shadow-[0_0_20px_rgba(58,158,143,0.3)] hover:-translate-y-0.5"
+              >
+                📞
               </a>
-              <a href="mailto:avenfieldtutors@gmail.com" className="text-[#7da8b8] hover:text-[#E8C86A] transition-colors">
-                avenfieldtutors@gmail.com
+
+              {/* Email - Icon Only */}
+              <a
+                href="mailto:avenfieldtutors@gmail.com"
+                aria-label="Email Avenfield Tutors at avenfieldtutors@gmail.com"
+                className="w-11 h-11 rounded-full bg-[#3A9E8F]/20 border-2 border-[#3A9E8F]/40 flex items-center justify-center text-[#3A9E8F] text-xl hover:bg-[#3A9E8F] hover:text-white hover:border-[#3A9E8F] transition-all duration-200 hover:shadow-[0_0_20px_rgba(58,158,143,0.3)] hover:-translate-y-0.5"
+              >
+                ✉️
               </a>
             </div>
           </div>
