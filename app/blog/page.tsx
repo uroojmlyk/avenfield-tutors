@@ -1,6 +1,5 @@
 
 
-
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
 // import { blogPosts } from '@/lib/blog-posts'
@@ -8,16 +7,26 @@
 // const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.com'
 
 // export const metadata: Metadata = {
-//   title: 'Blog — Tutoring Tips, Exam Prep & Study Guides',
+//   title: 'Tutoring Tips & Exam Preparation Guide | Avenfield Tutors Blog',
 //   description:
-//     'Practical advice on choosing a tutor, exam preparation, and getting the most out of online and home tuition from the Avenfield Tutors team.',
+//     'Expert advice on finding the best online and home tutors in Pakistan. Learn effective exam preparation strategies for O Level, A Level, IELTS, MDCAT, CSS and more.',
 //   keywords: [
-//     'tutoring blog', 'exam preparation tips', 'how to choose a tutor',
-//     'O Level study guide', 'IELTS tips', 'home tuition advice',
+//     'tutoring tips Pakistan',
+//     'exam preparation guide',
+//     'how to choose a tutor',
+//     'online tutoring advice',
+//     'home tuition tips',
+//     'O Level study guide',
+//     'A Level preparation',
+//     'IELTS tips',
+//     'MDCAT preparation',
+//     'CSS exam guide',
+//     'study tips for students',
+//     'academic success tips',
 //   ],
 //   openGraph: {
-//     title: 'Blog | Avenfield Tutors',
-//     description: 'Practical advice on tutoring, exam prep, and study strategies.',
+//     title: 'Tutoring Tips & Exam Preparation Guide | Avenfield Tutors',
+//     description: 'Expert advice on finding the best tutors and preparing for exams in Pakistan.',
 //     type: 'website',
 //     locale: 'en_PK',
 //     siteName: 'Avenfield Tutors',
@@ -26,12 +35,50 @@
 //   },
 //   twitter: {
 //     card: 'summary_large_image',
-//     title: 'Blog | Avenfield Tutors',
-//     description: 'Practical advice on tutoring, exam prep, and study strategies.',
+//     title: 'Tutoring Tips & Exam Preparation Guide | Avenfield Tutors',
+//     description: 'Expert advice on finding the best tutors and preparing for exams in Pakistan.',
 //   },
 //   alternates: {
 //     canonical: `${SITE_URL}/blog`,
 //   },
+// }
+
+// // Blog Schema for listing page
+// function BlogSchema() {
+//   const schema = {
+//     '@context': 'https://schema.org',
+//     '@type': 'Blog',
+//     name: 'Avenfield Tutors Blog',
+//     description: 'Expert tutoring tips, exam preparation guides, and study advice for students in Pakistan and worldwide.',
+//     url: `${SITE_URL}/blog`,
+//     publisher: {
+//       '@type': 'Organization',
+//       name: 'Avenfield Tutors',
+//     },
+//   }
+//   return (
+//     <script
+//       type="application/ld+json"
+//       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+//     />
+//   )
+// }
+
+// function BreadcrumbSchema() {
+//   const schema = {
+//     '@context': 'https://schema.org',
+//     '@type': 'BreadcrumbList',
+//     itemListElement: [
+//       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+//       { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+//     ],
+//   }
+//   return (
+//     <script
+//       type="application/ld+json"
+//       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+//     />
+//   )
 // }
 
 // const categoryColors: Record<string, string> = {
@@ -63,25 +110,14 @@
 //   return new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
 // }
 
-// function BreadcrumbSchema() {
-//   const schema = {
-//     '@context': 'https://schema.org',
-//     '@type': 'BreadcrumbList',
-//     itemListElement: [
-//       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-//       { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
-//     ],
-//   }
-//   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-// }
-
 // export default function BlogPage() {
 //   const sorted = [...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 //   const [featured, ...rest] = sorted
 //   const categories = Array.from(new Set(blogPosts.map(p => p.category)))
 
 //   return (
-//     <div className="text-[#2E4F5E] overflow-x-hidden" style={{ fontFamily: "'Nunito', sans-serif" }}>
+//     <div className="text-[#2E4F5E] overflow-x-hidden bg-[#FFFDF7]" style={{ fontFamily: "'Nunito', sans-serif" }}>
+//       <BlogSchema />
 //       <BreadcrumbSchema />
 
 //       <div className="bg-[#FFFDF7] min-h-screen">
@@ -105,14 +141,24 @@
 //               </span>
 //             </h1>
 //             <p className="text-[#7da8b8] text-[0.9rem] sm:text-[1rem] font-semibold leading-relaxed max-w-lg mx-auto">
-//               Practical, no-fluff advice on choosing a tutor, exam preparation, and getting the most out of your learning.
+//               Practical advice on finding the best online and home tutors in Pakistan, exam preparation strategies for O Level, A Level, IELTS, MDCAT, CSS, and more.
 //             </p>
+//             <div className="mt-4 flex flex-wrap justify-center gap-3 text-[0.7rem] text-[#7da8b8] font-semibold">
+//               <span>📚 50+ Subjects</span>
+//               <span className="w-px h-4 bg-[#7da8b8]/30" />
+//               <span>🎓 Exam Prep Guides</span>
+//               <span className="w-px h-4 bg-[#7da8b8]/30" />
+//               <span>💡 Tutoring Tips</span>
+//             </div>
 //           </div>
 //         </section>
 
 //         {/* ── CATEGORY CHIPS ── */}
 //         <section className="px-4 sm:px-8 -mt-6 relative z-10">
 //           <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-2">
+//             <span className="px-3.5 py-1.5 rounded-full text-[0.72rem] font-black border-2 border-[#2E4F5E] shadow-[2px_2px_0_0_#2E4F5E] bg-[#2E4F5E] text-white">
+//               All Posts
+//             </span>
 //             {categories.map(cat => (
 //               <span key={cat} className={`px-3.5 py-1.5 rounded-full text-[0.72rem] font-black border-2 border-[#2E4F5E] shadow-[2px_2px_0_0_#2E4F5E] ${categoryColors[cat] || 'bg-white text-[#2E4F5E]'}`}>
 //                 {cat}
@@ -135,7 +181,7 @@
 //                     <span className={`px-2.5 py-1 text-[0.62rem] font-black rounded-full border border-[#2E4F5E] ${categoryColors[featured.category] || 'bg-[#E8C86A] text-[#2E4F5E]'}`}>
 //                       {featured.category}
 //                     </span>
-//                     <span className="text-[0.68rem] font-black text-[#E05C42] uppercase tracking-wide">Latest</span>
+//                     <span className="text-[0.68rem] font-black text-[#E05C42] uppercase tracking-wide">Featured</span>
 //                   </div>
 //                   <h2 className="text-[#2E4F5E] font-black text-[1.3rem] sm:text-[1.6rem] leading-snug mb-3 group-hover:text-[#3A9E8F] transition-colors">
 //                     {featured.title}
@@ -162,7 +208,7 @@
 //             <div className="max-w-5xl mx-auto">
 //               <div className="flex items-center gap-3 mb-5">
 //                 <div className="h-5 w-1 bg-[#D4D0C5] rounded-full" />
-//                 <h3 className="font-black text-[1rem] text-[#2E4F5E]">More Articles</h3>
+//                 <h2 className="font-black text-[1rem] text-[#2E4F5E]">More Articles</h2>
 //               </div>
 //               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
 //                 {rest.map(post => (
@@ -191,6 +237,34 @@
 //           </section>
 //         )}
 
+//         {/* ── SEO CONTENT BLOCK ── */}
+//         <section className="max-w-5xl mx-auto px-4 sm:px-8 pb-10">
+//           <div className="bg-white rounded-2xl border-2 border-[#E8C86A] shadow-[4px_4px_0_0_#E8C86A] p-6 sm:p-8">
+//             <h2 className="font-black text-[1.3rem] text-[#2E4F5E] mb-4 flex items-center gap-2">
+//               <span>📖</span>
+//               Why Read the Avenfield Tutors Blog?
+//             </h2>
+//             <div className="space-y-4 text-[#4a6a78] text-[0.9rem] sm:text-[0.95rem] leading-[1.8] font-semibold">
+//               <p>
+//                 <strong className="text-[#2E4F5E]">Expert tutoring tips and exam strategies</strong> – Our blog is designed to help students, parents, and educators navigate the world of <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">online tutoring</Link> and <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">home tuition</Link> in Pakistan. Whether you're preparing for <Link href="/tutors?subject=O%20Level" className="text-[#E05C42] hover:underline font-black">O Level</Link>, <Link href="/tutors?subject=A%20Level" className="text-[#E05C42] hover:underline font-black">A Level</Link>, <Link href="/tutors?subject=IELTS" className="text-[#E05C42] hover:underline font-black">IELTS</Link>, <Link href="/tutors?subject=MDCAT" className="text-[#E05C42} hover:underline font-black">MDCAT</Link>, or <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#E05C42} hover:underline font-black">CSS</Link>, our expert guides provide actionable advice to help you succeed.
+//               </p>
+//               <p>
+//                 <strong className="text-[#2E4F5E]">Choosing the right tutor</strong> – Finding the perfect tutor can be challenging. Our articles cover everything from how to evaluate a tutor's qualifications to understanding different <Link href="/tutors" className="text-[#E05C42} hover:underline font-black">learning formats</Link> – online tuition vs. home tuition – and which one works best for your needs.
+//               </p>
+//               <p>
+//                 <strong className="text-[#2E4F5E]">Exam preparation strategies</strong> – We share proven study techniques, time management tips, and subject-specific advice to help you ace your exams. From <Link href="/tutors?subject=Mathematics" className="text-[#E05C42} hover:underline font-black">Mathematics</Link> and <Link href="/tutors?subject=Physics" className="text-[#E05C42} hover:underline font-black">Physics</Link> to <Link href="/tutors?subject=English" className="text-[#E05C42} hover:underline font-black">English</Link> and <Link href="/tutors?subject=Computer%20Science" className="text-[#E05C42} hover:underline font-black">Computer Science</Link>, our blog covers a wide range of subjects and curricula including IGCSE, GCSE, CAIE, Edexcel, and local Pakistani boards.
+//               </p>
+//               <p>
+//                 <strong className="text-[#2E4F5E]">Real stories from real students</strong> – Learn from the experiences of other students and parents who have navigated the tutoring journey. Their insights and recommendations can help you make informed decisions about your own learning path.
+//               </p>
+//               <p className="text-[0.8rem] text-[#7da8b8]">
+//                 <span>📌 </span>
+//                 Looking for a tutor? <Link href="/tutors" className="text-[#E05C42} hover:underline font-black">Browse our verified tutors</Link> or <Link href="/become-tutor" className="text-[#E05C42} hover:underline font-black">apply to become a tutor</Link> today.
+//               </p>
+//             </div>
+//           </div>
+//         </section>
+
 //         {/* ── CTA ── */}
 //         <section className="pb-14 px-4 sm:px-8">
 //           <div className="max-w-5xl mx-auto bg-[#E8C86A] rounded-2xl border-2 border-[#2E4F5E] shadow-[4px_4px_0_0_#2E4F5E] p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -212,6 +286,7 @@
 
 
 
+
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { blogPosts } from '@/lib/blog-posts'
@@ -219,7 +294,9 @@ import { blogPosts } from '@/lib/blog-posts'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.com'
 
 export const metadata: Metadata = {
-  title: 'Tutoring Tips & Exam Preparation Guide | Avenfield Tutors Blog',
+  // NOTE: no "Avenfield Tutors" in the title itself — layout.tsx template
+  // already appends "| Avenfield Tutors" automatically.
+  title: 'Tutoring Tips & Exam Preparation Guide',
   description:
     'Expert advice on finding the best online and home tutors in Pakistan. Learn effective exam preparation strategies for O Level, A Level, IELTS, MDCAT, CSS and more.',
   keywords: [
@@ -458,20 +535,20 @@ export default function BlogPage() {
             </h2>
             <div className="space-y-4 text-[#4a6a78] text-[0.9rem] sm:text-[0.95rem] leading-[1.8] font-semibold">
               <p>
-                <strong className="text-[#2E4F5E]">Expert tutoring tips and exam strategies</strong> – Our blog is designed to help students, parents, and educators navigate the world of <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">online tutoring</Link> and <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">home tuition</Link> in Pakistan. Whether you're preparing for <Link href="/tutors?subject=O%20Level" className="text-[#E05C42] hover:underline font-black">O Level</Link>, <Link href="/tutors?subject=A%20Level" className="text-[#E05C42] hover:underline font-black">A Level</Link>, <Link href="/tutors?subject=IELTS" className="text-[#E05C42] hover:underline font-black">IELTS</Link>, <Link href="/tutors?subject=MDCAT" className="text-[#E05C42} hover:underline font-black">MDCAT</Link>, or <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#E05C42} hover:underline font-black">CSS</Link>, our expert guides provide actionable advice to help you succeed.
+                <strong className="text-[#2E4F5E]">Expert tutoring tips and exam strategies</strong> – Our blog is designed to help students, parents, and educators navigate the world of <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">online tutoring</Link> and <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">home tuition</Link> in Pakistan. Whether you're preparing for <Link href="/tutors?subject=O%20Level" className="text-[#E05C42] hover:underline font-black">O Level</Link>, <Link href="/tutors?subject=A%20Level" className="text-[#E05C42] hover:underline font-black">A Level</Link>, <Link href="/tutors?subject=IELTS" className="text-[#E05C42] hover:underline font-black">IELTS</Link>, <Link href="/tutors?subject=MDCAT" className="text-[#E05C42] hover:underline font-black">MDCAT</Link>, or <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#E05C42] hover:underline font-black">CSS</Link>, our expert guides provide actionable advice to help you succeed.
               </p>
               <p>
-                <strong className="text-[#2E4F5E]">Choosing the right tutor</strong> – Finding the perfect tutor can be challenging. Our articles cover everything from how to evaluate a tutor's qualifications to understanding different <Link href="/tutors" className="text-[#E05C42} hover:underline font-black">learning formats</Link> – online tuition vs. home tuition – and which one works best for your needs.
+                <strong className="text-[#2E4F5E]">Choosing the right tutor</strong> – Finding the perfect tutor can be challenging. Our articles cover everything from how to evaluate a tutor's qualifications to understanding different <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">learning formats</Link> – online tuition vs. home tuition – and which one works best for your needs.
               </p>
               <p>
-                <strong className="text-[#2E4F5E]">Exam preparation strategies</strong> – We share proven study techniques, time management tips, and subject-specific advice to help you ace your exams. From <Link href="/tutors?subject=Mathematics" className="text-[#E05C42} hover:underline font-black">Mathematics</Link> and <Link href="/tutors?subject=Physics" className="text-[#E05C42} hover:underline font-black">Physics</Link> to <Link href="/tutors?subject=English" className="text-[#E05C42} hover:underline font-black">English</Link> and <Link href="/tutors?subject=Computer%20Science" className="text-[#E05C42} hover:underline font-black">Computer Science</Link>, our blog covers a wide range of subjects and curricula including IGCSE, GCSE, CAIE, Edexcel, and local Pakistani boards.
+                <strong className="text-[#2E4F5E]">Exam preparation strategies</strong> – We share proven study techniques, time management tips, and subject-specific advice to help you ace your exams. From <Link href="/tutors?subject=Mathematics" className="text-[#E05C42] hover:underline font-black">Mathematics</Link> and <Link href="/tutors?subject=Physics" className="text-[#E05C42] hover:underline font-black">Physics</Link> to <Link href="/tutors?subject=English" className="text-[#E05C42] hover:underline font-black">English</Link> and <Link href="/tutors?subject=Computer%20Science" className="text-[#E05C42] hover:underline font-black">Computer Science</Link>, our blog covers a wide range of subjects and curricula including IGCSE, GCSE, CAIE, Edexcel, and local Pakistani boards.
               </p>
               <p>
                 <strong className="text-[#2E4F5E]">Real stories from real students</strong> – Learn from the experiences of other students and parents who have navigated the tutoring journey. Their insights and recommendations can help you make informed decisions about your own learning path.
               </p>
               <p className="text-[0.8rem] text-[#7da8b8]">
                 <span>📌 </span>
-                Looking for a tutor? <Link href="/tutors" className="text-[#E05C42} hover:underline font-black">Browse our verified tutors</Link> or <Link href="/become-tutor" className="text-[#E05C42} hover:underline font-black">apply to become a tutor</Link> today.
+                Looking for a tutor? <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">Browse our verified tutors</Link> or <Link href="/become-tutor" className="text-[#E05C42] hover:underline font-black">apply to become a tutor</Link> today.
               </p>
             </div>
           </div>

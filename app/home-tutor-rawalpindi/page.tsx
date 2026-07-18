@@ -1,7 +1,6 @@
 
 
 
-// // home-tutor-rawalpindi/page.tsx
 // import type { Metadata } from 'next'
 // import CityLandingPage from '@/components/shared/CityLandingPage'
 
@@ -13,14 +12,14 @@
 //   description:
 //     'Find verified home tutors in Rawalpindi for O Level, A Level, IELTS, MDCAT & 50+ subjects. Free consultation, direct WhatsApp booking. Covering Satellite Town, Bahria Town, Askari & more. Qualified tutors available.',
 //   keywords: [
-//     'home tutor Rawalpindi', 
+//     'home tutor Rawalpindi',
 //     'best home tutor in Rawalpindi',
-//     'home tuition Rawalpindi', 
+//     'home tuition Rawalpindi',
 //     'private tutor Rawalpindi',
-//     'O Level tutor Rawalpindi', 
-//     'A Level tutor Rawalpindi', 
+//     'O Level tutor Rawalpindi',
+//     'A Level tutor Rawalpindi',
 //     'IELTS tutor Rawalpindi',
-//     'MDCAT tutor Rawalpindi', 
+//     'MDCAT tutor Rawalpindi',
 //     'home tutor near me Rawalpindi',
 //     'tutor for O Level in Rawalpindi',
 //     'tuition teacher in Rawalpindi',
@@ -42,14 +41,150 @@
 //   },
 // }
 
-// const RAWALPINDI_AREAS = [
-//   'Satellite Town', 'Bahria Town Rawalpindi', 'Askari', 'Chaklala', 'Westridge',
-//   'Rawalpindi Cantt', 'Gulraiz', 'Adiala Road', 'Committee Chowk', 'Saddar', 'Peshawar Road',
-// ]
+// const RAWALPINDI_AREAS = {
+//   bahriaTown: [
+//     'Bahria Town Rawalpindi - Phase 1',
+//     'Bahria Town Rawalpindi - Phase 2',
+//     'Bahria Town Rawalpindi - Phase 3',
+//     'Bahria Town Rawalpindi - Phase 4',
+//     'Bahria Town Rawalpindi - Phase 5',
+//     'Bahria Town Rawalpindi - Phase 6',
+//     'Bahria Town Rawalpindi - Phase 7',
+//     'Bahria Town Rawalpindi - Phase 8',
+//   ],
+//   dha: [
+//     'DHA Phase 1',
+//     'DHA Phase 2',
+//     'DHA Phase 3',
+//     'DHA Phase 4',
+//     'DHA Phase 5',
+//     'DHA Valley',
+//   ],
+//   askariHousing: [
+//     'Askari 5',
+//     'Askari 7',
+//     'Askari 10',
+//     'Askari 11',
+//     'Askari 12',
+//     'Askari 14',
+//   ],
+//   housingSocieties: [
+//     'Gulraiz Housing Scheme',
+//     'Chaklala Scheme I',
+//     'Chaklala Scheme II',
+//     'Chaklala Scheme III',
+//     'Airport Housing Society',
+//     'PWD Housing Society',
+//     'CBR Town Phase I',
+//     'CBR Town Phase II',
+//     'Media Town',
+//     'Soan Garden',
+//     'River Garden',
+//     'Pakistan Town',
+//     'Korang Town',
+//     'Korang Enclave',
+//     'Doctors Town',
+//     'Green Valley',
+//     'Capital Enclave',
+//     'Safari Villas',
+//     'Bahria Green',
+//     'Bahria Springs',
+//     'Bahria Paradise',
+//     'Bahria Intellectual Village',
+//     'Bahria Overseas Enclave',
+//     'Falcon Complex',
+//     'Faisal Colony',
+//     'Al-Haram City',
+//     'Rawalpindi Cooperative Housing Society',
+//     'National Police Foundation (NPF)',
+//     'Fazaia Housing Scheme',
+//     'Naval Anchorage',
+//     'Judicial Colony',
+//     'Police Foundation',
+//     'Blue World City',
+//     'Rudn Enclave',
+//     'Faisal Hills',
+//     'Faisal Town',
+//     'Top City-1',
+//     'Mumtaz City',
+//     'Capital Smart City',
+//     'Nova City',
+//     'Kingdom Valley',
+//     'University Town',
+//     'Silver City',
+//     'Multi Gardens B-17',
+//   ],
+//   localities: [
+//     'Satellite Town',
+//     'Westridge 1',
+//     'Westridge 2',
+//     'Chaklala',
+//     'Cantt',
+//     'Morgah',
+//     'Adiala Road',
+//     'Gulraiz',
+//     'Chakri Road',
+//     'Chak Jalal Din',
+//     'Misrial Road',
+//     'Tulsa Road',
+//     'Dhamial',
+//     'Adiala',
+//     'New Katarian',
+//     'Gulshan Abad',
+//     'Gulshan Colony',
+//     'Chakri Interchange Area',
+//     'Afshan Colony',
+//     'Chungi No. 22',
+//     'High Court Road',
+//     'Rawat',
+//     'Kallar Syedan Road',
+//     'Chak Beli Khan',
+//     'Girja Road',
+//     'Dhok Mangtal',
+//     'Dhok Banaras',
+//     'Dhok Sayedan',
+//     'Chakri',
+//     'Thalian',
+//     'Mandrah',
+//   ],
+//   commercial: [
+//     'Saddar',
+//     'Satellite Town Commercial Market',
+//     'Peshawar Road',
+//     'Harley Street',
+//     'Lalazar',
+//     'Race Course',
+//     'Saidpur Road',
+//     'Asghar Mall',
+//     'Dhoke Kala Khan',
+//     'Dhoke Kashmirian',
+//     'Dhoke Paracha',
+//     'Dhoke Hassu',
+//     'Dhoke Chaudhrian',
+//     'Sadiqabad',
+//     'Rehmanabad',
+//     'Shamsabad',
+//     'Committee Chowk',
+//     'Raja Bazaar',
+//     'Banni',
+//     'Gawalmandi',
+//     'Pirwadhai',
+//     'Tench Bhata',
+//     'Khyaban-e-Sir Syed',
+//     'Gulistan Colony',
+//   ],
+// }
 
 // export default function HomeTutorRawalpindiPage() {
 //   return <CityLandingPage city="Rawalpindi" areas={RAWALPINDI_AREAS} nearbyCity="Islamabad" />
 // }
+
+
+
+
+
+
+
 
 
 
@@ -61,7 +196,8 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.co
 const url = `${SITE_URL}/home-tutor-rawalpindi`
 
 export const metadata: Metadata = {
-  title: 'Best Home Tutor in Rawalpindi | O Level, A Level, IELTS & MDCAT | Avenfield Tutors',
+  // NOTE: no "| Avenfield Tutors" suffix — layout.tsx template already appends it.
+  title: 'Best Home Tutor in Rawalpindi | O Level, A Level, IELTS & MDCAT',
   description:
     'Find verified home tutors in Rawalpindi for O Level, A Level, IELTS, MDCAT & 50+ subjects. Free consultation, direct WhatsApp booking. Covering Satellite Town, Bahria Town, Askari & more. Qualified tutors available.',
   keywords: [

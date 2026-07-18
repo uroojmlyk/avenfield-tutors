@@ -1,6 +1,6 @@
 
 
-// // home-tutor-islamabad/page.tsx
+
 // import type { Metadata } from 'next'
 // import CityLandingPage from '@/components/shared/CityLandingPage'
 
@@ -12,14 +12,14 @@
 //   description:
 //     'Find verified home tutors in Islamabad for O Level, A Level, IELTS, MDCAT & 50+ subjects. Free consultation, direct WhatsApp booking. Covering F-6 to G-15, DHA, Bahria Town & more. 100% verified tutors.',
 //   keywords: [
-//     'home tutor Islamabad', 
+//     'home tutor Islamabad',
 //     'best home tutor in Islamabad',
-//     'home tuition Islamabad', 
+//     'home tuition Islamabad',
 //     'private tutor Islamabad',
-//     'O Level tutor Islamabad', 
-//     'A Level tutor Islamabad', 
+//     'O Level tutor Islamabad',
+//     'A Level tutor Islamabad',
 //     'IELTS tutor Islamabad',
-//     'MDCAT tutor Islamabad', 
+//     'MDCAT tutor Islamabad',
 //     'home tutor near me Islamabad',
 //     'tutor for O Level in Islamabad',
 //     'tuition teacher in Islamabad',
@@ -41,15 +41,103 @@
 //   },
 // }
 
-// const ISLAMABAD_AREAS = [
-//   'F-6', 'F-7', 'F-8', 'F-10', 'F-11', 'G-6', 'G-9', 'G-10', 'G-11', 'G-13', 'G-15',
-//   'E-7', 'E-11', 'DHA Islamabad', 'Bahria Town Islamabad', 'Bani Gala', 'PWD', 'Chak Shahzad',
-// ]
+// // Organized Islamabad Areas with Categories
+// const ISLAMABAD_AREAS = {
+//   sectors: [
+//     'F-5', 'F-6', 'F-7', 'F-8', 'F-10', 'F-11', 'F-15', 'F-17',
+//     'G-5', 'G-6', 'G-7', 'G-8', 'G-9', 'G-10', 'G-11', 'G-13', 'G-14', 'G-15', 'G-16',
+//     'E-7', 'E-8', 'E-11', 'E-16', 'E-17',
+//     'D-12', 'D-17',
+//     'I-8', 'I-9', 'I-10', 'I-11', 'I-12', 'I-14',
+//     'B-10', 'B-11', 'B-12', 'B-15', 'B-17',
+//     'C-12', 'C-14', 'C-15', 'C-16', 'C-17',
+//     'H-8', 'H-9', 'H-10', 'H-11', 'H-12', 'H-13',
+//   ],
+//   housingSocieties: [
+//     'DHA Islamabad (All Phases)',
+//     'Bahria Enclave',
+//     'Gulberg Greens',
+//     'Gulberg Residencia',
+//     'Naval Anchorage',
+//     'Park View City',
+//     'Capital Smart City',
+//     'Top City-1',
+//     'University Town',
+//     'Faisal Town',
+//     'Mumtaz City',
+//     'Multi Gardens B-17',
+//     'MPCHS',
+//     'Faisal Hills',
+//     'Eighteen Islamabad',
+//     'Blue World City',
+//     'Kingdom Valley',
+//     'Discovery Gardens',
+//     'PECHS',
+//     'CBR Town',
+//     'Pakistan Town',
+//     'Soan Garden',
+//     'River Garden',
+//     'Jinnah Gardens',
+//     'PWD Housing Society',
+//     'Korang Town',
+//     'Korang Enclave',
+//     'Media Town',
+//     'FGEHA Housing Scheme',
+//     'OPF Housing Scheme',
+//     'Gulshan-e-Sehat',
+//     'Doctors Housing Society',
+//     'Engineers Cooperative Housing Society',
+//   ],
+//   localities: [
+//     'Bani Gala',
+//     'Chak Shahzad',
+//     'Bhara Kahu',
+//     'Shah Allah Ditta',
+//     'Bari Imam',
+//     'Saidpur',
+//     'Rawal Town',
+//     'Model Town Humak',
+//     'Humak',
+//     'Sihala',
+//     'Tarlai',
+//     'Lehtrar Road',
+//     'Nilore',
+//     'Simly Dam Road',
+//     'Tramri',
+//     'Khanna',
+//     'Koral',
+//     'Loi Bher',
+//     'Alipur Farash',
+//     'Golra',
+//     'Tarnol',
+//     'Sangjani',
+//     'Golra Sharif',
+//     'Noon',
+//     'Kirpa',
+//     'Phulgran',
+//     'Jhangi Syedan',
+//     'Islamabad Expressway Corridor',
+//   ],
+//   commercial: [
+//     'Diplomatic Enclave',
+//     'Blue Area',
+//     'Red Zone',
+//     'Constitution Avenue',
+//     'Melody',
+//     'Aabpara',
+//     'Super Market',
+//     'Jinnah Super',
+//     'Sitara Market',
+//     'Karachi Company',
+//     'F-10 Markaz',
+//     'F-11 Markaz',
+//     'I-8 Markaz',
+//   ],
+// }
 
 // export default function HomeTutorIslamabadPage() {
 //   return <CityLandingPage city="Islamabad" areas={ISLAMABAD_AREAS} nearbyCity="Rawalpindi" />
 // }
-
 
 
 
@@ -64,7 +152,8 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.co
 const url = `${SITE_URL}/home-tutor-islamabad`
 
 export const metadata: Metadata = {
-  title: 'Best Home Tutor in Islamabad | O Level, A Level, IELTS & MDCAT | Avenfield Tutors',
+  // NOTE: no "| Avenfield Tutors" suffix — layout.tsx template already appends it.
+  title: 'Best Home Tutor in Islamabad | O Level, A Level, IELTS & MDCAT',
   description:
     'Find verified home tutors in Islamabad for O Level, A Level, IELTS, MDCAT & 50+ subjects. Free consultation, direct WhatsApp booking. Covering F-6 to G-15, DHA, Bahria Town & more. 100% verified tutors.',
   keywords: [

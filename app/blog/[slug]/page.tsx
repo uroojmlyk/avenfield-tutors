@@ -1,15 +1,13 @@
 
-
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
 // import { notFound } from 'next/navigation'
 // import { blogPosts, getBlogPost } from '@/lib/blog-posts'
-// // import BlogShare from '@/components/shared/BlogShare'
 // import BlogShare from '@/components/shared/BlogShare'
+
 // const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.com'
 
-// // Turns a heading into a URL-safe anchor id, e.g.
-// // "Start with past papers, not the textbook" -> "start-with-past-papers-not-the-textbook"
+// // Turns a heading into a URL-safe anchor id
 // function headingToId(heading: string): string {
 //   return heading
 //     .toLowerCase()
@@ -22,7 +20,7 @@
 //   params: Promise<{ slug: string }>
 // }
 
-// // Pre-builds every post page at build time — fast, and great for SEO
+// // Pre-builds every post page at build time
 // export function generateStaticParams() {
 //   return blogPosts.map(post => ({ slug: post.slug }))
 // }
@@ -35,12 +33,12 @@
 //   const url = `${SITE_URL}/blog/${slug}`
 
 //   return {
-//     title: post.title,
+//     title: `${post.title} | Avenfield Tutors Blog`,
 //     description: post.excerpt,
-//     keywords: [post.category, 'Avenfield Tutors blog', post.title],
+//     keywords: [post.category, 'tutoring tips', 'exam preparation', 'online tutors Pakistan', 'home tutors Pakistan', post.title],
 //     alternates: { canonical: url },
 //     openGraph: {
-//       title: `${post.title} | Avenfield Tutors`,
+//       title: `${post.title} | Avenfield Tutors Blog`,
 //       description: post.excerpt,
 //       type: 'article',
 //       url,
@@ -116,7 +114,7 @@
 //   const post = getBlogPost(slug)
 //   if (!post) notFound()
 
-//   const otherPosts = blogPosts.filter(p => p.slug !== slug).slice(0, 2)
+//   const otherPosts = blogPosts.filter(p => p.slug !== slug).slice(0, 3)
 
 //   return (
 //     <div className="text-[#2E4F5E] overflow-x-hidden bg-[#FFFDF7]" style={{ fontFamily: "'Nunito', sans-serif" }}>
@@ -143,7 +141,6 @@
 //             {post.title}
 //           </h1>
 
-//           {/* Byline — E-E-A-T signal: who wrote this and when */}
 //           <div className="flex items-center justify-between flex-wrap gap-3">
 //             <div className="flex items-center gap-3">
 //               <div className="w-9 h-9 rounded-full bg-[#E8C86A] border-2 border-white/30 flex items-center justify-center flex-shrink-0">
@@ -209,12 +206,13 @@
 //           ))}
 //         </div>
 
-//         {/* Related subjects — the actual internal link from this article to
-//             conversion pages (/tutors?subject=X). This was missing before:
-//             posts only linked out generically to /tutors and /blog. */}
+//         {/* ── RELATED SUBJECTS ── */}
 //         {post.relatedSubjects.length > 0 && (
 //           <div className="mt-8 bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-6 sm:p-8">
-//             <Eyebrow text="Explore Related Subjects" />
+//             <Eyebrow text="Find Tutors for These Subjects" />
+//             <p className="text-[#4a6a78] text-[0.85rem] font-semibold mb-4">
+//               Looking for expert tutoring in these subjects?
+//             </p>
 //             <div className="flex flex-wrap gap-2.5">
 //               {post.relatedSubjects.map(s => (
 //                 <Link key={s} href={`/tutors?subject=${encodeURIComponent(s)}`}
@@ -226,7 +224,7 @@
 //           </div>
 //         )}
 
-//         {/* FAQ — adds real content depth and FAQPage rich-snippet eligibility */}
+//         {/* ── FAQ ── */}
 //         {post.faqs.length > 0 && (
 //           <div id="faqs" className="mt-8 bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-6 sm:p-8 scroll-mt-24">
 //             <Eyebrow text="Frequently Asked Questions" />
@@ -246,23 +244,50 @@
 //           </div>
 //         )}
 
-//         {/* CTA */}
+//         {/* ── INTERNAL LINKING ── */}
+//         <div className="mt-8 bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-6 sm:p-8">
+//           <Eyebrow text="Explore More" />
+//           <div className="grid sm:grid-cols-2 gap-3">
+//             <Link href="/tutors" className="group flex items-center gap-3 p-3 rounded-xl border-2 border-[#D4D0C5] hover:border-[#3A9E8F] transition-colors no-underline">
+//               <span className="text-2xl">👨‍🏫</span>
+//               <div>
+//                 <p className="text-[#2E4F5E] font-black text-[0.85rem] group-hover:text-[#3A9E8F] transition-colors">Browse All Tutors</p>
+//                 <p className="text-[#7da8b8] text-[0.65rem] font-bold">Find verified tutors for any subject</p>
+//               </div>
+//             </Link>
+//             <Link href="/become-tutor" className="group flex items-center gap-3 p-3 rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors no-underline">
+//               <span className="text-2xl">🎓</span>
+//               <div>
+//                 <p className="text-[#2E4F5E] font-black text-[0.85rem] group-hover:text-[#E8C86A] transition-colors">Become a Tutor</p>
+//                 <p className="text-[#7da8b8] text-[0.65rem] font-bold">Share your knowledge with students</p>
+//               </div>
+//             </Link>
+//           </div>
+//         </div>
+
+//         {/* ── CTA ── */}
 //         <div className="mt-8 bg-[#3A9E8F] rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-6 sm:p-8 text-center">
 //           <p className="text-white font-black text-[1.1rem] mb-2">Ready to put this into practice?</p>
 //           <p className="text-[#c5e8e3] text-[0.85rem] font-semibold mb-5 max-w-md mx-auto">
-//             Browse verified tutors on Avenfield and book your first session via WhatsApp no long forms, no waiting.
+//             Browse verified tutors on Avenfield and book your first session via WhatsApp – no long forms, no waiting.
 //           </p>
-//           <Link href="/tutors"
-//             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#E8C86A] text-[#2E4F5E] text-[0.85rem] font-black rounded-xl border-2 border-[#2E4F5E] shadow-[3px_3px_0_0_#2E4F5E] hover:shadow-[1px_1px_0_0_#2E4F5E] hover:translate-y-[2px] transition-all">
-//             Find a Tutor
-//           </Link>
+//           <div className="flex flex-col sm:flex-row gap-3 justify-center">
+//             <Link href="/tutors"
+//               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#E8C86A] text-[#2E4F5E] text-[0.85rem] font-black rounded-xl border-2 border-[#2E4F5E] shadow-[3px_3px_0_0_#2E4F5E] hover:shadow-[1px_1px_0_0_#2E4F5E] hover:translate-y-[2px] transition-all">
+//               Find a Tutor Now →
+//             </Link>
+//             <Link href="/become-tutor"
+//               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#2E4F5E] text-[0.85rem] font-black rounded-xl border-2 border-[#2E4F5E] shadow-[3px_3px_0_0_#2E4F5E] hover:shadow-[1px_1px_0_0_#2E4F5E] hover:translate-y-[2px] transition-all no-underline">
+//               Become a Tutor
+//             </Link>
+//           </div>
 //         </div>
 
-//         {/* Other posts — internal linking */}
+//         {/* ── OTHER POSTS ── */}
 //         {otherPosts.length > 0 && (
 //           <div className="mt-10">
 //             <Eyebrow text="Keep Reading" />
-//             <div className="grid sm:grid-cols-2 gap-4">
+//             <div className="grid sm:grid-cols-3 gap-4">
 //               {otherPosts.map(p => (
 //                 <Link key={p.slug} href={`/blog/${p.slug}`}
 //                   className="bg-white rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors p-4 no-underline">
@@ -277,11 +302,6 @@
 //     </div>
 //   )
 // }
-
-
-
-
-
 
 
 
@@ -485,9 +505,11 @@ export default async function BlogPostPage({ params }: Props) {
               </h2>
               <div className="space-y-3">
                 {section.paragraphs.map((p, j) => (
-                  <p key={j} className="text-[#4a6a78] text-[0.92rem] leading-relaxed font-semibold">
-                    {p}
-                  </p>
+                  <p
+                    key={j}
+                    className="text-[#4a6a78] text-[0.92rem] leading-relaxed font-semibold"
+                    dangerouslySetInnerHTML={{ __html: p }}
+                  />
                 ))}
               </div>
             </div>
