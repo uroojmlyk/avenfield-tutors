@@ -1,5 +1,4 @@
 
-
 // 'use client'
 
 // import Link from 'next/link'
@@ -15,18 +14,21 @@
 //   { href: '/contact',      label: 'Contact' },
 // ]
 
-// // Rendered as a "Services" dropdown on desktop, and as indented sub-items
+// // Rendered as a "Services" dropdown on desktop, and as collapsible sub-items
 // // under Services on mobile — keeps the local SEO pages one click from
 // // every page on the site instead of only living in the footer.
 // const cityLinks = [
 //   { href: '/home-tutor-islamabad',  label: 'Home Tutor in Islamabad' },
 //   { href: '/home-tutor-rawalpindi', label: 'Home Tutor in Rawalpindi' },
+//   { href: '/home-tutor-lahore', label: 'Home Tutor in Lahore' },
+
 // ]
 
 // export default function Navbar() {
 //   const [open, setOpen]         = useState(false)
 //   const [scrolled, setScrolled] = useState(false)
 //   const [servicesOpen, setServicesOpen] = useState(false)
+//   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
 //   const pathname                = usePathname()
 
 //   useEffect(() => {
@@ -35,7 +37,10 @@
 //     return () => window.removeEventListener('scroll', fn)
 //   }, [])
 
-//   useEffect(() => { setOpen(false) }, [pathname])
+//   useEffect(() => { 
+//     setOpen(false)
+//     setMobileServicesOpen(false)
+//   }, [pathname])
 
 //   // Admin pages get no public navbar (and /admin is disallowed in robots.ts,
 //   // so this section stays out of Google entirely)
@@ -181,7 +186,7 @@
 //       <div
 //         id="mobile-nav"
 //         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-//           open ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+//           open ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
 //         }`}
 //       >
 //         <nav
@@ -202,35 +207,58 @@
 //               >
 //                 {l.label}
 //               </Link>
-//               {/* Services + local landing pages inserted right after Home */}
+//               {/* Services with collapsible sub-items inserted right after Home */}
 //               {i === 0 && (
-//                 <>
-//                   <Link
-//                     href="/services"
-//                     aria-current={pathname === '/services' ? 'page' : undefined}
-//                     className={`px-4 py-3 text-[0.9rem] font-black rounded-xl transition-all border-2 ${
-//                       pathname === '/services'
+//                 <div className="flex flex-col gap-2">
+//                   {/* Services parent link with toggle */}
+//                   <button
+//                     onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+//                     className={`px-4 py-3 text-[0.9rem] font-black rounded-xl transition-all border-2 flex items-center justify-between ${
+//                       pathname === '/services' || pathname.startsWith('/home-tutor-')
 //                         ? 'text-white bg-[#2E4F5E] border-[#2E4F5E] shadow-[0_2px_0_0_#1a3240]'
 //                         : 'text-[#2E4F5E] bg-transparent border-transparent hover:bg-[#E8C86A]/40 hover:border-[#2E4F5E]'
 //                     }`}
+//                     aria-expanded={mobileServicesOpen}
 //                   >
-//                     Services
-//                   </Link>
-//                   {cityLinks.map(l => (
-//                     <Link
-//                       key={l.href}
-//                       href={l.href}
-//                       aria-current={pathname === l.href ? 'page' : undefined}
-//                       className={`ml-3 px-4 py-2.5 text-[0.82rem] font-bold rounded-xl transition-all border-2 ${
-//                         pathname === l.href
-//                           ? 'text-white bg-[#2E4F5E] border-[#2E4F5E]'
-//                           : 'text-[#4a6a78] bg-transparent border-transparent hover:bg-[#E8C86A]/30 hover:border-[#2E4F5E]'
-//                       }`}
+//                     <span>Services</span>
+//                     <svg 
+//                       className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} 
+//                       fill="none" 
+//                       viewBox="0 0 24 24" 
+//                       stroke="currentColor" 
+//                       strokeWidth={3}
 //                     >
-//                       📍 {l.label}
-//                     </Link>
-//                   ))}
-//                 </>
+//                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+//                     </svg>
+//                   </button>
+                  
+//                   {/* Collapsible sub-items with professional styling */}
+//                   <div 
+//                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
+//                       mobileServicesOpen ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'
+//                     }`}
+//                   >
+//                     <div className="pl-4 flex flex-col gap-1.5 border-l-2 border-[#2E4F5E]/20 ml-2">
+//                       {cityLinks.map(l => (
+//                         <Link
+//                           key={l.href}
+//                           href={l.href}
+//                           aria-current={pathname === l.href ? 'page' : undefined}
+//                           className={`px-4 py-2.5 text-[0.82rem] font-bold rounded-xl transition-all border-2 ${
+//                             pathname === l.href
+//                               ? 'text-white bg-[#2E4F5E] border-[#2E4F5E] shadow-[0_2px_0_0_#1a3240]'
+//                               : 'text-[#4a6a78] bg-transparent border-transparent hover:bg-[#E8C86A]/30 hover:border-[#2E4F5E]'
+//                           }`}
+//                         >
+//                           <span className="flex items-center gap-2">
+//                             <span className="text-[#3A9E8F]">▸</span>
+//                             {l.label}
+//                           </span>
+//                         </Link>
+//                       ))}
+//                     </div>
+//                   </div>
+//                 </div>
 //               )}
 //             </Fragment>
 //           ))}
@@ -272,6 +300,8 @@ const navLinks = [
 const cityLinks = [
   { href: '/home-tutor-islamabad',  label: 'Home Tutor in Islamabad' },
   { href: '/home-tutor-rawalpindi', label: 'Home Tutor in Rawalpindi' },
+  { href: '/home-tutor-lahore', label: 'Home Tutor in Lahore' },
+
 ]
 
 export default function Navbar() {
@@ -367,20 +397,42 @@ export default function Navbar() {
             </Link>
 
             <div
-              className={`absolute top-full left-0 pt-2 transition-all duration-150 ${
+              className={`absolute top-full left-0 pt-2 transition-all duration-200 ${
                 servicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1'
               }`}
             >
-              <div className="bg-white border-2 border-[#2E4F5E] rounded-xl shadow-[3px_3px_0_0_#2E4F5E] p-2 min-w-[220px]">
-                {cityLinks.map(l => (
-                  <Link
-                    key={l.href}
-                    href={l.href}
-                    className="block px-3 py-2 text-[0.82rem] font-bold text-[#2E4F5E] rounded-lg hover:bg-[#FFFDF7] transition-colors whitespace-nowrap"
-                  >
-                    📍 {l.label}
-                  </Link>
-                ))}
+              <div className="bg-white border-2 border-[#2E4F5E] rounded-2xl shadow-[4px_4px_0_0_#2E4F5E] p-2.5 min-w-[260px] overflow-hidden">
+                <p className="px-2.5 pt-1 pb-2 text-[0.6rem] font-black uppercase tracking-[0.15em] text-[#7da8b8]">
+                  Local Home Tutoring
+                </p>
+                <Link
+                  href="/services"
+                  className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl hover:bg-[#FFFDF7] transition-colors mb-1 group/item"
+                >
+                  <span className="w-8 h-8 rounded-lg bg-[#2E4F5E] text-[#E8C86A] flex items-center justify-center text-[0.85rem] flex-shrink-0 group-hover/item:scale-110 transition-transform">✨</span>
+                  <span className="text-[0.82rem] font-black text-[#2E4F5E]">All Services</span>
+                </Link>
+                <div className="h-px bg-[#D4D0C5] my-1.5 mx-1" />
+                {cityLinks.map((l, i) => {
+                  const cityAccents = [
+                    { bg: 'bg-[#3A9E8F]', ring: 'group-hover/item:bg-[#3A9E8F]/10' },
+                    { bg: 'bg-[#E8934A]', ring: 'group-hover/item:bg-[#E8934A]/10' },
+                    { bg: 'bg-[#E05C42]', ring: 'group-hover/item:bg-[#E05C42]/10' },
+                  ][i % 3]
+                  return (
+                    <Link
+                      key={l.href}
+                      href={l.href}
+                      className={`flex items-center gap-2.5 px-2.5 py-2 rounded-xl transition-colors group/item ${cityAccents.ring}`}
+                    >
+                      <span className={`w-8 h-8 rounded-lg ${cityAccents.bg} text-white flex items-center justify-center text-[0.7rem] flex-shrink-0 group-hover/item:scale-110 transition-transform`}>📍</span>
+                      <span className="text-[0.82rem] font-bold text-[#2E4F5E] whitespace-nowrap">{l.label}</span>
+                      <svg className="w-3.5 h-3.5 text-[#D4D0C5] ml-auto opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-0.5 -translate-x-1 transition-all flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  )
+                })}
               </div>
             </div>
           </div>

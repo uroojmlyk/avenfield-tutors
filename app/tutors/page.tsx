@@ -1,7 +1,6 @@
 
 
 
-
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
 // import TutorCard from '@/components/tutor/TutorCard'
@@ -211,13 +210,20 @@
 // export default async function TutorsPage({
 //   searchParams,
 // }: {
-//   searchParams: Promise<{ subject?: string; search?: string }>
+//   searchParams: Promise<{ subject?: string; search?: string; city?: string }>
 // }) {
 //   const resolvedParams = await searchParams
 //   const activeSubject = resolvedParams.subject || 'All'
 //   const searchQuery = resolvedParams.search || ''
+//   const activeCity = resolvedParams.city || ''
 
 //   let tutors = await getTutors(activeSubject)
+//   // Was previously ignored entirely — every "home tuition in Lahore" style
+//   // link on the site (home page, /tutors SEO content, footer) pointed to
+//   // ?city=Lahore but nothing here read it, so the link did nothing.
+//   if (activeCity) {
+//     tutors = tutors.filter(t => t.city.toLowerCase() === activeCity.toLowerCase())
+//   }
 //   if (searchQuery && tutors.length > 0) {
 //     tutors = tutors.filter(t =>
 //       t.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -413,8 +419,10 @@
 //                 <div className="flex items-center justify-between mb-6">
 //                   <p className="text-[0.75rem] font-bold text-[#7da8b8]">
 //                     {activeSubject !== 'All'
-//                       ? `${tutors.length} tutor${tutors.length !== 1 ? 's' : ''} found for "${activeSubject}"`
-//                       : `${tutors.length} verified tutor${tutors.length !== 1 ? 's' : ''} available`
+//                       ? `${tutors.length} tutor${tutors.length !== 1 ? 's' : ''} found for "${activeSubject}"${activeCity ? ` in ${activeCity}` : ''}`
+//                       : activeCity
+//                         ? `${tutors.length} tutor${tutors.length !== 1 ? 's' : ''} available in ${activeCity}`
+//                         : `${tutors.length} verified tutor${tutors.length !== 1 ? 's' : ''} available`
 //                     }
 //                   </p>
 //                   {searchQuery && (
@@ -692,6 +700,11 @@
 
 
 
+
+
+
+
+
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import TutorCard from '@/components/tutor/TutorCard'
@@ -709,7 +722,7 @@ export const metadata: Metadata = {
   // to appear twice in the actual <title> tag.
   title: 'Verified Online & Home Tutors — O Level, A Level, IELTS, MDCAT',
   description:
-    'Browse 500+ verified online & home tutors for O Level, A Level, IELTS, MDCAT & 50+ subjects. Pakistan, UAE & UK. Book instantly via WhatsApp.',
+    'Browse verified online & home tutors for O Level, A Level, IELTS, MDCAT & 50+ subjects. Pakistan, UAE & UK. Book instantly via WhatsApp.',
   keywords: [
     'online tutors Pakistan', 'home tutors Pakistan', 'private tutors',
     'verified tutors', 'online tuition', 'home tuition', 'O Level tutor',
@@ -720,7 +733,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Verified Online & Home Tutors — O Level, A Level, IELTS, MDCAT | Avenfield Tutors',
     description:
-      'Browse 500+ hand-verified online and home tutors for O Level, A Level, IGCSE, IELTS, MDCAT, CSS and 50+ subjects. Online tuition worldwide and home tutoring in Pakistan, UAE & UK.',
+      'Browse hand-verified online and home tutors for O Level, A Level, IGCSE, IELTS, MDCAT, CSS and 50+ subjects. Online tuition worldwide and home tutoring in Islamabad, Rawalpindi & Lahore.',
     type: 'website',
     locale: 'en_PK',
     siteName: 'Avenfield Tutors',
@@ -737,7 +750,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Verified Online & Home Tutors | Avenfield Tutors',
-    description: 'Browse 500+ hand-verified tutors for O Level, A Level, IELTS, MDCAT, CSS and 50+ subjects.',
+    description: 'Browse hand-verified tutors for O Level, A Level, IELTS, MDCAT, CSS and 50+ subjects.',
     images: [`${SITE_URL}/avenfieldtutors-newlogo.png`],
   },
   alternates: {
@@ -792,7 +805,7 @@ function WebPageSchema() {
     '@type': 'WebPage',
     name: 'Verified Online & Home Tutors — O Level, A Level, IELTS, MDCAT | Avenfield Tutors',
     description:
-      'Browse 500+ hand-verified online and home tutors for O Level, A Level, IGCSE, IELTS, MDCAT, CSS and 50+ subjects. Online tuition worldwide and home tutoring in Pakistan, UAE & UK.',
+      'Browse hand-verified online and home tutors for O Level, A Level, IGCSE, IELTS, MDCAT, CSS and 50+ subjects. Online tuition worldwide and home tutoring in Islamabad, Rawalpindi & Lahore.',
     url: `${SITE_URL}/tutors`,
     about: {
       '@type': 'Thing',

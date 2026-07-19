@@ -1,4 +1,6 @@
 
+
+
 // import type { MetadataRoute } from 'next'
 // import { connectDB } from '@/lib/db'
 // import Tutor from '@/lib/models/Tutor'
@@ -32,6 +34,18 @@
 //       lastModified: LAST_UPDATED,
 //       changeFrequency: 'monthly',
 //       priority: 0.8,
+//     },
+//     {
+//       url: `${BASE_URL}/home-tutor-islamabad`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.85,
+//     },
+//     {
+//       url: `${BASE_URL}/home-tutor-rawalpindi`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.85,
 //     },
 //     {
 //       url: `${BASE_URL}/become-tutor`,
@@ -97,9 +111,6 @@
 
 
 
-
-
-
 import type { MetadataRoute } from 'next'
 import { connectDB } from '@/lib/db'
 import Tutor from '@/lib/models/Tutor'
@@ -142,6 +153,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/home-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/home-tutor-lahore`,
       lastModified: LAST_UPDATED,
       changeFrequency: 'monthly',
       priority: 0.85,
