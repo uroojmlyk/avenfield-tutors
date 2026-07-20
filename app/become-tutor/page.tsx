@@ -1,6 +1,5 @@
 
 
-
 // 'use client'
 
 // import { useState } from 'react'
@@ -189,7 +188,7 @@
 //           {/* Social proof pill */}
 //           <div className="inline-flex items-center gap-2 bg-[#E8C86A]/30 border-2 border-[#E8C86A] text-[#2E4F5E] text-[0.7rem] font-black px-3.5 py-1.5 rounded-full mb-6 shadow-[2px_2px_0_0_#c9ab4a]">
 //             <span className="w-1.5 h-1.5 rounded-full bg-[#E05C42] animate-pulse flex-shrink-0" />
-//             500+ Verified Tutors · 8,000+ Students · 15+ Countries
+//             ⭐ Google Rated · Verified Tutors · Islamabad, Rawalpindi & Lahore
 //           </div>
 
 //           <h1 className="text-[2.1rem] sm:text-[3rem] lg:text-[3.4rem] font-black leading-[1.07] tracking-[-0.025em] text-[#2E4F5E] mb-5">
@@ -234,9 +233,9 @@
 //       <section className="bg-[#E8C86A] border-y-2 border-[#2E4F5E] py-5 px-4 sm:px-8">
 //         <div className="max-w-3xl mx-auto flex items-center justify-center gap-6 sm:gap-10 flex-wrap">
 //           {[
-//             { v: '500+', l: 'Verified Tutors' },
-//             { v: '8,000+', l: 'Students Helped' },
-//             { v: '15+', l: 'Countries Served' },
+//             { v: '⭐ Google Rated', l: 'By Real Families' },
+//             { v: 'Verified', l: 'Every Tutor' },
+//             { v: '50+', l: 'Subjects Covered' },
 //           ].map(stat => (
 //             <div key={stat.l} className="flex items-center gap-2.5">
 //               <div className="w-0.5 h-7 bg-[#2E4F5E] rounded-full opacity-30" />
@@ -512,6 +511,8 @@
 
 
 
+
+
 'use client'
 
 import { useState } from 'react'
@@ -587,6 +588,16 @@ const lbl = "block text-[0.7rem] font-black text-[#2E4F5E] uppercase tracking-[0
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.com'
 
+// ⚠️ This is an always-open recruiting listing, not a single expiring job —
+// but Google's JobPosting schema still requires a datePosted, and derecommends
+// listings once validThrough has passed. Bump JOB_POSTED_DATE whenever you
+// touch this page (or at least every ~2-3 months) to keep the listing valid
+// and fresh in Google's eyes; validThrough is calculated 90 days out from it.
+const JOB_POSTED_DATE = '2026-07-18'
+const jobValidThroughDate = new Date(JOB_POSTED_DATE)
+jobValidThroughDate.setDate(jobValidThroughDate.getDate() + 90)
+const JOB_VALID_THROUGH = jobValidThroughDate.toISOString().split('T')[0]
+
 function BecomeTutorSchema() {
   const schema = {
     '@context': 'https://schema.org',
@@ -594,6 +605,8 @@ function BecomeTutorSchema() {
     title: 'Online & Home Tutor',
     description:
       'Teach O Level, A Level, IELTS, MDCAT, CSS/PMS and more on Avenfield Tutors. Connect with motivated students across Pakistan, UAE and the UK — no marketing needed.',
+    datePosted: JOB_POSTED_DATE,
+    validThrough: `${JOB_VALID_THROUGH}T23:59:59+05:00`,
     hiringOrganization: {
       '@type': 'Organization',
       name: 'Avenfield Tutors',

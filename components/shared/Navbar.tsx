@@ -1,4 +1,6 @@
 
+
+
 // 'use client'
 
 // import Link from 'next/link'
@@ -117,20 +119,42 @@
 //             </Link>
 
 //             <div
-//               className={`absolute top-full left-0 pt-2 transition-all duration-150 ${
+//               className={`absolute top-full left-0 pt-2 transition-all duration-200 ${
 //                 servicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1'
 //               }`}
 //             >
-//               <div className="bg-white border-2 border-[#2E4F5E] rounded-xl shadow-[3px_3px_0_0_#2E4F5E] p-2 min-w-[220px]">
-//                 {cityLinks.map(l => (
-//                   <Link
-//                     key={l.href}
-//                     href={l.href}
-//                     className="block px-3 py-2 text-[0.82rem] font-bold text-[#2E4F5E] rounded-lg hover:bg-[#FFFDF7] transition-colors whitespace-nowrap"
-//                   >
-//                     📍 {l.label}
-//                   </Link>
-//                 ))}
+//               <div className="bg-white border-2 border-[#2E4F5E] rounded-2xl shadow-[4px_4px_0_0_#2E4F5E] p-2.5 min-w-[260px] overflow-hidden">
+//                 <p className="px-2.5 pt-1 pb-2 text-[0.6rem] font-black uppercase tracking-[0.15em] text-[#7da8b8]">
+//                   Local Home Tutoring
+//                 </p>
+//                 <Link
+//                   href="/services"
+//                   className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl hover:bg-[#FFFDF7] transition-colors mb-1 group/item"
+//                 >
+//                   <span className="w-8 h-8 rounded-lg bg-[#2E4F5E] text-[#E8C86A] flex items-center justify-center text-[0.85rem] flex-shrink-0 group-hover/item:scale-110 transition-transform">✨</span>
+//                   <span className="text-[0.82rem] font-black text-[#2E4F5E]">All Services</span>
+//                 </Link>
+//                 <div className="h-px bg-[#D4D0C5] my-1.5 mx-1" />
+//                 {cityLinks.map((l, i) => {
+//                   const cityAccents = [
+//                     { bg: 'bg-[#3A9E8F]', ring: 'group-hover/item:bg-[#3A9E8F]/10' },
+//                     { bg: 'bg-[#E8934A]', ring: 'group-hover/item:bg-[#E8934A]/10' },
+//                     { bg: 'bg-[#E05C42]', ring: 'group-hover/item:bg-[#E05C42]/10' },
+//                   ][i % 3]
+//                   return (
+//                     <Link
+//                       key={l.href}
+//                       href={l.href}
+//                       className={`flex items-center gap-2.5 px-2.5 py-2 rounded-xl transition-colors group/item ${cityAccents.ring}`}
+//                     >
+//                       <span className={`w-8 h-8 rounded-lg ${cityAccents.bg} text-white flex items-center justify-center text-[0.7rem] flex-shrink-0 group-hover/item:scale-110 transition-transform`}>📍</span>
+//                       <span className="text-[0.82rem] font-bold text-[#2E4F5E] whitespace-nowrap">{l.label}</span>
+//                       <svg className="w-3.5 h-3.5 text-[#D4D0C5] ml-auto opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-0.5 -translate-x-1 transition-all flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+//                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+//                       </svg>
+//                     </Link>
+//                   )
+//                 })}
 //               </div>
 //             </div>
 //           </div>
@@ -279,6 +303,11 @@
 
 
 
+
+
+
+
+
 'use client'
 
 import Link from 'next/link'
@@ -292,6 +321,15 @@ const navLinks = [
   { href: '/tutors',       label: 'Find a Tutor' },
   { href: '/blog',         label: 'Blog' },
   { href: '/contact',      label: 'Contact' },
+]
+
+// Same links as navLinks, with icons — used by the mobile menu for the
+// icon-chip treatment that matches the desktop Services dropdown styling.
+const navIcons = [
+  { href: '/',             label: 'Home',         icon: '🏠' },
+  { href: '/tutors',       label: 'Find a Tutor',  icon: '🔍' },
+  { href: '/blog',         label: 'Blog',          icon: '📝' },
+  { href: '/contact',      label: 'Contact',       icon: '💬' },
 ]
 
 // Rendered as a "Services" dropdown on desktop, and as collapsible sub-items
@@ -488,85 +526,107 @@ export default function Navbar() {
       <div
         id="mobile-nav"
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          open ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+          open ? 'max-h-[720px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <nav
-          className="border-t-2 border-[#2E4F5E] bg-[#FFFDF7] px-4 py-3 flex flex-col gap-2 pb-5"
+          className="border-t-2 border-[#2E4F5E] bg-[#FFFDF7] px-3 py-4 flex flex-col gap-1.5 pb-5"
           aria-label="Mobile navigation"
           style={{ fontFamily: "'Nunito', sans-serif" }}
         >
-          {navLinks.map((l, i) => (
-            <Fragment key={l.href}>
+          {navIcons.map(({ href, label, icon }, i) => (
+            <Fragment key={href}>
               <Link
-                href={l.href}
-                aria-current={pathname === l.href ? 'page' : undefined}
-                className={`px-4 py-3 text-[0.9rem] font-black rounded-xl transition-all border-2 ${
-                  pathname === l.href
+                href={href}
+                aria-current={pathname === href ? 'page' : undefined}
+                className={`flex items-center gap-3 px-3 py-3 text-[0.9rem] font-black rounded-2xl transition-all border-2 ${
+                  pathname === href
                     ? 'text-white bg-[#2E4F5E] border-[#2E4F5E] shadow-[0_2px_0_0_#1a3240]'
-                    : 'text-[#2E4F5E] bg-transparent border-transparent hover:bg-[#E8C86A]/40 hover:border-[#2E4F5E]'
+                    : 'text-[#2E4F5E] bg-white border-[#D4D0C5] hover:border-[#E8C86A] hover:bg-[#E8C86A]/15'
                 }`}
               >
-                {l.label}
+                <span className={`w-9 h-9 rounded-xl flex items-center justify-center text-[1rem] flex-shrink-0 ${
+                  pathname === href ? 'bg-white/15' : 'bg-[#FFFDF7]'
+                }`} aria-hidden="true">
+                  {icon}
+                </span>
+                {label}
               </Link>
-              {/* Services with collapsible sub-items inserted right after Home */}
+
+              {/* Services with collapsible, "cute" sub-items — matches the desktop dropdown styling */}
               {i === 0 && (
-                <div className="flex flex-col gap-2">
-                  {/* Services parent link with toggle */}
+                <div className="flex flex-col gap-1.5">
                   <button
                     onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                    className={`px-4 py-3 text-[0.9rem] font-black rounded-xl transition-all border-2 flex items-center justify-between ${
+                    className={`flex items-center gap-3 px-3 py-3 text-[0.9rem] font-black rounded-2xl transition-all border-2 ${
                       pathname === '/services' || pathname.startsWith('/home-tutor-')
                         ? 'text-white bg-[#2E4F5E] border-[#2E4F5E] shadow-[0_2px_0_0_#1a3240]'
-                        : 'text-[#2E4F5E] bg-transparent border-transparent hover:bg-[#E8C86A]/40 hover:border-[#2E4F5E]'
+                        : 'text-[#2E4F5E] bg-white border-[#D4D0C5] hover:border-[#E8C86A] hover:bg-[#E8C86A]/15'
                     }`}
                     aria-expanded={mobileServicesOpen}
                   >
-                    <span>Services</span>
-                    <svg 
-                      className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
-                      stroke="currentColor" 
+                    <span className={`w-9 h-9 rounded-xl flex items-center justify-center text-[1rem] flex-shrink-0 ${
+                      pathname === '/services' || pathname.startsWith('/home-tutor-') ? 'bg-white/15' : 'bg-[#FFFDF7]'
+                    }`} aria-hidden="true">
+                      🛎️
+                    </span>
+                    <span className="flex-1 text-left">Services</span>
+                    <svg
+                      className={`w-4 h-4 transition-transform duration-200 flex-shrink-0 ${mobileServicesOpen ? 'rotate-180' : ''}`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
                       strokeWidth={3}
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  
-                  {/* Collapsible sub-items with professional styling */}
-                  <div 
+
+                  <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      mobileServicesOpen ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'
+                      mobileServicesOpen ? 'max-h-[280px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="pl-4 flex flex-col gap-1.5 border-l-2 border-[#2E4F5E]/20 ml-2">
-                      {cityLinks.map(l => (
-                        <Link
-                          key={l.href}
-                          href={l.href}
-                          aria-current={pathname === l.href ? 'page' : undefined}
-                          className={`px-4 py-2.5 text-[0.82rem] font-bold rounded-xl transition-all border-2 ${
-                            pathname === l.href
-                              ? 'text-white bg-[#2E4F5E] border-[#2E4F5E] shadow-[0_2px_0_0_#1a3240]'
-                              : 'text-[#4a6a78] bg-transparent border-transparent hover:bg-[#E8C86A]/30 hover:border-[#2E4F5E]'
-                          }`}
-                        >
-                          <span className="flex items-center gap-2">
-                            <span className="text-[#3A9E8F]">▸</span>
-                            {l.label}
-                          </span>
-                        </Link>
-                      ))}
+                    <div className="ml-3 pl-3 py-1 flex flex-col gap-1.5 border-l-2 border-dashed border-[#E8C86A]">
+                      <Link
+                        href="/services"
+                        className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white border-2 border-[#D4D0C5] hover:border-[#2E4F5E] transition-colors"
+                      >
+                        <span className="w-7 h-7 rounded-lg bg-[#2E4F5E] text-[#E8C86A] flex items-center justify-center text-[0.75rem] flex-shrink-0">✨</span>
+                        <span className="text-[0.8rem] font-black text-[#2E4F5E]">All Services</span>
+                      </Link>
+                      {cityLinks.map((l, ci) => {
+                        const accent = [
+                          { bg: 'bg-[#3A9E8F]' },
+                          { bg: 'bg-[#E8934A]' },
+                          { bg: 'bg-[#E05C42]' },
+                        ][ci % 3]
+                        return (
+                          <Link
+                            key={l.href}
+                            href={l.href}
+                            aria-current={pathname === l.href ? 'page' : undefined}
+                            className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl border-2 transition-colors ${
+                              pathname === l.href
+                                ? 'text-white bg-[#2E4F5E] border-[#2E4F5E]'
+                                : 'bg-white border-[#D4D0C5] hover:border-[#2E4F5E] text-[#2E4F5E]'
+                            }`}
+                          >
+                            <span className={`w-7 h-7 rounded-lg ${accent.bg} text-white flex items-center justify-center text-[0.65rem] flex-shrink-0`}>📍</span>
+                            <span className="text-[0.8rem] font-bold whitespace-nowrap">{l.label}</span>
+                          </Link>
+                        )
+                      })}
                     </div>
                   </div>
                 </div>
               )}
             </Fragment>
           ))}
+
           <Link
             href="/become-tutor"
-            className="mt-1 px-5 py-3 bg-[#E05C42] hover:bg-[#c94e37] text-white text-[0.9rem] font-black rounded-xl text-center shadow-[0_3px_0_0_#a83c2a] border-2 border-[#a83c2a] transition-colors"
+            className="mt-2 flex items-center justify-center gap-2 px-5 py-3.5 bg-[#E05C42] hover:bg-[#c94e37] text-white text-[0.9rem] font-black rounded-2xl text-center shadow-[0_3px_0_0_#a83c2a] border-2 border-[#a83c2a] transition-colors"
             aria-label="Apply to become a tutor at Avenfield Tutors"
           >
             Join as Tutor ✨
