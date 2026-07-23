@@ -1,5 +1,7 @@
 
 
+
+
 // import type { MetadataRoute } from 'next'
 // import { connectDB } from '@/lib/db'
 // import Tutor from '@/lib/models/Tutor'
@@ -11,7 +13,7 @@
 // // to a static page (not on every deploy). Using new Date() here made every
 // // single page look "modified today" on every build, even when nothing
 // // changed — a misleading signal to Google.
-// const LAST_UPDATED = new Date('2026-07-11')
+// const LAST_UPDATED = new Date('2026-07-23') // ← optional: aaj ki date bhi kar sakte ho
 
 // export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 //   // Static routes
@@ -52,6 +54,32 @@
 //       changeFrequency: 'monthly',
 //       priority: 0.85,
 //     },
+//     // ─── ✅ NEW SUBJECT PAGES (Islamabad) ───
+//     {
+//       url: `${BASE_URL}/o-level-tutor-islamabad`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     {
+//       url: `${BASE_URL}/a-level-tutor-islamabad`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     {
+//       url: `${BASE_URL}/ielts-tutor-islamabad`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     {
+//       url: `${BASE_URL}/mdcat-tutor-islamabad`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     // ─── ──────────────────────────────── ───
 //     {
 //       url: `${BASE_URL}/become-tutor`,
 //       lastModified: LAST_UPDATED,
@@ -117,6 +145,8 @@
 
 
 
+
+
 import type { MetadataRoute } from 'next'
 import { connectDB } from '@/lib/db'
 import Tutor from '@/lib/models/Tutor'
@@ -128,7 +158,7 @@ const BASE_URL = 'https://avenfieldtutors.com'
 // to a static page (not on every deploy). Using new Date() here made every
 // single page look "modified today" on every build, even when nothing
 // changed — a misleading signal to Google.
-const LAST_UPDATED = new Date('2026-07-23') // ← optional: aaj ki date bhi kar sakte ho
+const LAST_UPDATED = new Date('2026-07-23')
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static routes
@@ -169,7 +199,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.85,
     },
-    // ─── ✅ NEW SUBJECT PAGES (Islamabad) ───
+    // ─── SUBJECT PAGES (Islamabad) ───
     {
       url: `${BASE_URL}/o-level-tutor-islamabad`,
       lastModified: LAST_UPDATED,
@@ -194,7 +224,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    // ─── ──────────────────────────────── ───
+    // ─── ✅ NEW SUBJECT PAGES (Added Today) ───
+    {
+      url: `${BASE_URL}/biology-tutor-islamabad`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/chemistry-tutor-islamabad`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/physics-tutor-islamabad`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/math-tutor-islamabad`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    // ─── ───────────────────────────────────── ───
     {
       url: `${BASE_URL}/become-tutor`,
       lastModified: LAST_UPDATED,

@@ -1,6 +1,5 @@
 
 
-
 // import Link from 'next/link'
 
 // interface CityPageProps {
@@ -12,6 +11,12 @@
 // }
 
 // const WHATSAPP_NUMBER = '923095154253'
+
+// // Cities that currently have dedicated /o-level-tutor-{city} style subject
+// // pages built. Update this list as more get built (e.g. add 'Rawalpindi'
+// // once app/o-level-tutor-rawalpindi etc. exist) — otherwise the "Popular
+// // Subjects" section below would link to pages that don't exist yet (404s).
+// const SUBJECT_PAGE_CITIES = ['Islamabad']
 
 // function buildWhatsAppURL(city: string, subject?: string) {
 //   const baseMessage = `Hi! I'm looking for a home tutor in ${city}`
@@ -334,7 +339,7 @@
 //                 { name: 'A Level Tutors', href: `/a-level-tutor-${city.toLowerCase()}`, icon: '🎯' },
 //                 { name: 'IELTS Tutors', href: `/ielts-tutor-${city.toLowerCase()}`, icon: '🎓' },
 //                 { name: 'MDCAT Tutors', href: `/mdcat-tutor-${city.toLowerCase()}`, icon: '🩺' },
-//               ].map((item) => (
+//               ].filter(() => SUBJECT_PAGE_CITIES.includes(city)).map((item) => (
 //                 <Link key={item.name} href={item.href}
 //                   className="group flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FFFDF7] text-[#2E4F5E] text-[0.76rem] sm:text-[0.82rem] font-bold rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] hover:bg-[#FFFDF7] transition-all no-underline">
 //                   <span className="text-base sm:text-lg flex-shrink-0">{item.icon}</span>
@@ -505,6 +510,9 @@
 //     </div>
 //   )
 // }
+
+
+
 
 
 
@@ -848,6 +856,11 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
                 { name: 'A Level Tutors', href: `/a-level-tutor-${city.toLowerCase()}`, icon: '🎯' },
                 { name: 'IELTS Tutors', href: `/ielts-tutor-${city.toLowerCase()}`, icon: '🎓' },
                 { name: 'MDCAT Tutors', href: `/mdcat-tutor-${city.toLowerCase()}`, icon: '🩺' },
+                // ✅ NEW LINKS ADDED HERE
+                { name: 'Biology Tutors', href: `/biology-tutor-${city.toLowerCase()}`, icon: '🧬' },
+                { name: 'Chemistry Tutors', href: `/chemistry-tutor-${city.toLowerCase()}`, icon: '🧪' },
+                { name: 'Physics Tutors', href: `/physics-tutor-${city.toLowerCase()}`, icon: '⚡' },
+                { name: 'Mathematics Tutors', href: `/math-tutor-${city.toLowerCase()}`, icon: '📐' },
               ].filter(() => SUBJECT_PAGE_CITIES.includes(city)).map((item) => (
                 <Link key={item.name} href={item.href}
                   className="group flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FFFDF7] text-[#2E4F5E] text-[0.76rem] sm:text-[0.82rem] font-bold rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] hover:bg-[#FFFDF7] transition-all no-underline">
