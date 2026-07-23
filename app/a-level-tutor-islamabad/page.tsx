@@ -1,3 +1,5 @@
+
+
 // import type { Metadata } from 'next'
 // import SubjectLandingPage from '@/components/shared/SubjectLandingPage'
 
@@ -40,9 +42,19 @@
 //     title: 'Best A Level Tutor in Islamabad | Avenfield Tutors',
 //     description: 'Verified A Level tutors in Islamabad for Cambridge CAIE & Edexcel. Expert tuition for all subjects.',
 //   },
+//   robots: {
+//     index: true,
+//     follow: true,
+//     googleBot: {
+//       index: true,
+//       follow: true,
+//       'max-video-preview': -1,
+//       'max-image-preview': 'large',
+//       'max-snippet': -1,
+//     },
+//   },
 // }
 
-// // Islamabad Areas Data (same as O Level)
 // const ISLAMABAD_AREAS = {
 //   sectors: [
 //     'F-5', 'F-6', 'F-7', 'F-8', 'F-10', 'F-11', 'F-15', 'F-17',
@@ -143,7 +155,7 @@
 //       city="Islamabad"
 //       slug="a-level-tutor-islamabad"
 //       pageTitle="Best A Level Tutor in Islamabad | Cambridge A Level Tuition"
-//       pageDescription="Find verified A Level tutors in Islamabad for Cambridge CAIE & Edexcel. Expert tuition for all subjects — Mathematics, Physics, Chemistry, Biology, Economics & more. Free consultation."
+//       pageDescription="Find verified A Level tutors in Islamabad for Cambridge CAIE & Edexcel. Expert tuition for all subjects Mathematics, Physics, Chemistry, Biology, Economics & more. Free consultation."
 //       metaKeywords={[
 //         'A Level tutor Islamabad',
 //         'A Level tuition Islamabad',
@@ -166,8 +178,8 @@
 //       subjectEmoji="📘"
 //       subjectOverview={[
 //         `The <a href="/tutors?subject=A%20Level&city=Islamabad" class="text-[#E05C42] hover:underline font-black">A Level tutor in Islamabad</a> market is highly specialised, with students seeking expert guidance to excel in one of the most rigorous pre-university programmes in the world. Cambridge A Level is known for its depth and challenge, requiring students to develop advanced analytical skills, independent research capabilities, and a profound understanding of their chosen subjects. Our verified A Level tutors in Islamabad are uniquely positioned to help students meet these demands with confidence.`,
-//         `Whether your child is preparing for <a href="/tutors?subject=Mathematics&city=Islamabad" class="text-[#E05C42} hover:underline font-black">A Level Mathematics</a>, <a href="/tutors?subject=Physics&city=Islamabad" class="text-[#E05C42} hover:underline font-black">Physics</a>, <a href="/tutors?subject=Chemistry&city=Islamabad" class="text-[#E05C42} hover:underline font-black">Chemistry</a>, <a href="/tutors?subject=Biology&city=Islamabad" class="text-[#E05C42} hover:underline font-black">Biology</a>, <a href="/tutors?subject=Economics&city=Islamabad" class="text-[#E05C42} hover:underline font-black">Economics</a>, or <a href="/tutors?subject=English&city=Islamabad" class="text-[#E05C42} hover:underline font-black">English Literature</a>, our experienced tutors provide personalised support tailored to the Cambridge syllabus. They understand the specific requirements of both <a href="/tutors?subject=A%20Level&exam=CAIE" class="text-[#E05C42} hover:underline font-black">CAIE</a> and <a href="/tutors?subject=A%20Level&exam=Edexcel" class="text-[#E05C42} hover:underline font-black">Edexcel</a> exam boards, ensuring students are fully prepared for their AS and A2 examinations.`,
-//         `With a focus on building deep conceptual understanding and exam technique, our <a href="/home-tutor-islamabad" class="text-[#E05C42} hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that classroom settings often cannot offer. This personalised approach is particularly effective for A Level students, who need to master complex concepts across multiple subjects while developing the critical thinking skills required for top university admissions.`,
+//         `Whether your child is preparing for <a href="/tutors?subject=Mathematics&city=Islamabad" class="text-[#E05C42] hover:underline font-black">A Level Mathematics</a>, <a href="/tutors?subject=Physics&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Physics</a>, <a href="/tutors?subject=Chemistry&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Chemistry</a>, <a href="/tutors?subject=Biology&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Biology</a>, <a href="/tutors?subject=Economics&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Economics</a>, or <a href="/tutors?subject=English&city=Islamabad" class="text-[#E05C42] hover:underline font-black">English Literature</a>, our experienced tutors provide personalised support tailored to the Cambridge syllabus. They understand the specific requirements of both <a href="/tutors?subject=A%20Level&exam=CAIE" class="text-[#E05C42] hover:underline font-black">CAIE</a> and <a href="/tutors?subject=A%20Level&exam=Edexcel" class="text-[#E05C42] hover:underline font-black">Edexcel</a> exam boards, ensuring students are fully prepared for their AS and A2 examinations.`,
+//         `With a focus on building deep conceptual understanding and exam technique, our <a href="/home-tutor-islamabad" class="text-[#E05C42] hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that classroom settings often cannot offer. This personalised approach is particularly effective for A Level students, who need to master complex concepts across multiple subjects while developing the critical thinking skills required for top university admissions.`,
 //       ]}
 //       subjectDetails={[
 //         `Our <strong class="text-[#2E4F5E]">A Level tutors in Islamabad</strong> are subject matter experts with extensive experience teaching the Cambridge syllabus at both AS and A2 levels. They are familiar with the specific requirements of each subject and provide targeted support to help students achieve top grades — A* and A — in their examinations.`,
@@ -214,7 +226,7 @@
 //         },
 //         {
 //           q: 'Do you offer online A Level tutoring as well?',
-//           a: 'Yes! While we specialise in <a href="/home-tutor-islamabad" class="text-[#E05C42} hover:underline font-black">home tuition in Islamabad</a>, we also offer <a href="/tutors?subject=A%20Level" class="text-[#E05C42} hover:underline font-black">online A Level tutoring</a> for students who prefer the flexibility of learning from home or who live outside Islamabad. Our online sessions are conducted via video call with interactive whiteboards and screen sharing for an effective learning experience, ideal for A Level students who need flexible scheduling.',
+//           a: 'Yes! While we specialise in <a href="/home-tutor-islamabad" class="text-[#E05C42] hover:underline font-black">home tuition in Islamabad</a>, we also offer <a href="/tutors?subject=A%20Level" class="text-[#E05C42] hover:underline font-black">online A Level tutoring</a> for students who prefer the flexibility of learning from home or who live outside Islamabad. Our online sessions are conducted via video call with interactive whiteboards and screen sharing for an effective learning experience, ideal for A Level students who need flexible scheduling.',
 //         },
 //         {
 //           q: 'Which areas of Islamabad do your home tutors cover?',
@@ -238,6 +250,9 @@
 //     />
 //   )
 // }
+
+
+
 
 
 
@@ -284,19 +299,9 @@ export const metadata: Metadata = {
     title: 'Best A Level Tutor in Islamabad | Avenfield Tutors',
     description: 'Verified A Level tutors in Islamabad for Cambridge CAIE & Edexcel. Expert tuition for all subjects.',
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
 }
 
+// Islamabad Areas Data (same as O Level)
 const ISLAMABAD_AREAS = {
   sectors: [
     'F-5', 'F-6', 'F-7', 'F-8', 'F-10', 'F-11', 'F-15', 'F-17',
@@ -397,7 +402,7 @@ export default function ALevelTutorIslamabadPage() {
       city="Islamabad"
       slug="a-level-tutor-islamabad"
       pageTitle="Best A Level Tutor in Islamabad | Cambridge A Level Tuition"
-      pageDescription="Find verified A Level tutors in Islamabad for Cambridge CAIE & Edexcel. Expert tuition for all subjects Mathematics, Physics, Chemistry, Biology, Economics & more. Free consultation."
+      pageDescription="Find verified A Level tutors in Islamabad for Cambridge CAIE & Edexcel. Expert tuition for all subjects — Mathematics, Physics, Chemistry, Biology, Economics & more. Free consultation."
       metaKeywords={[
         'A Level tutor Islamabad',
         'A Level tuition Islamabad',

@@ -1,3 +1,5 @@
+
+
 // import type { Metadata } from 'next'
 // import SubjectLandingPage from '@/components/shared/SubjectLandingPage'
 
@@ -38,9 +40,19 @@
 //     title: 'Best O Level Tutor in Islamabad | Avenfield Tutors',
 //     description: 'Verified O Level tutors in Islamabad for Cambridge CAIE & Edexcel. Expert tuition for all subjects.',
 //   },
+//   robots: {
+//     index: true,
+//     follow: true,
+//     googleBot: {
+//       index: true,
+//       follow: true,
+//       'max-video-preview': -1,
+//       'max-image-preview': 'large',
+//       'max-snippet': -1,
+//     },
+//   },
 // }
 
-// // Islamabad Areas Data
 // const ISLAMABAD_AREAS = {
 //   sectors: [
 //     'F-5', 'F-6', 'F-7', 'F-8', 'F-10', 'F-11', 'F-15', 'F-17',
@@ -162,8 +174,8 @@
 //       subjectEmoji="📖"
 //       subjectOverview={[
 //         `The <a href="/tutors?subject=O%20Level&city=Islamabad" class="text-[#E05C42] hover:underline font-black">O Level tutor in Islamabad</a> market is highly competitive, and finding the right tutor can make all the difference in a student's academic journey. The Cambridge O Level curriculum is known for its rigour and depth, requiring students to develop strong analytical skills, critical thinking, and a deep understanding of core concepts. Our verified O Level tutors in Islamabad specialise in helping students navigate these challenges with confidence.`,
-//         `Whether your child is struggling with <a href="/tutors?subject=Mathematics&city=Islamabad" class="text-[#E05C42] hover:underline font-black">O Level Mathematics</a>, <a href="/tutors?subject=Physics&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Physics</a>, <a href="/tutors?subject=Chemistry&city=Islamabad" class="text-[#E05C42} hover:underline font-black">Chemistry</a>, <a href="/tutors?subject=Biology&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Biology</a>, or <a href="/tutors?subject=English&city=Islamabad" class="text-[#E05C42} hover:underline font-black">English</a>, our experienced tutors provide personalised support tailored to the Cambridge syllabus. They understand the specific requirements of both <a href="/tutors?subject=O%20Level&exam=CAIE" class="text-[#E05C42} hover:underline font-black">CAIE</a> and <a href="/tutors?subject=O%20Level&exam=Edexcel" class="text-[#E05C42} hover:underline font-black">Edexcel</a> exam boards, ensuring students are fully prepared for their examinations.`,
-//         `With a focus on building foundational knowledge and exam technique, our <a href="/home-tutor-islamabad" class="text-[#E05C42} hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that classroom settings often cannot offer. This personalised approach is particularly effective for O Level students, who need to master complex concepts across multiple subjects while developing the critical thinking skills required for success in higher education.`,
+//         `Whether your child is struggling with <a href="/tutors?subject=Mathematics&city=Islamabad" class="text-[#E05C42] hover:underline font-black">O Level Mathematics</a>, <a href="/tutors?subject=Physics&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Physics</a>, <a href="/tutors?subject=Chemistry&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Chemistry</a>, <a href="/tutors?subject=Biology&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Biology</a>, or <a href="/tutors?subject=English&city=Islamabad" class="text-[#E05C42] hover:underline font-black">English</a>, our experienced tutors provide personalised support tailored to the Cambridge syllabus. They understand the specific requirements of both <a href="/tutors?subject=O%20Level&exam=CAIE" class="text-[#E05C42] hover:underline font-black">CAIE</a> and <a href="/tutors?subject=O%20Level&exam=Edexcel" class="text-[#E05C42] hover:underline font-black">Edexcel</a> exam boards, ensuring students are fully prepared for their examinations.`,
+//         `With a focus on building foundational knowledge and exam technique, our <a href="/home-tutor-islamabad" class="text-[#E05C42] hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that classroom settings often cannot offer. This personalised approach is particularly effective for O Level students, who need to master complex concepts across multiple subjects while developing the critical thinking skills required for success in higher education.`,
 //       ]}
 //       subjectDetails={[
 //         `Our <strong class="text-[#2E4F5E]">O Level tutors in Islamabad</strong> are subject matter experts with extensive experience teaching the Cambridge syllabus. They are familiar with the specific requirements of each subject and provide targeted support to help students excel in their examinations.`,
@@ -210,7 +222,7 @@
 //         },
 //         {
 //           q: 'Do you offer online O Level tutoring as well?',
-//           a: 'Yes! While we specialise in <a href="/home-tutor-islamabad" class="text-[#E05C42} hover:underline font-black">home tuition in Islamabad</a>, we also offer <a href="/tutors?subject=O%20Level" class="text-[#E05C42} hover:underline font-black">online O Level tutoring</a> for students who prefer the flexibility of learning from home or who live outside Islamabad. Our online sessions are conducted via video call with interactive whiteboards and screen sharing for an effective learning experience.',
+//           a: 'Yes! While we specialise in <a href="/home-tutor-islamabad" class="text-[#E05C42] hover:underline font-black">home tuition in Islamabad</a>, we also offer <a href="/tutors?subject=O%20Level" class="text-[#E05C42] hover:underline font-black">online O Level tutoring</a> for students who prefer the flexibility of learning from home or who live outside Islamabad. Our online sessions are conducted via video call with interactive whiteboards and screen sharing for an effective learning experience.',
 //         },
 //         {
 //           q: 'Which areas of Islamabad do your home tutors cover?',
@@ -233,6 +245,9 @@
 //     />
 //   )
 // }
+
+
+
 
 
 
@@ -277,19 +292,9 @@ export const metadata: Metadata = {
     title: 'Best O Level Tutor in Islamabad | Avenfield Tutors',
     description: 'Verified O Level tutors in Islamabad for Cambridge CAIE & Edexcel. Expert tuition for all subjects.',
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
 }
 
+// Islamabad Areas Data
 const ISLAMABAD_AREAS = {
   sectors: [
     'F-5', 'F-6', 'F-7', 'F-8', 'F-10', 'F-11', 'F-15', 'F-17',
