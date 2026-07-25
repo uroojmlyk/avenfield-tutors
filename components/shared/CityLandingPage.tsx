@@ -1,5 +1,9 @@
 
 
+
+
+
+
 // import Link from 'next/link'
 
 // interface CityPageProps {
@@ -339,6 +343,11 @@
 //                 { name: 'A Level Tutors', href: `/a-level-tutor-${city.toLowerCase()}`, icon: '🎯' },
 //                 { name: 'IELTS Tutors', href: `/ielts-tutor-${city.toLowerCase()}`, icon: '🎓' },
 //                 { name: 'MDCAT Tutors', href: `/mdcat-tutor-${city.toLowerCase()}`, icon: '🩺' },
+//                 // ✅ NEW LINKS ADDED HERE
+//                 { name: 'Biology Tutors', href: `/biology-tutor-${city.toLowerCase()}`, icon: '🧬' },
+//                 { name: 'Chemistry Tutors', href: `/chemistry-tutor-${city.toLowerCase()}`, icon: '🧪' },
+//                 { name: 'Physics Tutors', href: `/physics-tutor-${city.toLowerCase()}`, icon: '⚡' },
+//                 { name: 'Mathematics Tutors', href: `/math-tutor-${city.toLowerCase()}`, icon: '📐' },
 //               ].filter(() => SUBJECT_PAGE_CITIES.includes(city)).map((item) => (
 //                 <Link key={item.name} href={item.href}
 //                   className="group flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FFFDF7] text-[#2E4F5E] text-[0.76rem] sm:text-[0.82rem] font-bold rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] hover:bg-[#FFFDF7] transition-all no-underline">
@@ -510,10 +519,6 @@
 //     </div>
 //   )
 // }
-
-
-
-
 
 
 
@@ -856,11 +861,15 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
                 { name: 'A Level Tutors', href: `/a-level-tutor-${city.toLowerCase()}`, icon: '🎯' },
                 { name: 'IELTS Tutors', href: `/ielts-tutor-${city.toLowerCase()}`, icon: '🎓' },
                 { name: 'MDCAT Tutors', href: `/mdcat-tutor-${city.toLowerCase()}`, icon: '🩺' },
-                // ✅ NEW LINKS ADDED HERE
                 { name: 'Biology Tutors', href: `/biology-tutor-${city.toLowerCase()}`, icon: '🧬' },
                 { name: 'Chemistry Tutors', href: `/chemistry-tutor-${city.toLowerCase()}`, icon: '🧪' },
                 { name: 'Physics Tutors', href: `/physics-tutor-${city.toLowerCase()}`, icon: '⚡' },
                 { name: 'Mathematics Tutors', href: `/math-tutor-${city.toLowerCase()}`, icon: '📐' },
+                // ✅ NEW LINKS ADDED TODAY
+                { name: 'Computer Science Tutors', href: `/computer-science-tutor-${city.toLowerCase()}`, icon: '💻' },
+                { name: 'English Tutors', href: `/english-tutor-${city.toLowerCase()}`, icon: '📝' },
+                { name: 'Quran Tutors', href: `/quran-tutor-${city.toLowerCase()}`, icon: '🕌' },
+                { name: 'Urdu Tutors', href: `/urdu-tutor-${city.toLowerCase()}`, icon: '🖋️' },
               ].filter(() => SUBJECT_PAGE_CITIES.includes(city)).map((item) => (
                 <Link key={item.name} href={item.href}
                   className="group flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FFFDF7] text-[#2E4F5E] text-[0.76rem] sm:text-[0.82rem] font-bold rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] hover:bg-[#FFFDF7] transition-all no-underline">
