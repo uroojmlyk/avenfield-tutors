@@ -330,13 +330,12 @@
 
 
 
-
-
 'use client'
 
 import Link from 'next/link'
 import Image from 'next/image'
 import { Fragment, useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { usePathname } from 'next/navigation'
 import {
   Home,
@@ -382,7 +381,11 @@ export default function Navbar() {
   const [open, setOpen]         = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [mounted, setMounted]   = useState(false)
   const pathname                = usePathname()
+
+  // Portal target only exists client-side; also avoids SSR/hydration mismatch
+  useEffect(() => { setMounted(true) }, [])
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 10)
@@ -549,29 +552,33 @@ export default function Navbar() {
       </div>
 
       {/* ── Mobile drawer ──
-          Fixed slide-in panel instead of an in-flow max-height accordion:
-          - transform (translate-x) is GPU-accelerated → no more jank/slowness on mobile
-          - stays a contained side panel instead of stretching across the full screen
-          - backdrop click closes it */}
-      <div
-        className={`md:hidden fixed inset-0 top-[66px] z-40 bg-black/40 transition-opacity duration-300 ${
-          open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-        onClick={() => setOpen(false)}
-        aria-hidden="true"
-      />
+          Rendered through a portal straight into document.body. Fixed-position
+          elements are only fixed relative to the VIEWPORT if no ancestor has a
+          transform/filter/perspective applied — but page-transition wrappers or
+          smooth-scroll libraries commonly add one, which silently turns "fixed"
+          into "absolute relative to that ancestor" and clips the drawer short
+          (the "half-cut" bug). The portal sidesteps that entirely. */}
+      {mounted && createPortal(
+        <>
+          <div
+            className={`md:hidden fixed inset-0 top-[66px] z-[100] bg-black/40 transition-opacity duration-300 ${
+              open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+            }`}
+            onClick={() => setOpen(false)}
+            aria-hidden="true"
+          />
 
-      <nav
-        id="mobile-nav"
-        className={`md:hidden fixed top-[66px] right-0 bottom-0 z-40 w-[82%] max-w-[340px]
-                    bg-[#FFFDF7] border-l-2 border-[#2E4F5E] shadow-[-4px_0_0_0_rgba(46,79,94,0.15)]
-                    overflow-y-auto px-3 py-4 flex flex-col gap-1.5 pb-6
-                    transition-transform duration-300 ease-out
-                    ${open ? 'translate-x-0' : 'translate-x-full'}`}
-        aria-label="Mobile navigation"
-        style={{ fontFamily: "'Nunito', sans-serif" }}
-      >
-        {navIcons.map(({ href, label, Icon }, i) => (
+          <nav
+            id="mobile-nav"
+            className={`md:hidden fixed top-[66px] right-0 bottom-0 z-[100] w-[82%] max-w-[340px]
+                        bg-[#FFFDF7] border-l-2 border-[#2E4F5E] shadow-[-4px_0_0_0_rgba(46,79,94,0.15)]
+                        overflow-y-auto px-3 py-4 flex flex-col gap-1.5 pb-6
+                        transition-transform duration-300 ease-out
+                        ${open ? 'translate-x-0' : 'translate-x-full'}`}
+            aria-label="Mobile navigation"
+            style={{ fontFamily: "'Nunito', sans-serif" }}
+          >
+            {navIcons.map(({ href, label, Icon }, i) => (
           <Fragment key={href}>
             <Link
               href={href}
@@ -653,14 +660,17 @@ export default function Navbar() {
           </Fragment>
         ))}
 
-        <Link
-          href="/become-tutor"
-          className="mt-2 flex items-center justify-center gap-2 px-5 py-3.5 bg-[#E05C42] hover:bg-[#c94e37] text-white text-[0.9rem] font-black rounded-2xl text-center shadow-[0_3px_0_0_#a83c2a] border-2 border-[#a83c2a] transition-colors"
-          aria-label="Apply to become a tutor at Avenfield Tutors"
-        >
-          Join as Tutor ✨
-        </Link>
-      </nav>
+            <Link
+              href="/become-tutor"
+              className="mt-2 flex items-center justify-center gap-2 px-5 py-3.5 bg-[#E05C42] hover:bg-[#c94e37] text-white text-[0.9rem] font-black rounded-2xl text-center shadow-[0_3px_0_0_#a83c2a] border-2 border-[#a83c2a] transition-colors"
+              aria-label="Apply to become a tutor at Avenfield Tutors"
+            >
+              Join as Tutor ✨
+            </Link>
+          </nav>
+        </>,
+        document.body
+      )}
     </header>
   )
 }
