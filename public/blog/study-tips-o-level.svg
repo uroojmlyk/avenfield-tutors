@@ -1,0 +1,44 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#FFFDF7"/>
+  <circle cx="1080" cy="60" r="220" fill="#3A9E8F" opacity="0.18"/>
+  <circle cx="60" cy="580" r="160" fill="#E8C86A" opacity="0.25"/>
+
+  <!-- Open book -->
+  <g transform="translate(600,320)">
+    <path d="M -260 -60 L -20 -95 L -20 90 L -260 130 Z" fill="#2E4F5E" stroke="#2E4F5E" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M 20 -95 L 260 -60 L 260 130 L 20 90 Z" fill="#3A9E8F" stroke="#2E4F5E" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M -20 90 L 20 90 L 20 -95 L -20 -95 Z" fill="#E8934A" stroke="#2E4F5E" stroke-width="8" stroke-linejoin="round"/>
+    <!-- lines on left page -->
+    <line x1="-230" y1="-30" x2="-55" y2="-50" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round"/>
+    <line x1="-230" y1="0" x2="-55" y2="-18" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round"/>
+    <line x1="-230" y1="30" x2="-55" y2="14" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round"/>
+    <line x1="-230" y1="60" x2="-55" y2="46" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round"/>
+    <!-- lines on right page -->
+    <line x1="55" y1="-50" x2="230" y2="-30" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round"/>
+    <line x1="55" y1="-18" x2="230" y2="0" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round"/>
+    <line x1="55" y1="14" x2="230" y2="30" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- checklist badges -->
+  <g transform="translate(320,180)">
+    <circle r="46" fill="#E05C42" stroke="#2E4F5E" stroke-width="7"/>
+    <path d="M -18 0 L -6 14 L 20 -16" stroke="#FFFDF7" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(880,190)">
+    <circle r="46" fill="#E8C86A" stroke="#2E4F5E" stroke-width="7"/>
+    <path d="M -18 0 L -6 14 L 20 -16" stroke="#2E4F5E" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(240,470)">
+    <circle r="38" fill="#3A9E8F" stroke="#2E4F5E" stroke-width="7"/>
+    <text x="0" y="13" font-family="Nunito, sans-serif" font-weight="900" font-size="34" fill="#FFFDF7" text-anchor="middle">10</text>
+  </g>
+
+  <!-- pencil -->
+  <g transform="translate(960,460) rotate(-35)">
+    <rect x="-14" y="-110" width="28" height="150" rx="6" fill="#E8934A" stroke="#2E4F5E" stroke-width="7"/>
+    <path d="M -14 -110 L 0 -145 L 14 -110 Z" fill="#2E4F5E"/>
+    <rect x="-14" y="30" width="28" height="24" fill="#E05C42" stroke="#2E4F5E" stroke-width="7"/>
+  </g>
+
+  <rect x="4" y="4" width="1192" height="622" fill="none" stroke="#2E4F5E" stroke-width="0"/>
+</svg>

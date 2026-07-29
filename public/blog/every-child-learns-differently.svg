@@ -1,0 +1,33 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#FFFDF7"/>
+  <circle cx="150" cy="80" r="180" fill="#E8C86A" opacity="0.2"/>
+  <circle cx="1080" cy="560" r="200" fill="#3A9E8F" opacity="0.16"/>
+
+  <!-- 4 puzzle-piece children figures forming a group -->
+  <g transform="translate(430,340)">
+    <circle cx="0" cy="-110" r="46" fill="#E8934A" stroke="#2E4F5E" stroke-width="7"/>
+    <path d="M -70 60 C -70 -10 70 -10 70 60 L 70 100 L -70 100 Z" fill="#E05C42" stroke="#2E4F5E" stroke-width="7" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(600,370)">
+    <circle cx="0" cy="-120" r="50" fill="#3A9E8F" stroke="#2E4F5E" stroke-width="7"/>
+    <path d="M -76 66 C -76 -12 76 -12 76 66 L 76 108 L -76 108 Z" fill="#E8C86A" stroke="#2E4F5E" stroke-width="7" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(770,340)">
+    <circle cx="0" cy="-110" r="46" fill="#E05C42" stroke="#2E4F5E" stroke-width="7"/>
+    <path d="M -70 60 C -70 -10 70 -10 70 60 L 70 100 L -70 100 Z" fill="#3A9E8F" stroke="#2E4F5E" stroke-width="7" stroke-linejoin="round"/>
+  </g>
+
+  <!-- lightbulb above the middle child, representing individual insight -->
+  <g transform="translate(600,150)">
+    <circle r="58" fill="#E8C86A" stroke="#2E4F5E" stroke-width="8"/>
+    <rect x="-18" y="46" width="36" height="26" rx="6" fill="#2E4F5E"/>
+    <path d="M -20 -18 C -20 -45 20 -45 20 -18 C 20 0 5 5 5 30 L -5 30 C -5 5 -20 0 -20 -18 Z" fill="#FFFDF7" stroke="#2E4F5E" stroke-width="5"/>
+  </g>
+
+  <!-- scattered puzzle pieces -->
+  <g fill="#E8934A" stroke="#2E4F5E" stroke-width="5">
+    <rect x="160" y="250" width="70" height="70" rx="10" transform="rotate(12 195 285)"/>
+    <rect x="960" y="230" width="70" height="70" rx="10" transform="rotate(-16 995 265)"/>
+    <rect x="130" y="450" width="60" height="60" rx="10" transform="rotate(-8 160 480)"/>
+  </g>
+</svg>

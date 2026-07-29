@@ -1,5 +1,3 @@
-
-
 // export interface BlogSection {
 //   heading: string
 //   paragraphs: string[] // contains <a class="blog-link" ...> tags
@@ -1014,6 +1012,8 @@ export interface BlogPost {
   date: string
   readTime: string
   category: string
+  image?: string // path under /public, e.g. '/blog/mdcat-prep-guide.jpg' — optional, falls back to a plain hero if not set
+  imageAlt?: string
   sections: BlogSection[]
   relatedSubjects: string[]
   faqs: BlogFAQ[]
@@ -1041,13 +1041,15 @@ export const blogPosts: BlogPost[] = [
   // ─── BLOG 1 ───
   {
     slug: 'top-10-study-tips-for-o-level-students-pakistan',
+    image: '/blog/study-tips-o-level.svg',
+    imageAlt: 'Illustration of an open book with a checklist and pencil, representing O Level study tips',
     title: 'Top 10 Study Tips for O Level Students in Pakistan: A Practical Guide to Exam Success',
     excerpt:
       'Struggling with O Level preparation? Here are 10 actionable, no-nonsense study tips specifically for Pakistani students to help you ace your Cambridge exams with confidence.',
     date: '2026-07-22',
     readTime: '14 min read',
     category: 'Study Tips',
-    author: AUTHOR,
+    author: AUTHOR_MUBASHAR,
     sections: [
       {
         heading: '1. Start Early and Plan Backwards',
@@ -1154,13 +1156,15 @@ export const blogPosts: BlogPost[] = [
   // ─── BLOG 2 ───
   {
     slug: 'how-to-choose-the-right-online-tutor',
+    image: '/blog/choosing-right-tutor.svg',
+    imageAlt: 'Illustration of a magnifying glass reviewing a tutor profile with a graduation cap',
     title: 'How to Choose the Right Online Tutor for Your Child? A Complete Guide for Pakistani Parents',
     excerpt:
       "Not all tutors are the same. Here's a practical checklist for picking someone who actually fits your child's subject, level, and learning style written specifically for parents in Pakistan.",
     date: '2026-07-18',
     readTime: '14 min read',
     category: 'Choosing a Tutor',
-    author: AUTHOR,
+    author: AUTHOR_MUBASHAR,
     sections: [
       {
         heading: 'Start with the subject and level, not just the price',
@@ -1251,13 +1255,15 @@ export const blogPosts: BlogPost[] = [
   // ─── BLOG 3 ───
   {
     slug: 'home-tuition-vs-online-tuition',
+    image: '/blog/home-vs-online-tuition.svg',
+    imageAlt: 'Illustration comparing a home tuition house icon with an online tuition laptop and globe',
     title: 'Home Tuition vs Online Tuition in Pakistan: Which Is Right for Your Child?',
     excerpt:
       "Both formats work, but they work for different students and different situations. Here's how to decide based on your child's needs, location, and learning style.",
     date: '2026-07-18',
     readTime: '13 min read',
     category: 'Learning Formats',
-    author: AUTHOR,
+    author: AUTHOR_MUBASHAR,
     sections: [
       {
         heading: 'Home tuition: structure and undivided attention',
@@ -1340,13 +1346,15 @@ export const blogPosts: BlogPost[] = [
   // ─── BLOG 4 ───
   {
     slug: 'how-to-prepare-for-o-level-exams',
+    image: '/blog/o-level-exam-prep.svg',
+    imageAlt: 'Illustration of an exam paper, clock and pencil representing O Level exam preparation',
     title: 'How to Prepare for O Level Exams in Pakistan: A Complete Study Guide',
     excerpt:
       "A realistic, no-fluff plan for O Level revision covering timelines, past papers, and how to actually retain what you study — written specifically for Pakistani students.",
     date: '2026-07-18',
     readTime: '17 min read',
     category: 'Exam Preparation',
-    author: AUTHOR,
+    author: AUTHOR_MUBASHAR,
     sections: [
       {
         heading: 'Start with past papers, not the textbook',
@@ -1445,13 +1453,15 @@ export const blogPosts: BlogPost[] = [
   // ─── BLOG 5 ───
   {
     slug: 'mdcat-preparation-guide-islamabad-rawalpindi',
+    image: '/blog/mdcat-prep-guide.svg',
+    imageAlt: 'Illustration of a stethoscope, medical cross and textbook representing MDCAT preparation',
     title: 'MDCAT Preparation in Islamabad & Rawalpindi: A Complete Study Guide for Pakistani Students',
     excerpt:
       'A comprehensive month-by-month MDCAT prep plan for students in Islamabad and Rawalpindi, plus how to know whether you need a tutor or can self-study effectively.',
     date: '2026-07-18',
     readTime: '17 min read',
     category: 'Exam Preparation',
-    author: AUTHOR,
+    author: AUTHOR_MUBASHAR,
     sections: [
       {
         heading: 'Why MDCAT prep timelines fail more often than they should',
@@ -1550,13 +1560,15 @@ export const blogPosts: BlogPost[] = [
   // ─── BLOG 6 ───
   {
     slug: 'ielts-band-7-preparation-guide',
+    image: '/blog/ielts-band-7-guide.svg',
+    imageAlt: 'Illustration of a globe and a speech bubble with a target, representing IELTS band 7 preparation',
     title: 'IELTS Band 7+ Preparation Guide for Pakistani Students: Complete Strategy for Success',
     excerpt:
       'A section-by-section breakdown of what actually moves the needle on IELTS scores past Band 7, based on where Pakistani test-takers typically lose marks and how to fix those gaps.',
     date: '2026-07-18',
     readTime: '16 min read',
     category: 'Exam Preparation',
-    author: AUTHOR,
+    author: AUTHOR_MUBASHAR,
     sections: [
       {
         heading: 'Why Pakistani students often get stuck at Band 6.5',
@@ -1647,13 +1659,15 @@ export const blogPosts: BlogPost[] = [
   // ─── BLOG 7 ───
   {
     slug: 'o-level-to-a-level-guide-pakistan',
+    image: '/blog/o-level-to-a-level.svg',
+    imageAlt: 'Illustration of a staircase with a graduation cap, representing the O Level to A Level progression',
     title: 'O Level vs A Level in Pakistan: Which Path is Right for Your Child?',
     excerpt:
       "Choosing between O Level and A Level is one of the most important academic decisions for Pakistani students. This complete guide breaks down the differences in curriculum, difficulty, university admissions, and career outcomes to help you make the right choice.",
     date: '2026-07-18',
     readTime: '15 min read',
     category: 'Curriculum Choices',
-    author: AUTHOR,
+    author: AUTHOR_MUBASHAR,
     sections: [
       {
         heading: 'Understanding the Core Difference: Breadth vs Depth',
@@ -1744,6 +1758,8 @@ export const blogPosts: BlogPost[] = [
   // ─── BLOG 8: NEW FOUNDER BLOG ───
   {
     slug: 'why-every-child-learns-differently',
+    image: '/blog/every-child-learns-differently.svg',
+    imageAlt: 'Illustration of children as puzzle pieces with a lightbulb, representing different learning styles',
     title: 'Why Every Child Learns Differently: Reflections from an Educator',
     excerpt:
       'A reflective piece on why children learn differently, the importance of confidence in education, and why every child deserves a learning path that honours their unique strengths. Written by the founder of AVENField Tutors.',
@@ -2005,9 +2021,3 @@ export const blogPosts: BlogPost[] = [
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find(p => p.slug === slug)
 }
-
-
-
-
-
-

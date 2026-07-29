@@ -1,0 +1,37 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#FFFDF7"/>
+  <circle cx="100" cy="80" r="200" fill="#E05C42" opacity="0.15"/>
+  <circle cx="1120" cy="560" r="180" fill="#3A9E8F" opacity="0.2"/>
+
+  <!-- person silhouette -->
+  <g transform="translate(520,360)">
+    <circle cx="0" cy="-90" r="60" fill="#E8934A" stroke="#2E4F5E" stroke-width="8"/>
+    <path d="M -110 90 C -110 -10 110 -10 110 90 L 110 130 L -110 130 Z" fill="#2E4F5E" stroke="#2E4F5E" stroke-width="8" stroke-linejoin="round"/>
+  </g>
+
+  <!-- graduation cap -->
+  <g transform="translate(520,205)">
+    <path d="M -95 0 L 0 -40 L 95 0 L 0 40 Z" fill="#2E4F5E" stroke="#2E4F5E" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M -95 0 L 0 40 L 95 0" fill="none" stroke="#2E4F5E" stroke-width="6"/>
+    <circle cx="90" cy="20" r="7" fill="#E8C86A"/>
+    <line x1="90" y1="20" x2="90" y2="65" stroke="#E8C86A" stroke-width="6"/>
+  </g>
+
+  <!-- magnifying glass -->
+  <g transform="translate(830,330)">
+    <circle r="100" fill="#FFFDF7" stroke="#3A9E8F" stroke-width="16"/>
+    <line x1="72" y1="72" x2="150" y2="150" stroke="#3A9E8F" stroke-width="22" stroke-linecap="round"/>
+    <circle r="100" fill="#3A9E8F" opacity="0.12"/>
+  </g>
+
+  <!-- star badges around -->
+  <g transform="translate(280,220)">
+    <path d="M0,-26 L7,-8 26,-8 11,4 17,24 0,12 -17,24 -11,4 -26,-8 -7,-8 Z" fill="#E8C86A" stroke="#2E4F5E" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(330,470)">
+    <path d="M0,-20 L5,-6 20,-6 8,3 13,18 0,9 -13,18 -8,3 -20,-6 -5,-6 Z" fill="#E05C42" stroke="#2E4F5E" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(950,500)">
+    <path d="M0,-20 L5,-6 20,-6 8,3 13,18 0,9 -13,18 -8,3 -20,-6 -5,-6 Z" fill="#3A9E8F" stroke="#2E4F5E" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+</svg>

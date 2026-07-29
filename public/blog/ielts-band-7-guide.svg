@@ -1,0 +1,30 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#FFFDF7"/>
+  <circle cx="1130" cy="80" r="190" fill="#E8C86A" opacity="0.22"/>
+  <circle cx="70" cy="560" r="180" fill="#3A9E8F" opacity="0.18"/>
+
+  <!-- globe -->
+  <g transform="translate(420,320)">
+    <circle r="150" fill="#3A9E8F" stroke="#2E4F5E" stroke-width="10"/>
+    <ellipse cx="0" cy="0" rx="60" ry="150" fill="none" stroke="#FFFDF7" stroke-width="5"/>
+    <ellipse cx="0" cy="0" rx="130" ry="150" fill="none" stroke="#FFFDF7" stroke-width="5" opacity="0.5"/>
+    <line x1="-150" y1="0" x2="150" y2="0" stroke="#FFFDF7" stroke-width="5"/>
+    <line x1="-140" y1="-70" x2="140" y2="-70" stroke="#FFFDF7" stroke-width="5"/>
+    <line x1="-140" y1="70" x2="140" y2="70" stroke="#FFFDF7" stroke-width="5"/>
+  </g>
+
+  <!-- speech bubble with target -->
+  <g transform="translate(830,270)">
+    <path d="M -170 -110 h340 a30 30 0 0 1 30 30 v150 a30 30 0 0 1 -30 30 h-230 l -60 60 v-60 h-50 a30 30 0 0 1 -30 -30 v-150 a30 30 0 0 1 30 -30 z"
+          fill="#FFFDF7" stroke="#2E4F5E" stroke-width="9" stroke-linejoin="round"/>
+    <circle cx="0" cy="-5" r="70" fill="#E05C42" stroke="#2E4F5E" stroke-width="7"/>
+    <circle cx="0" cy="-5" r="46" fill="#FFFDF7" stroke="#2E4F5E" stroke-width="6"/>
+    <circle cx="0" cy="-5" r="20" fill="#E8C86A" stroke="#2E4F5E" stroke-width="6"/>
+  </g>
+
+  <!-- band 7 badge -->
+  <g transform="translate(600,530)">
+    <path d="M0,-40 L10,-12 40,-12 16,6 26,36 0,18 -26,36 -16,6 -40,-12 -10,-12 Z" fill="#E8934A" stroke="#2E4F5E" stroke-width="7" stroke-linejoin="round"/>
+    <text x="0" y="10" font-family="Nunito, sans-serif" font-weight="900" font-size="26" fill="#2E4F5E" text-anchor="middle">7</text>
+  </g>
+</svg>

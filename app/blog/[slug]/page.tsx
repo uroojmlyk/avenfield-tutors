@@ -1,4 +1,8 @@
 
+
+
+
+
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
 // import { notFound } from 'next/navigation'
@@ -197,9 +201,11 @@
 //               </h2>
 //               <div className="space-y-3">
 //                 {section.paragraphs.map((p, j) => (
-//                   <p key={j} className="text-[#4a6a78] text-[0.92rem] leading-relaxed font-semibold">
-//                     {p}
-//                   </p>
+//                   <p
+//                     key={j}
+//                     className="text-[#4a6a78] text-[0.92rem] leading-relaxed font-semibold"
+//                     dangerouslySetInnerHTML={{ __html: p }}
+//                   />
 //                 ))}
 //               </div>
 //             </div>
@@ -307,8 +313,11 @@
 
 
 
+
+
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { blogPosts, getBlogPost } from '@/lib/blog-posts'
 import BlogShare from '@/components/shared/BlogShare'
@@ -352,7 +361,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url,
       siteName: 'Avenfield Tutors',
       publishedTime: post.date,
-      images: [{ url: `${SITE_URL}/avenfieldtutors-newlogo.png`, width: 1200, height: 630, alt: post.title }],
+      images: [{ url: `${SITE_URL}${post.image || '/avenfieldtutors-newlogo.png'}`, width: 1200, height: 630, alt: post.imageAlt || post.title }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -381,14 +390,14 @@ function ArticleSchema({ post, slug }: { post: NonNullable<ReturnType<typeof get
     description: post.excerpt,
     datePublished: post.date,
     dateModified: post.date,
-    author: { '@type': 'Organization', name: 'Avenfield Tutors' },
+    author: { '@type': 'Person', name: post.author.name, jobTitle: post.author.role },
     publisher: {
       '@type': 'Organization',
       name: 'Avenfield Tutors',
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/avenfieldtutors-newlogo.png` },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-    image: `${SITE_URL}/avenfieldtutors-newlogo.png`,
+    image: `${SITE_URL}${post.image || '/avenfieldtutors-newlogo.png'}`,
   }
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -452,10 +461,12 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="flex items-center justify-between flex-wrap gap-3">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-[#E8C86A] border-2 border-white/30 flex items-center justify-center flex-shrink-0">
-                <span className="text-[#2E4F5E] font-black text-[0.85rem]">AT</span>
+                <span className="text-[#2E4F5E] font-black text-[0.85rem]">
+                  {post.author.name.split(' ').filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase()}
+                </span>
               </div>
               <div className="text-[0.78rem] font-bold text-[#7da8b8]">
-                <p className="text-white font-black">Avenfield Tutors Team</p>
+                <p className="text-white font-black">{post.author.name}</p>
                 <div className="flex items-center gap-2">
                   <span>{new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
                   <span aria-hidden="true">·</span>
@@ -467,6 +478,22 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </div>
       </div>
+
+      {/* ── FEATURED IMAGE ── */}
+      {post.image && (
+        <div className="max-w-3xl mx-auto px-4 sm:px-8 -mt-8 sm:-mt-10 relative z-10">
+          <div className="rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] overflow-hidden bg-white">
+            <Image
+              src={post.image}
+              alt={post.imageAlt || post.title}
+              width={1200}
+              height={630}
+              priority
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      )}
 
       {/* ── TABLE OF CONTENTS ── */}
       <div className="max-w-3xl mx-auto px-4 sm:px-8 -mt-8 relative z-10">
@@ -514,6 +541,23 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* ── AUTHOR BIO ── */}
+        <div className="mt-8 bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-6 sm:p-8">
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-full bg-[#E8C86A] border-2 border-[#2E4F5E] flex items-center justify-center flex-shrink-0">
+              <span className="text-[#2E4F5E] font-black text-[1rem]">
+                {post.author.name.split(' ').filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase()}
+              </span>
+            </div>
+            <div>
+              <p className="text-[0.6rem] font-black uppercase tracking-[0.18em] text-[#E05C42] mb-1">Written by</p>
+              <p className="text-[#2E4F5E] font-black text-[0.95rem]">{post.author.name}</p>
+              <p className="text-[#7da8b8] text-[0.72rem] font-bold mb-2">{post.author.role}</p>
+              <p className="text-[#4a6a78] text-[0.82rem] leading-relaxed font-semibold">{post.author.bio}</p>
+            </div>
+          </div>
         </div>
 
         {/* ── RELATED SUBJECTS ── */}

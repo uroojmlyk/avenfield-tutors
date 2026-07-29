@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#FFFDF7"/>
+  <rect x="0" y="0" width="600" height="630" fill="#2E4F5E" opacity="0.06"/>
+  <circle cx="0" cy="0" r="220" fill="#E8C86A" opacity="0.2"/>
+  <circle cx="1200" cy="630" r="220" fill="#3A9E8F" opacity="0.2"/>
+
+  <!-- VS badge center -->
+  <g transform="translate(600,315)">
+    <circle r="58" fill="#E05C42" stroke="#2E4F5E" stroke-width="8"/>
+    <text x="0" y="16" font-family="Nunito, sans-serif" font-weight="900" font-size="38" fill="#FFFDF7" text-anchor="middle">VS</text>
+  </g>
+
+  <!-- house (left) -->
+  <g transform="translate(310,340)">
+    <path d="M -130 20 L 0 -100 L 130 20 L 130 140 L -130 140 Z" fill="#E8934A" stroke="#2E4F5E" stroke-width="9" stroke-linejoin="round"/>
+    <rect x="-30" y="40" width="60" height="100" fill="#2E4F5E"/>
+    <rect x="-95" y="0" width="45" height="45" fill="#FFFDF7" stroke="#2E4F5E" stroke-width="6"/>
+    <rect x="50" y="0" width="45" height="45" fill="#FFFDF7" stroke="#2E4F5E" stroke-width="6"/>
+    <path d="M -150 20 L 0 -120 L 150 20" fill="none" stroke="#2E4F5E" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+
+  <!-- laptop with globe (right) -->
+  <g transform="translate(890,350)">
+    <rect x="-120" y="-60" width="240" height="150" rx="10" fill="#2E4F5E" stroke="#2E4F5E" stroke-width="8"/>
+    <rect x="-100" y="-42" width="200" height="112" rx="4" fill="#FFFDF7"/>
+    <rect x="-150" y="90" width="300" height="26" rx="8" fill="#3A9E8F" stroke="#2E4F5E" stroke-width="7"/>
+    <circle cx="0" cy="14" r="52" fill="#3A9E8F" opacity="0.85"/>
+    <path d="M -52 14 A52 52 0 0 1 52 14" fill="none" stroke="#FFFDF7" stroke-width="4"/>
+    <ellipse cx="0" cy="14" rx="20" ry="52" fill="none" stroke="#FFFDF7" stroke-width="4"/>
+    <line x1="-52" y1="14" x2="52" y2="14" stroke="#FFFDF7" stroke-width="4"/>
+  </g>
+</svg>

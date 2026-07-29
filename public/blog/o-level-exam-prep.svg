@@ -1,0 +1,41 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#FFFDF7"/>
+  <circle cx="1150" cy="90" r="200" fill="#E8C86A" opacity="0.22"/>
+  <circle cx="50" cy="560" r="170" fill="#E05C42" opacity="0.15"/>
+
+  <!-- exam paper -->
+  <g transform="translate(500,330) rotate(-6)">
+    <rect x="-160" y="-220" width="320" height="440" rx="14" fill="#FFFDF7" stroke="#2E4F5E" stroke-width="9"/>
+    <rect x="-120" y="-170" width="180" height="20" rx="4" fill="#2E4F5E"/>
+    <line x1="-120" y1="-120" x2="120" y2="-120" stroke="#3A9E8F" stroke-width="8" stroke-linecap="round"/>
+    <line x1="-120" y1="-80" x2="120" y2="-80" stroke="#3A9E8F" stroke-width="8" stroke-linecap="round"/>
+    <line x1="-120" y1="-40" x2="70" y2="-40" stroke="#3A9E8F" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="-135" cy="10" r="14" fill="none" stroke="#E05C42" stroke-width="6"/>
+    <line x1="-105" y1="10" x2="120" y2="10" stroke="#D4D0C5" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="-135" cy="55" r="14" fill="#E8C86A" stroke="#2E4F5E" stroke-width="6"/>
+    <path d="M -142 55 L -138 61 L -128 47" stroke="#2E4F5E" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="-105" y1="55" x2="120" y2="55" stroke="#D4D0C5" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="-135" cy="100" r="14" fill="none" stroke="#E05C42" stroke-width="6"/>
+    <line x1="-105" y1="100" x2="80" y2="100" stroke="#D4D0C5" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- clock -->
+  <g transform="translate(880,300)">
+    <circle r="130" fill="#3A9E8F" stroke="#2E4F5E" stroke-width="10"/>
+    <circle r="112" fill="#FFFDF7"/>
+    <line x1="0" y1="0" x2="0" y2="-70" stroke="#2E4F5E" stroke-width="9" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="45" y2="18" stroke="#E05C42" stroke-width="9" stroke-linecap="round"/>
+    <circle r="10" fill="#2E4F5E"/>
+    <circle cx="0" cy="-95" r="6" fill="#2E4F5E"/>
+    <circle cx="0" cy="95" r="6" fill="#2E4F5E"/>
+    <circle cx="95" cy="0" r="6" fill="#2E4F5E"/>
+    <circle cx="-95" cy="0" r="6" fill="#2E4F5E"/>
+  </g>
+
+  <!-- pencil -->
+  <g transform="translate(300,470) rotate(20)">
+    <rect x="-14" y="-100" width="28" height="140" rx="6" fill="#E8934A" stroke="#2E4F5E" stroke-width="7"/>
+    <path d="M -14 -100 L 0 -132 L 14 -100 Z" fill="#2E4F5E"/>
+    <rect x="-14" y="28" width="28" height="22" fill="#E05C42" stroke="#2E4F5E" stroke-width="7"/>
+  </g>
+</svg>
