@@ -1,6 +1,5 @@
 
 
-
 // import type { MetadataRoute } from 'next'
 // import { connectDB } from '@/lib/db'
 // import Tutor from '@/lib/models/Tutor'
@@ -12,7 +11,7 @@
 // // to a static page (not on every deploy). Using new Date() here made every
 // // single page look "modified today" on every build, even when nothing
 // // changed — a misleading signal to Google.
-// const LAST_UPDATED = new Date('2026-07-25')
+// const LAST_UPDATED = new Date('2026-07-27')
 
 // export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 //   // Static routes
@@ -102,7 +101,6 @@
 //       changeFrequency: 'monthly',
 //       priority: 0.8,
 //     },
-//     // ─── ✅ NEW SUBJECT PAGES (Added Today - 25 July) ───
 //     {
 //       url: `${BASE_URL}/computer-science-tutor-islamabad`,
 //       lastModified: LAST_UPDATED,
@@ -123,6 +121,44 @@
 //     },
 //     {
 //       url: `${BASE_URL}/urdu-tutor-islamabad`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     // ─── ✅ NEW SUBJECT PAGES (Added 27 July) ───
+//     {
+//       url: `${BASE_URL}/pakistan-studies-tutor-islamabad`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     {
+//       url: `${BASE_URL}/islamic-studies-tutor-islamabad`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     {
+//       url: `${BASE_URL}/accounting-tutor-islamabad`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     {
+//       url: `${BASE_URL}/economics-tutor-islamabad`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     // ─── 🆕 COUNTRY-WIDE COMPETITIVE EXAMS ───
+//     {
+//       url: `${BASE_URL}/css-tutor-pakistan`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     {
+//       url: `${BASE_URL}/pms-tutor-pakistan`,
 //       lastModified: LAST_UPDATED,
 //       changeFrequency: 'monthly',
 //       priority: 0.8,
@@ -192,6 +228,12 @@
 
 
 
+
+
+
+
+
+
 import type { MetadataRoute } from 'next'
 import { connectDB } from '@/lib/db'
 import Tutor from '@/lib/models/Tutor'
@@ -203,7 +245,7 @@ const BASE_URL = 'https://avenfieldtutors.com'
 // to a static page (not on every deploy). Using new Date() here made every
 // single page look "modified today" on every build, even when nothing
 // changed — a misleading signal to Google.
-const LAST_UPDATED = new Date('2026-07-27')
+const LAST_UPDATED = new Date('2026-08-05')
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static routes
@@ -317,7 +359,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    // ─── ✅ NEW SUBJECT PAGES (Added 27 July) ───
+    // ─── SUBJECT PAGES (Islamabad - New) ───
     {
       url: `${BASE_URL}/pakistan-studies-tutor-islamabad`,
       lastModified: LAST_UPDATED,
@@ -342,7 +384,38 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    // ─── 🆕 COUNTRY-WIDE COMPETITIVE EXAMS ───
+    // ─── ✅ NEW SUBJECT PAGES (Rawalpindi) ───
+    {
+      url: `${BASE_URL}/home-math-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/home-physics-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/home-chemistry-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/home-biology-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/home-english-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    // ─── COUNTRY-WIDE COMPETITIVE EXAMS ───
     {
       url: `${BASE_URL}/css-tutor-pakistan`,
       lastModified: LAST_UPDATED,
