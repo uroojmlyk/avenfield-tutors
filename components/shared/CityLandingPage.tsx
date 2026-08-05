@@ -320,7 +320,7 @@
 //         </section>
 
 //         {/* ══════════════════════ POPULAR SUBJECTS ══════════════════════ */}
-//         {/* NEW SECTION — only shows for Islamabad (where subject landing pages exist) */}
+//         {/* ORGANIZED WITH CATEGORIES — only shows for Islamabad */}
 //         {city === 'Islamabad' && (
 //           <section className="bg-white rounded-2xl border-2 border-[#E8C86A] p-5 sm:p-8 shadow-[4px_4px_0_0_#E8C86A]">
 //             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-5">
@@ -334,38 +334,63 @@
 //                 </p>
 //               </div>
 //             </div>
-//             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
-//               {[
-//                 // ─── ACADEMIC SUBJECTS ───
-//                 { name: 'O Level Tutors', href: `/o-level-tutor-${city.toLowerCase()}`, icon: '📚' },
-//                 { name: 'A Level Tutors', href: `/a-level-tutor-${city.toLowerCase()}`, icon: '🎯' },
-//                 { name: 'IELTS Tutors', href: `/ielts-tutor-${city.toLowerCase()}`, icon: '🎓' },
-//                 { name: 'MDCAT Tutors', href: `/mdcat-tutor-${city.toLowerCase()}`, icon: '🩺' },
-//                 { name: 'Biology Tutors', href: `/biology-tutor-${city.toLowerCase()}`, icon: '🧬' },
-//                 { name: 'Chemistry Tutors', href: `/chemistry-tutor-${city.toLowerCase()}`, icon: '🧪' },
-//                 { name: 'Physics Tutors', href: `/physics-tutor-${city.toLowerCase()}`, icon: '⚡' },
-//                 { name: 'Mathematics Tutors', href: `/math-tutor-${city.toLowerCase()}`, icon: '📐' },
-//                 { name: 'Computer Science Tutors', href: `/computer-science-tutor-${city.toLowerCase()}`, icon: '💻' },
-//                 { name: 'English Tutors', href: `/english-tutor-${city.toLowerCase()}`, icon: '📝' },
-//                 { name: 'Quran Tutors', href: `/quran-tutor-${city.toLowerCase()}`, icon: '🕌' },
-//                 { name: 'Urdu Tutors', href: `/urdu-tutor-${city.toLowerCase()}`, icon: '🖋️' },
-//                 // ─── ✅ NEW SUBJECTS ADDED TODAY ───
-//                 { name: 'Pakistan Studies Tutors', href: `/pakistan-studies-tutor-${city.toLowerCase()}`, icon: '🇵🇰' },
-//                 { name: 'Islamic Studies Tutors', href: `/islamic-studies-tutor-${city.toLowerCase()}`, icon: '☪️' },
-//                 { name: 'Accounting Tutors', href: `/accounting-tutor-${city.toLowerCase()}`, icon: '📊' },
-//                 { name: 'Economics Tutors', href: `/economics-tutor-${city.toLowerCase()}`, icon: '📈' },
-//                 // ─── 🆕 COMPETITIVE EXAMS (Country-wide) ───
-//                 { name: 'CSS Tutors', href: `/css-tutor-pakistan`, icon: '🏛️' },
-//                 { name: 'PMS Tutors', href: `/pms-tutor-pakistan`, icon: '📋' },
-//               ].filter(() => SUBJECT_PAGE_CITIES.includes(city)).map((item) => (
-//                 <Link key={item.name} href={item.href}
-//                   className="group flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FFFDF7] text-[#2E4F5E] text-[0.76rem] sm:text-[0.82rem] font-bold rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] hover:bg-[#FFFDF7] transition-all no-underline">
-//                   <span className="text-base sm:text-lg flex-shrink-0">{item.icon}</span>
-//                   <span className="group-hover:text-[#E8C86A] transition-colors">{item.name}</span>
-//                 </Link>
-//               ))}
+
+//             {/* 🆕 ORGANIZED DROPDOWN-STYLE SECTIONS */}
+//             <div className="space-y-5">
+//               {/* ─── ACADEMIC SUBJECTS ─── */}
+//               <div>
+//                 <p className="text-[0.7rem] font-black text-[#3A9E8F] uppercase tracking-wider mb-2 flex items-center gap-2">
+//                   <span>📚</span> Academic Subjects
+//                 </p>
+//                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
+//                   {[
+//                     { name: 'O Level Tutors', href: `/o-level-tutor-${city.toLowerCase()}`, icon: '📚' },
+//                     { name: 'A Level Tutors', href: `/a-level-tutor-${city.toLowerCase()}`, icon: '🎯' },
+//                     { name: 'IELTS Tutors', href: `/ielts-tutor-${city.toLowerCase()}`, icon: '🎓' },
+//                     { name: 'MDCAT Tutors', href: `/mdcat-tutor-${city.toLowerCase()}`, icon: '🩺' },
+//                     { name: 'Biology Tutors', href: `/biology-tutor-${city.toLowerCase()}`, icon: '🧬' },
+//                     { name: 'Chemistry Tutors', href: `/chemistry-tutor-${city.toLowerCase()}`, icon: '🧪' },
+//                     { name: 'Physics Tutors', href: `/physics-tutor-${city.toLowerCase()}`, icon: '⚡' },
+//                     { name: 'Mathematics Tutors', href: `/math-tutor-${city.toLowerCase()}`, icon: '📐' },
+//                     { name: 'Computer Science Tutors', href: `/computer-science-tutor-${city.toLowerCase()}`, icon: '💻' },
+//                     { name: 'English Tutors', href: `/english-tutor-${city.toLowerCase()}`, icon: '📝' },
+//                     { name: 'Quran Tutors', href: `/quran-tutor-${city.toLowerCase()}`, icon: '🕌' },
+//                     { name: 'Urdu Tutors', href: `/urdu-tutor-${city.toLowerCase()}`, icon: '🖋️' },
+//                     { name: 'Pakistan Studies Tutors', href: `/pakistan-studies-tutor-${city.toLowerCase()}`, icon: '🇵🇰' },
+//                     { name: 'Islamic Studies Tutors', href: `/islamic-studies-tutor-${city.toLowerCase()}`, icon: '☪️' },
+//                     { name: 'Accounting Tutors', href: `/accounting-tutor-${city.toLowerCase()}`, icon: '📊' },
+//                     { name: 'Economics Tutors', href: `/economics-tutor-${city.toLowerCase()}`, icon: '📈' },
+//                   ].filter(() => SUBJECT_PAGE_CITIES.includes(city)).map((item) => (
+//                     <Link key={item.name} href={item.href}
+//                       className="group flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FFFDF7] text-[#2E4F5E] text-[0.76rem] sm:text-[0.82rem] font-bold rounded-xl border-2 border-[#D4D0C5] hover:border-[#3A9E8F] hover:bg-[#FFFDF7] transition-all no-underline">
+//                       <span className="text-base sm:text-lg flex-shrink-0">{item.icon}</span>
+//                       <span className="group-hover:text-[#3A9E8F] transition-colors">{item.name}</span>
+//                     </Link>
+//                   ))}
+//                 </div>
+//               </div>
+
+//               {/* ─── COMPETITIVE EXAMS ─── */}
+//               <div className="pt-4 border-t-2 border-dashed border-[#E8C86A]/40">
+//                 <p className="text-[0.7rem] font-black text-[#E05C42] uppercase tracking-wider mb-2 flex items-center gap-2">
+//                   <span>🏛️</span> Competitive Exams
+//                 </p>
+//                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
+//                   {[
+//                     { name: 'CSS Tutors', href: '/css-tutor-pakistan', icon: '🏛️' },
+//                     { name: 'PMS Tutors', href: '/pms-tutor-pakistan', icon: '📋' },
+//                   ].filter(() => SUBJECT_PAGE_CITIES.includes(city)).map((item) => (
+//                     <Link key={item.name} href={item.href}
+//                       className="group flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FFFDF7] text-[#2E4F5E] text-[0.76rem] sm:text-[0.82rem] font-bold rounded-xl border-2 border-[#D4D0C5] hover:border-[#E05C42] hover:bg-[#FFFDF7] transition-all no-underline">
+//                       <span className="text-base sm:text-lg flex-shrink-0">{item.icon}</span>
+//                       <span className="group-hover:text-[#E05C42] transition-colors">{item.name}</span>
+//                     </Link>
+//                   ))}
+//                 </div>
+//               </div>
 //             </div>
-//             <p className="text-[#7da8b8] text-[0.75rem] font-semibold mt-3 text-center">
+
+//             <p className="text-[#7da8b8] text-[0.75rem] font-semibold mt-5 text-center">
 //               🎓 These pages are designed to help you find specialised tutors for each subject in {city}
 //             </p>
 //           </section>
@@ -532,6 +557,7 @@
 
 
 
+
 import Link from 'next/link'
 
 interface CityPageProps {
@@ -548,7 +574,7 @@ const WHATSAPP_NUMBER = '923095154253'
 // pages built. Update this list as more get built (e.g. add 'Rawalpindi'
 // once app/o-level-tutor-rawalpindi etc. exist) — otherwise the "Popular
 // Subjects" section below would link to pages that don't exist yet (404s).
-const SUBJECT_PAGE_CITIES = ['Islamabad']
+const SUBJECT_PAGE_CITIES = ['Islamabad', 'Rawalpindi']
 
 function buildWhatsAppURL(city: string, subject?: string) {
   const baseMessage = `Hi! I'm looking for a home tutor in ${city}`
@@ -851,8 +877,8 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
         </section>
 
         {/* ══════════════════════ POPULAR SUBJECTS ══════════════════════ */}
-        {/* ORGANIZED WITH CATEGORIES — only shows for Islamabad */}
-        {city === 'Islamabad' && (
+        {/* ORGANIZED WITH CATEGORIES — shows for Islamabad & Rawalpindi */}
+        {SUBJECT_PAGE_CITIES.includes(city) && (
           <section className="bg-white rounded-2xl border-2 border-[#E8C86A] p-5 sm:p-8 shadow-[4px_4px_0_0_#E8C86A]">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-5">
               <div>
@@ -866,7 +892,6 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
               </div>
             </div>
 
-            {/* 🆕 ORGANIZED DROPDOWN-STYLE SECTIONS */}
             <div className="space-y-5">
               {/* ─── ACADEMIC SUBJECTS ─── */}
               <div>
@@ -875,23 +900,34 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
                   {[
-                    { name: 'O Level Tutors', href: `/o-level-tutor-${city.toLowerCase()}`, icon: '📚' },
-                    { name: 'A Level Tutors', href: `/a-level-tutor-${city.toLowerCase()}`, icon: '🎯' },
-                    { name: 'IELTS Tutors', href: `/ielts-tutor-${city.toLowerCase()}`, icon: '🎓' },
-                    { name: 'MDCAT Tutors', href: `/mdcat-tutor-${city.toLowerCase()}`, icon: '🩺' },
-                    { name: 'Biology Tutors', href: `/biology-tutor-${city.toLowerCase()}`, icon: '🧬' },
-                    { name: 'Chemistry Tutors', href: `/chemistry-tutor-${city.toLowerCase()}`, icon: '🧪' },
-                    { name: 'Physics Tutors', href: `/physics-tutor-${city.toLowerCase()}`, icon: '⚡' },
-                    { name: 'Mathematics Tutors', href: `/math-tutor-${city.toLowerCase()}`, icon: '📐' },
-                    { name: 'Computer Science Tutors', href: `/computer-science-tutor-${city.toLowerCase()}`, icon: '💻' },
-                    { name: 'English Tutors', href: `/english-tutor-${city.toLowerCase()}`, icon: '📝' },
-                    { name: 'Quran Tutors', href: `/quran-tutor-${city.toLowerCase()}`, icon: '🕌' },
-                    { name: 'Urdu Tutors', href: `/urdu-tutor-${city.toLowerCase()}`, icon: '🖋️' },
-                    { name: 'Pakistan Studies Tutors', href: `/pakistan-studies-tutor-${city.toLowerCase()}`, icon: '🇵🇰' },
-                    { name: 'Islamic Studies Tutors', href: `/islamic-studies-tutor-${city.toLowerCase()}`, icon: '☪️' },
-                    { name: 'Accounting Tutors', href: `/accounting-tutor-${city.toLowerCase()}`, icon: '📊' },
-                    { name: 'Economics Tutors', href: `/economics-tutor-${city.toLowerCase()}`, icon: '📈' },
-                  ].filter(() => SUBJECT_PAGE_CITIES.includes(city)).map((item) => (
+                    // ─── Islamabad Subjects ───
+                    ...(city === 'Islamabad' ? [
+                      { name: 'O Level Tutors', href: `/o-level-tutor-${city.toLowerCase()}`, icon: '📚' },
+                      { name: 'A Level Tutors', href: `/a-level-tutor-${city.toLowerCase()}`, icon: '🎯' },
+                      { name: 'IELTS Tutors', href: `/ielts-tutor-${city.toLowerCase()}`, icon: '🎓' },
+                      { name: 'MDCAT Tutors', href: `/mdcat-tutor-${city.toLowerCase()}`, icon: '🩺' },
+                      { name: 'Biology Tutors', href: `/biology-tutor-${city.toLowerCase()}`, icon: '🧬' },
+                      { name: 'Chemistry Tutors', href: `/chemistry-tutor-${city.toLowerCase()}`, icon: '🧪' },
+                      { name: 'Physics Tutors', href: `/physics-tutor-${city.toLowerCase()}`, icon: '⚡' },
+                      { name: 'Mathematics Tutors', href: `/math-tutor-${city.toLowerCase()}`, icon: '📐' },
+                      { name: 'Computer Science Tutors', href: `/computer-science-tutor-${city.toLowerCase()}`, icon: '💻' },
+                      { name: 'English Tutors', href: `/english-tutor-${city.toLowerCase()}`, icon: '📝' },
+                      { name: 'Quran Tutors', href: `/quran-tutor-${city.toLowerCase()}`, icon: '🕌' },
+                      { name: 'Urdu Tutors', href: `/urdu-tutor-${city.toLowerCase()}`, icon: '🖋️' },
+                      { name: 'Pakistan Studies Tutors', href: `/pakistan-studies-tutor-${city.toLowerCase()}`, icon: '🇵🇰' },
+                      { name: 'Islamic Studies Tutors', href: `/islamic-studies-tutor-${city.toLowerCase()}`, icon: '☪️' },
+                      { name: 'Accounting Tutors', href: `/accounting-tutor-${city.toLowerCase()}`, icon: '📊' },
+                      { name: 'Economics Tutors', href: `/economics-tutor-${city.toLowerCase()}`, icon: '📈' },
+                    ] : []),
+                    // ─── Rawalpindi Subjects ───
+                    ...(city === 'Rawalpindi' ? [
+                      { name: 'Home Math Tutors', href: `/home-math-tutor-${city.toLowerCase()}`, icon: '📐' },
+                      { name: 'Home Physics Tutors', href: `/home-physics-tutor-${city.toLowerCase()}`, icon: '⚡' },
+                      { name: 'Home Chemistry Tutors', href: `/home-chemistry-tutor-${city.toLowerCase()}`, icon: '🧪' },
+                      { name: 'Home Biology Tutors', href: `/home-biology-tutor-${city.toLowerCase()}`, icon: '🧬' },
+                      { name: 'Home English Tutors', href: `/home-english-tutor-${city.toLowerCase()}`, icon: '📝' },
+                    ] : []),
+                  ].map((item) => (
                     <Link key={item.name} href={item.href}
                       className="group flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FFFDF7] text-[#2E4F5E] text-[0.76rem] sm:text-[0.82rem] font-bold rounded-xl border-2 border-[#D4D0C5] hover:border-[#3A9E8F] hover:bg-[#FFFDF7] transition-all no-underline">
                       <span className="text-base sm:text-lg flex-shrink-0">{item.icon}</span>
@@ -910,7 +946,7 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
                   {[
                     { name: 'CSS Tutors', href: '/css-tutor-pakistan', icon: '🏛️' },
                     { name: 'PMS Tutors', href: '/pms-tutor-pakistan', icon: '📋' },
-                  ].filter(() => SUBJECT_PAGE_CITIES.includes(city)).map((item) => (
+                  ].map((item) => (
                     <Link key={item.name} href={item.href}
                       className="group flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FFFDF7] text-[#2E4F5E] text-[0.76rem] sm:text-[0.82rem] font-bold rounded-xl border-2 border-[#D4D0C5] hover:border-[#E05C42] hover:bg-[#FFFDF7] transition-all no-underline">
                       <span className="text-base sm:text-lg flex-shrink-0">{item.icon}</span>
