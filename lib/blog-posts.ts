@@ -262,7 +262,7 @@ export const blogPosts: BlogPost[] = [
   // ─── BLOG 3 ───
   {
     slug: 'home-tuition-vs-online-tuition',
-    image: '/blog/Home-vs-online-tuition.svg',
+    image: '/blog/home vs online tutors.svg',
     imageAlt: 'Illustration comparing a home tuition house icon with an online tuition laptop and globe',
     title: 'Home Tuition vs Online Tuition in Pakistan: Which Is Right for Your Child?',
     excerpt:
