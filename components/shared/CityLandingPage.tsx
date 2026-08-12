@@ -570,6 +570,8 @@
 
 
 
+
+
 import Link from 'next/link'
 
 interface CityPageProps {
@@ -928,14 +930,27 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
                       { name: 'Accounting Tutors', href: `/accounting-tutor-${city.toLowerCase()}`, icon: '📊' },
                       { name: 'Economics Tutors', href: `/economics-tutor-${city.toLowerCase()}`, icon: '📈' },
                     ] : []),
-                    // ─── Rawalpindi Subjects ───
+                    // ─── Rawalpindi Subjects (ALL 20) ───
                     ...(city === 'Rawalpindi' ? [
+                      // ─── Core Subjects ───
                       { name: 'Home Math Tutors', href: `/home-math-tutor-${city.toLowerCase()}`, icon: '📐' },
                       { name: 'Home Physics Tutors', href: `/home-physics-tutor-${city.toLowerCase()}`, icon: '⚡' },
                       { name: 'Home Chemistry Tutors', href: `/home-chemistry-tutor-${city.toLowerCase()}`, icon: '🧪' },
                       { name: 'Home Biology Tutors', href: `/home-biology-tutor-${city.toLowerCase()}`, icon: '🧬' },
                       { name: 'Home English Tutors', href: `/home-english-tutor-${city.toLowerCase()}`, icon: '📝' },
-                      // ─── ✅ NEWLY ADDED RAWALPINDI SUBJECTS ───
+                      // ─── Cambridge & Exam Subjects ───
+                      { name: 'Home O Level Tutors', href: `/home-o-level-tutor-${city.toLowerCase()}`, icon: '📚' },
+                      { name: 'Home A Level Tutors', href: `/home-a-level-tutor-${city.toLowerCase()}`, icon: '🎯' },
+                      { name: 'Home IELTS Tutors', href: `/home-ielts-tutor-${city.toLowerCase()}`, icon: '🎓' },
+                      { name: 'Home MDCAT Tutors', href: `/home-mdcat-tutor-${city.toLowerCase()}`, icon: '🩺' },
+                      // ─── Humanities & Social Sciences ───
+                      { name: 'Home Pakistan Studies Tutors', href: `/home-pakistan-studies-tutor-${city.toLowerCase()}`, icon: '🇵🇰' },
+                      { name: 'Home Islamic Studies Tutors', href: `/home-islamic-studies-tutor-${city.toLowerCase()}`, icon: '☪️' },
+                      { name: 'Home Geography Tutors', href: `/home-geography-tutor-${city.toLowerCase()}`, icon: '🌍' },
+                      { name: 'Home Psychology Tutors', href: `/home-psychology-tutor-${city.toLowerCase()}`, icon: '🧠' },
+                      { name: 'Home Sociology Tutors', href: `/home-sociology-tutor-${city.toLowerCase()}`, icon: '👥' },
+                      { name: 'Home Statistics Tutors', href: `/home-statistics-tutor-${city.toLowerCase()}`, icon: '📊' },
+                      // ─── Additional Subjects ───
                       { name: 'Home Computer Science Tutors', href: `/home-computer-science-tutor-${city.toLowerCase()}`, icon: '💻' },
                       { name: 'Home Urdu Tutors', href: `/home-urdu-tutor-${city.toLowerCase()}`, icon: '🖋️' },
                       { name: 'Home Quran Tutors', href: `/home-quran-tutor-${city.toLowerCase()}`, icon: '🕌' },

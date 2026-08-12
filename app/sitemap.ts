@@ -2,6 +2,8 @@
 
 
 
+
+
 // import type { MetadataRoute } from 'next'
 // import { connectDB } from '@/lib/db'
 // import Tutor from '@/lib/models/Tutor'
@@ -13,7 +15,7 @@
 // // to a static page (not on every deploy). Using new Date() here made every
 // // single page look "modified today" on every build, even when nothing
 // // changed — a misleading signal to Google.
-// const LAST_UPDATED = new Date('2026-08-05')
+// const LAST_UPDATED = new Date('2026-08-08')
 
 // export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 //   // Static routes
@@ -127,7 +129,6 @@
 //       changeFrequency: 'monthly',
 //       priority: 0.8,
 //     },
-//     // ─── SUBJECT PAGES (Islamabad - New) ───
 //     {
 //       url: `${BASE_URL}/pakistan-studies-tutor-islamabad`,
 //       lastModified: LAST_UPDATED,
@@ -152,7 +153,7 @@
 //       changeFrequency: 'monthly',
 //       priority: 0.8,
 //     },
-//     // ─── ✅ NEW SUBJECT PAGES (Rawalpindi) ───
+//     // ─── SUBJECT PAGES (Rawalpindi - First 5) ───
 //     {
 //       url: `${BASE_URL}/home-math-tutor-rawalpindi`,
 //       lastModified: LAST_UPDATED,
@@ -179,6 +180,37 @@
 //     },
 //     {
 //       url: `${BASE_URL}/home-english-tutor-rawalpindi`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     // ─── ✅ NEW SUBJECT PAGES (Rawalpindi - Second Batch) ───
+//     {
+//       url: `${BASE_URL}/home-computer-science-tutor-rawalpindi`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     {
+//       url: `${BASE_URL}/home-urdu-tutor-rawalpindi`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     {
+//       url: `${BASE_URL}/home-quran-tutor-rawalpindi`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     {
+//       url: `${BASE_URL}/home-accounting-tutor-rawalpindi`,
+//       lastModified: LAST_UPDATED,
+//       changeFrequency: 'monthly',
+//       priority: 0.8,
+//     },
+//     {
+//       url: `${BASE_URL}/home-economics-tutor-rawalpindi`,
 //       lastModified: LAST_UPDATED,
 //       changeFrequency: 'monthly',
 //       priority: 0.8,
@@ -265,8 +297,6 @@
 
 
 
-
-
 import type { MetadataRoute } from 'next'
 import { connectDB } from '@/lib/db'
 import Tutor from '@/lib/models/Tutor'
@@ -278,7 +308,7 @@ const BASE_URL = 'https://avenfieldtutors.com'
 // to a static page (not on every deploy). Using new Date() here made every
 // single page look "modified today" on every build, even when nothing
 // changed — a misleading signal to Google.
-const LAST_UPDATED = new Date('2026-08-08')
+const LAST_UPDATED = new Date('2026-08-12')
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static routes
@@ -447,7 +477,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    // ─── ✅ NEW SUBJECT PAGES (Rawalpindi - Second Batch) ───
+    // ─── SUBJECT PAGES (Rawalpindi - Second Batch) ───
     {
       url: `${BASE_URL}/home-computer-science-tutor-rawalpindi`,
       lastModified: LAST_UPDATED,
@@ -474,6 +504,67 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/home-economics-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    // ─── ✅ NEW SUBJECT PAGES (Rawalpindi - Third Batch - 12 Aug 2026) ───
+    {
+      url: `${BASE_URL}/home-o-level-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/home-a-level-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/home-ielts-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/home-mdcat-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/home-pakistan-studies-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/home-islamic-studies-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/home-geography-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/home-psychology-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/home-sociology-tutor-rawalpindi`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/home-statistics-tutor-rawalpindi`,
       lastModified: LAST_UPDATED,
       changeFrequency: 'monthly',
       priority: 0.8,
