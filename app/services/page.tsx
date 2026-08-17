@@ -1,5 +1,6 @@
 
 
+
 // 'use client'
 
 // import React from 'react'
@@ -471,7 +472,7 @@
 //           {/* Social proof pill */}
 //           <div className="inline-flex items-center gap-2 bg-[#E8C86A]/30 border-2 border-[#E8C86A] text-[#2E4F5E] text-[0.74rem] font-black px-4 py-1.5 rounded-full mb-6 shadow-[2px_2px_0_0_#d4b558]">
 //             <span className="w-1.5 h-1.5 rounded-full bg-[#E05C42] animate-pulse" aria-hidden="true" />
-//             500+ Verified Tutors · 50+ Subjects · 15+ Countries
+//             ⭐ Google Rated · Verified Tutors · 50+ Subjects
 //           </div>
 
 //           {/* H1 — Only ONE H1 on the page */}
@@ -498,9 +499,9 @@
 //               Whether you need{' '}
 //               <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">online tutoring</Link> from anywhere in the world or prefer{' '}
 //               <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">home tuition</Link> in{' '}
-//               <Link href="/tutors?city=Lahore" className="text-[#E05C42] hover:underline font-black">Lahore</Link>,{' '}
-//               <Link href="/tutors?city=Karachi" className="text-[#E05C42] hover:underline font-black">Karachi</Link>, or{' '}
-//               <Link href="/tutors?city=Islamabad" className="text-[#E05C42] hover:underline font-black">Islamabad</Link>, our{' '}
+//               <Link href="/home-tutor-islamabad" className="text-[#E05C42] hover:underline font-black">Islamabad</Link>,{' '}
+//               <Link href="/home-tutor-rawalpindi" className="text-[#E05C42] hover:underline font-black">Rawalpindi</Link>, or{' '}
+//               <Link href="/home-tutor-lahore" className="text-[#E05C42] hover:underline font-black">Lahore</Link>, our{' '}
 //               <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">qualified tutors</Link> provide personalized{' '}
 //               <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">private tutoring</Link> designed for your success.
 //             </p>
@@ -530,7 +531,7 @@
 //       ══════════════════════════════════════════════════════ */}
 //       <div className="bg-[#2E4F5E] py-4 px-4 sm:px-8" aria-label="Key stats">
 //         <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-x-7 gap-y-2">
-//           {['500+ Verified Tutors', '50+ Subjects', '15+ Countries', '24hr Response', 'Free Consultation'].map((t) => (
+//           {['Google Rated', 'Verified Tutors', '50+ Subjects', '24hr Response', 'Free Consultation'].map((t) => (
 //             <span key={t} className="flex items-center gap-1.5 text-[0.8rem] font-bold text-[#E8C86A] whitespace-nowrap">
 //               <span className="w-4 h-4 rounded-full bg-[#3A9E8F] flex items-center justify-center text-white text-[0.58rem] font-black flex-shrink-0" aria-hidden="true">✓</span>
 //               {t}
@@ -799,17 +800,17 @@
 //             </p>
 //             <p>
 //               <strong className="text-[#2E4F5E]">Why Choose Avenfield Tutors?</strong> We are Pakistan's most trusted platform for{' '}
-//               <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">private tutoring</Link>. With 500+{' '}
+//               <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">private tutoring</Link>. With rigorously{' '}
 //               <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">verified tutors</Link>, 50+ subjects, and{' '}
 //               <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">online tutoring</Link> available worldwide plus{' '}
 //               <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">home tuition</Link> in major Pakistani cities, we make quality education accessible to everyone.
 //             </p>
 //             <p>
-//               <strong className="text-[#2E4F5E]">Home Tuition in Pakistan:</strong> Our{' '}
+//               <strong className="text-[#2E4F5E]">Home Tuition:</strong> Our{' '}
 //               <Link href="/tutors?mode=home" className="text-[#E05C42] hover:underline font-black">home tutors</Link> serve{' '}
-//               <Link href="/tutors?city=Lahore" className="text-[#E05C42] hover:underline font-black">Lahore</Link>,{' '}
-//               <Link href="/tutors?city=Karachi" className="text-[#E05C42] hover:underline font-black">Karachi</Link>,{' '}
-//               <Link href="/tutors?city=Islamabad" className="text-[#E05C42] hover:underline font-black">Islamabad</Link>, Rawalpindi, Faisalabad, and other cities. Students receive personalized attention in a comfortable home environment, with lessons tailored to their individual learning styles.
+//               <Link href="/home-tutor-islamabad" className="text-[#E05C42] hover:underline font-black">Islamabad</Link>,{' '}
+//               <Link href="/home-tutor-rawalpindi" className="text-[#E05C42] hover:underline font-black">Rawalpindi</Link>, and{' '}
+//               <Link href="/home-tutor-lahore" className="text-[#E05C42] hover:underline font-black">Lahore</Link>. Students receive personalized attention in a comfortable home environment, with lessons tailored to their individual learning styles.
 //             </p>
 //             <p>
 //               <strong className="text-[#2E4F5E]">Online Tutoring Worldwide:</strong> Our{' '}
@@ -947,16 +948,17 @@
 
 
 
+ 
 'use client'
-
+ 
 import React from 'react'
 import Link from 'next/link'
 import { useState, useMemo } from 'react'
-
+ 
 // ─────────────────────────────────────────────────────────────────────────────
 // SEO NOTE: Metadata is in layout.tsx
 // ─────────────────────────────────────────────────────────────────────────────
-
+ 
 // ── General subjects grid ──
 const SUBJECTS = [
   { label: 'O & A Level',         icon: '📖', bg: 'bg-[#2E4F5E]', t: 'text-[#E8C86A]' },
@@ -983,7 +985,7 @@ const SUBJECTS = [
   { label: 'IELTS',               icon: '🌍', bg: 'bg-[#3A9E8F]', t: 'text-white'     },
   { label: 'Cadet College Prep',  icon: '🎖️', bg: 'bg-[#E8C86A]', t: 'text-[#2E4F5E]' },
 ]
-
+ 
 // ── Specialised exam data ──
 const CSS_COMPULSORY = [
   'English Essay', 'Precis & Composition', 'General Science & Ability',
@@ -1023,7 +1025,7 @@ const PMS_SUBJECTS = [
   'Pakistan Affairs', 'Islamiat', 'Economics',
   'Political Science', 'History', 'Geography',
 ]
-
+ 
 // ── Exam categories for tab panel ──
 const EXAM_CATEGORIES = [
   {
@@ -1090,18 +1092,18 @@ const EXAM_CATEGORIES = [
     ],
   },
 ]
-
+ 
 // ── Utility components ──
 function Eyebrow({ text, light = false }: { text: string; light?: boolean }) {
   return (
     <div className="flex items-center gap-2 mb-4" aria-hidden="true">
       <span className={`w-1.5 h-1.5 rounded-full ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
-      <span className={`text-[0.68rem] font-black uppercase tracking-[0.25em] ${light ? 'text-[#E8C86A]' : 'text-[#E05C42]'}`}>{text}</span>
+      <span className={`text-[0.68rem] font-black uppercase tracking-[0.25em] ${light ? 'text-[#E8C86A]' : 'text-[#C43D24]'}`}>{text}</span>
       <span className={`w-1.5 h-1.5 rounded-full ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
     </div>
   )
 }
-
+ 
 function Wiggle({ color = '#E8C86A' }: { color?: string }) {
   return (
     <svg viewBox="0 0 160 10" fill="none" className="absolute -bottom-1.5 left-0 w-full h-3 pointer-events-none" aria-hidden="true">
@@ -1109,12 +1111,12 @@ function Wiggle({ color = '#E8C86A' }: { color?: string }) {
     </svg>
   )
 }
-
+ 
 // ── Subject search + tab explorer (client component) ──
 function SubjectsSection() {
   const [search, setSearch]     = useState('')
   const [activeTab, setActiveTab] = useState('css')
-
+ 
   const ALL_FLAT: { label: string; category: string }[] = [
     ...SUBJECTS.map(s => ({ label: s.label, category: 'General Subjects' })),
     ...CSS_COMPULSORY.map(s => ({ label: s, category: 'CSS Compulsory' })),
@@ -1125,7 +1127,7 @@ function SubjectsSection() {
     ...ENGLISH_PROFICIENCY.map(s => ({ label: s, category: 'English Proficiency' })),
     ...MEDICAL_EXAMS.map(s => ({ label: s, category: 'Medical Exams' })),
   ]
-
+ 
   const filtered = useMemo(() => {
     if (!search.trim()) return []
     const q = search.toLowerCase()
@@ -1134,16 +1136,16 @@ function SubjectsSection() {
     )
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search])
-
+ 
   const activeCategory = EXAM_CATEGORIES.find(c => c.id === activeTab)!
-
+ 
   return (
     <section
       aria-labelledby="subjects-heading"
       className="bg-[#2E4F5E] py-16 sm:py-24 px-4 sm:px-8"
     >
       <div className="max-w-6xl mx-auto">
-
+ 
         {/* Section header */}
         <div className="text-center mb-10">
           <Eyebrow text="Academic Coverage" light />
@@ -1153,7 +1155,7 @@ function SubjectsSection() {
           <p className="text-[#7da8b8] text-[0.93rem] max-w-md mx-auto font-semibold mb-8">
             From school fundamentals to CSS, MDCAT, and international certifications we cover it all.
           </p>
-
+ 
           {/* Search bar */}
           <div className="relative max-w-xl mx-auto">
             <label htmlFor="subject-search" className="sr-only">Search for a subject</label>
@@ -1178,7 +1180,7 @@ function SubjectsSection() {
               </button>
             )}
           </div>
-
+ 
           {/* Search results */}
           {search.trim() && (
             <div className="max-w-xl mx-auto mt-2 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-4 text-left">
@@ -1207,7 +1209,7 @@ function SubjectsSection() {
             </div>
           )}
         </div>
-
+ 
         {/* General subjects grid + specialised tabs — only when not searching */}
         {!search.trim() && (
           <>
@@ -1229,13 +1231,13 @@ function SubjectsSection() {
                 </Link>
               ))}
             </div>
-
+ 
             {/* Specialised exam tab explorer */}
             <div>
               <p className="text-[#E8C86A] text-[0.68rem] font-black uppercase tracking-[0.22em] mb-5 text-center">
                 Specialised Exam Preparation
               </p>
-
+ 
               {/* Tab buttons */}
               <div className="flex flex-wrap justify-center gap-2 mb-6" role="tablist" aria-label="Exam categories">
                 {EXAM_CATEGORIES.map(cat => (
@@ -1256,7 +1258,7 @@ function SubjectsSection() {
                   </button>
                 ))}
               </div>
-
+ 
               {/* Active tab panel */}
               <div
                 id={`tab-panel-${activeCategory.id}`}
@@ -1296,7 +1298,7 @@ function SubjectsSection() {
             </div>
           </>
         )}
-
+ 
         {/* CTA */}
         <div className="text-center mt-12">
           <Link
@@ -1311,7 +1313,7 @@ function SubjectsSection() {
     </section>
   )
 }
-
+ 
 // ── FAQ Schema Component ──
 function FAQSchema() {
   const faqs = [
@@ -1340,7 +1342,7 @@ function FAQSchema() {
       answer: 'Booking a tutor is simple. Browse our tutor directory, filter by subject, city, and learning mode (online or home), review tutor profiles, and connect directly via WhatsApp. You can start learning the same day with no long forms or waiting periods.'
     }
   ];
-
+ 
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -1353,7 +1355,7 @@ function FAQSchema() {
       }
     }))
   };
-
+ 
   return (
     <script
       type="application/ld+json"
@@ -1361,7 +1363,7 @@ function FAQSchema() {
     />
   );
 }
-
+ 
 // ── Breadcrumb Schema ──
 function BreadcrumbSchema() {
   const schema = {
@@ -1382,7 +1384,7 @@ function BreadcrumbSchema() {
       }
     ]
   };
-
+ 
   return (
     <script
       type="application/ld+json"
@@ -1390,18 +1392,18 @@ function BreadcrumbSchema() {
     />
   );
 }
-
+ 
 // ─────────────────────────────────────────────────────────────────────────────
 // Main page export
 // ─────────────────────────────────────────────────────────────────────────────
 export default function ServicesPage() {
   return (
     <div className="text-[#2E4F5E] overflow-x-hidden" style={{ fontFamily: "'Nunito', sans-serif" }}>
-
+ 
       {/* JSON-LD Schemas */}
       <BreadcrumbSchema />
       <FAQSchema />
-
+ 
       {/* ══════════════════════════════════════════════════════
           §1  HERO — SEO Optimized H1 with Keyword-Rich Paragraph
       ══════════════════════════════════════════════════════ */}
@@ -1411,48 +1413,48 @@ export default function ServicesPage() {
       >
         <div aria-hidden="true" className="absolute top-0 right-0 w-72 h-72 sm:w-[450px] sm:h-[450px] rounded-full opacity-25 pointer-events-none"
           style={{ background: 'radial-gradient(circle, #3A9E8F, transparent 70%)', transform: 'translate(35%,-25%)' }} />
-
+ 
         <div className="relative max-w-4xl mx-auto text-center">
           <Eyebrow text="Avenfield Tutors Services" />
-
+ 
           {/* Social proof pill */}
           <div className="inline-flex items-center gap-2 bg-[#E8C86A]/30 border-2 border-[#E8C86A] text-[#2E4F5E] text-[0.74rem] font-black px-4 py-1.5 rounded-full mb-6 shadow-[2px_2px_0_0_#d4b558]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#E05C42] animate-pulse" aria-hidden="true" />
             ⭐ Google Rated · Verified Tutors · 50+ Subjects
           </div>
-
+ 
           {/* H1 — Only ONE H1 on the page */}
           <h1 id="services-hero-heading" className="text-[2.2rem] sm:text-[2.8rem] md:text-[3.4rem] lg:text-[3.8rem] font-black leading-[1.07] tracking-[-0.025em] text-[#2E4F5E] mb-6">
             Online &amp; Home Tutoring Services in Pakistan
           </h1>
-
+ 
           {/* Keyword-Rich Intro Paragraph (120-180 words) */}
           <div className="text-[#4a6a78] text-[0.95rem] sm:text-[1.02rem] leading-[1.75] mb-8 max-w-2xl mx-auto font-semibold space-y-3">
             <p>
               <Link href="/" className="font-black text-[#2E4F5E]">Avenfield Tutors</Link> provides professional{' '}
-              <Link href="/tutors?mode=online" className="text-[#E05C42] hover:underline font-black">online tutoring</Link> and{' '}
-              <Link href="/tutors?mode=home" className="text-[#E05C42] hover:underline font-black">home tuition services</Link> across{' '}
-              <Link href="/" className="text-[#E05C42] hover:underline font-black">Pakistan</Link>. We connect students with{' '}
-              <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">verified tutors</Link> for{' '}
-              <Link href="/tutors?subject=O%20Level" className="text-[#E05C42] hover:underline font-black">O Level</Link>,{' '}
-              <Link href="/tutors?subject=A%20Level" className="text-[#E05C42] hover:underline font-black">A Level</Link>,{' '}
-              <Link href="/tutors?subject=IGCSE" className="text-[#E05C42] hover:underline font-black">IGCSE</Link>,{' '}
-              <Link href="/tutors?subject=IELTS" className="text-[#E05C42] hover:underline font-black">IELTS</Link>,{' '}
-              <Link href="/tutors?subject=MDCAT" className="text-[#E05C42] hover:underline font-black">MDCAT</Link>, and{' '}
-              <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#E05C42] hover:underline font-black">CSS</Link> exam preparation.
+              <Link href="/tutors?mode=online" className="text-[#C43D24] hover:underline font-black">online tutoring</Link> and{' '}
+              <Link href="/tutors?mode=home" className="text-[#C43D24] hover:underline font-black">home tuition services</Link> across{' '}
+              <Link href="/" className="text-[#C43D24] hover:underline font-black">Pakistan</Link>. We connect students with{' '}
+              <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">verified tutors</Link> for{' '}
+              <Link href="/tutors?subject=O%20Level" className="text-[#C43D24] hover:underline font-black">O Level</Link>,{' '}
+              <Link href="/tutors?subject=A%20Level" className="text-[#C43D24] hover:underline font-black">A Level</Link>,{' '}
+              <Link href="/tutors?subject=IGCSE" className="text-[#C43D24] hover:underline font-black">IGCSE</Link>,{' '}
+              <Link href="/tutors?subject=IELTS" className="text-[#C43D24] hover:underline font-black">IELTS</Link>,{' '}
+              <Link href="/tutors?subject=MDCAT" className="text-[#C43D24] hover:underline font-black">MDCAT</Link>, and{' '}
+              <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#C43D24] hover:underline font-black">CSS</Link> exam preparation.
             </p>
             <p>
               Whether you need{' '}
-              <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">online tutoring</Link> from anywhere in the world or prefer{' '}
-              <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">home tuition</Link> in{' '}
-              <Link href="/home-tutor-islamabad" className="text-[#E05C42] hover:underline font-black">Islamabad</Link>,{' '}
-              <Link href="/home-tutor-rawalpindi" className="text-[#E05C42] hover:underline font-black">Rawalpindi</Link>, or{' '}
-              <Link href="/home-tutor-lahore" className="text-[#E05C42] hover:underline font-black">Lahore</Link>, our{' '}
-              <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">qualified tutors</Link> provide personalized{' '}
-              <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">private tutoring</Link> designed for your success.
+              <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">online tutoring</Link> from anywhere in the world or prefer{' '}
+              <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">home tuition</Link> in{' '}
+              <Link href="/home-tutor-islamabad" className="text-[#C43D24] hover:underline font-black">Islamabad</Link>,{' '}
+              <Link href="/home-tutor-rawalpindi" className="text-[#C43D24] hover:underline font-black">Rawalpindi</Link>, or{' '}
+              <Link href="/home-tutor-lahore" className="text-[#C43D24] hover:underline font-black">Lahore</Link>, our{' '}
+              <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">qualified tutors</Link> provide personalized{' '}
+              <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">private tutoring</Link> designed for your success.
             </p>
           </div>
-
+ 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/tutors"
@@ -1471,7 +1473,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
+ 
       {/* ══════════════════════════════════════════════════════
           §2  TRUST STRIP
       ══════════════════════════════════════════════════════ */}
@@ -1485,7 +1487,7 @@ export default function ServicesPage() {
           ))}
         </div>
       </div>
-
+ 
       {/* ══════════════════════════════════════════════════════
           §3  ONLINE vs HOME TUTORING — H2 SEO Optimized
       ══════════════════════════════════════════════════════ */}
@@ -1503,7 +1505,7 @@ export default function ServicesPage() {
               Choose the mode that works for you. Both include verified tutors and personalised lesson plans.
             </p>
           </div>
-
+ 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Online tutoring card */}
             <article className="group bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-7 hover:-translate-y-1 hover:shadow-[5px_7px_0_0_#2E4F5E] transition-all duration-200">
@@ -1539,7 +1541,7 @@ export default function ServicesPage() {
                 Find Online Tutors →
               </Link>
             </article>
-
+ 
             {/* Home tutoring card */}
             <article className="group bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-7 hover:-translate-y-1 hover:shadow-[5px_7px_0_0_#2E4F5E] transition-all duration-200">
               <div className="flex items-center gap-4 mb-6">
@@ -1577,12 +1579,12 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
+ 
       {/* ══════════════════════════════════════════════════════
           §4  SUBJECTS + SEARCH
       ══════════════════════════════════════════════════════ */}
       <SubjectsSection />
-
+ 
       {/* ══════════════════════════════════════════════════════
           §5  WHY AVENFIELD TUTORS — H2 SEO Optimized
       ══════════════════════════════════════════════════════ */}
@@ -1616,7 +1618,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
+ 
       {/* ══════════════════════════════════════════════════════
           §6  HOW IT WORKS
       ══════════════════════════════════════════════════════ */}
@@ -1653,7 +1655,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
+ 
       {/* ══════════════════════════════════════════════════════
           §7  STUDENT SUCCESS STORIES
       ══════════════════════════════════════════════════════ */}
@@ -1675,7 +1677,7 @@ export default function ServicesPage() {
               { quote: 'I needed an IELTS tutor urgently. Within 6 hours I was connected. Got my band 7.5 in just 6 weeks!', name: 'Bilal A.', role: 'Student · Lahore', init: 'BA', bg: 'bg-[#E05C42]', t: 'text-white' },
             ].map((r) => (
               <article key={r.name} className="bg-white rounded-2xl border-2 border-[#2E4F5E] p-6 flex flex-col shadow-[4px_4px_0_0_#2E4F5E] hover:-translate-y-1 hover:shadow-[4px_6px_0_0_#2E4F5E] transition-all duration-200">
-                <div className="flex gap-0.5 mb-4" aria-label="5 star rating">
+                <div role="img" className="flex gap-0.5 mb-4" aria-label="5 star rating">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <svg key={i} className="w-4 h-4 text-[#E8C86A]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -1695,7 +1697,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
+ 
       {/* ══════════════════════════════════════════════════════
           §8  PROFESSIONAL ONLINE & HOME TUTORING SERVICES
           — SEO Content Block (400-700 words)
@@ -1714,58 +1716,58 @@ export default function ServicesPage() {
           <div className="space-y-5 text-[#4a6a78] text-[0.9rem] sm:text-[0.95rem] leading-[1.8] font-semibold">
             <p>
               <strong className="text-[#2E4F5E]">Comprehensive Tutoring Solutions:</strong> Avenfield Tutors offers professional{' '}
-              <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">online tutoring</Link> and{' '}
-              <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">home tuition services</Link> designed to help students excel. Our{' '}
-              <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">verified tutors</Link> are experts in{' '}
-              <Link href="/tutors?subject=O%20Level" className="text-[#E05C42] hover:underline font-black">O Level</Link>,{' '}
-              <Link href="/tutors?subject=A%20Level" className="text-[#E05C42] hover:underline font-black">A Level</Link>,{' '}
-              <Link href="/tutors?subject=IGCSE" className="text-[#E05C42] hover:underline font-black">IGCSE</Link>,{' '}
-              <Link href="/tutors?subject=GCSE" className="text-[#E05C42] hover:underline font-black">GCSE</Link>, and various other curricula.
+              <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">online tutoring</Link> and{' '}
+              <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">home tuition services</Link> designed to help students excel. Our{' '}
+              <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">verified tutors</Link> are experts in{' '}
+              <Link href="/tutors?subject=O%20Level" className="text-[#C43D24] hover:underline font-black">O Level</Link>,{' '}
+              <Link href="/tutors?subject=A%20Level" className="text-[#C43D24] hover:underline font-black">A Level</Link>,{' '}
+              <Link href="/tutors?subject=IGCSE" className="text-[#C43D24] hover:underline font-black">IGCSE</Link>,{' '}
+              <Link href="/tutors?subject=GCSE" className="text-[#C43D24] hover:underline font-black">GCSE</Link>, and various other curricula.
             </p>
             <p>
               <strong className="text-[#2E4F5E]">Exam Preparation Services:</strong> We specialize in{' '}
-              <Link href="/tutors?subject=IELTS" className="text-[#E05C42] hover:underline font-black">IELTS preparation</Link>,{' '}
-              <Link href="/tutors?subject=MDCAT" className="text-[#E05C42] hover:underline font-black">MDCAT coaching</Link>,{' '}
-              <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#E05C42] hover:underline font-black">CSS coaching</Link>,{' '}
-              <Link href="/tutors?subject=PPSC%20%2F%20FPSC" className="text-[#E05C42] hover:underline font-black">PPSC</Link>, and{' '}
-              <Link href="/tutors?subject=PPSC%20%2F%20FPSC" className="text-[#E05C42] hover:underline font-black">FPSC</Link> exam preparation. Our{' '}
-              <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">qualified tutors</Link> provide targeted guidance for competitive exams, ensuring students achieve their desired scores.
+              <Link href="/tutors?subject=IELTS" className="text-[#C43D24] hover:underline font-black">IELTS preparation</Link>,{' '}
+              <Link href="/tutors?subject=MDCAT" className="text-[#C43D24] hover:underline font-black">MDCAT coaching</Link>,{' '}
+              <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#C43D24] hover:underline font-black">CSS coaching</Link>,{' '}
+              <Link href="/tutors?subject=PPSC%20%2F%20FPSC" className="text-[#C43D24] hover:underline font-black">PPSC</Link>, and{' '}
+              <Link href="/tutors?subject=PPSC%20%2F%20FPSC" className="text-[#C43D24] hover:underline font-black">FPSC</Link> exam preparation. Our{' '}
+              <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">qualified tutors</Link> provide targeted guidance for competitive exams, ensuring students achieve their desired scores.
             </p>
             <p>
               <strong className="text-[#2E4F5E]">Academic Subjects:</strong> We cover 50+ subjects including{' '}
-              <Link href="/tutors?subject=Mathematics" className="text-[#E05C42] hover:underline font-black">Mathematics</Link>,{' '}
-              <Link href="/tutors?subject=Physics" className="text-[#E05C42] hover:underline font-black">Physics</Link>,{' '}
-              <Link href="/tutors?subject=Chemistry" className="text-[#E05C42] hover:underline font-black">Chemistry</Link>,{' '}
-              <Link href="/tutors?subject=Biology" className="text-[#E05C42] hover:underline font-black">Biology</Link>,{' '}
-              <Link href="/tutors?subject=English" className="text-[#E05C42] hover:underline font-black">English</Link>,{' '}
-              <Link href="/tutors?subject=Urdu" className="text-[#E05C42] hover:underline font-black">Urdu</Link>,{' '}
-              <Link href="/tutors?subject=Quran%20%26%20Arabic" className="text-[#E05C42] hover:underline font-black">Quran &amp; Arabic</Link>,{' '}
-              <Link href="/tutors?subject=Computer%20Science" className="text-[#E05C42] hover:underline font-black">Computer Science</Link>,{' '}
-              <Link href="/tutors?subject=Economics" className="text-[#E05C42] hover:underline font-black">Economics</Link>,{' '}
-              <Link href="/tutors?subject=Statistics" className="text-[#E05C42] hover:underline font-black">Statistics</Link>, and more. Our tutors are subject matter experts with years of teaching experience.
+              <Link href="/tutors?subject=Mathematics" className="text-[#C43D24] hover:underline font-black">Mathematics</Link>,{' '}
+              <Link href="/tutors?subject=Physics" className="text-[#C43D24] hover:underline font-black">Physics</Link>,{' '}
+              <Link href="/tutors?subject=Chemistry" className="text-[#C43D24] hover:underline font-black">Chemistry</Link>,{' '}
+              <Link href="/tutors?subject=Biology" className="text-[#C43D24] hover:underline font-black">Biology</Link>,{' '}
+              <Link href="/tutors?subject=English" className="text-[#C43D24] hover:underline font-black">English</Link>,{' '}
+              <Link href="/tutors?subject=Urdu" className="text-[#C43D24] hover:underline font-black">Urdu</Link>,{' '}
+              <Link href="/tutors?subject=Quran%20%26%20Arabic" className="text-[#C43D24] hover:underline font-black">Quran &amp; Arabic</Link>,{' '}
+              <Link href="/tutors?subject=Computer%20Science" className="text-[#C43D24] hover:underline font-black">Computer Science</Link>,{' '}
+              <Link href="/tutors?subject=Economics" className="text-[#C43D24] hover:underline font-black">Economics</Link>,{' '}
+              <Link href="/tutors?subject=Statistics" className="text-[#C43D24] hover:underline font-black">Statistics</Link>, and more. Our tutors are subject matter experts with years of teaching experience.
             </p>
             <p>
               <strong className="text-[#2E4F5E]">Why Choose Avenfield Tutors?</strong> We are Pakistan's most trusted platform for{' '}
-              <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">private tutoring</Link>. With rigorously{' '}
-              <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">verified tutors</Link>, 50+ subjects, and{' '}
-              <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">online tutoring</Link> available worldwide plus{' '}
-              <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">home tuition</Link> in major Pakistani cities, we make quality education accessible to everyone.
+              <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">private tutoring</Link>. With rigorously{' '}
+              <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">verified tutors</Link>, 50+ subjects, and{' '}
+              <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">online tutoring</Link> available worldwide plus{' '}
+              <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">home tuition</Link> in major Pakistani cities, we make quality education accessible to everyone.
             </p>
             <p>
               <strong className="text-[#2E4F5E]">Home Tuition:</strong> Our{' '}
-              <Link href="/tutors?mode=home" className="text-[#E05C42] hover:underline font-black">home tutors</Link> serve{' '}
-              <Link href="/home-tutor-islamabad" className="text-[#E05C42] hover:underline font-black">Islamabad</Link>,{' '}
-              <Link href="/home-tutor-rawalpindi" className="text-[#E05C42] hover:underline font-black">Rawalpindi</Link>, and{' '}
-              <Link href="/home-tutor-lahore" className="text-[#E05C42] hover:underline font-black">Lahore</Link>. Students receive personalized attention in a comfortable home environment, with lessons tailored to their individual learning styles.
+              <Link href="/tutors?mode=home" className="text-[#C43D24] hover:underline font-black">home tutors</Link> serve{' '}
+              <Link href="/home-tutor-islamabad" className="text-[#C43D24] hover:underline font-black">Islamabad</Link>,{' '}
+              <Link href="/home-tutor-rawalpindi" className="text-[#C43D24] hover:underline font-black">Rawalpindi</Link>, and{' '}
+              <Link href="/home-tutor-lahore" className="text-[#C43D24] hover:underline font-black">Lahore</Link>. Students receive personalized attention in a comfortable home environment, with lessons tailored to their individual learning styles.
             </p>
             <p>
               <strong className="text-[#2E4F5E]">Online Tutoring Worldwide:</strong> Our{' '}
-              <Link href="/tutors?mode=online" className="text-[#E05C42] hover:underline font-black">online tutors</Link> connect with students across the UK, USA, Canada, Australia, UAE, and Europe. Using modern teaching tools, we deliver engaging, effective lessons that match the quality of in-person tutoring.
+              <Link href="/tutors?mode=online" className="text-[#C43D24] hover:underline font-black">online tutors</Link> connect with students across the UK, USA, Canada, Australia, UAE, and Europe. Using modern teaching tools, we deliver engaging, effective lessons that match the quality of in-person tutoring.
             </p>
           </div>
         </div>
       </section>
-
+ 
       {/* ══════════════════════════════════════════════════════
           §9  FAQ SECTION — with FAQ Schema
       ══════════════════════════════════════════════════════ */}
@@ -1837,7 +1839,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
+ 
       {/* ══════════════════════════════════════════════════════
           §10  FINAL CTA — SEO Optimized
       ══════════════════════════════════════════════════════ */}
@@ -1880,7 +1882,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
+ 
     </div>
   )
 }
