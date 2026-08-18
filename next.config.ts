@@ -1,6 +1,4 @@
 
-
-
 // import type { NextConfig } from "next";
 
 // const nextConfig: NextConfig = {
@@ -14,17 +12,28 @@
 //     contentDispositionType: 'attachment',
 //     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
 //   },
+//   // Security headers flagged by Lighthouse Best Practices. Deliberately NOT
+//   // adding a Content-Security-Policy here — a wrong CSP can silently block
+//   // inline styles/scripts across the whole site with no visible build error,
+//   // and this project just recovered from one bad production deploy. A CSP
+//   // needs to be built and tested carefully on its own, not shipped blind.
+//   async headers() {
+//     return [
+//       {
+//         source: '/:path*',
+//         headers: [
+//           { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
+//           { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+//           { key: 'X-Content-Type-Options', value: 'nosniff' },
+//           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+//           { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
+//         ],
+//       },
+//     ]
+//   },
 // };
 
 // export default nextConfig;
-
-
-
-
-
-
-
-
 
 
 

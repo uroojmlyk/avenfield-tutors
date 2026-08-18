@@ -1,3 +1,6 @@
+
+
+
 // import Link from 'next/link'
 
 // interface SubjectLandingPageProps {
@@ -289,31 +292,51 @@
 //           </div>
 
 //           <div className="space-y-3">
-//             {Object.entries(areas).map(([category, areaList]) => (
-//               <details key={category} className="group bg-white border-2 border-[#D4D0C5] rounded-xl overflow-hidden hover:border-[#3A9E8F] transition-colors">
-//                 <summary className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3.5 cursor-pointer list-none hover:bg-[#FFFDF7] transition-colors">
-//                   <span className="text-[0.82rem] sm:text-[0.88rem] font-black text-[#2E4F5E] flex items-center gap-2 min-w-0">
-//                     <span className="truncate">{getCategoryLabel(category)}</span>
-//                     <span className="flex-shrink-0 text-[0.68rem] font-bold text-[#7da8b8] bg-[#D4D0C5]/30 px-2 py-0.5 rounded-full">
-//                       {areaList.length}
+//             {Object.entries(areas).map(([category, areaList]) => {
+//               // Cap how many areas render per category on SUBJECT pages.
+//               // The full ~140-area list used to repeat verbatim on every
+//               // single subject page (math, physics, chemistry, ...) which
+//               // made these pages look like near-duplicates of each other
+//               // and of the city page — a likely reason Google was leaving
+//               // them as "Discovered - currently not indexed". The complete
+//               // list still lives on the city page (home-tutor-{city}), so
+//               // nothing is lost — it's just not repeated 15+ times.
+//               const CAP = 8
+//               const visibleAreas = areaList.slice(0, CAP)
+//               const remaining = areaList.length - visibleAreas.length
+
+//               return (
+//                 <details key={category} className="group bg-white border-2 border-[#D4D0C5] rounded-xl overflow-hidden hover:border-[#3A9E8F] transition-colors">
+//                   <summary className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3.5 cursor-pointer list-none hover:bg-[#FFFDF7] transition-colors">
+//                     <span className="text-[0.82rem] sm:text-[0.88rem] font-black text-[#2E4F5E] flex items-center gap-2 min-w-0">
+//                       <span className="truncate">{getCategoryLabel(category)}</span>
+//                       <span className="flex-shrink-0 text-[0.68rem] font-bold text-[#7da8b8] bg-[#D4D0C5]/30 px-2 py-0.5 rounded-full">
+//                         {areaList.length}
+//                       </span>
 //                     </span>
-//                   </span>
-//                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#E8C86A] flex items-center justify-center text-[#2E4F5E] font-black text-sm transition-transform group-open:rotate-180">
-//                     ▼
-//                   </span>
-//                 </summary>
-//                 <div className="px-4 sm:px-5 pb-5 pt-1">
-//                   <div className="flex flex-wrap gap-2">
-//                     {areaList.map((area) => (
-//                       <Link key={area} href={`/tutors?subject=${encodeURIComponent(subject)}&city=${encodeURIComponent(city)}&area=${encodeURIComponent(area)}`}
-//                         className="px-3 sm:px-3.5 py-1.5 sm:py-2 bg-[#FFFDF7] text-[#2E4F5E] text-[0.72rem] sm:text-[0.78rem] font-bold rounded-full border-2 border-[#D4D0C5] hover:border-[#3A9E8F] hover:bg-[#E8C86A]/20 transition-all no-underline">
-//                         {area}
-//                       </Link>
-//                     ))}
+//                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#E8C86A] flex items-center justify-center text-[#2E4F5E] font-black text-sm transition-transform group-open:rotate-180">
+//                       ▼
+//                     </span>
+//                   </summary>
+//                   <div className="px-4 sm:px-5 pb-5 pt-1">
+//                     <div className="flex flex-wrap gap-2">
+//                       {visibleAreas.map((area) => (
+//                         <Link key={area} href={`/tutors?subject=${encodeURIComponent(subject)}&city=${encodeURIComponent(city)}&area=${encodeURIComponent(area)}`}
+//                           className="px-3 sm:px-3.5 py-1.5 sm:py-2 bg-[#FFFDF7] text-[#2E4F5E] text-[0.72rem] sm:text-[0.78rem] font-bold rounded-full border-2 border-[#D4D0C5] hover:border-[#3A9E8F] hover:bg-[#E8C86A]/20 transition-all no-underline">
+//                           {area}
+//                         </Link>
+//                       ))}
+//                       {remaining > 0 && (
+//                         <Link href={`/home-tutor-${city.toLowerCase()}`}
+//                           className="px-3 sm:px-3.5 py-1.5 sm:py-2 bg-[#2E4F5E] text-white text-[0.72rem] sm:text-[0.78rem] font-bold rounded-full border-2 border-[#2E4F5E] hover:bg-[#3A9E8F] hover:border-[#3A9E8F] transition-all no-underline">
+//                           +{remaining} more in {city} →
+//                         </Link>
+//                       )}
+//                     </div>
 //                   </div>
-//                 </div>
-//               </details>
-//             ))}
+//                 </details>
+//               )
+//             })}
 //           </div>
 
 //           <p className="text-[#7da8b8] text-[0.78rem] sm:text-[0.8rem] font-semibold mt-4 flex items-start gap-1.5">
@@ -476,6 +499,11 @@
 //     </div>
 //   )
 // }
+
+
+
+
+
 
 
 
@@ -824,7 +852,7 @@ export default function SubjectLandingPage({
             <span>📌</span>
             <span>
               Don&#39;t see your area?{' '}
-              <a href={whatsappURL} target="_blank" rel="noopener noreferrer" className="text-[#E05C42] hover:underline font-black">
+              <a href={whatsappURL} target="_blank" rel="noopener noreferrer" className="text-[#C43D24] hover:underline font-black">
                 Message us on WhatsApp
               </a>{' '}
               and we&#39;ll confirm a {subject} tutor in your area.
@@ -917,23 +945,23 @@ export default function SubjectLandingPage({
           </h2>
           <div className="space-y-4 text-[#4a6a78] text-[0.85rem] sm:text-[0.95rem] leading-[1.75] font-semibold">
             <p>
-              Finding the right <strong className="text-[#2E4F5E]">{subject} tutor in {city}</strong> is crucial for academic success. At Avenfield Tutors, we connect students with experienced, verified tutors who understand the unique challenges of the Cambridge curriculum. Whether you are preparing for <Link href={`/tutors?subject=O%20Level&city=${encodeURIComponent(city)}`} className="text-[#E05C42] hover:underline font-black">O Level</Link> or need help with specific topics, our tutors provide personalised attention tailored to your learning style.
+              Finding the right <strong className="text-[#2E4F5E]">{subject} tutor in {city}</strong> is crucial for academic success. At Avenfield Tutors, we connect students with experienced, verified tutors who understand the unique challenges of the Cambridge curriculum. Whether you are preparing for <Link href={`/tutors?subject=O%20Level&city=${encodeURIComponent(city)}`} className="text-[#C43D24] hover:underline font-black">O Level</Link> or need help with specific topics, our tutors provide personalised attention tailored to your learning style.
             </p>
             <p>
               Our <strong className="text-[#2E4F5E]">{subject} tutors in {city}</strong> are subject matter experts with years of experience teaching the Cambridge syllabus. They are familiar with common exam patterns, marking schemes, and the specific challenges students face. With one-on-one attention, your child can build confidence, master difficult concepts, and achieve their academic goals.
             </p>
             <p>
-              <strong className="text-[#2E4F5E]">Flexible learning options:</strong> Choose between <Link href={`/home-tutor-${city.toLowerCase()}`} className="text-[#E05C42] hover:underline font-black">home tuition in {city}</Link> where the tutor comes to your location, or <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">online tutoring</Link> for maximum convenience. Both options offer the same high-quality, personalised instruction.
+              <strong className="text-[#2E4F5E]">Flexible learning options:</strong> Choose between <Link href={`/home-tutor-${city.toLowerCase()}`} className="text-[#C43D24] hover:underline font-black">home tuition in {city}</Link> where the tutor comes to your location, or <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">online tutoring</Link> for maximum convenience. Both options offer the same high-quality, personalised instruction.
             </p>
             <p>
               <strong className="text-[#2E4F5E]">Ready to get started?</strong>{' '}
-              <a href={whatsappURL} target="_blank" rel="noopener noreferrer" className="text-[#E05C42] hover:underline font-black">Message us on WhatsApp</a>{' '}
+              <a href={whatsappURL} target="_blank" rel="noopener noreferrer" className="text-[#C43D24] hover:underline font-black">Message us on WhatsApp</a>{' '}
               with your requirements. We&#39;ll match you with a verified {subject} tutor in {city} within 24 hours.
             </p>
             {nearbyCity && (
               <p className="text-[0.78rem] sm:text-[0.8rem] text-[#7da8b8]">
                 <span>📌 </span>
-                Also serving <Link href={`/home-tutor-${nearbyCity.toLowerCase()}`} className="text-[#E05C42] hover:underline font-black">{nearbyCity}</Link> and other cities across Pakistan.
+                Also serving <Link href={`/home-tutor-${nearbyCity.toLowerCase()}`} className="text-[#C43D24] hover:underline font-black">{nearbyCity}</Link> and other cities across Pakistan.
               </p>
             )}
           </div>

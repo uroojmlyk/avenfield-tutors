@@ -1,5 +1,8 @@
 
 
+
+
+
 // 'use client'
 
 // import { useState } from 'react'
@@ -75,6 +78,16 @@
 
 // const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.com'
 
+// // ⚠️ This is an always-open recruiting listing, not a single expiring job —
+// // but Google's JobPosting schema still requires a datePosted, and derecommends
+// // listings once validThrough has passed. Bump JOB_POSTED_DATE whenever you
+// // touch this page (or at least every ~2-3 months) to keep the listing valid
+// // and fresh in Google's eyes; validThrough is calculated 90 days out from it.
+// const JOB_POSTED_DATE = '2026-07-18'
+// const jobValidThroughDate = new Date(JOB_POSTED_DATE)
+// jobValidThroughDate.setDate(jobValidThroughDate.getDate() + 90)
+// const JOB_VALID_THROUGH = jobValidThroughDate.toISOString().split('T')[0]
+
 // function BecomeTutorSchema() {
 //   const schema = {
 //     '@context': 'https://schema.org',
@@ -82,6 +95,8 @@
 //     title: 'Online & Home Tutor',
 //     description:
 //       'Teach O Level, A Level, IELTS, MDCAT, CSS/PMS and more on Avenfield Tutors. Connect with motivated students across Pakistan, UAE and the UK — no marketing needed.',
+//     datePosted: JOB_POSTED_DATE,
+//     validThrough: `${JOB_VALID_THROUGH}T23:59:59+05:00`,
 //     hiringOrganization: {
 //       '@type': 'Organization',
 //       name: 'Avenfield Tutors',
@@ -513,6 +528,8 @@
 
 
 
+
+
 'use client'
 
 import { useState } from 'react'
@@ -568,7 +585,7 @@ function Eyebrow({ text, light = false, center = false }: { text: string; light?
   return (
     <div className={`flex items-center gap-2 mb-3 ${center ? 'justify-center' : ''}`}>
       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
-      <span className={`text-[0.62rem] font-black uppercase tracking-[0.22em] ${light ? 'text-[#E8C86A]' : 'text-[#E05C42]'}`}>{text}</span>
+      <span className={`text-[0.62rem] font-black uppercase tracking-[0.22em] ${light ? 'text-[#E8C86A]' : 'text-[#C43D24]'}`}>{text}</span>
       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
     </div>
   )
@@ -676,7 +693,7 @@ export default function BecomeTutorPage() {
             Thank you for applying to join Avenfield Tutors network. Our team will review your application shortly.
           </p>
           <div className="bg-[#FFFDF7] rounded-xl p-4 mb-6 text-left border-2 border-[#E8C86A] shadow-[2px_2px_0_0_#c9ab4a]">
-            <p className="text-[0.65rem] font-black text-[#E05C42] uppercase tracking-[0.2em] mb-3">What happens next?</p>
+            <p className="text-[0.65rem] font-black text-[#C43D24] uppercase tracking-[0.2em] mb-3">What happens next?</p>
             {[
               { icon: '📋', t: 'Our team reviews your application within 24 to 48 hours' },
               { icon: '💬', t: 'You will receive a WhatsApp verification message' },
@@ -688,7 +705,7 @@ export default function BecomeTutorPage() {
               </div>
             ))}
           </div>
-          <Link href="/" className="inline-flex items-center gap-1.5 text-[0.85rem] font-black text-[#E05C42] hover:text-[#c44d36] transition-colors">
+          <Link href="/" className="inline-flex items-center gap-1.5 text-[0.85rem] font-black text-[#C43D24] hover:text-[#c44d36] transition-colors">
             ← Back to homepage
           </Link>
         </div>
@@ -798,12 +815,12 @@ export default function BecomeTutorPage() {
               {/* Row 1: Name + WhatsApp */}
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className={lbl}>Full Name <span className="text-[#E05C42]">*</span></label>
+                  <label className={lbl}>Full Name <span className="text-[#C43D24]">*</span></label>
                   <input required className={inp} placeholder="e.g. Ahmad Hassan"
                     value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} />
                 </div>
                 <div>
-                  <label className={lbl}>WhatsApp Number <span className="text-[#E05C42]">*</span></label>
+                  <label className={lbl}>WhatsApp Number <span className="text-[#C43D24]">*</span></label>
                   <input required className={inp} placeholder="+92 300 0000000"
                     value={form.whatsapp} onChange={e => setForm(f => ({ ...f, whatsapp: e.target.value }))} />
                 </div>
@@ -812,7 +829,7 @@ export default function BecomeTutorPage() {
               {/* Subjects (grouped accordion selector) */}
               <div>
                 <label className={lbl}>
-                  Subjects You Teach <span className="text-[#E05C42]">*</span>
+                  Subjects You Teach <span className="text-[#C43D24]">*</span>
                   {form.subjects.length > 0 && (
                     <span className="ml-2 bg-[#E8C86A] text-[#2E4F5E] px-2 py-0.5 rounded-full normal-case tracking-normal font-black text-[0.6rem]">
                       {form.subjects.length} selected
@@ -858,13 +875,13 @@ export default function BecomeTutorPage() {
               {/* Row 2: Experience + Mode */}
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className={lbl}>Years of Experience <span className="text-[#E05C42]">*</span></label>
+                  <label className={lbl}>Years of Experience <span className="text-[#C43D24]">*</span></label>
                   <input required type="number" min={0} max={50} className={inp} placeholder="e.g. 5"
                     value={form.experience || ''}
                     onChange={e => setForm(f => ({ ...f, experience: parseInt(e.target.value) || 0 }))} />
                 </div>
                 <div>
-                  <label className={lbl}>Teaching Mode <span className="text-[#E05C42]">*</span></label>
+                  <label className={lbl}>Teaching Mode <span className="text-[#C43D24]">*</span></label>
                   <select required className={inp}
                     value={form.mode}
                     onChange={e => setForm(f => ({ ...f, mode: e.target.value as IApplication['mode'] }))}>
@@ -878,12 +895,12 @@ export default function BecomeTutorPage() {
               {/* Row 3: City + Country */}
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className={lbl}>City <span className="text-[#E05C42]">*</span></label>
+                  <label className={lbl}>City <span className="text-[#C43D24]">*</span></label>
                   <input required className={inp} placeholder="e.g. Islamabad"
                     value={form.city} onChange={e => setForm(f => ({ ...f, city: e.target.value }))} />
                 </div>
                 <div>
-                  <label className={lbl}>Country <span className="text-[#E05C42]">*</span></label>
+                  <label className={lbl}>Country <span className="text-[#C43D24]">*</span></label>
                   <input required className={inp} placeholder="e.g. Pakistan"
                     value={form.country} onChange={e => setForm(f => ({ ...f, country: e.target.value }))} />
                 </div>
@@ -891,14 +908,14 @@ export default function BecomeTutorPage() {
 
               {/* Education */}
               <div>
-                <label className={lbl}>Education / Qualification <span className="text-[#E05C42]">*</span></label>
+                <label className={lbl}>Education / Qualification <span className="text-[#C43D24]">*</span></label>
                 <input required className={inp} placeholder="e.g. BS Computer Science, NUST"
                   value={form.education} onChange={e => setForm(f => ({ ...f, education: e.target.value }))} />
               </div>
 
               {/* Bio */}
               <div>
-                <label className={lbl}>About Yourself <span className="text-[#E05C42]">*</span></label>
+                <label className={lbl}>About Yourself <span className="text-[#C43D24]">*</span></label>
                 <textarea required rows={4}
                   className={`${inp} resize-none`}
                   placeholder='Example: "I help O Level Mathematics students improve grades through concept based learning and weekly practice sessions."'
@@ -909,7 +926,7 @@ export default function BecomeTutorPage() {
 
               {/* Error state */}
               {status === 'error' && (
-                <div className="flex items-center gap-2.5 bg-[#E05C42]/10 border-2 border-[#E05C42] text-[#E05C42] text-[0.82rem] font-black px-4 py-3 rounded-xl">
+                <div className="flex items-center gap-2.5 bg-[#E05C42]/10 border-2 border-[#E05C42] text-[#C43D24] text-[0.82rem] font-black px-4 py-3 rounded-xl">
                   <span>⚠️</span> Something went wrong. Please try again.
                 </div>
               )}

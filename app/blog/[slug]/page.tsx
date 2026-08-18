@@ -1,8 +1,6 @@
 
 
 
-
-
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
 // import Image from 'next/image'
@@ -220,7 +218,7 @@
 //               </h2>
 //               <div className="space-y-3">
 //                 {section.paragraphs.map((p, j) => (
-//                   <p
+//                   <div
 //                     key={j}
 //                     className="text-[#4a6a78] text-[0.92rem] leading-relaxed font-semibold"
 //                     dangerouslySetInnerHTML={{ __html: p }}
@@ -278,7 +276,10 @@
 //                     <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#E8C86A] flex items-center justify-center text-[#2E4F5E] font-black text-xs transition-transform group-open:rotate-180">▼</span>
 //                   </summary>
 //                   <div className="px-4 pb-4 pt-1">
-//                     <p className="text-[#4a6a78] text-[0.85rem] leading-relaxed font-semibold">{faq.a}</p>
+//                     <p
+//                       className="text-[#4a6a78] text-[0.85rem] leading-relaxed font-semibold"
+//                       dangerouslySetInnerHTML={{ __html: faq.a }}
+//                     />
 //                   </div>
 //                 </details>
 //               ))}
@@ -347,6 +348,12 @@
 
 
 
+
+
+
+
+
+
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -407,7 +414,7 @@ function Eyebrow({ text }: { text: string }) {
   return (
     <div className="flex items-center gap-2 mb-3" aria-hidden="true">
       <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#E05C42]" />
-      <span className="text-[0.62rem] font-black uppercase tracking-[0.22em] text-[#E05C42]">{text}</span>
+      <span className="text-[0.62rem] font-black uppercase tracking-[0.22em] text-[#C43D24]">{text}</span>
       <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#E05C42]" />
     </div>
   )
@@ -530,12 +537,12 @@ export default async function BlogPostPage({ params }: Props) {
       {/* ── TABLE OF CONTENTS ── */}
       <div className="max-w-3xl mx-auto px-4 sm:px-8 -mt-8 relative z-10">
         <nav aria-label="Table of contents" className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
-          <p className="text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#E05C42] mb-3">In This Article</p>
+          <p className="text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#C43D24] mb-3">In This Article</p>
           <ol className="space-y-1.5">
             {post.sections.map((section, i) => (
               <li key={i}>
                 <a href={`#${headingToId(section.heading)}`}
-                  className="flex items-start gap-2 text-[0.82rem] font-bold text-[#4a6a78] hover:text-[#E05C42] transition-colors no-underline">
+                  className="flex items-start gap-2 text-[0.82rem] font-bold text-[#4a6a78] hover:text-[#C43D24] transition-colors no-underline">
                   <span className="text-[#E8C86A] font-black flex-shrink-0">{i + 1}.</span>
                   {section.heading}
                 </a>
@@ -544,7 +551,7 @@ export default async function BlogPostPage({ params }: Props) {
             {post.faqs.length > 0 && (
               <li>
                 <a href="#faqs"
-                  className="flex items-start gap-2 text-[0.82rem] font-bold text-[#4a6a78] hover:text-[#E05C42] transition-colors no-underline">
+                  className="flex items-start gap-2 text-[0.82rem] font-bold text-[#4a6a78] hover:text-[#C43D24] transition-colors no-underline">
                   <span className="text-[#E8C86A] font-black flex-shrink-0">{post.sections.length + 1}.</span>
                   Frequently Asked Questions
                 </a>
@@ -584,7 +591,7 @@ export default async function BlogPostPage({ params }: Props) {
               </span>
             </div>
             <div>
-              <p className="text-[0.6rem] font-black uppercase tracking-[0.18em] text-[#E05C42] mb-1">Written by</p>
+              <p className="text-[0.6rem] font-black uppercase tracking-[0.18em] text-[#C43D24] mb-1">Written by</p>
               <p className="text-[#2E4F5E] font-black text-[0.95rem]">{post.author.name}</p>
               <p className="text-[#7da8b8] text-[0.72rem] font-bold mb-2">{post.author.role}</p>
               <p className="text-[#4a6a78] text-[0.82rem] leading-relaxed font-semibold">{post.author.bio}</p>

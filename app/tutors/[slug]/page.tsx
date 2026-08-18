@@ -1,8 +1,13 @@
 
 
 
+
+
+
+
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
+// import Image from 'next/image'
 // import { notFound, permanentRedirect } from 'next/navigation'
 // import { ITutor } from '@/types'
 
@@ -210,7 +215,15 @@
 //             <div className="relative flex-shrink-0">
 //               <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-[#E8C86A] shadow-[4px_4px_0_0_#1a3a44]">
 //                 {tutor.imageUrl ? (
-//                   <img src={tutor.imageUrl} alt={`${tutor.name}, ${tutor.subjects[0]} tutor in ${tutor.city}`} className="w-full h-full object-cover" />
+//                   <Image
+//                     src={tutor.imageUrl}
+//                     alt={`${tutor.name}, ${tutor.subjects[0]} tutor in ${tutor.city}`}
+//                     width={128}
+//                     height={128}
+//                     priority
+//                     unoptimized
+//                     className="w-full h-full object-cover"
+//                   />
 //                 ) : (
 //                   <div className="w-full h-full bg-gradient-to-br from-[#E8C86A] to-[#c4a84a] flex items-center justify-center">
 //                     <span className="text-[#2E4F5E] font-black text-4xl sm:text-5xl">{tutor.name.charAt(0)}</span>
@@ -511,10 +524,6 @@
 
 
 
-
-
-
-
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -621,7 +630,7 @@ function buildWhatsAppURL(phone: string, name: string, subject: string) {
 // plain div — same look, but now readable as page structure by Google.
 function Eyebrow({ text, light = false, as: Tag = 'h2' }: { text: string; light?: boolean; as?: 'h2' | 'h3' }) {
   return (
-    <Tag className={`flex items-center gap-2 mb-3 text-[0.63rem] font-black uppercase tracking-[0.22em] ${light ? 'text-[#E8C86A]' : 'text-[#E05C42]'}`}>
+    <Tag className={`flex items-center gap-2 mb-3 text-[0.63rem] font-black uppercase tracking-[0.22em] ${light ? 'text-[#E8C86A]' : 'text-[#C43D24]'}`}>
       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
       <span>{text}</span>
       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
@@ -975,7 +984,7 @@ export default async function TutorDetailPage({ params }: Props) {
                     </p>
                   </div>
                   <div className="mt-3 pt-3 border-t-2 border-dashed border-[#E8C86A] text-center">
-                    <p className="text-[0.63rem] font-black text-[#E05C42]">
+                    <p className="text-[0.63rem] font-black text-[#C43D24]">
                       Limited weekly slots available
                     </p>
                   </div>
@@ -1006,7 +1015,7 @@ export default async function TutorDetailPage({ params }: Props) {
                 <div className="flex items-start gap-2.5">
                   <span className="text-[#3A9E8F] text-lg flex-shrink-0">✓</span>
                   <p className="text-[0.72rem] font-semibold text-[#2E4F5E] leading-relaxed">
-                    <span className="font-black text-[#E05C42]">Verified tutor</span> manually reviewed and approved by the Avenfield team before going live.
+                    <span className="font-black text-[#C43D24]">Verified tutor</span> manually reviewed and approved by the Avenfield team before going live.
                   </p>
                 </div>
               </div>

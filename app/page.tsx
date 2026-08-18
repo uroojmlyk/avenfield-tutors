@@ -1,5 +1,11 @@
 
 
+
+
+
+
+
+
 // import { blogPosts } from '@/lib/blog-posts'
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
@@ -73,7 +79,7 @@
 //   return (
 //     <div className={`flex items-center gap-2 mb-3 ${center ? 'justify-center' : ''}`} aria-hidden="true">
 //       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
-//       <span className={`text-[0.62rem] font-black uppercase tracking-[0.22em] ${light ? 'text-[#E8C86A]' : 'text-[#E05C42]'}`}>{text}</span>
+//       <span className={`text-[0.62rem] font-black uppercase tracking-[0.22em] ${light ? 'text-[#E8C86A]' : 'text-[#C43D24]'}`}>{text}</span>
 //       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
 //     </div>
 //   )
@@ -261,7 +267,7 @@
 //               {/* H1 — SEO optimized with primary keywords */}
 //               <h1 className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] font-black leading-[1.08] tracking-[-0.025em] text-[#2E4F5E] mb-4 md:mb-5">
 //                 Online &amp; Home Tutors in Pakistan{' '}
-//                 <span className="relative inline-block text-[#E05C42]">
+//                 <span className="relative inline-block text-[#C43D24]">
 //                   <span className="relative z-10">for O Level, A Level, IELTS &amp; MDCAT</span>
 //                   <Wiggle color="#E8C86A" />
 //                 </span>
@@ -271,29 +277,29 @@
 //               <div className="text-[#4a6a78] text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] leading-[1.7] md:leading-[1.75] mb-6 md:mb-8 font-semibold space-y-3">
 //                 <p>
 //                   <Link href="/" className="font-black text-[#2E4F5E]">Avenfield Tutors</Link> is Pakistan's trusted platform connecting students with verified{' '}
-//                   <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">online tutors</Link> and{' '}
-//                   <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">home tutors</Link> across the country. Whether you're preparing for{' '}
-//                   <Link href="/tutors?subject=O%20Level" className="text-[#E05C42] hover:underline font-black">O Level</Link>,{' '}
-//                   <Link href="/tutors?subject=A%20Level" className="text-[#E05C42] hover:underline font-black">A Level</Link>,{' '}
-//                   <Link href="/tutors?subject=IGCSE" className="text-[#E05C42] hover:underline font-black">IGCSE</Link>, or{' '}
-//                   <Link href="/tutors?subject=GCSE" className="text-[#E05C42] hover:underline font-black">GCSE</Link> examinations, our expert tutors provide personalized guidance tailored to your learning needs.
+//                   <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">online tutors</Link> and{' '}
+//                   <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">home tutors</Link> across the country. Whether you're preparing for{' '}
+//                   <Link href="/tutors?subject=O%20Level" className="text-[#C43D24] hover:underline font-black">O Level</Link>,{' '}
+//                   <Link href="/tutors?subject=A%20Level" className="text-[#C43D24] hover:underline font-black">A Level</Link>,{' '}
+//                   <Link href="/tutors?subject=IGCSE" className="text-[#C43D24] hover:underline font-black">IGCSE</Link>, or{' '}
+//                   <Link href="/tutors?subject=GCSE" className="text-[#C43D24] hover:underline font-black">GCSE</Link> examinations, our expert tutors provide personalized guidance tailored to your learning needs.
 //                 </p>
 //                 <p>
 //                   We offer specialized coaching for competitive exams including{' '}
-//                   <Link href="/tutors?subject=IELTS" className="text-[#E05C42] hover:underline font-black">IELTS</Link>,{' '}
-//                   <Link href="/tutors?subject=MDCAT" className="text-[#E05C42] hover:underline font-black">MDCAT</Link>, and{' '}
-//                   <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#E05C42] hover:underline font-black">CSS</Link> preparation. Our qualified tutors also cover{' '}
-//                   <Link href="/tutors?subject=Mathematics" className="text-[#E05C42] hover:underline font-black">Mathematics</Link>,{' '}
-//                   <Link href="/tutors?subject=Physics" className="text-[#E05C42] hover:underline font-black">Physics</Link>,{' '}
-//                   <Link href="/tutors?subject=Chemistry" className="text-[#E05C42] hover:underline font-black">Chemistry</Link>,{' '}
-//                   <Link href="/tutors?subject=Biology" className="text-[#E05C42] hover:underline font-black">Biology</Link>,{' '}
-//                   <Link href="/tutors?subject=English" className="text-[#E05C42] hover:underline font-black">English</Link>, and{' '}
-//                   <Link href="/tutors?subject=Quran%20%26%20Arabic" className="text-[#E05C42] hover:underline font-black">Quran</Link> with{' '}
-//                   <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">online tuition</Link> available worldwide and{' '}
-//                   <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">home tuition</Link> in{' '}
-//                   <Link href="/home-tutor-islamabad" className="text-[#E05C42] hover:underline font-black">Islamabad</Link>,{' '}
-//                   <Link href="/home-tutor-rawalpindi" className="text-[#E05C42] hover:underline font-black">Rawalpindi</Link>, and{' '}
-//                   <Link href="/home-tutor-lahore" className="text-[#E05C42] hover:underline font-black">Lahore</Link>. 
+//                   <Link href="/tutors?subject=IELTS" className="text-[#C43D24] hover:underline font-black">IELTS</Link>,{' '}
+//                   <Link href="/tutors?subject=MDCAT" className="text-[#C43D24] hover:underline font-black">MDCAT</Link>, and{' '}
+//                   <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#C43D24] hover:underline font-black">CSS</Link> preparation. Our qualified tutors also cover{' '}
+//                   <Link href="/tutors?subject=Mathematics" className="text-[#C43D24] hover:underline font-black">Mathematics</Link>,{' '}
+//                   <Link href="/tutors?subject=Physics" className="text-[#C43D24] hover:underline font-black">Physics</Link>,{' '}
+//                   <Link href="/tutors?subject=Chemistry" className="text-[#C43D24] hover:underline font-black">Chemistry</Link>,{' '}
+//                   <Link href="/tutors?subject=Biology" className="text-[#C43D24] hover:underline font-black">Biology</Link>,{' '}
+//                   <Link href="/tutors?subject=English" className="text-[#C43D24] hover:underline font-black">English</Link>, and{' '}
+//                   <Link href="/tutors?subject=Quran%20%26%20Arabic" className="text-[#C43D24] hover:underline font-black">Quran</Link> with{' '}
+//                   <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">online tuition</Link> available worldwide and{' '}
+//                   <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">home tuition</Link> in{' '}
+//                   <Link href="/home-tutor-islamabad" className="text-[#C43D24] hover:underline font-black">Islamabad</Link>,{' '}
+//                   <Link href="/home-tutor-rawalpindi" className="text-[#C43D24] hover:underline font-black">Rawalpindi</Link>, and{' '}
+//                   <Link href="/home-tutor-lahore" className="text-[#C43D24] hover:underline font-black">Lahore</Link>. 
 //                   Rated by real families on Google, Avenfield Tutors is your gateway to academic excellence.
 //                 </p>
 //               </div>
@@ -400,6 +406,7 @@
 //           §2  CURRICULUM STRIP — dark teal
 //       ══════════════════════════════════════════════════════ */}
 //       <div
+//         role="group"
 //         className="bg-[#2E4F5E] py-3 sm:py-4 px-4 sm:px-6 md:px-8 border-y border-white/10"
 //         aria-label="Supported curricula and exam boards including IGCSE, A-Level, Edexcel, IB, O Level, AP, SAT, CAIE, and Oxford"
 //       >
@@ -632,7 +639,7 @@
 //                   </p>
                   
 //                   {/* H3 Title */}
-//                   <h3 className="text-[0.95rem] font-black text-[#2E4F5E] leading-snug group-hover:text-[#E05C42] transition-colors line-clamp-2">
+//                   <h3 className="text-[0.95rem] font-black text-[#2E4F5E] leading-snug group-hover:text-[#C43D24] transition-colors line-clamp-2">
 //                     {post.title}
 //                   </h3>
                   
@@ -646,7 +653,7 @@
 //                     <span className="text-[0.6rem] font-bold text-[#4a6a78]">{post.readTime}</span>
 //                     <span className="w-1 h-1 rounded-full bg-[#2E4F5E] flex-shrink-0" aria-hidden="true" />
 //                     <span className="text-[0.6rem] font-bold text-[#4a6a78]">{post.date}</span>
-//                     <span className="ml-auto text-[#E05C42] text-[0.7rem] font-black group-hover:translate-x-1 transition-transform duration-200">
+//                     <span className="ml-auto text-[#C43D24] text-[0.7rem] font-black group-hover:translate-x-1 transition-transform duration-200">
 //                       Read →
 //                     </span>
 //                   </div>
@@ -676,7 +683,7 @@
 //           <h2 id="reviews-heading" className="text-[1.5rem] sm:text-[2rem] md:text-[2.4rem] font-black tracking-[-0.02em] text-white mb-5">
 //             Highly Rated on Google by Families Across Islamabad, Rawalpindi &amp; Lahore
 //           </h2>
-//           <div className="flex justify-center gap-1 mb-4" aria-label="5 star rating">
+//           <div role="img" className="flex justify-center gap-1 mb-4" aria-label="5 star rating">
 //             {Array.from({ length: 5 }).map((_, i) => (
 //               <svg key={i} className="w-6 h-6 sm:w-7 sm:h-7 text-[#E8C86A]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 //                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -707,7 +714,7 @@
 //           <h2 id="reviews-heading" className="text-[1.5rem] sm:text-[2rem] md:text-[2.4rem] font-black tracking-[-0.02em] text-white mb-5">
 //             Highly Rated on Google by Families Across Islamabad, Rawalpindi &amp; Lahore
 //           </h2>
-//           <div className="flex justify-center gap-1 mb-4" aria-label="5 star rating">
+//           <div role="img" className="flex justify-center gap-1 mb-4" aria-label="5 star rating">
 //             {Array.from({ length: 5 }).map((_, i) => (
 //               <svg key={i} className="w-6 h-6 sm:w-7 sm:h-7 text-[#E8C86A]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 //                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -756,69 +763,69 @@
 //             <p>
 //               <strong className="text-[#2E4F5E]">Why choose Avenfield Tutors?</strong> We are Pakistan's premier platform for connecting students with 
 //               qualified online tutors and home tutors. Our rigorous verification process ensures that every educator on our platform 
-//               is a qualified professional with proven teaching experience. Whether you need an <Link href="/tutors?subject=O%20Level" className="text-[#E05C42] hover:underline font-black">O Level tutor</Link>, 
-//               <Link href="/tutors?subject=A%20Level" className="text-[#E05C42] hover:underline font-black">A Level tutor</Link>, or 
-//               <Link href="/tutors?subject=IELTS" className="text-[#E05C42] hover:underline font-black">IELTS tutor</Link>, we match you with the perfect educator 
+//               is a qualified professional with proven teaching experience. Whether you need an <Link href="/tutors?subject=O%20Level" className="text-[#C43D24] hover:underline font-black">O Level tutor</Link>, 
+//               <Link href="/tutors?subject=A%20Level" className="text-[#C43D24] hover:underline font-black">A Level tutor</Link>, or 
+//               <Link href="/tutors?subject=IELTS" className="text-[#C43D24] hover:underline font-black">IELTS tutor</Link>, we match you with the perfect educator 
 //               for your learning journey.
 //             </p>
 //             <p>
 //               <strong className="text-[#2E4F5E]">Who are we?</strong> Avenfield Tutors is a team of education enthusiasts committed to making 
 //               quality education accessible to every student in Pakistan and abroad. Founded by educators who understand the challenges 
 //               of the Pakistani education system, we've built a platform that connects students with verified tutors for 
-//               <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">online tutoring</Link> and 
-//               <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">home tuition</Link>. Our mission is to 
+//               <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">online tutoring</Link> and 
+//               <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">home tuition</Link>. Our mission is to 
 //               "Building Confidence. Delivering Excellence." and we achieve this by carefully matching each student with the right 
 //               tutor for their specific needs.
 //             </p>
 //             <p>
-//               <strong className="text-[#2E4F5E]">Areas we serve:</strong> We provide <Link href="/home-tutor-islamabad" className="text-[#E05C42] hover:underline font-black">home tuition in Islamabad</Link>, 
-//               <Link href="/home-tutor-rawalpindi" className="text-[#E05C42] hover:underline font-black">Rawalpindi</Link>, and 
-//               <Link href="/home-tutor-lahore" className="text-[#E05C42] hover:underline font-black">Lahore</Link>. Our <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">online tutoring</Link> 
+//               <strong className="text-[#2E4F5E]">Areas we serve:</strong> We provide <Link href="/home-tutor-islamabad" className="text-[#C43D24] hover:underline font-black">home tuition in Islamabad</Link>, 
+//               <Link href="/home-tutor-rawalpindi" className="text-[#C43D24] hover:underline font-black">Rawalpindi</Link>, and 
+//               <Link href="/home-tutor-lahore" className="text-[#C43D24] hover:underline font-black">Lahore</Link>. Our <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">online tutoring</Link> 
 //               services extend worldwide, covering students in the UK, USA, Canada, Australia, UAE, and across Europe. No matter where 
 //               you are, Avenfield Tutors brings expert education to your doorstep — online or in-person.
 //             </p>
 //             <p>
-//               <strong className="text-[#2E4F5E]">Online tuition:</strong> Our <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">online tuition</Link> 
+//               <strong className="text-[#2E4F5E]">Online tuition:</strong> Our <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">online tuition</Link> 
 //               platform connects students with expert tutors from around the world. Using modern teaching tools and interactive 
 //               whiteboards, our online tutors deliver engaging, effective lessons that match the quality of in-person tutoring. 
 //               Online tutoring is flexible, convenient, and accessible — perfect for students preparing for 
-//               <Link href="/tutors?subject=IELTS" className="text-[#E05C42] hover:underline font-black">IELTS</Link>, 
-//               <Link href="/tutors?subject=MDCAT" className="text-[#E05C42] hover:underline font-black">MDCAT</Link>, 
-//               <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#E05C42] hover:underline font-black">CSS</Link>, or any 
+//               <Link href="/tutors?subject=IELTS" className="text-[#C43D24] hover:underline font-black">IELTS</Link>, 
+//               <Link href="/tutors?subject=MDCAT" className="text-[#C43D24] hover:underline font-black">MDCAT</Link>, 
+//               <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#C43D24] hover:underline font-black">CSS</Link>, or any 
 //               other competitive exam.
 //             </p>
 //             <p>
 //               <strong className="text-[#2E4F5E]">Home tuition:</strong> For students who prefer face-to-face learning, we offer 
-//               <Link href="/tutors" className="text-[#E05C42] hover:underline font-black">home tuition</Link> services in Islamabad, Rawalpindi and Lahore. 
-//               Our verified <Link href="/home-tutor-islamabad" className="text-[#E05C42] hover:underline font-black">home tutors in Islamabad</Link>, 
-//               <Link href="/home-tutor-rawalpindi" className="text-[#E05C42] hover:underline font-black">Rawalpindi</Link>, and 
-//               <Link href="/home-tutor-lahore" className="text-[#E05C42] hover:underline font-black">Lahore</Link> provide 
+//               <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">home tuition</Link> services in Islamabad, Rawalpindi and Lahore. 
+//               Our verified <Link href="/home-tutor-islamabad" className="text-[#C43D24] hover:underline font-black">home tutors in Islamabad</Link>, 
+//               <Link href="/home-tutor-rawalpindi" className="text-[#C43D24] hover:underline font-black">Rawalpindi</Link>, and 
+//               <Link href="/home-tutor-lahore" className="text-[#C43D24] hover:underline font-black">Lahore</Link> provide 
 //               personalized, one-on-one instruction in the comfort of your home. Home tuition offers the benefits of focused attention, 
 //               immediate feedback, and a learning environment tailored to your child's needs.
 //             </p>
 //             <p>
 //               <strong className="text-[#2E4F5E]">Subjects:</strong> We offer tutoring in 50+ subjects including 
-//               <Link href="/tutors?subject=Mathematics" className="text-[#E05C42] hover:underline font-black">Mathematics</Link>, 
-//               <Link href="/tutors?subject=Physics" className="text-[#E05C42] hover:underline font-black">Physics</Link>, 
-//               <Link href="/tutors?subject=Chemistry" className="text-[#E05C42] hover:underline font-black">Chemistry</Link>, 
-//               <Link href="/tutors?subject=Biology" className="text-[#E05C42] hover:underline font-black">Biology</Link>, 
-//               <Link href="/tutors?subject=English" className="text-[#E05C42] hover:underline font-black">English</Link>, 
-//               <Link href="/tutors?subject=Urdu" className="text-[#E05C42] hover:underline font-black">Urdu</Link>, 
-//               <Link href="/tutors?subject=Quran%20%26%20Arabic" className="text-[#E05C42] hover:underline font-black">Quran &amp; Arabic</Link>, 
-//               <Link href="/tutors?subject=Computer%20Science" className="text-[#E05C42] hover:underline font-black">Computer Science</Link>, 
-//               and more. We also specialize in exam preparation for <Link href="/tutors?subject=O%20Level" className="text-[#E05C42] hover:underline font-black">O Level</Link>, 
-//               <Link href="/tutors?subject=A%20Level" className="text-[#E05C42] hover:underline font-black">A Level</Link>, 
-//               <Link href="/tutors?subject=IGCSE" className="text-[#E05C42] hover:underline font-black">IGCSE</Link>, 
-//               <Link href="/tutors?subject=GCSE" className="text-[#E05C42] hover:underline font-black">GCSE</Link>, and competitive exams 
-//               like <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#E05C42] hover:underline font-black">CSS</Link> and 
-//               <Link href="/tutors?subject=PPSC%20%2F%20FPSC" className="text-[#E05C42] hover:underline font-black">PPSC</Link>.
+//               <Link href="/tutors?subject=Mathematics" className="text-[#C43D24] hover:underline font-black">Mathematics</Link>, 
+//               <Link href="/tutors?subject=Physics" className="text-[#C43D24] hover:underline font-black">Physics</Link>, 
+//               <Link href="/tutors?subject=Chemistry" className="text-[#C43D24] hover:underline font-black">Chemistry</Link>, 
+//               <Link href="/tutors?subject=Biology" className="text-[#C43D24] hover:underline font-black">Biology</Link>, 
+//               <Link href="/tutors?subject=English" className="text-[#C43D24] hover:underline font-black">English</Link>, 
+//               <Link href="/tutors?subject=Urdu" className="text-[#C43D24] hover:underline font-black">Urdu</Link>, 
+//               <Link href="/tutors?subject=Quran%20%26%20Arabic" className="text-[#C43D24] hover:underline font-black">Quran &amp; Arabic</Link>, 
+//               <Link href="/tutors?subject=Computer%20Science" className="text-[#C43D24] hover:underline font-black">Computer Science</Link>, 
+//               and more. We also specialize in exam preparation for <Link href="/tutors?subject=O%20Level" className="text-[#C43D24] hover:underline font-black">O Level</Link>, 
+//               <Link href="/tutors?subject=A%20Level" className="text-[#C43D24] hover:underline font-black">A Level</Link>, 
+//               <Link href="/tutors?subject=IGCSE" className="text-[#C43D24] hover:underline font-black">IGCSE</Link>, 
+//               <Link href="/tutors?subject=GCSE" className="text-[#C43D24] hover:underline font-black">GCSE</Link>, and competitive exams 
+//               like <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#C43D24] hover:underline font-black">CSS</Link> and 
+//               <Link href="/tutors?subject=PPSC%20%2F%20FPSC" className="text-[#C43D24] hover:underline font-black">PPSC</Link>.
 //             </p>
 //             <p>
-//               <strong className="text-[#2E4F5E]">Exam preparation:</strong> Our specialized <Link href="/tutors?subject=IELTS" className="text-[#E05C42] hover:underline font-black">IELTS tutors</Link> 
-//               help students achieve their target band scores, while our <Link href="/tutors?subject=MDCAT" className="text-[#E05C42] hover:underline font-black">MDCAT tutors</Link> 
+//               <strong className="text-[#2E4F5E]">Exam preparation:</strong> Our specialized <Link href="/tutors?subject=IELTS" className="text-[#C43D24] hover:underline font-black">IELTS tutors</Link> 
+//               help students achieve their target band scores, while our <Link href="/tutors?subject=MDCAT" className="text-[#C43D24] hover:underline font-black">MDCAT tutors</Link> 
 //               provide comprehensive preparation for medical entrance exams. For civil service aspirants, our 
-//               <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#E05C42] hover:underline font-black">CSS tutors</Link> and 
-//               <Link href="/tutors?subject=PPSC%20%2F%20FPSC" className="text-[#E05C42] hover:underline font-black">PPSC tutors</Link> 
+//               <Link href="/tutors?subject=CSS%20%2F%20PMS" className="text-[#C43D24] hover:underline font-black">CSS tutors</Link> and 
+//               <Link href="/tutors?subject=PPSC%20%2F%20FPSC" className="text-[#C43D24] hover:underline font-black">PPSC tutors</Link> 
 //               offer expert guidance on essay writing, current affairs, and subject-specific preparation. With Avenfield Tutors, 
 //               exam success is within reach.
 //             </p>
@@ -976,8 +983,6 @@
 //     </div>
 //   )
 // }
-
-
 
 
 

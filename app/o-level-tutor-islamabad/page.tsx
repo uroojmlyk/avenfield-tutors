@@ -1,5 +1,8 @@
 
 
+
+
+
 // import type { Metadata } from 'next'
 // import SubjectLandingPage from '@/components/shared/SubjectLandingPage'
 
@@ -40,19 +43,9 @@
 //     title: 'Best O Level Tutor in Islamabad | Avenfield Tutors',
 //     description: 'Verified O Level tutors in Islamabad for Cambridge CAIE & Edexcel. Expert tuition for all subjects.',
 //   },
-//   robots: {
-//     index: true,
-//     follow: true,
-//     googleBot: {
-//       index: true,
-//       follow: true,
-//       'max-video-preview': -1,
-//       'max-image-preview': 'large',
-//       'max-snippet': -1,
-//     },
-//   },
 // }
 
+// // Islamabad Areas Data
 // const ISLAMABAD_AREAS = {
 //   sectors: [
 //     'F-5', 'F-6', 'F-7', 'F-8', 'F-10', 'F-11', 'F-15', 'F-17',
@@ -251,7 +244,6 @@
 
 
 
-
 import type { Metadata } from 'next'
 import SubjectLandingPage from '@/components/shared/SubjectLandingPage'
 
@@ -415,9 +407,9 @@ export default function OLevelTutorIslamabadPage() {
       subjectIcon="📚"
       subjectEmoji="📖"
       subjectOverview={[
-        `The <a href="/tutors?subject=O%20Level&city=Islamabad" class="text-[#E05C42] hover:underline font-black">O Level tutor in Islamabad</a> market is highly competitive, and finding the right tutor can make all the difference in a student's academic journey. The Cambridge O Level curriculum is known for its rigour and depth, requiring students to develop strong analytical skills, critical thinking, and a deep understanding of core concepts. Our verified O Level tutors in Islamabad specialise in helping students navigate these challenges with confidence.`,
-        `Whether your child is struggling with <a href="/tutors?subject=Mathematics&city=Islamabad" class="text-[#E05C42] hover:underline font-black">O Level Mathematics</a>, <a href="/tutors?subject=Physics&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Physics</a>, <a href="/tutors?subject=Chemistry&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Chemistry</a>, <a href="/tutors?subject=Biology&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Biology</a>, or <a href="/tutors?subject=English&city=Islamabad" class="text-[#E05C42] hover:underline font-black">English</a>, our experienced tutors provide personalised support tailored to the Cambridge syllabus. They understand the specific requirements of both <a href="/tutors?subject=O%20Level&exam=CAIE" class="text-[#E05C42] hover:underline font-black">CAIE</a> and <a href="/tutors?subject=O%20Level&exam=Edexcel" class="text-[#E05C42] hover:underline font-black">Edexcel</a> exam boards, ensuring students are fully prepared for their examinations.`,
-        `With a focus on building foundational knowledge and exam technique, our <a href="/home-tutor-islamabad" class="text-[#E05C42] hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that classroom settings often cannot offer. This personalised approach is particularly effective for O Level students, who need to master complex concepts across multiple subjects while developing the critical thinking skills required for success in higher education.`,
+        `The <a href="/tutors?subject=O%20Level&city=Islamabad" class="text-[#C43D24] hover:underline font-black">O Level tutor in Islamabad</a> market is highly competitive, and finding the right tutor can make all the difference in a student's academic journey. The Cambridge O Level curriculum is known for its rigour and depth, requiring students to develop strong analytical skills, critical thinking, and a deep understanding of core concepts. Our verified O Level tutors in Islamabad specialise in helping students navigate these challenges with confidence.`,
+        `Whether your child is struggling with <a href="/tutors?subject=Mathematics&city=Islamabad" class="text-[#C43D24] hover:underline font-black">O Level Mathematics</a>, <a href="/tutors?subject=Physics&city=Islamabad" class="text-[#C43D24] hover:underline font-black">Physics</a>, <a href="/tutors?subject=Chemistry&city=Islamabad" class="text-[#C43D24] hover:underline font-black">Chemistry</a>, <a href="/tutors?subject=Biology&city=Islamabad" class="text-[#C43D24] hover:underline font-black">Biology</a>, or <a href="/tutors?subject=English&city=Islamabad" class="text-[#C43D24] hover:underline font-black">English</a>, our experienced tutors provide personalised support tailored to the Cambridge syllabus. They understand the specific requirements of both <a href="/tutors?subject=O%20Level&exam=CAIE" class="text-[#C43D24] hover:underline font-black">CAIE</a> and <a href="/tutors?subject=O%20Level&exam=Edexcel" class="text-[#C43D24] hover:underline font-black">Edexcel</a> exam boards, ensuring students are fully prepared for their examinations.`,
+        `With a focus on building foundational knowledge and exam technique, our <a href="/home-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that classroom settings often cannot offer. This personalised approach is particularly effective for O Level students, who need to master complex concepts across multiple subjects while developing the critical thinking skills required for success in higher education.`,
       ]}
       subjectDetails={[
         `Our <strong class="text-[#2E4F5E]">O Level tutors in Islamabad</strong> are subject matter experts with extensive experience teaching the Cambridge syllabus. They are familiar with the specific requirements of each subject and provide targeted support to help students excel in their examinations.`,
@@ -452,11 +444,11 @@ export default function OLevelTutorIslamabadPage() {
         },
         {
           q: 'Which O Level subjects do you offer tuition for?',
-          a: 'We offer tuition for all O Level subjects including Mathematics, Physics, Chemistry, Biology, English, Urdu, Economics, Computer Science, Accounting, Business Studies, History, Geography, and more. Our tutors cover both CAIE and Edexcel exam boards. If you need a specific subject not listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">contact us on WhatsApp</a> and we\'ll find a tutor for you.',
+          a: 'We offer tuition for all O Level subjects including Mathematics, Physics, Chemistry, Biology, English, Urdu, Economics, Computer Science, Accounting, Business Studies, History, Geography, and more. Our tutors cover both CAIE and Edexcel exam boards. If you need a specific subject not listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">contact us on WhatsApp</a> and we\'ll find a tutor for you.',
         },
         {
           q: 'How much do O Level tutors in Islamabad charge?',
-          a: 'O Level tutor rates in Islamabad vary based on the subject, the tutor\'s experience, and the student\'s level. Typically, rates range from PKR 2,000 to 4,500 per hour for home tuition. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive rates with complete transparency and no hidden charges.',
+          a: 'O Level tutor rates in Islamabad vary based on the subject, the tutor\'s experience, and the student\'s level. Typically, rates range from PKR 2,000 to 4,500 per hour for home tuition. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive rates with complete transparency and no hidden charges.',
         },
         {
           q: 'Can I get a free trial session with an O Level tutor?',
@@ -464,11 +456,11 @@ export default function OLevelTutorIslamabadPage() {
         },
         {
           q: 'Do you offer online O Level tutoring as well?',
-          a: 'Yes! While we specialise in <a href="/home-tutor-islamabad" class="text-[#E05C42] hover:underline font-black">home tuition in Islamabad</a>, we also offer <a href="/tutors?subject=O%20Level" class="text-[#E05C42] hover:underline font-black">online O Level tutoring</a> for students who prefer the flexibility of learning from home or who live outside Islamabad. Our online sessions are conducted via video call with interactive whiteboards and screen sharing for an effective learning experience.',
+          a: 'Yes! While we specialise in <a href="/home-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">home tuition in Islamabad</a>, we also offer <a href="/tutors?subject=O%20Level" class="text-[#C43D24] hover:underline font-black">online O Level tutoring</a> for students who prefer the flexibility of learning from home or who live outside Islamabad. Our online sessions are conducted via video call with interactive whiteboards and screen sharing for an effective learning experience.',
         },
         {
           q: 'Which areas of Islamabad do your home tutors cover?',
-          a: 'Our O Level home tutors cover all major areas of Islamabad including F-5 to F-17, G-5 to G-16, E-7 to E-17, D-12, I-8 to I-14, B-10 to B-17, C-12 to C-17, H-8 to H-13, DHA Islamabad (all phases), Bahria Enclave, Gulberg Greens, Park View City, Capital Smart City, and many more. If you don\'t see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">message us on WhatsApp</a> and we\'ll confirm availability.',
+          a: 'Our O Level home tutors cover all major areas of Islamabad including F-5 to F-17, G-5 to G-16, E-7 to E-17, D-12, I-8 to I-14, B-10 to B-17, C-12 to C-17, H-8 to H-13, DHA Islamabad (all phases), Bahria Enclave, Gulberg Greens, Park View City, Capital Smart City, and many more. If you don\'t see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">message us on WhatsApp</a> and we\'ll confirm availability.',
         },
       ]}
       areas={ISLAMABAD_AREAS}

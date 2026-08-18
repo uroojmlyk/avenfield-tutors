@@ -1,12 +1,25 @@
 
 
-
 // import './globals.css'
 // import type { Metadata } from 'next'
+// import { Nunito } from 'next/font/google'
 // import Navbar from '@/components/shared/Navbar'
 // import Footer from '@/components/shared/Footer'
 // import StructuredData from '@/components/shared/StructuredData'
 // import WhatsAppButton from '@/components/shared/WhatsAppButton'
+
+// // Self-hosted via next/font — eliminates the render-blocking request to
+// // fonts.googleapis.com (was costing ~750ms + 1,590ms of render-blocking
+// // time per PageSpeed Insights). next/font keeps the family registered as
+// // literally 'Nunito', so it's a drop-in replacement for every existing
+// // style={{ fontFamily: "'Nunito', sans-serif" }} in the codebase — nothing
+// // else needs to change.
+// const nunito = Nunito({
+//   subsets: ['latin'],
+//   weight: ['400', '600', '700', '800', '900'],
+//   display: 'swap',
+//   variable: '--font-nunito',
+// })
 
 // export const metadata: Metadata = {
 //   metadataBase: new URL('https://avenfieldtutors.com'),
@@ -51,16 +64,8 @@
 
 // export default function RootLayout({ children }: { children: React.ReactNode }) {
 //   return (
-//     <html lang="en">
-//       <head>
-//         <link rel="preconnect" href="https://fonts.googleapis.com" />
-//         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-//         <link
-//           href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
-//           rel="stylesheet"
-//         />
-//       </head>
-//       <body className="min-h-screen flex flex-col bg-[#FFFDF7]">
+//     <html lang="en" className={nunito.variable}>
+//       <body className={`${nunito.className} min-h-screen flex flex-col bg-[#FFFDF7]`}>
 //          <StructuredData />
 //         <Navbar />
 //         <main className="flex-1">{children}</main>
@@ -70,7 +75,6 @@
 //     </html>
 //   )
 // }
-
 
 
 

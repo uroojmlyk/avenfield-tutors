@@ -1,8 +1,12 @@
 
 
+
+
+
 // 'use client'
 
 // import Link from 'next/link'
+// import Image from 'next/image'
 // import { ITutor } from '@/types'
 
 // interface TutorCardProps {
@@ -97,7 +101,14 @@
 //                 style={{ background: `linear-gradient(135deg, ${accent}, ${accent}aa)`, boxShadow: '3px 3px 0 #2E4F5E' }}
 //               >
 //                 {tutor.imageUrl ? (
-//                   <img src={tutor.imageUrl} alt={`${tutor.name} - ${tutor.subjects[0]} tutor`} className="w-full h-full object-cover" />
+//                   <Image
+//                     src={tutor.imageUrl}
+//                     alt={`${tutor.name} - ${tutor.subjects[0]} tutor`}
+//                     width={58}
+//                     height={58}
+//                     unoptimized
+//                     className="w-full h-full object-cover"
+//                   />
 //                 ) : (
 //                   <span className="text-[22px] font-black text-[#2E4F5E]">{initials}</span>
 //                 )}
@@ -195,6 +206,10 @@
 //     </Link>
 //   )
 // }
+
+
+
+
 
 
 
@@ -320,7 +335,7 @@ export default function TutorCard({ tutor, featured = false }: TutorCardProps) {
 
             {/* Name + rating */}
             <div className="flex-1 min-w-0">
-              <h3 className="text-[17px] font-black text-[#2E4F5E] leading-snug mb-1 truncate group-hover:text-[#E05C42] transition-colors">
+              <h3 className="text-[17px] font-black text-[#2E4F5E] leading-snug mb-1 truncate group-hover:text-[#C43D24] transition-colors">
                 {tutor.name}
               </h3>
               {tutor.rating ? (
@@ -386,7 +401,7 @@ export default function TutorCard({ tutor, featured = false }: TutorCardProps) {
               <span className="text-[15px]" aria-hidden="true">💬</span>
               <span className={`text-[11px] font-black ${responseTime.color}`}>{responseTime.text}</span>
             </div>
-            <div className="flex items-center gap-1 text-[#E05C42] font-black text-[13px] transition-all duration-150 group-hover:gap-2">
+            <div className="flex items-center gap-1 text-[#C43D24] font-black text-[13px] transition-all duration-150 group-hover:gap-2">
               <span>View Profile</span>
               <svg className="w-[15px] h-[15px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6"/>
@@ -397,7 +412,7 @@ export default function TutorCard({ tutor, featured = false }: TutorCardProps) {
           {/* Urgency — only experienced tutors */}
           {tutor.experience >= 5 && (
             <div className="text-center mt-2">
-              <span className="text-[10px] font-black text-[#E05C42] bg-[#E05C4215] px-3 py-[3px] rounded-full">
+              <span className="text-[10px] font-black text-[#C43D24] bg-[#E05C4215] px-3 py-[3px] rounded-full">
                 ⏳ Limited weekly slots available
               </span>
             </div>

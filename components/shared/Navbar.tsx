@@ -1,5 +1,8 @@
 
 
+
+
+
 // 'use client'
 
 // import Link from 'next/link'
@@ -107,6 +110,7 @@
 //               height={60}
 //               sizes="(max-width: 640px) 150px, 200px"
 //               className="h-full w-auto object-contain"
+//               quality={60}
 //               priority
 //             />
 //           </div>
@@ -143,10 +147,7 @@
 //               <ChevronDown className="w-3.5 h-3.5 transition-transform duration-150 group-hover:rotate-180" strokeWidth={3} />
 //             </Link>
 
-//             <div
-//               className="absolute top-full left-0 pt-2 opacity-0 invisible -translate-y-1 transition-all duration-150
-//                          group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
-//             >
+//             <div className="absolute top-full left-0 pt-2 opacity-0 invisible -translate-y-1 transition-all duration-150 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
 //               <div className="bg-white border-2 border-[#2E4F5E] rounded-2xl shadow-[4px_4px_0_0_#2E4F5E] p-2.5 min-w-[260px] overflow-hidden">
 //                 <p className="px-2.5 pt-1 pb-2 text-[0.6rem] font-black uppercase tracking-[0.15em] text-[#7da8b8]">
 //                   Local Home Tutoring
@@ -344,7 +345,6 @@
 //     </header>
 //   )
 // }
-
 
 
 
