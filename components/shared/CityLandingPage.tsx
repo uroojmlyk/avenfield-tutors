@@ -1,7 +1,3 @@
-
-
-
-
 // import Link from 'next/link'
 
 // interface CityPageProps {
@@ -199,7 +195,7 @@
 //             <span className="text-[#E8C86A] block sm:inline"> {city}</span>
 //           </h1>
 
-//           <p className="text-[#7da8b8] text-[0.92rem] sm:text-[1.05rem] font-semibold leading-relaxed max-w-2xl mb-6">
+//           <p className="text-[#a8c5d0] text-[0.92rem] sm:text-[1.05rem] font-semibold leading-relaxed max-w-2xl mb-6">
 //             Connect with verified home tutors for{' '}
 //             <Link href={`/tutors?subject=O%20Level&city=${encodeURIComponent(city)}`} className="text-[#E8C86A] hover:underline font-black">O Level</Link>,{' '}
 //             <Link href={`/tutors?subject=A%20Level&city=${encodeURIComponent(city)}`} className="text-[#E8C86A] hover:underline font-black">A Level</Link>,{' '}
@@ -209,7 +205,7 @@
 
 //           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-7">
 //             {['Free Consultation', '100% Verified Tutors', 'WhatsApp Booking'].map(t => (
-//               <span key={t} className="flex items-center gap-1.5 text-[#7da8b8] text-[0.8rem] sm:text-[0.85rem] font-semibold">
+//               <span key={t} className="flex items-center gap-1.5 text-[#a8c5d0] text-[0.8rem] sm:text-[0.85rem] font-semibold">
 //                 <span className="w-4 h-4 rounded-full bg-[#3A9E8F] flex items-center justify-center text-white text-[0.6rem] flex-shrink-0">✓</span>
 //                 {t}
 //               </span>
@@ -244,7 +240,7 @@
 //                 Our home tutors serve students across these neighborhoods
 //               </p>
 //             </div>
-//             <span className="text-[0.7rem] font-bold text-[#7da8b8] bg-white px-3 py-1.5 rounded-full border border-[#D4D0C5] whitespace-nowrap self-start sm:self-auto">
+//             <span className="text-[0.7rem] font-bold text-[#a8c5d0] bg-white px-3 py-1.5 rounded-full border border-[#D4D0C5] whitespace-nowrap self-start sm:self-auto">
 //               {totalAreas}+ areas covered
 //             </span>
 //           </div>
@@ -255,7 +251,7 @@
 //                 <summary className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3.5 cursor-pointer list-none hover:bg-[#FFFDF7] transition-colors">
 //                   <span className="text-[0.82rem] sm:text-[0.88rem] font-black text-[#2E4F5E] flex items-center gap-2 min-w-0">
 //                     <span className="truncate">{getCategoryLabel(category)}</span>
-//                     <span className="flex-shrink-0 text-[0.68rem] font-bold text-[#7da8b8] bg-[#D4D0C5]/30 px-2 py-0.5 rounded-full">
+//                     <span className="flex-shrink-0 text-[0.68rem] font-bold text-[#a8c5d0] bg-[#D4D0C5]/30 px-2 py-0.5 rounded-full">
 //                       {areaList.length}
 //                     </span>
 //                   </span>
@@ -277,7 +273,7 @@
 //             ))}
 //           </div>
 
-//           <p className="text-[#7da8b8] text-[0.78rem] sm:text-[0.8rem] font-semibold mt-4 flex items-start gap-1.5">
+//           <p className="text-[#a8c5d0] text-[0.78rem] sm:text-[0.8rem] font-semibold mt-4 flex items-start gap-1.5">
 //             <span>📌</span>
 //             <span>
 //               Don&#39;t see your area?{' '}
@@ -301,7 +297,7 @@
 //                 Expert tutoring across all major subjects and exam boards
 //               </p>
 //             </div>
-//             <Link href="/tutors" className="text-[0.7rem] font-bold text-[#3A9E8F] hover:text-[#2d7a6e] underline whitespace-nowrap">
+//             <Link href="/tutors" className="text-[0.7rem] font-bold text-[#2c7d70] hover:text-[#2d7a6e] underline whitespace-nowrap">
 //               View all subjects →
 //             </Link>
 //           </div>
@@ -311,7 +307,7 @@
 //               <Link key={subject.name} href={`/tutors?subject=${encodeURIComponent(subject.name)}&city=${encodeURIComponent(city)}`}
 //                 className="group flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2.5 sm:py-3 bg-white text-[#2E4F5E] text-[0.76rem] sm:text-[0.82rem] font-bold rounded-xl border-2 border-[#D4D0C5] hover:border-[#3A9E8F] hover:bg-[#FFFDF7] transition-all no-underline">
 //                 <span className="text-base sm:text-lg flex-shrink-0">{subject.icon}</span>
-//                 <span className="group-hover:text-[#3A9E8F] transition-colors truncate">{subject.name}</span>
+//                 <span className="group-hover:text-[#2c7d70] transition-colors truncate">{subject.name}</span>
 //               </Link>
 //             ))}
 //           </div>
@@ -336,7 +332,7 @@
 //             <div className="space-y-5">
 //               {/* ─── ACADEMIC SUBJECTS ─── */}
 //               <div>
-//                 <p className="text-[0.7rem] font-black text-[#3A9E8F] uppercase tracking-wider mb-2 flex items-center gap-2">
+//                 <p className="text-[0.7rem] font-black text-[#2c7d70] uppercase tracking-wider mb-2 flex items-center gap-2">
 //                   <span>📚</span> Academic Subjects
 //                 </p>
 //                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
@@ -391,7 +387,7 @@
 //                     <Link key={item.name} href={item.href}
 //                       className="group flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FFFDF7] text-[#2E4F5E] text-[0.76rem] sm:text-[0.82rem] font-bold rounded-xl border-2 border-[#D4D0C5] hover:border-[#3A9E8F] hover:bg-[#FFFDF7] transition-all no-underline">
 //                       <span className="text-base sm:text-lg flex-shrink-0">{item.icon}</span>
-//                       <span className="group-hover:text-[#3A9E8F] transition-colors">{item.name}</span>
+//                       <span className="group-hover:text-[#2c7d70] transition-colors">{item.name}</span>
 //                     </Link>
 //                   ))}
 //                 </div>
@@ -417,20 +413,20 @@
 //               </div>
 //             </div>
 
-//             <p className="text-[#7da8b8] text-[0.75rem] font-semibold mt-5 text-center">
+//             <p className="text-[#a8c5d0] text-[0.75rem] font-semibold mt-5 text-center">
 //               🎓 These pages are designed to help you find specialised tutors for each subject in {city}
 //             </p>
 //           </section>
 //         )}
 
 //         {/* ══════════════════════ WHY CHOOSE US ══════════════════════ */}
-//         <section className="bg-[#3A9E8F] rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] sm:shadow-[6px_6px_0_0_#2E4F5E] p-5 sm:p-9 text-white">
+//         <section className="bg-[#2f8074] rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] sm:shadow-[6px_6px_0_0_#2E4F5E] p-5 sm:p-9 text-white">
 //           <div className="text-center max-w-2xl mx-auto mb-7 sm:mb-8">
 //             <h2 className="font-black text-[1.2rem] sm:text-[1.4rem] flex items-center justify-center gap-2">
 //               <span>⭐</span>
 //               Why Families in {city} Trust Us
 //             </h2>
-//             <p className="text-[#c5e8e3] text-[0.85rem] sm:text-[0.9rem] font-semibold mt-1">
+//             <p className="text-white text-[0.85rem] sm:text-[0.9rem] font-semibold mt-1">
 //               What makes Avenfield Tutors the preferred choice for home tuition
 //             </p>
 //           </div>
@@ -443,7 +439,7 @@
 //                 </div>
 //                 <div>
 //                   <h3 className="font-black text-[0.9rem] sm:text-[0.95rem]">{item.title}</h3>
-//                   <p className="text-[#c5e8e3] text-[0.78rem] sm:text-[0.8rem] font-semibold mt-0.5 leading-relaxed">{item.desc}</p>
+//                   <p className="text-white text-[0.78rem] sm:text-[0.8rem] font-semibold mt-0.5 leading-relaxed">{item.desc}</p>
 //                 </div>
 //               </div>
 //             ))}
@@ -531,7 +527,7 @@
 //               <strong className="text-[#2E4F5E]">Ready to get started?</strong> Simply <a href={whatsappURL} target="_blank" rel="noopener noreferrer" className="text-[#E05C42] hover:underline font-black">message us on WhatsApp</a> with your subject and level. We&#39;ll match you with a verified tutor in {city} within 24 hours. No long forms, no waiting weeks – start learning today with Avenfield Tutors.
 //             </p>
 //             {nearbyCity && (
-//               <p className="text-[0.78rem] sm:text-[0.8rem] text-[#7da8b8]">
+//               <p className="text-[0.78rem] sm:text-[0.8rem] text-[#a8c5d0]">
 //                 <span>📌 </span>
 //                 Also serving <Link href={`/home-tutor-${nearbyCity.toLowerCase()}`} className="text-[#E05C42] hover:underline font-black">{nearbyCity}</Link> and other cities across Pakistan.
 //               </p>
@@ -553,7 +549,7 @@
 //               Ready to Find Your Perfect Home Tutor in {city}?
 //             </h2>
 
-//             <p className="text-[#7da8b8] text-[0.88rem] sm:text-[0.95rem] font-semibold mb-6">
+//             <p className="text-[#a8c5d0] text-[0.88rem] sm:text-[0.95rem] font-semibold mb-6">
 //               Message us on WhatsApp with your subject and level. We&#39;ll match you with a verified tutor within 24 hours.
 //             </p>
 
@@ -569,7 +565,7 @@
 //               </Link>
 //             </div>
 
-//             <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-4 text-[0.68rem] sm:text-[0.7rem] text-[#7da8b8] font-semibold">
+//             <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-4 text-[0.68rem] sm:text-[0.7rem] text-[#a8c5d0] font-semibold">
 //               <span>📱 WhatsApp: +92 309 5154253</span>
 //               <span className="hidden sm:inline">|</span>
 //               <span>✉️ avenfieldtutors@gmail.com</span>
@@ -786,7 +782,7 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
             <span className="text-[#E8C86A] block sm:inline"> {city}</span>
           </h1>
 
-          <p className="text-[#7da8b8] text-[0.92rem] sm:text-[1.05rem] font-semibold leading-relaxed max-w-2xl mb-6">
+          <p className="text-[#a8c5d0] text-[0.92rem] sm:text-[1.05rem] font-semibold leading-relaxed max-w-2xl mb-6">
             Connect with verified home tutors for{' '}
             <Link href={`/tutors?subject=O%20Level&city=${encodeURIComponent(city)}`} className="text-[#E8C86A] hover:underline font-black">O Level</Link>,{' '}
             <Link href={`/tutors?subject=A%20Level&city=${encodeURIComponent(city)}`} className="text-[#E8C86A] hover:underline font-black">A Level</Link>,{' '}
@@ -796,7 +792,7 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
 
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-7">
             {['Free Consultation', '100% Verified Tutors', 'WhatsApp Booking'].map(t => (
-              <span key={t} className="flex items-center gap-1.5 text-[#7da8b8] text-[0.8rem] sm:text-[0.85rem] font-semibold">
+              <span key={t} className="flex items-center gap-1.5 text-[#a8c5d0] text-[0.8rem] sm:text-[0.85rem] font-semibold">
                 <span className="w-4 h-4 rounded-full bg-[#3A9E8F] flex items-center justify-center text-white text-[0.6rem] flex-shrink-0">✓</span>
                 {t}
               </span>
@@ -831,7 +827,7 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
                 Our home tutors serve students across these neighborhoods
               </p>
             </div>
-            <span className="text-[0.7rem] font-bold text-[#7da8b8] bg-white px-3 py-1.5 rounded-full border border-[#D4D0C5] whitespace-nowrap self-start sm:self-auto">
+            <span className="text-[0.7rem] font-bold text-[#a8c5d0] bg-white px-3 py-1.5 rounded-full border border-[#D4D0C5] whitespace-nowrap self-start sm:self-auto">
               {totalAreas}+ areas covered
             </span>
           </div>
@@ -842,7 +838,7 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
                 <summary className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3.5 cursor-pointer list-none hover:bg-[#FFFDF7] transition-colors">
                   <span className="text-[0.82rem] sm:text-[0.88rem] font-black text-[#2E4F5E] flex items-center gap-2 min-w-0">
                     <span className="truncate">{getCategoryLabel(category)}</span>
-                    <span className="flex-shrink-0 text-[0.68rem] font-bold text-[#7da8b8] bg-[#D4D0C5]/30 px-2 py-0.5 rounded-full">
+                    <span className="flex-shrink-0 text-[0.68rem] font-bold text-[#a8c5d0] bg-[#D4D0C5]/30 px-2 py-0.5 rounded-full">
                       {areaList.length}
                     </span>
                   </span>
@@ -864,7 +860,7 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
             ))}
           </div>
 
-          <p className="text-[#7da8b8] text-[0.78rem] sm:text-[0.8rem] font-semibold mt-4 flex items-start gap-1.5">
+          <p className="text-[#a8c5d0] text-[0.78rem] sm:text-[0.8rem] font-semibold mt-4 flex items-start gap-1.5">
             <span>📌</span>
             <span>
               Don&#39;t see your area?{' '}
@@ -888,7 +884,7 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
                 Expert tutoring across all major subjects and exam boards
               </p>
             </div>
-            <Link href="/tutors" className="text-[0.7rem] font-bold text-[#3A9E8F] hover:text-[#2d7a6e] underline whitespace-nowrap">
+            <Link href="/tutors" className="text-[0.7rem] font-bold text-[#2c7d70] hover:text-[#2d7a6e] underline whitespace-nowrap">
               View all subjects →
             </Link>
           </div>
@@ -898,7 +894,7 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
               <Link key={subject.name} href={`/tutors?subject=${encodeURIComponent(subject.name)}&city=${encodeURIComponent(city)}`}
                 className="group flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2.5 sm:py-3 bg-white text-[#2E4F5E] text-[0.76rem] sm:text-[0.82rem] font-bold rounded-xl border-2 border-[#D4D0C5] hover:border-[#3A9E8F] hover:bg-[#FFFDF7] transition-all no-underline">
                 <span className="text-base sm:text-lg flex-shrink-0">{subject.icon}</span>
-                <span className="group-hover:text-[#3A9E8F] transition-colors truncate">{subject.name}</span>
+                <span className="group-hover:text-[#2c7d70] transition-colors truncate">{subject.name}</span>
               </Link>
             ))}
           </div>
@@ -923,7 +919,7 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
             <div className="space-y-5">
               {/* ─── ACADEMIC SUBJECTS ─── */}
               <div>
-                <p className="text-[0.7rem] font-black text-[#3A9E8F] uppercase tracking-wider mb-2 flex items-center gap-2">
+                <p className="text-[0.7rem] font-black text-[#2c7d70] uppercase tracking-wider mb-2 flex items-center gap-2">
                   <span>📚</span> Academic Subjects
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
@@ -978,7 +974,7 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
                     <Link key={item.name} href={item.href}
                       className="group flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FFFDF7] text-[#2E4F5E] text-[0.76rem] sm:text-[0.82rem] font-bold rounded-xl border-2 border-[#D4D0C5] hover:border-[#3A9E8F] hover:bg-[#FFFDF7] transition-all no-underline">
                       <span className="text-base sm:text-lg flex-shrink-0">{item.icon}</span>
-                      <span className="group-hover:text-[#3A9E8F] transition-colors">{item.name}</span>
+                      <span className="group-hover:text-[#2c7d70] transition-colors">{item.name}</span>
                     </Link>
                   ))}
                 </div>
@@ -1004,20 +1000,20 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
               </div>
             </div>
 
-            <p className="text-[#7da8b8] text-[0.75rem] font-semibold mt-5 text-center">
+            <p className="text-[#a8c5d0] text-[0.75rem] font-semibold mt-5 text-center">
               🎓 These pages are designed to help you find specialised tutors for each subject in {city}
             </p>
           </section>
         )}
 
         {/* ══════════════════════ WHY CHOOSE US ══════════════════════ */}
-        <section className="bg-[#3A9E8F] rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] sm:shadow-[6px_6px_0_0_#2E4F5E] p-5 sm:p-9 text-white">
+        <section className="bg-[#2f8074] rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] sm:shadow-[6px_6px_0_0_#2E4F5E] p-5 sm:p-9 text-white">
           <div className="text-center max-w-2xl mx-auto mb-7 sm:mb-8">
             <h2 className="font-black text-[1.2rem] sm:text-[1.4rem] flex items-center justify-center gap-2">
               <span>⭐</span>
               Why Families in {city} Trust Us
             </h2>
-            <p className="text-[#c5e8e3] text-[0.85rem] sm:text-[0.9rem] font-semibold mt-1">
+            <p className="text-white text-[0.85rem] sm:text-[0.9rem] font-semibold mt-1">
               What makes Avenfield Tutors the preferred choice for home tuition
             </p>
           </div>
@@ -1030,7 +1026,7 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
                 </div>
                 <div>
                   <h3 className="font-black text-[0.9rem] sm:text-[0.95rem]">{item.title}</h3>
-                  <p className="text-[#c5e8e3] text-[0.78rem] sm:text-[0.8rem] font-semibold mt-0.5 leading-relaxed">{item.desc}</p>
+                  <p className="text-white text-[0.78rem] sm:text-[0.8rem] font-semibold mt-0.5 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -1118,7 +1114,7 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
               <strong className="text-[#2E4F5E]">Ready to get started?</strong> Simply <a href={whatsappURL} target="_blank" rel="noopener noreferrer" className="text-[#C43D24] hover:underline font-black">message us on WhatsApp</a> with your subject and level. We&#39;ll match you with a verified tutor in {city} within 24 hours. No long forms, no waiting weeks – start learning today with Avenfield Tutors.
             </p>
             {nearbyCity && (
-              <p className="text-[0.78rem] sm:text-[0.8rem] text-[#7da8b8]">
+              <p className="text-[0.78rem] sm:text-[0.8rem] text-[#a8c5d0]">
                 <span>📌 </span>
                 Also serving <Link href={`/home-tutor-${nearbyCity.toLowerCase()}`} className="text-[#C43D24] hover:underline font-black">{nearbyCity}</Link> and other cities across Pakistan.
               </p>
@@ -1140,7 +1136,7 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
               Ready to Find Your Perfect Home Tutor in {city}?
             </h2>
 
-            <p className="text-[#7da8b8] text-[0.88rem] sm:text-[0.95rem] font-semibold mb-6">
+            <p className="text-[#a8c5d0] text-[0.88rem] sm:text-[0.95rem] font-semibold mb-6">
               Message us on WhatsApp with your subject and level. We&#39;ll match you with a verified tutor within 24 hours.
             </p>
 
@@ -1156,7 +1152,7 @@ export default function CityLandingPage({ city, areas, nearbyCity }: CityPagePro
               </Link>
             </div>
 
-            <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-4 text-[0.68rem] sm:text-[0.7rem] text-[#7da8b8] font-semibold">
+            <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-4 text-[0.68rem] sm:text-[0.7rem] text-[#a8c5d0] font-semibold">
               <span>📱 WhatsApp: +92 309 5154253</span>
               <span className="hidden sm:inline">|</span>
               <span>✉️ avenfieldtutors@gmail.com</span>

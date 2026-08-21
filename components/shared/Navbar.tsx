@@ -1,10 +1,9 @@
 
 
-
-
-
+ 
+ 
 // 'use client'
-
+ 
 // import Link from 'next/link'
 // import Image from 'next/image'
 // import { Fragment, useState, useEffect } from 'react'
@@ -21,7 +20,7 @@
 //   Menu,
 //   X,
 // } from 'lucide-react'
-
+ 
 // // 5 links total, no duplication with the CTA button — keeps desktop clean
 // const navLinks = [
 //   { href: '/',             label: 'Home' },
@@ -29,7 +28,7 @@
 //   { href: '/blog',         label: 'Blog' },
 //   { href: '/contact',      label: 'Contact' },
 // ]
-
+ 
 // // Same links as navLinks, with icons — used by the mobile menu.
 // // Icons swapped from emoji to lucide-react SVGs (crisper, consistent across devices/fonts).
 // const navIcons = [
@@ -38,7 +37,7 @@
 //   { href: '/blog',         label: 'Blog',          Icon: PenLine },
 //   { href: '/contact',      label: 'Contact',       Icon: MessageCircle },
 // ]
-
+ 
 // // Rendered as a "Services" dropdown on desktop, and as collapsible sub-items
 // // under Services on mobile — keeps the local SEO pages one click from
 // // every page on the site instead of only living in the footer.
@@ -47,43 +46,43 @@
 //   { href: '/home-tutor-rawalpindi', label: 'Home Tutor in Rawalpindi' },
 //   { href: '/home-tutor-lahore',     label: 'Home Tutor in Lahore' },
 // ]
-
-// const cityAccentBg = ['bg-[#3A9E8F]', 'bg-[#E8934A]', 'bg-[#E05C42]']
-
+ 
+// const cityAccentBg = ['bg-[#3A9E8F]', 'bg-[#E8934A]', 'bg-[#c94e37]']
+ 
 // export default function Navbar() {
 //   const [open, setOpen]         = useState(false)
 //   const [scrolled, setScrolled] = useState(false)
 //   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
 //   const [mounted, setMounted]   = useState(false)
 //   const pathname                = usePathname()
-
+ 
 //   // Portal target only exists client-side; also avoids SSR/hydration mismatch
 //   useEffect(() => { setMounted(true) }, [])
-
+ 
 //   useEffect(() => {
 //     const fn = () => setScrolled(window.scrollY > 10)
 //     window.addEventListener('scroll', fn, { passive: true })
 //     return () => window.removeEventListener('scroll', fn)
 //   }, [])
-
+ 
 //   useEffect(() => {
 //     setOpen(false)
 //     setMobileServicesOpen(false)
 //   }, [pathname])
-
+ 
 //   // Lock background scroll while the mobile drawer is open
 //   useEffect(() => {
 //     document.body.style.overflow = open ? 'hidden' : ''
 //     return () => { document.body.style.overflow = '' }
 //   }, [open])
-
+ 
 //   // Admin pages get no public navbar (and /admin is disallowed in robots.ts,
 //   // so this section stays out of Google entirely)
 //   const isAdmin = pathname.startsWith('/admin')
 //   if (isAdmin) return null
-
+ 
 //   const isServicesActive = pathname === '/services' || pathname.startsWith('/home-tutor-')
-
+ 
 //   return (
 //     <header
 //       role="banner"
@@ -95,7 +94,7 @@
 //       style={{ fontFamily: "'Nunito', 'Fredoka One', sans-serif" }}
 //     >
 //       <div className="max-w-6xl mx-auto px-4 sm:px-8 h-[66px] flex items-center justify-between gap-4">
-
+ 
 //         {/* ── Logo ── transparent PNG, no white box against any background */}
 //         <Link
 //           href="/"
@@ -115,7 +114,7 @@
 //             />
 //           </div>
 //         </Link>
-
+ 
 //         {/* ── Desktop nav ── */}
 //         <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
 //           <Link
@@ -130,7 +129,7 @@
 //           >
 //             Home
 //           </Link>
-
+ 
 //           {/* Services dropdown — pure CSS group-hover, no JS state, no re-render lag on hover */}
 //           <div className="relative group">
 //             <Link
@@ -146,10 +145,10 @@
 //               Services
 //               <ChevronDown className="w-3.5 h-3.5 transition-transform duration-150 group-hover:rotate-180" strokeWidth={3} />
 //             </Link>
-
+ 
 //             <div className="absolute top-full left-0 pt-2 opacity-0 invisible -translate-y-1 transition-all duration-150 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
 //               <div className="bg-white border-2 border-[#2E4F5E] rounded-2xl shadow-[4px_4px_0_0_#2E4F5E] p-2.5 min-w-[260px] overflow-hidden">
-//                 <p className="px-2.5 pt-1 pb-2 text-[0.6rem] font-black uppercase tracking-[0.15em] text-[#7da8b8]">
+//                 <p className="px-2.5 pt-1 pb-2 text-[0.6rem] font-black uppercase tracking-[0.15em] text-[#a8c5d0]">
 //                   Local Home Tutoring
 //                 </p>
 //                 <Link
@@ -178,7 +177,7 @@
 //               </div>
 //             </div>
 //           </div>
-
+ 
 //           {navLinks.slice(1).map((l) => (
 //             <Link
 //               key={l.href}
@@ -195,19 +194,19 @@
 //             </Link>
 //           ))}
 //         </nav>
-
+ 
 //         {/* ── Desktop right — single CTA, no duplication ── */}
 //         <div className="hidden md:flex items-center">
 //           <Link
 //             href="/become-tutor"
-//             className="px-5 py-2.5 bg-[#E05C42] hover:bg-[#c94e37] text-white text-[0.85rem] font-black rounded-xl transition-colors duration-200 shadow-[0_3px_0_0_#a83c2a] hover:shadow-[0_1px_0_0_#a83c2a] hover:translate-y-[2px] border-0 whitespace-nowrap"
+//             className="px-5 py-2.5 bg-[#c94e37] hover:bg-[#a83c2a] text-white text-[0.85rem] font-black rounded-xl transition-colors duration-200 shadow-[0_3px_0_0_#a83c2a] hover:shadow-[0_1px_0_0_#a83c2a] hover:translate-y-[2px] border-0 whitespace-nowrap"
 //             style={{ fontFamily: "'Nunito', sans-serif" }}
 //             aria-label="Join Avenfield Tutors as a tutor"
 //           >
 //             Join as Tutor ✨
 //           </Link>
 //         </div>
-
+ 
 //         {/* ── Mobile right ── */}
 //         <div className="md:hidden flex items-center gap-2">
 //           <button
@@ -221,7 +220,7 @@
 //           </button>
 //         </div>
 //       </div>
-
+ 
 //       {/* ── Mobile drawer ──
 //           Rendered through a portal straight into document.body. Fixed-position
 //           elements are only fixed relative to the VIEWPORT if no ancestor has a
@@ -238,7 +237,7 @@
 //             onClick={() => setOpen(false)}
 //             aria-hidden="true"
 //           />
-
+ 
 //           <nav
 //             id="mobile-nav"
 //             className={`md:hidden fixed top-[66px] right-0 bottom-0 z-[100] w-[82%] max-w-[340px]
@@ -267,7 +266,7 @@
 //               </span>
 //               {label}
 //             </Link>
-
+ 
 //             {/* Services with collapsible sub-items — matches the desktop dropdown styling */}
 //             {i === 0 && (
 //               <div className="flex flex-col gap-1.5">
@@ -291,7 +290,7 @@
 //                     strokeWidth={3}
 //                   />
 //                 </button>
-
+ 
 //                 <div
 //                   className={`overflow-hidden transition-all duration-200 ease-in-out ${
 //                     mobileServicesOpen ? 'max-h-[280px] opacity-100' : 'max-h-0 opacity-0'
@@ -330,10 +329,10 @@
 //             )}
 //           </Fragment>
 //         ))}
-
+ 
 //             <Link
 //               href="/become-tutor"
-//               className="mt-2 flex items-center justify-center gap-2 px-5 py-3.5 bg-[#E05C42] hover:bg-[#c94e37] text-white text-[0.9rem] font-black rounded-2xl text-center shadow-[0_3px_0_0_#a83c2a] border-2 border-[#a83c2a] transition-colors"
+//               className="mt-2 flex items-center justify-center gap-2 px-5 py-3.5 bg-[#c94e37] hover:bg-[#a83c2a] text-white text-[0.9rem] font-black rounded-2xl text-center shadow-[0_3px_0_0_#a83c2a] border-2 border-[#a83c2a] transition-colors"
 //               aria-label="Apply to become a tutor at Avenfield Tutors"
 //             >
 //               Join as Tutor ✨
@@ -353,8 +352,11 @@
 
 
 
-'use client'
 
+
+ 
+'use client'
+ 
 import Link from 'next/link'
 import Image from 'next/image'
 import { Fragment, useState, useEffect } from 'react'
@@ -371,7 +373,7 @@ import {
   Menu,
   X,
 } from 'lucide-react'
-
+ 
 // 5 links total, no duplication with the CTA button — keeps desktop clean
 const navLinks = [
   { href: '/',             label: 'Home' },
@@ -379,7 +381,7 @@ const navLinks = [
   { href: '/blog',         label: 'Blog' },
   { href: '/contact',      label: 'Contact' },
 ]
-
+ 
 // Same links as navLinks, with icons — used by the mobile menu.
 // Icons swapped from emoji to lucide-react SVGs (crisper, consistent across devices/fonts).
 const navIcons = [
@@ -388,7 +390,7 @@ const navIcons = [
   { href: '/blog',         label: 'Blog',          Icon: PenLine },
   { href: '/contact',      label: 'Contact',       Icon: MessageCircle },
 ]
-
+ 
 // Rendered as a "Services" dropdown on desktop, and as collapsible sub-items
 // under Services on mobile — keeps the local SEO pages one click from
 // every page on the site instead of only living in the footer.
@@ -397,43 +399,43 @@ const cityLinks = [
   { href: '/home-tutor-rawalpindi', label: 'Home Tutor in Rawalpindi' },
   { href: '/home-tutor-lahore',     label: 'Home Tutor in Lahore' },
 ]
-
-const cityAccentBg = ['bg-[#3A9E8F]', 'bg-[#E8934A]', 'bg-[#E05C42]']
-
+ 
+const cityAccentBg = ['bg-[#3A9E8F]', 'bg-[#E8934A]', 'bg-[#c94e37]']
+ 
 export default function Navbar() {
   const [open, setOpen]         = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const [mounted, setMounted]   = useState(false)
   const pathname                = usePathname()
-
+ 
   // Portal target only exists client-side; also avoids SSR/hydration mismatch
   useEffect(() => { setMounted(true) }, [])
-
+ 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 10)
     window.addEventListener('scroll', fn, { passive: true })
     return () => window.removeEventListener('scroll', fn)
   }, [])
-
+ 
   useEffect(() => {
     setOpen(false)
     setMobileServicesOpen(false)
   }, [pathname])
-
+ 
   // Lock background scroll while the mobile drawer is open
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [open])
-
+ 
   // Admin pages get no public navbar (and /admin is disallowed in robots.ts,
   // so this section stays out of Google entirely)
   const isAdmin = pathname.startsWith('/admin')
   if (isAdmin) return null
-
+ 
   const isServicesActive = pathname === '/services' || pathname.startsWith('/home-tutor-')
-
+ 
   return (
     <header
       role="banner"
@@ -445,7 +447,7 @@ export default function Navbar() {
       style={{ fontFamily: "'Nunito', 'Fredoka One', sans-serif" }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-8 h-[66px] flex items-center justify-between gap-4">
-
+ 
         {/* ── Logo ── transparent PNG, no white box against any background */}
         <Link
           href="/"
@@ -465,7 +467,7 @@ export default function Navbar() {
             />
           </div>
         </Link>
-
+ 
         {/* ── Desktop nav ── */}
         <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
           <Link
@@ -480,7 +482,7 @@ export default function Navbar() {
           >
             Home
           </Link>
-
+ 
           {/* Services dropdown — pure CSS group-hover, no JS state, no re-render lag on hover */}
           <div className="relative group">
             <Link
@@ -496,10 +498,10 @@ export default function Navbar() {
               Services
               <ChevronDown className="w-3.5 h-3.5 transition-transform duration-150 group-hover:rotate-180" strokeWidth={3} />
             </Link>
-
+ 
             <div className="absolute top-full left-0 pt-2 opacity-0 invisible -translate-y-1 transition-all duration-150 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
               <div className="bg-white border-2 border-[#2E4F5E] rounded-2xl shadow-[4px_4px_0_0_#2E4F5E] p-2.5 min-w-[260px] overflow-hidden">
-                <p className="px-2.5 pt-1 pb-2 text-[0.6rem] font-black uppercase tracking-[0.15em] text-[#7da8b8]">
+                <p className="px-2.5 pt-1 pb-2 text-[0.6rem] font-black uppercase tracking-[0.15em] text-[#a8c5d0]">
                   Local Home Tutoring
                 </p>
                 <Link
@@ -528,7 +530,7 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-
+ 
           {navLinks.slice(1).map((l) => (
             <Link
               key={l.href}
@@ -545,19 +547,19 @@ export default function Navbar() {
             </Link>
           ))}
         </nav>
-
+ 
         {/* ── Desktop right — single CTA, no duplication ── */}
         <div className="hidden md:flex items-center">
           <Link
             href="/become-tutor"
-            className="px-5 py-2.5 bg-[#E05C42] hover:bg-[#c94e37] text-white text-[0.85rem] font-black rounded-xl transition-colors duration-200 shadow-[0_3px_0_0_#a83c2a] hover:shadow-[0_1px_0_0_#a83c2a] hover:translate-y-[2px] border-0 whitespace-nowrap"
+            className="px-5 py-2.5 bg-[#c94e37] hover:bg-[#a83c2a] text-white text-[0.85rem] font-black rounded-xl transition-colors duration-200 shadow-[0_3px_0_0_#a83c2a] hover:shadow-[0_1px_0_0_#a83c2a] hover:translate-y-[2px] border-0 whitespace-nowrap"
             style={{ fontFamily: "'Nunito', sans-serif" }}
             aria-label="Join Avenfield Tutors as a tutor"
           >
             Join as Tutor ✨
           </Link>
         </div>
-
+ 
         {/* ── Mobile right ── */}
         <div className="md:hidden flex items-center gap-2">
           <button
@@ -571,7 +573,7 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-
+ 
       {/* ── Mobile drawer ──
           Rendered through a portal straight into document.body. Fixed-position
           elements are only fixed relative to the VIEWPORT if no ancestor has a
@@ -588,7 +590,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             aria-hidden="true"
           />
-
+ 
           <nav
             id="mobile-nav"
             className={`md:hidden fixed top-[66px] right-0 bottom-0 z-[100] w-[82%] max-w-[340px]
@@ -617,7 +619,7 @@ export default function Navbar() {
               </span>
               {label}
             </Link>
-
+ 
             {/* Services with collapsible sub-items — matches the desktop dropdown styling */}
             {i === 0 && (
               <div className="flex flex-col gap-1.5">
@@ -641,7 +643,7 @@ export default function Navbar() {
                     strokeWidth={3}
                   />
                 </button>
-
+ 
                 <div
                   className={`overflow-hidden transition-all duration-200 ease-in-out ${
                     mobileServicesOpen ? 'max-h-[280px] opacity-100' : 'max-h-0 opacity-0'
@@ -680,10 +682,10 @@ export default function Navbar() {
             )}
           </Fragment>
         ))}
-
+ 
             <Link
               href="/become-tutor"
-              className="mt-2 flex items-center justify-center gap-2 px-5 py-3.5 bg-[#E05C42] hover:bg-[#c94e37] text-white text-[0.9rem] font-black rounded-2xl text-center shadow-[0_3px_0_0_#a83c2a] border-2 border-[#a83c2a] transition-colors"
+              className="mt-2 flex items-center justify-center gap-2 px-5 py-3.5 bg-[#c94e37] hover:bg-[#a83c2a] text-white text-[0.9rem] font-black rounded-2xl text-center shadow-[0_3px_0_0_#a83c2a] border-2 border-[#a83c2a] transition-colors"
               aria-label="Apply to become a tutor at Avenfield Tutors"
             >
               Join as Tutor ✨

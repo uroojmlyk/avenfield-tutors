@@ -1,11 +1,12 @@
 
 
 
+ 
 // import Link from 'next/link'
 // import Image from 'next/image'
-
+ 
 // const WHATSAPP = '923095154253'
-
+ 
 // const platformLinks: [string, string][] = [
 //   ['/', 'Home'],
 //   ['/services', 'Tutoring Services'],
@@ -14,18 +15,19 @@
 //   ['/blog', 'Blog'],
 //   ['/contact', 'Contact'],
 // ]
-
+ 
 // const cityLinks: [string, string][] = [
 //   ['/home-tutor-islamabad', 'Home Tutor in Islamabad'],
 //   ['/home-tutor-rawalpindi', 'Home Tutor in Rawalpindi'],
+//   ['/home-tutor-lahore', 'Home Tutor in Lahore'], // ✅ Added
 // ]
-
+ 
 // const subjects = [
 //   'Mathematics', 'Physics', 'English',
 //   'O Level', 'A Level', 'IELTS',
 //   'Computer Science', 'Quran',
 // ]
-
+ 
 // export default function Footer() {
 //   return (
 //     <footer
@@ -40,10 +42,10 @@
 //           <path d="M0,24 C180,48 360,0 540,24 C720,48 900,0 1080,24 C1260,48 1350,12 1440,24 L1440,0 L0,0 Z"/>
 //         </svg>
 //       </div>
-
+ 
 //       <div className="max-w-6xl mx-auto px-4 sm:px-8 pt-4 pb-8">
 //         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-
+ 
 //           {/* ── Brand ── */}
 //           <div className="sm:col-span-2 lg:col-span-1">
 //             <Link
@@ -62,16 +64,16 @@
 //                 />
 //               </div>
 //             </Link>
-
-//             <p className="text-[0.84rem] leading-relaxed text-[#7da8b8] max-w-xs mb-2 font-medium">
+ 
+//             <p className="text-[0.84rem] leading-relaxed text-[#a8c5d0] max-w-xs mb-2 font-medium">
 //               Avenfield Tutors connects students with verified, expert tutors for personalised online and home tuition across Pakistan, UAE &amp; UK. 🌍
 //             </p>
-
-//             <p className="text-[0.78rem] text-[#3A9E8F] font-semibold mt-3">
+ 
+//             <p className="text-[0.78rem] text-[#2c7d70] font-semibold mt-3">
 //               📱 Available on WhatsApp 7 days a week
 //             </p>
 //           </div>
-
+ 
 //           {/* ── Platform ── */}
 //           <nav aria-label="Platform links">
 //             <h2 className="text-[#E8C86A] text-[0.78rem] font-black uppercase tracking-[0.2em] mb-5">Platform</h2>
@@ -98,7 +100,7 @@
 //               ))}
 //             </ul>
 //           </nav>
-
+ 
 //           {/* ── Subjects ── */}
 //           <nav aria-label="Subject links">
 //             <h2 className="text-[#E8C86A] text-[0.78rem] font-black uppercase tracking-[0.2em] mb-5">Subjects</h2>
@@ -116,14 +118,14 @@
 //               ))}
 //             </ul>
 //           </nav>
-
+ 
 //           {/* ── Contact ── */}
 //           <div>
 //             <h2 className="text-[#E8C86A] text-[0.78rem] font-black uppercase tracking-[0.2em] mb-5">Contact Us</h2>
-//             <p className="text-[0.84rem] text-[#7da8b8] mb-4 leading-relaxed font-medium">
+//             <p className="text-[0.84rem] text-[#a8c5d0] mb-4 leading-relaxed font-medium">
 //               Have a question? We reply within an hour promise! 🤝
 //             </p>
-
+ 
 //             {/* WhatsApp CTA */}
 //             <a
 //               href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi! I visited Avenfield Tutors and have a question.')}`}
@@ -138,43 +140,43 @@
 //               </svg>
 //               Chat on WhatsApp
 //             </a>
-
+ 
 //             {/* Contact Icons - Only Icons, Properly Adjusted */}
 //             <div className="mt-5 flex items-center gap-4">
 //               {/* Phone - Icon Only */}
 //               <a
 //                 href={`tel:+${WHATSAPP}`}
 //                 aria-label="Call Avenfield Tutors on +92 309 5154253"
-//                 className="w-11 h-11 rounded-full bg-[#3A9E8F]/20 border-2 border-[#3A9E8F]/40 flex items-center justify-center text-[#3A9E8F] text-xl hover:bg-[#3A9E8F] hover:text-white hover:border-[#3A9E8F] transition-all duration-200 hover:shadow-[0_0_20px_rgba(58,158,143,0.3)] hover:-translate-y-0.5"
+//                 className="w-11 h-11 rounded-full bg-[#3A9E8F]/20 border-2 border-[#3A9E8F]/40 flex items-center justify-center text-[#2c7d70] text-xl hover:bg-[#3A9E8F] hover:text-white hover:border-[#3A9E8F] transition-all duration-200 hover:shadow-[0_0_20px_rgba(58,158,143,0.3)] hover:-translate-y-0.5"
 //               >
 //                 📞
 //               </a>
-
+ 
 //               {/* Email - Icon Only */}
 //               <a
 //                 href="mailto:avenfieldtutors@gmail.com"
 //                 aria-label="Email Avenfield Tutors at avenfieldtutors@gmail.com"
-//                 className="w-11 h-11 rounded-full bg-[#3A9E8F]/20 border-2 border-[#3A9E8F]/40 flex items-center justify-center text-[#3A9E8F] text-xl hover:bg-[#3A9E8F] hover:text-white hover:border-[#3A9E8F] transition-all duration-200 hover:shadow-[0_0_20px_rgba(58,158,143,0.3)] hover:-translate-y-0.5"
+//                 className="w-11 h-11 rounded-full bg-[#3A9E8F]/20 border-2 border-[#3A9E8F]/40 flex items-center justify-center text-[#2c7d70] text-xl hover:bg-[#3A9E8F] hover:text-white hover:border-[#3A9E8F] transition-all duration-200 hover:shadow-[0_0_20px_rgba(58,158,143,0.3)] hover:-translate-y-0.5"
 //               >
 //                 ✉️
 //               </a>
 //             </div>
 //           </div>
 //         </div>
-
+ 
 //         {/* ── Divider ── */}
 //         <div className="h-[2px] bg-[#3A9E8F]/40 rounded-full mb-6" aria-hidden="true" />
-
+ 
 //         {/* ── Bottom ── */}
 //         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-//           <p className="text-[0.78rem] text-[#5a7f8e] font-semibold">
+//           <p className="text-[0.78rem] text-[#a8c5d0] font-semibold">
 //             © {new Date().getFullYear()} Avenfield Tutors. All rights reserved.
 //             <span className="hidden sm:inline"> Building Confidence. Delivering Excellence. 💛</span>
 //           </p>
 //         </div>
-
+ 
 //         {/* Mobile-only tagline */}
-//         <p className="text-[0.7rem] text-[#5a7f8e] text-center mt-3 sm:hidden font-medium">
+//         <p className="text-[0.7rem] text-[#a8c5d0] text-center mt-3 sm:hidden font-medium">
 //           Building Confidence. Delivering Excellence. 💛
 //         </p>
 //       </div>
@@ -187,11 +189,17 @@
 
 
 
+
+
+
+ 
+ 
+ 
 import Link from 'next/link'
 import Image from 'next/image'
-
+ 
 const WHATSAPP = '923095154253'
-
+ 
 const platformLinks: [string, string][] = [
   ['/', 'Home'],
   ['/services', 'Tutoring Services'],
@@ -200,19 +208,19 @@ const platformLinks: [string, string][] = [
   ['/blog', 'Blog'],
   ['/contact', 'Contact'],
 ]
-
+ 
 const cityLinks: [string, string][] = [
   ['/home-tutor-islamabad', 'Home Tutor in Islamabad'],
   ['/home-tutor-rawalpindi', 'Home Tutor in Rawalpindi'],
   ['/home-tutor-lahore', 'Home Tutor in Lahore'], // ✅ Added
 ]
-
+ 
 const subjects = [
   'Mathematics', 'Physics', 'English',
   'O Level', 'A Level', 'IELTS',
   'Computer Science', 'Quran',
 ]
-
+ 
 export default function Footer() {
   return (
     <footer
@@ -227,10 +235,10 @@ export default function Footer() {
           <path d="M0,24 C180,48 360,0 540,24 C720,48 900,0 1080,24 C1260,48 1350,12 1440,24 L1440,0 L0,0 Z"/>
         </svg>
       </div>
-
+ 
       <div className="max-w-6xl mx-auto px-4 sm:px-8 pt-4 pb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-
+ 
           {/* ── Brand ── */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link
@@ -249,16 +257,16 @@ export default function Footer() {
                 />
               </div>
             </Link>
-
-            <p className="text-[0.84rem] leading-relaxed text-[#7da8b8] max-w-xs mb-2 font-medium">
+ 
+            <p className="text-[0.84rem] leading-relaxed text-[#a8c5d0] max-w-xs mb-2 font-medium">
               Avenfield Tutors connects students with verified, expert tutors for personalised online and home tuition across Pakistan, UAE &amp; UK. 🌍
             </p>
-
-            <p className="text-[0.78rem] text-[#3A9E8F] font-semibold mt-3">
+ 
+            <p className="text-[0.78rem] text-[#2c7d70] font-semibold mt-3">
               📱 Available on WhatsApp 7 days a week
             </p>
           </div>
-
+ 
           {/* ── Platform ── */}
           <nav aria-label="Platform links">
             <h2 className="text-[#E8C86A] text-[0.78rem] font-black uppercase tracking-[0.2em] mb-5">Platform</h2>
@@ -285,7 +293,7 @@ export default function Footer() {
               ))}
             </ul>
           </nav>
-
+ 
           {/* ── Subjects ── */}
           <nav aria-label="Subject links">
             <h2 className="text-[#E8C86A] text-[0.78rem] font-black uppercase tracking-[0.2em] mb-5">Subjects</h2>
@@ -303,14 +311,14 @@ export default function Footer() {
               ))}
             </ul>
           </nav>
-
+ 
           {/* ── Contact ── */}
           <div>
             <h2 className="text-[#E8C86A] text-[0.78rem] font-black uppercase tracking-[0.2em] mb-5">Contact Us</h2>
-            <p className="text-[0.84rem] text-[#7da8b8] mb-4 leading-relaxed font-medium">
+            <p className="text-[0.84rem] text-[#a8c5d0] mb-4 leading-relaxed font-medium">
               Have a question? We reply within an hour promise! 🤝
             </p>
-
+ 
             {/* WhatsApp CTA */}
             <a
               href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi! I visited Avenfield Tutors and have a question.')}`}
@@ -325,43 +333,43 @@ export default function Footer() {
               </svg>
               Chat on WhatsApp
             </a>
-
+ 
             {/* Contact Icons - Only Icons, Properly Adjusted */}
             <div className="mt-5 flex items-center gap-4">
               {/* Phone - Icon Only */}
               <a
                 href={`tel:+${WHATSAPP}`}
                 aria-label="Call Avenfield Tutors on +92 309 5154253"
-                className="w-11 h-11 rounded-full bg-[#3A9E8F]/20 border-2 border-[#3A9E8F]/40 flex items-center justify-center text-[#3A9E8F] text-xl hover:bg-[#3A9E8F] hover:text-white hover:border-[#3A9E8F] transition-all duration-200 hover:shadow-[0_0_20px_rgba(58,158,143,0.3)] hover:-translate-y-0.5"
+                className="w-11 h-11 rounded-full bg-[#3A9E8F]/20 border-2 border-[#3A9E8F]/40 flex items-center justify-center text-[#2c7d70] text-xl hover:bg-[#3A9E8F] hover:text-white hover:border-[#3A9E8F] transition-all duration-200 hover:shadow-[0_0_20px_rgba(58,158,143,0.3)] hover:-translate-y-0.5"
               >
                 📞
               </a>
-
+ 
               {/* Email - Icon Only */}
               <a
                 href="mailto:avenfieldtutors@gmail.com"
                 aria-label="Email Avenfield Tutors at avenfieldtutors@gmail.com"
-                className="w-11 h-11 rounded-full bg-[#3A9E8F]/20 border-2 border-[#3A9E8F]/40 flex items-center justify-center text-[#3A9E8F] text-xl hover:bg-[#3A9E8F] hover:text-white hover:border-[#3A9E8F] transition-all duration-200 hover:shadow-[0_0_20px_rgba(58,158,143,0.3)] hover:-translate-y-0.5"
+                className="w-11 h-11 rounded-full bg-[#3A9E8F]/20 border-2 border-[#3A9E8F]/40 flex items-center justify-center text-[#2c7d70] text-xl hover:bg-[#3A9E8F] hover:text-white hover:border-[#3A9E8F] transition-all duration-200 hover:shadow-[0_0_20px_rgba(58,158,143,0.3)] hover:-translate-y-0.5"
               >
                 ✉️
               </a>
             </div>
           </div>
         </div>
-
+ 
         {/* ── Divider ── */}
         <div className="h-[2px] bg-[#3A9E8F]/40 rounded-full mb-6" aria-hidden="true" />
-
+ 
         {/* ── Bottom ── */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[0.78rem] text-[#5a7f8e] font-semibold">
+          <p className="text-[0.78rem] text-[#a8c5d0] font-semibold">
             © {new Date().getFullYear()} Avenfield Tutors. All rights reserved.
             <span className="hidden sm:inline"> Building Confidence. Delivering Excellence. 💛</span>
           </p>
         </div>
-
+ 
         {/* Mobile-only tagline */}
-        <p className="text-[0.7rem] text-[#5a7f8e] text-center mt-3 sm:hidden font-medium">
+        <p className="text-[0.7rem] text-[#a8c5d0] text-center mt-3 sm:hidden font-medium">
           Building Confidence. Delivering Excellence. 💛
         </p>
       </div>

@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 // import { blogPosts } from '@/lib/blog-posts'
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
@@ -1040,23 +1032,23 @@ const sortedBlogPosts = [...blogPosts].sort((a, b) => new Date(b.date).getTime()
 const SUBJECTS = [
   { name: 'Mathematics',       icon: '∑',    bg: 'bg-[#E8C86A]',  text: 'text-[#2E4F5E]' },
   { name: 'Physics',           icon: '⚛',   bg: 'bg-[#E8934A]',  text: 'text-white'      },
-  { name: 'Chemistry',         icon: '🧪',   bg: 'bg-[#E05C42]',  text: 'text-white'      },
+  { name: 'Chemistry',         icon: '🧪',   bg: 'bg-[#c94e37]',  text: 'text-white'      },
   { name: 'Biology',           icon: '🧬',   bg: 'bg-[#3A9E8F]',  text: 'text-white'      },
   { name: 'Science',           icon: '🔬',   bg: 'bg-[#E8934A]',  text: 'text-white'      },
   { name: 'English',           icon: 'Aa',   bg: 'bg-[#3A9E8F]',  text: 'text-white'      },
   { name: 'Urdu',              icon: 'اردو', bg: 'bg-[#2E4F5E]',  text: 'text-[#E8C86A]'  },
   { name: 'Islamic Studies',   icon: '☪️',   bg: 'bg-[#E8C86A]',  text: 'text-[#2E4F5E]'  },
   { name: 'Pakistan Studies',  icon: '🇵🇰',  bg: 'bg-[#3A9E8F]',  text: 'text-white'      },
-  { name: 'Statistics',        icon: '📈',   bg: 'bg-[#E05C42]',  text: 'text-white'      },
+  { name: 'Statistics',        icon: '📈',   bg: 'bg-[#c94e37]',  text: 'text-white'      },
   { name: 'Political Science', icon: '🏛️',  bg: 'bg-[#E8934A]',  text: 'text-white'      },
   { name: 'Law',               icon: '⚖️',   bg: 'bg-[#E8C86A]',  text: 'text-[#2E4F5E]'  },
   { name: 'Computer Science',  icon: '</>',  bg: 'bg-[#2E4F5E]',  text: 'text-[#E8C86A]'  },
   { name: 'O Level',           icon: 'O/L',  bg: 'bg-[#2E4F5E]',  text: 'text-[#E8C86A]'  },
-  { name: 'A Level',           icon: 'A/L',  bg: 'bg-[#E05C42]',  text: 'text-white'      },
+  { name: 'A Level',           icon: 'A/L',  bg: 'bg-[#c94e37]',  text: 'text-white'      },
   { name: 'IELTS',             icon: 'IEL',  bg: 'bg-[#E8934A]',  text: 'text-white'      },
   { name: 'CSS / PMS',         icon: '🎓',   bg: 'bg-[#2E4F5E]',  text: 'text-[#E8C86A]'  },
   { name: 'PPSC / FPSC',       icon: '📋',   bg: 'bg-[#E8934A]',  text: 'text-white'      },
-  { name: 'MDCAT',             icon: '🏥',   bg: 'bg-[#E05C42]',  text: 'text-white'      },
+  { name: 'MDCAT',             icon: '🏥',   bg: 'bg-[#c94e37]',  text: 'text-white'      },
   { name: 'Quran & Arabic',    icon: '📿',   bg: 'bg-[#3A9E8F]',  text: 'text-white'      },
   { name: 'Cadet College',     icon: '🎖️',  bg: 'bg-[#E8C86A]',  text: 'text-[#2E4F5E]'  },
 ]
@@ -1064,9 +1056,9 @@ const SUBJECTS = [
 function Eyebrow({ text, light = false, center = false }: { text: string; light?: boolean; center?: boolean }) {
   return (
     <div className={`flex items-center gap-2 mb-3 ${center ? 'justify-center' : ''}`} aria-hidden="true">
-      <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
+      <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#c94e37]'}`} />
       <span className={`text-[0.62rem] font-black uppercase tracking-[0.22em] ${light ? 'text-[#E8C86A]' : 'text-[#C43D24]'}`}>{text}</span>
-      <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
+      <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#c94e37]'}`} />
     </div>
   )
 }
@@ -1243,7 +1235,7 @@ export default async function HomePage() {
 
               {/* Social proof badge */}
               <div className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 bg-[#E8C86A]/25 border-2 border-[#E8C86A] text-[#2E4F5E] text-[0.7rem] font-black px-3 py-1.5 rounded-full mb-5 shadow-[2px_2px_0_0_#c9ab4a] max-w-full">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E05C42] animate-pulse flex-shrink-0" aria-hidden="true" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#c94e37] animate-pulse flex-shrink-0" aria-hidden="true" />
                 <span className="whitespace-nowrap">🌎 Trusted by 8k+ students across</span>
                 <span className="flex items-center gap-1 flex-wrap" aria-label="UK, USA, Canada, Australia, UAE, Europe">
                   🇬🇧 🇺🇸 🇨🇦 🇦🇺 🇦🇪 🇪🇺 ⭐
@@ -1294,7 +1286,7 @@ export default async function HomePage() {
               <div className="flex flex-col sm:flex-row gap-3 mb-8 md:mb-9">
                 <Link
                   href="/tutors"
-                  className="flex items-center justify-center gap-2 px-5 md:px-6 py-3 bg-[#E05C42] text-white font-black rounded-xl border-2 border-[#a83c2a] shadow-[0_4px_0_0_#a83c2a] hover:shadow-[0_2px_0_0_#a83c2a] hover:translate-y-[2px] transition-all duration-150 text-[0.85rem] md:text-[0.9rem]"
+                  className="flex items-center justify-center gap-2 px-5 md:px-6 py-3 bg-[#c94e37] text-white font-black rounded-xl border-2 border-[#a83c2a] shadow-[0_4px_0_0_#a83c2a] hover:shadow-[0_2px_0_0_#a83c2a] hover:translate-y-[2px] transition-all duration-150 text-[0.85rem] md:text-[0.9rem]"
                   aria-label="Browse all verified online and home tutors at Avenfield Tutors"
                 >
                   Find My Tutor →
@@ -1314,7 +1306,7 @@ export default async function HomePage() {
                   { v: '⭐ Google Rated', l: 'Real Reviews',    c: 'border-[#E8C86A] bg-[#E8C86A]/20'  },
                   { v: 'Verified',        l: 'Every Tutor',    c: 'border-[#3A9E8F] bg-[#3A9E8F]/12'  },
                   { v: '50+ Subjects',    l: 'Areas Covered',    c: 'border-[#E8934A] bg-[#E8934A]/12'  },
-                  { v: 'Online & Home',   l: 'Learning Modes',  c: 'border-[#E05C42] bg-[#E05C42]/10'  },
+                  { v: 'Online & Home',   l: 'Learning Modes',  c: 'border-[#E05C42] bg-[#c94e37]/10'  },
                 ].map(({ v, l, c }) => (
                   <div key={l} className={`px-3 py-2 rounded-xl border-2 ${c}`}>
                     <p className="font-black text-[#2E4F5E] text-[0.8rem] md:text-[0.85rem] leading-tight">{v}</p>
@@ -1334,7 +1326,7 @@ export default async function HomePage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="font-black text-[0.9rem] text-[#2E4F5E]">Avenfield Tutors</p>
-                      <p className="text-[0.65rem] text-[#3A9E8F] font-bold">All manually verified ✓</p>
+                      <p className="text-[0.65rem] text-[#2c7d70] font-bold">All manually verified ✓</p>
                     </div>
                     <div className="flex items-center gap-1 bg-[#E8C86A]/25 border border-[#E8C86A] px-2 py-0.5 rounded-full flex-shrink-0">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#3A9E8F] animate-pulse" aria-hidden="true"/>
@@ -1355,7 +1347,7 @@ export default async function HomePage() {
                           <div className={`w-9 h-9 rounded-xl ${palette.bg} ${palette.txt} text-[0.65rem] font-black flex items-center justify-center border-2 border-[#2E4F5E] flex-shrink-0`}>{initials}</div>
                           <div className="flex-1 min-w-0">
                             <p className="text-[0.8rem] font-black text-[#2E4F5E] truncate">{t.name}</p>
-                            <p className="text-[0.63rem] text-[#3A9E8F] font-bold truncate">{t.subjects.slice(0, 2).join(' & ')}</p>
+                            <p className="text-[0.63rem] text-[#2c7d70] font-bold truncate">{t.subjects.slice(0, 2).join(' & ')}</p>
                           </div>
                           <span className="text-[0.62rem] font-black text-[#2E4F5E] bg-[#E8C86A] px-2 py-0.5 rounded-full border border-[#2E4F5E] flex-shrink-0">{t.experience} yrs</span>
                         </Link>
@@ -1377,7 +1369,7 @@ export default async function HomePage() {
                   href="https://www.google.com/search?q=avenfield+tutors"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute -bottom-4 -left-5 bg-[#E05C42] text-white rounded-xl px-4 py-2.5 border-2 border-[#a83c2a] shadow-[3px_3px_0_0_#a83c2a] no-underline hover:translate-y-[1px] hover:shadow-[2px_2px_0_0_#a83c2a] transition-all"
+                  className="absolute -bottom-4 -left-5 bg-[#c94e37] text-white rounded-xl px-4 py-2.5 border-2 border-[#a83c2a] shadow-[3px_3px_0_0_#a83c2a] no-underline hover:translate-y-[1px] hover:shadow-[2px_2px_0_0_#a83c2a] transition-all"
                 >
                   <p className="text-[0.58rem] font-bold opacity-80">Google Reviews</p>
                   <p className="font-black text-[0.85rem] leading-tight">See What Families Say →</p>
@@ -1402,12 +1394,12 @@ export default async function HomePage() {
               { abbr: 'IGCSE',  label: 'Cambridge IGCSE', bg: 'bg-[#E8C86A]',  t: 'text-[#2E4F5E]' },
               { abbr: 'A-LVL',  label: 'CAIE A-Level',    bg: 'bg-[#3A9E8F]',  t: 'text-white'     },
               { abbr: 'EDX',    label: 'Edexcel',          bg: 'bg-[#E8934A]',  t: 'text-white'     },
-              { abbr: 'IB',     label: 'IB',               bg: 'bg-[#E05C42]',  t: 'text-white'     },
+              { abbr: 'IB',     label: 'IB',               bg: 'bg-[#c94e37]',  t: 'text-white'     },
               { abbr: 'O/LVL',  label: 'O Level',          bg: 'bg-[#2E4F5E]',  t: 'text-[#E8C86A]', border: 'border border-[#E8C86A]/40' },
               { abbr: 'AP',     label: 'AP Courses',       bg: 'bg-[#E8C86A]',  t: 'text-[#2E4F5E]' },
               { abbr: 'SAT',    label: 'SAT',              bg: 'bg-[#3A9E8F]',  t: 'text-white'     },
               { abbr: 'CAIE',   label: 'CAIE',             bg: 'bg-[#E8934A]',  t: 'text-white'     },
-              { abbr: 'Oxford', label: 'Oxford',            bg: 'bg-[#E05C42]',  t: 'text-white'     },
+              { abbr: 'Oxford', label: 'Oxford',            bg: 'bg-[#c94e37]',  t: 'text-white'     },
             ].map(({ abbr, label, bg, t, border = '' }) => (
               <div key={abbr} className="flex items-center gap-1 sm:gap-2">
                 <div
@@ -1416,7 +1408,7 @@ export default async function HomePage() {
                 >
                   {abbr}
                 </div>
-                <span className="text-[0.65rem] sm:text-[0.7rem] font-bold text-[#7da8b8] hidden sm:block whitespace-nowrap">{label}</span>
+                <span className="text-[0.65rem] sm:text-[0.7rem] font-bold text-[#a8c5d0] hidden sm:block whitespace-nowrap">{label}</span>
               </div>
             ))}
           </div>
@@ -1428,7 +1420,7 @@ export default async function HomePage() {
       ══════════════════════════════════════════════════════ */}
       <section
         aria-labelledby="why-choose-heading"
-        className="bg-[#3A9E8F] py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8"
+        className="bg-[#2f8074] py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8"
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
@@ -1436,7 +1428,7 @@ export default async function HomePage() {
             <h2 id="why-choose-heading" className="text-[1.5rem] sm:text-[2rem] md:text-[2.4rem] font-black tracking-[-0.02em] text-white mb-2 md:mb-3">
               Why Choose Avenfield Tutors for Online &amp; Home Tuition
             </h2>
-            <p className="text-[#c5e8e3] text-[0.85rem] md:text-[0.88rem] max-w-sm md:max-w-md mx-auto font-semibold leading-relaxed">
+            <p className="text-white text-[0.85rem] md:text-[0.88rem] max-w-sm md:max-w-md mx-auto font-semibold leading-relaxed">
               Not just a tutor list real verification, genuine flexibility, outcomes that matter.
             </p>
           </div>
@@ -1445,14 +1437,14 @@ export default async function HomePage() {
               { icon: '🛡️', title: 'Verified Tutors',     desc: 'Manually reviewed. Only qualified educators make it through.',              bd: 'border-[#E8C86A]', hv: 'hover:bg-[#E8C86A]/10 hover:shadow-[3px_3px_0_0_#E8C86A]' },
               { icon: '📅', title: 'Flexible Scheduling', desc: 'Morning, evening, weekends online or in person. Your terms.',             bd: 'border-white',     hv: 'hover:bg-white/10 hover:shadow-[3px_3px_0_0_white]'       },
               { icon: '🎯', title: 'Personalised Learning', desc: 'Sessions built around your goals, pace, and academic level.',             bd: 'border-[#E8934A]', hv: 'hover:bg-[#E8934A]/10 hover:shadow-[3px_3px_0_0_#E8934A]' },
-              { icon: '💬', title: 'Direct WhatsApp',     desc: 'No middlemen. Contact tutors directly and start the same day.',            bd: 'border-[#E05C42]', hv: 'hover:bg-[#E05C42]/10 hover:shadow-[3px_3px_0_0_#E05C42]' },
+              { icon: '💬', title: 'Direct WhatsApp',     desc: 'No middlemen. Contact tutors directly and start the same day.',            bd: 'border-[#E05C42]', hv: 'hover:bg-[#c94e37]/10 hover:shadow-[3px_3px_0_0_#E05C42]' },
             ].map(c => (
               <div key={c.title} className={`group bg-white/10 p-4 sm:p-5 md:p-6 rounded-2xl border-2 ${c.bd} ${c.hv} transition-all duration-200`}>
                 <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-xl bg-white/15 border-2 border-white/40 flex items-center justify-center text-xl sm:text-2xl mb-3 md:mb-4 group-hover:rotate-[-6deg] transition-transform duration-200" aria-hidden="true">
                   {c.icon}
                 </div>
                 <h3 className="font-black text-[0.85rem] sm:text-[0.9rem] md:text-[1rem] text-white mb-1 md:mb-1.5">{c.title}</h3>
-                <p className="text-[#c5e8e3] text-[0.72rem] sm:text-[0.75rem] md:text-[0.8rem] font-semibold leading-relaxed">{c.desc}</p>
+                <p className="text-white text-[0.72rem] sm:text-[0.75rem] md:text-[0.8rem] font-semibold leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -1472,7 +1464,7 @@ export default async function HomePage() {
             <h2 id="how-it-works-heading" className="text-[1.5rem] sm:text-[2rem] md:text-[2.4rem] font-black tracking-[-0.02em] text-[#2E4F5E] mb-2 md:mb-3">
               Book a Tutor in Under 2 Minutes ⚡
             </h2>
-            <p className="text-[#4a6a78] text-[0.85rem] md:text-[0.88rem] max-w-xs md:max-w-sm mx-auto font-semibold">
+            <p className="text-[#2E4F5E] text-[0.85rem] md:text-[0.88rem] max-w-xs md:max-w-sm mx-auto font-semibold">
               No long forms. No waiting weeks. Start learning today.
             </p>
           </div>
@@ -1480,7 +1472,7 @@ export default async function HomePage() {
             <div aria-hidden="true" className="hidden sm:block absolute top-[52px] left-[calc(16.66%+1.5rem)] right-[calc(16.66%+1.5rem)] border-t-2 border-dashed border-[#2E4F5E] opacity-30" />
             {[
               { n: '01', emoji: '🔍', title: 'Browse Expert Tutors', desc: 'Filter by subject, city and mode. Every tutor is verified zero fakes.',     bg: 'bg-[#2E4F5E]' },
-              { n: '02', emoji: '💡', title: 'Choose Your Match',     desc: 'Read bio, qualifications and experience. Know who is right in minutes.',      bg: 'bg-[#E05C42]' },
+              { n: '02', emoji: '💡', title: 'Choose Your Match',     desc: 'Read bio, qualifications and experience. Know who is right in minutes.',      bg: 'bg-[#c94e37]' },
               { n: '03', emoji: '🚀', title: 'Connect & Start',       desc: 'Message on WhatsApp, book a slot and start the same day. That simple.',       bg: 'bg-[#3A9E8F]' },
             ].map(s => (
               <div key={s.n} className="flex flex-col items-center text-center p-5 sm:p-6 md:p-7 bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[4px_4px_0_0_#2E4F5E] hover:-translate-y-1 hover:shadow-[4px_6px_0_0_#2E4F5E] transition-all duration-200">
@@ -1511,7 +1503,7 @@ export default async function HomePage() {
                 Subjects We Offer for Online &amp; Home Tuition 📚
               </h2>
             </div>
-            <p className="text-[#7da8b8] text-[0.8rem] md:text-[0.82rem] max-w-[200px] font-semibold leading-relaxed">
+            <p className="text-[#a8c5d0] text-[0.8rem] md:text-[0.82rem] max-w-[200px] font-semibold leading-relaxed">
               From school basics to professional certifications.
             </p>
           </div>
@@ -1593,7 +1585,7 @@ export default async function HomePage() {
               >
                 Latest Guides &amp; Exam Tips 📝
               </h2>
-              <p className="text-[#7da8b8] text-[0.85rem] font-semibold mt-1 max-w-md">
+              <p className="text-[#a8c5d0] text-[0.85rem] font-semibold mt-1 max-w-md">
                 Expert-written articles to help you ace your O Levels, A Levels, IELTS &amp; MDCAT.
               </p>
             </div>
@@ -1620,7 +1612,7 @@ export default async function HomePage() {
                   aria-label={`Read full guide: ${post.title}`}
                 >
                   {/* Category Badge */}
-                  <p className="text-[0.6rem] font-black text-[#3A9E8F] tracking-widest uppercase mb-2">
+                  <p className="text-[0.6rem] font-black text-[#2c7d70] tracking-widest uppercase mb-2">
                     {post.category}
                   </p>
                   
