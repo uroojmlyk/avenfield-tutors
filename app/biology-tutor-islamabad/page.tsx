@@ -1,3 +1,5 @@
+
+
 // import type { Metadata } from 'next'
 // import SubjectLandingPage from '@/components/shared/SubjectLandingPage'
 
@@ -171,9 +173,9 @@
 //       subjectIcon="🧬"
 //       subjectEmoji="🔬"
 //       subjectOverview={[
-//         `The <a href="/tutors?subject=Biology&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Biology tutor in Islamabad</a> market is thriving as students seek expert guidance in one of the most important and fascinating subjects. Biology forms the foundation for careers in medicine, healthcare, biotechnology, environmental science, and research. Our verified Biology tutors in Islamabad help students master everything from cell biology to human physiology with clarity and confidence.`,
-//         `Whether your child is preparing for <a href="/tutors?subject=O%20Level&city=Islamabad" class="text-[#E05C42] hover:underline font-black">O Level Biology</a>, <a href="/tutors?subject=A%20Level&city=Islamabad" class="text-[#E05C42] hover:underline font-black">A Level Biology</a>, <a href="/tutors?subject=MDCAT&city=Islamabad" class="text-[#E05C42] hover:underline font-black">MDCAT Biology</a>, or <a href="/tutors?subject=FSc&city=Islamabad" class="text-[#E05C42} hover:underline font-black">FSc Biology</a>, our experienced tutors provide personalised support tailored to the specific curriculum. They understand the unique challenges of each exam board and syllabus from Cambridge CAIE and Edexcel to local Pakistani boards and help students develop a deep understanding of biological concepts.`,
-//         `With a focus on building conceptual understanding and exam technique, our <a href="/home-tutor-islamabad" class="text-[#E05C42} hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that Biology requires. This personalised approach is particularly effective for students who need help with complex topics like genetics, evolution, human anatomy, and biochemical pathways.`,
+//         `The <a href="/tutors?subject=Biology&city=Islamabad" class="text-[#C43D24] hover:underline font-black">Biology tutor in Islamabad</a> market is thriving as students seek expert guidance in one of the most important and fascinating subjects. Biology forms the foundation for careers in medicine, healthcare, biotechnology, environmental science, and research. Our verified Biology tutors in Islamabad help students master everything from cell biology to human physiology with clarity and confidence.`,
+//         `Whether your child is preparing for <a href="/tutors?subject=O%20Level&city=Islamabad" class="text-[#C43D24] hover:underline font-black">O Level Biology</a>, <a href="/tutors?subject=A%20Level&city=Islamabad" class="text-[#C43D24] hover:underline font-black">A Level Biology</a>, <a href="/tutors?subject=MDCAT&city=Islamabad" class="text-[#C43D24] hover:underline font-black">MDCAT Biology</a>, or <a href="/tutors?subject=FSc&city=Islamabad" class="text-[#C43D24] hover:underline font-black">FSc Biology</a>, our experienced tutors provide personalised support tailored to the specific curriculum. They understand the unique challenges of each exam board and syllabus from Cambridge CAIE and Edexcel to local Pakistani boards and help students develop a deep understanding of biological concepts.`,
+//         `With a focus on building conceptual understanding and exam technique, our <a href="/home-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that Biology requires. This personalised approach is particularly effective for students who need help with complex topics like genetics, evolution, human anatomy, and biochemical pathways.`,
 //       ]}
 //       subjectDetails={[
 //         `Our <strong class="text-[#2E4F5E]">Biology tutors in Islamabad</strong> are subject matter experts with advanced degrees in biological sciences. They have extensive experience teaching Biology across multiple curricula <strong class="text-[#2E4F5E]">O Level</strong>, <strong class="text-[#2E4F5E]">A Level</strong>, <strong class="text-[#2E4F5E]">IGCSE</strong>, <strong class="text-[#2E4F5E]">FSc</strong>, and <strong class="text-[#2E4F5E]">MDCAT</strong> preparation. Their deep understanding of the subject enables them to explain complex biological processes in simple, relatable terms.`,
@@ -208,11 +210,11 @@
 //         },
 //         {
 //           q: 'Which Biology curricula do you offer tuition for?',
-//           a: 'We offer tuition for all major Biology curricula including CAIE (Cambridge International) O Level and A Level, Edexcel, Oxford AQA, IGCSE, FSc (local Pakistani boards), and MDCAT preparation. Our tutors are familiar with the specific requirements of each curriculum and exam board. If you need a specific syllabus not listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">contact us on WhatsApp</a> and we\'ll find a tutor for you.',
+//           a: 'We offer tuition for all major Biology curricula including CAIE (Cambridge International) O Level and A Level, Edexcel, Oxford AQA, IGCSE, FSc (local Pakistani boards), and MDCAT preparation. Our tutors are familiar with the specific requirements of each curriculum and exam board. If you need a specific syllabus not listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">contact us on WhatsApp</a> and we\'ll find a tutor for you.',
 //         },
 //         {
 //           q: 'How much do Biology tutors in Islamabad charge?',
-//           a: 'Biology tutor rates in Islamabad vary based on the curriculum, the tutor\'s experience, and the student\'s level. Typically, rates range from PKR 2,000 to 4,500 per hour for home tuition. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive rates with complete transparency and no hidden charges.',
+//           a: 'Biology tutor rates in Islamabad vary based on the curriculum, the tutor\'s experience, and the student\'s level. Typically, rates range from PKR 2,000 to 4,500 per hour for home tuition. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive rates with complete transparency and no hidden charges.',
 //         },
 //         {
 //           q: 'Can I get a free trial session with a Biology tutor?',
@@ -220,11 +222,11 @@
 //         },
 //         {
 //           q: 'Do you offer online Biology tutoring as well?',
-//           a: 'Yes! While we specialise in <a href="/home-tutor-islamabad" class="text-[#E05C42] hover:underline font-black">home tuition in Islamabad</a>, we also offer <a href="/tutors?subject=Biology" class="text-[#E05C42] hover:underline font-black">online Biology tutoring</a> for students who prefer the flexibility of learning from home. Our online sessions are conducted via video call with interactive whiteboards and screen sharing, making them just as effective as in-person sessions.',
+//           a: 'Yes! While we specialise in <a href="/home-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">home tuition in Islamabad</a>, we also offer <a href="/tutors?subject=Biology" class="text-[#C43D24] hover:underline font-black">online Biology tutoring</a> for students who prefer the flexibility of learning from home. Our online sessions are conducted via video call with interactive whiteboards and screen sharing, making them just as effective as in-person sessions.',
 //         },
 //         {
 //           q: 'Which areas of Islamabad do your home tutors cover?',
-//           a: 'Our Biology home tutors cover all major areas of Islamabad including F-5 to F-17, G-5 to G-16, E-7 to E-17, D-12, I-8 to I-14, B-10 to B-17, C-12 to C-17, H-8 to H-13, DHA Islamabad (all phases), Bahria Enclave, Gulberg Greens, Park View City, Capital Smart City, and many more. If you don\'t see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">message us on WhatsApp</a> and we\'ll confirm availability.',
+//           a: 'Our Biology home tutors cover all major areas of Islamabad including F-5 to F-17, G-5 to G-16, E-7 to E-17, D-12, I-8 to I-14, B-10 to B-17, C-12 to C-17, H-8 to H-13, DHA Islamabad (all phases), Bahria Enclave, Gulberg Greens, Park View City, Capital Smart City, and many more. If you don\'t see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">message us on WhatsApp</a> and we\'ll confirm availability.',
 //         },
 //       ]}
 //       areas={ISLAMABAD_AREAS}
@@ -243,8 +245,6 @@
 //     />
 //   )
 // }
-
-
 
 
 
@@ -422,15 +422,15 @@ export default function BiologyTutorIslamabadPage() {
       subjectIcon="🧬"
       subjectEmoji="🔬"
       subjectOverview={[
-        `The <a href="/tutors?subject=Biology&city=Islamabad" class="text-[#C43D24] hover:underline font-black">Biology tutor in Islamabad</a> market is thriving as students seek expert guidance in one of the most important and fascinating subjects. Biology forms the foundation for careers in medicine, healthcare, biotechnology, environmental science, and research. Our verified Biology tutors in Islamabad help students master everything from cell biology to human physiology with clarity and confidence.`,
-        `Whether your child is preparing for <a href="/tutors?subject=O%20Level&city=Islamabad" class="text-[#C43D24] hover:underline font-black">O Level Biology</a>, <a href="/tutors?subject=A%20Level&city=Islamabad" class="text-[#C43D24] hover:underline font-black">A Level Biology</a>, <a href="/tutors?subject=MDCAT&city=Islamabad" class="text-[#C43D24] hover:underline font-black">MDCAT Biology</a>, or <a href="/tutors?subject=FSc&city=Islamabad" class="text-[#C43D24] hover:underline font-black">FSc Biology</a>, our experienced tutors provide personalised support tailored to the specific curriculum. They understand the unique challenges of each exam board and syllabus from Cambridge CAIE and Edexcel to local Pakistani boards and help students develop a deep understanding of biological concepts.`,
-        `With a focus on building conceptual understanding and exam technique, our <a href="/home-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that Biology requires. This personalised approach is particularly effective for students who need help with complex topics like genetics, evolution, human anatomy, and biochemical pathways.`,
+        `Biology is where most Islamabad students preparing for medical college first meet real academic pressure it carries roughly a third of the <a href="/mdcat-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">MDCAT</a> weightage, more than Physics or Chemistry individually, so a weak grasp here has an outsized effect on the final score. Our <a href="/tutors?subject=Biology&city=Islamabad" class="text-[#C43D24] hover:underline font-black">Biology tutors in Islamabad</a> work with students from Grade 9 right through to MDCAT resits, and the single pattern that shows up again and again is students who can recite a process (say, the Krebs cycle) but cannot answer a question that tests the same knowledge from an unfamiliar angle.`,
+        `That gap between recall and application is the actual thing we teach against. For <a href="/o-level-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">O Level</a> and <a href="/a-level-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">A Level</a> students on CAIE or Edexcel, that means practising the command words examiners actually use ("explain", "compare", "evaluate") against real past paper questions, not just re-reading textbook chapters. For FSc students on the local board, it means bridging the gap between how Biology is taught in class and how questions are actually asked in board exams.`,
+        `Islamabad has a genuinely deep bench of Biology tutors with medical and biological-science backgrounds, partly because of the concentration of universities and medical colleges in the twin cities. That means we can usually match a student with a tutor who has specifically taught their exact syllabus before, not just Biology in general something that matters more for this subject than most because the depth expected at O Level, A Level and MDCAT differs sharply even when the topic name is the same.`,
       ]}
       subjectDetails={[
-        `Our <strong class="text-[#2E4F5E]">Biology tutors in Islamabad</strong> are subject matter experts with advanced degrees in biological sciences. They have extensive experience teaching Biology across multiple curricula <strong class="text-[#2E4F5E]">O Level</strong>, <strong class="text-[#2E4F5E]">A Level</strong>, <strong class="text-[#2E4F5E]">IGCSE</strong>, <strong class="text-[#2E4F5E]">FSc</strong>, and <strong class="text-[#2E4F5E]">MDCAT</strong> preparation. Their deep understanding of the subject enables them to explain complex biological processes in simple, relatable terms.`,
-        `We cover <strong class="text-[#2E4F5E]">all major Biology topics</strong> including cell biology, genetics, human physiology, ecology, evolution, biochemistry, microbiology, and biotechnology. Our tutors use diagrams, models, animations, and real-world examples to make learning engaging and effective.`,
-        `Our tutors focus on <strong class="text-[#2E4F5E]">building strong conceptual foundations</strong> and developing <strong class="text-[#2E4F5E]">exam technique</strong>. They use past papers, practice questions, and targeted revision strategies to help students achieve their target grades. For MDCAT students, special emphasis is placed on the high-weightage Biology topics that appear most frequently on the exam.`,
-        `We understand that Biology is a visual and analytical subject. That's why our tutors use <strong class="text-[#2E4F5E]">interactive teaching methods</strong> including diagrams, flowcharts, and practical examples to help students visualise biological processes and retain information more effectively.`,
+        `A first session with a new Biology student usually starts the same way: a quick diagnostic conversation, not a lesson. Which topics does the student already feel solid on, which ones make them go quiet, and what does their actual exam (O Level, A Level, FSc, or MDCAT) reward. Genetics and human physiology tend to be where O Level and A Level students in Islamabad lose the most marks, not because the content is unusually hard, but because both topics require holding several interacting steps in mind at once.`,
+        `Our tutors lean heavily on diagrams the student draws themselves, not diagrams they copy. Being able to redraw the nitrogen cycle or a nephron from memory and explain each step out loud is a far better test of understanding than being able to recognise a completed diagram, and it is closer to what an exam actually demands under time pressure.`,
+        `For MDCAT specifically, past paper analysis matters more here than in almost any other subject, since Biology questions repeat identifiable patterns year to year more than Physics or Chemistry do. We keep a running log with each student of exactly which topic areas cost them marks in practice tests, so revision time in the final weeks goes to the highest-yield gaps instead of being spread evenly across a syllabus that isn't weighted evenly in the first place.`,
+        `Home visits work particularly well for Biology because so much of it is genuinely visual. A tutor sitting with a student, sketching a cell membrane or working through a Punnett square together on paper, tends to build faster understanding than a purely verbal explanation, especially for students who are more comfortable seeing a process built up step by step.`,
       ]}
       examBoards={['CAIE (Cambridge International)', 'Edexcel', 'Oxford AQA', 'FSc (Local Boards)', 'MDCAT']}
       targetExams={['O Level', 'A Level', 'IGCSE', 'FSc', 'MDCAT']}
@@ -447,10 +447,10 @@ export default function BiologyTutorIslamabadPage() {
         'Homeostasis & Excretion',
       ]}
       whyChoose={[
-        'Our Biology tutors in Islamabad are <strong>subject matter experts</strong> with advanced degrees in biological sciences and proven track records of helping students achieve top grades.',
-        'We provide <strong>personalised lesson plans</strong> tailored to each student\'s learning style, pace, and academic goals, ensuring efficient and effective learning of complex biological concepts.',
-        'Our tutors use <strong>visual and interactive teaching methods</strong> including diagrams, models, animations, and real-world examples to make Biology engaging and easy to understand.',
-        'We offer <strong>flexible scheduling</strong> for both home tuition and online sessions, making it easy to fit Biology tutoring into your family\'s busy schedule.',
+        'Most of our Biology tutors in Islamabad have a medical or biological-sciences background, not just a general science degree, so they can speak to how a topic connects to what a student will see later in medical or biology-related study.',
+        'We match by exact syllabus, not just subject. An MDCAT-focused tutor and an A Level Biology tutor prepare students very differently, and we ask which one your child actually needs before assigning anyone.',
+        'Sessions are built around the student drawing and explaining processes themselves, not passively listening, since that is closer to what exams actually test under time pressure.',
+        'For MDCAT students, we track topic-level performance across practice tests so revision time goes to the highest-weightage gaps, not spread evenly across the syllabus.',
       ]}
       faqs={[
         {

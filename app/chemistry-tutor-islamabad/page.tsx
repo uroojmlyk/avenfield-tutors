@@ -1,3 +1,7 @@
+
+
+
+
 // import type { Metadata } from 'next'
 // import SubjectLandingPage from '@/components/shared/SubjectLandingPage'
 
@@ -171,9 +175,9 @@
 //       subjectIcon="🧪"
 //       subjectEmoji="⚗️"
 //       subjectOverview={[
-//         `The <a href="/tutors?subject=Chemistry&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Chemistry tutor in Islamabad</a> market is highly competitive, with students seeking expert guidance in one of the most challenging and rewarding subjects. Chemistry is essential for careers in medicine, pharmacy, engineering, research, and industry. Our verified Chemistry tutors in Islamabad help students master everything from atomic structure to organic synthesis with clarity and confidence.`,
-//         `Whether your child is preparing for <a href="/tutors?subject=O%20Level&city=Islamabad" class="text-[#E05C42] hover:underline font-black">O Level Chemistry</a>, <a href="/tutors?subject=A%20Level&city=Islamabad" class="text-[#E05C42] hover:underline font-black">A Level Chemistry</a>, <a href="/tutors?subject=MDCAT&city=Islamabad" class="text-[#E05C42] hover:underline font-black">MDCAT Chemistry</a>, or <a href="/tutors?subject=FSc&city=Islamabad" class="text-[#E05C42] hover:underline font-black">FSc Chemistry</a>, our experienced tutors provide personalised support tailored to the specific curriculum. They understand the unique challenges of each exam board and syllabus from Cambridge CAIE and Edexcel to local Pakistani boards and help students develop a deep understanding of chemical principles.`,
-//         `With a focus on building conceptual understanding and exam technique, our <a href="/home-tutor-islamabad" class="text-[#E05C42] hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that Chemistry requires. This personalised approach is particularly effective for students who need help with complex topics like chemical bonding, reaction mechanisms, stoichiometry, and thermodynamics.`,
+//         `The <a href="/tutors?subject=Chemistry&city=Islamabad" class="text-[#C43D24] hover:underline font-black">Chemistry tutor in Islamabad</a> market is highly competitive, with students seeking expert guidance in one of the most challenging and rewarding subjects. Chemistry is essential for careers in medicine, pharmacy, engineering, research, and industry. Our verified Chemistry tutors in Islamabad help students master everything from atomic structure to organic synthesis with clarity and confidence.`,
+//         `Whether your child is preparing for <a href="/tutors?subject=O%20Level&city=Islamabad" class="text-[#C43D24] hover:underline font-black">O Level Chemistry</a>, <a href="/tutors?subject=A%20Level&city=Islamabad" class="text-[#C43D24] hover:underline font-black">A Level Chemistry</a>, <a href="/tutors?subject=MDCAT&city=Islamabad" class="text-[#C43D24] hover:underline font-black">MDCAT Chemistry</a>, or <a href="/tutors?subject=FSc&city=Islamabad" class="text-[#C43D24] hover:underline font-black">FSc Chemistry</a>, our experienced tutors provide personalised support tailored to the specific curriculum. They understand the unique challenges of each exam board and syllabus from Cambridge CAIE and Edexcel to local Pakistani boards and help students develop a deep understanding of chemical principles.`,
+//         `With a focus on building conceptual understanding and exam technique, our <a href="/home-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that Chemistry requires. This personalised approach is particularly effective for students who need help with complex topics like chemical bonding, reaction mechanisms, stoichiometry, and thermodynamics.`,
 //       ]}
 //       subjectDetails={[
 //         `Our <strong class="text-[#2E4F5E]">Chemistry tutors in Islamabad</strong> are subject matter experts with advanced degrees in chemistry or chemical sciences. They have extensive experience teaching Chemistry across multiple curricula <strong class="text-[#2E4F5E]">O Level</strong>, <strong class="text-[#2E4F5E]">A Level</strong>, <strong class="text-[#2E4F5E]">IGCSE</strong>, <strong class="text-[#2E4F5E]">FSc</strong>, and <strong class="text-[#2E4F5E]">MDCAT</strong> preparation. Their deep understanding of the subject enables them to explain complex chemical concepts in simple, relatable terms.`,
@@ -208,11 +212,11 @@
 //         },
 //         {
 //           q: 'Which Chemistry curricula do you offer tuition for?',
-//           a: 'We offer tuition for all major Chemistry curricula including CAIE (Cambridge International) O Level and A Level, Edexcel, Oxford AQA, IGCSE, FSc (local Pakistani boards), and MDCAT preparation. Our tutors are familiar with the specific requirements of each curriculum and exam board. If you need a specific syllabus not listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">contact us on WhatsApp</a> and we\'ll find a tutor for you.',
+//           a: 'We offer tuition for all major Chemistry curricula including CAIE (Cambridge International) O Level and A Level, Edexcel, Oxford AQA, IGCSE, FSc (local Pakistani boards), and MDCAT preparation. Our tutors are familiar with the specific requirements of each curriculum and exam board. If you need a specific syllabus not listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">contact us on WhatsApp</a> and we\'ll find a tutor for you.',
 //         },
 //         {
 //           q: 'How much do Chemistry tutors in Islamabad charge?',
-//           a: 'Chemistry tutor rates in Islamabad vary based on the curriculum, the tutor\'s experience, and the student\'s level. Typically, rates range from PKR 2,000 to 4,500 per hour for home tuition. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive rates with complete transparency and no hidden charges.',
+//           a: 'Chemistry tutor rates in Islamabad vary based on the curriculum, the tutor\'s experience, and the student\'s level. Typically, rates range from PKR 2,000 to 4,500 per hour for home tuition. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive rates with complete transparency and no hidden charges.',
 //         },
 //         {
 //           q: 'Can I get a free trial session with a Chemistry tutor?',
@@ -220,11 +224,11 @@
 //         },
 //         {
 //           q: 'Do you offer online Chemistry tutoring as well?',
-//           a: 'Yes! While we specialise in <a href="/home-tutor-islamabad" class="text-[#E05C42] hover:underline font-black">home tuition in Islamabad</a>, we also offer <a href="/tutors?subject=Chemistry" class="text-[#E05C42] hover:underline font-black">online Chemistry tutoring</a> for students who prefer the flexibility of learning from home. Our online sessions are conducted via video call with interactive whiteboards and screen sharing, making them just as effective as in-person sessions.',
+//           a: 'Yes! While we specialise in <a href="/home-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">home tuition in Islamabad</a>, we also offer <a href="/tutors?subject=Chemistry" class="text-[#C43D24] hover:underline font-black">online Chemistry tutoring</a> for students who prefer the flexibility of learning from home. Our online sessions are conducted via video call with interactive whiteboards and screen sharing, making them just as effective as in-person sessions.',
 //         },
 //         {
 //           q: 'Which areas of Islamabad do your home tutors cover?',
-//           a: 'Our Chemistry home tutors cover all major areas of Islamabad including F-5 to F-17, G-5 to G-16, E-7 to E-17, D-12, I-8 to I-14, B-10 to B-17, C-12 to C-17, H-8 to H-13, DHA Islamabad (all phases), Bahria Enclave, Gulberg Greens, Park View City, Capital Smart City, and many more. If you don\'t see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">message us on WhatsApp</a> and we\'ll confirm availability.',
+//           a: 'Our Chemistry home tutors cover all major areas of Islamabad including F-5 to F-17, G-5 to G-16, E-7 to E-17, D-12, I-8 to I-14, B-10 to B-17, C-12 to C-17, H-8 to H-13, DHA Islamabad (all phases), Bahria Enclave, Gulberg Greens, Park View City, Capital Smart City, and many more. If you don\'t see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">message us on WhatsApp</a> and we\'ll confirm availability.',
 //         },
 //       ]}
 //       areas={ISLAMABAD_AREAS}
@@ -243,9 +247,6 @@
 //     />
 //   )
 // }
-
-
-
 
 
 
@@ -426,15 +427,15 @@ export default function ChemistryTutorIslamabadPage() {
       subjectIcon="🧪"
       subjectEmoji="⚗️"
       subjectOverview={[
-        `The <a href="/tutors?subject=Chemistry&city=Islamabad" class="text-[#C43D24] hover:underline font-black">Chemistry tutor in Islamabad</a> market is highly competitive, with students seeking expert guidance in one of the most challenging and rewarding subjects. Chemistry is essential for careers in medicine, pharmacy, engineering, research, and industry. Our verified Chemistry tutors in Islamabad help students master everything from atomic structure to organic synthesis with clarity and confidence.`,
-        `Whether your child is preparing for <a href="/tutors?subject=O%20Level&city=Islamabad" class="text-[#C43D24] hover:underline font-black">O Level Chemistry</a>, <a href="/tutors?subject=A%20Level&city=Islamabad" class="text-[#C43D24] hover:underline font-black">A Level Chemistry</a>, <a href="/tutors?subject=MDCAT&city=Islamabad" class="text-[#C43D24] hover:underline font-black">MDCAT Chemistry</a>, or <a href="/tutors?subject=FSc&city=Islamabad" class="text-[#C43D24] hover:underline font-black">FSc Chemistry</a>, our experienced tutors provide personalised support tailored to the specific curriculum. They understand the unique challenges of each exam board and syllabus from Cambridge CAIE and Edexcel to local Pakistani boards and help students develop a deep understanding of chemical principles.`,
-        `With a focus on building conceptual understanding and exam technique, our <a href="/home-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that Chemistry requires. This personalised approach is particularly effective for students who need help with complex topics like chemical bonding, reaction mechanisms, stoichiometry, and thermodynamics.`,
+        `Chemistry is the subject where Islamabad students most often say the problem isn't understanding, it's translation being able to see what a written question is actually asking for in terms of a calculation or a mechanism. Our <a href="/tutors?subject=Chemistry&city=Islamabad" class="text-[#C43D24] hover:underline font-black">Chemistry tutors in Islamabad</a> spend a disproportionate amount of early sessions just on reading questions properly, since a student who can balance an equation in isolation often still loses marks when that same skill is buried inside a longer, worded stoichiometry problem.`,
+        `Organic Chemistry mechanisms are the other consistent sticking point, particularly for <a href="/a-level-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">A Level</a> and <a href="/mdcat-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">MDCAT</a> students moving beyond the more descriptive Chemistry taught at <a href="/o-level-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">O Level</a>. Understanding why a mechanism proceeds a certain way, not just memorising the arrows, is what separates students who can only answer familiar past-paper questions from students who can handle an unfamiliar compound in the actual exam.`,
+        `We deliberately pair students with tutors who have taught their exact board before CAIE and Edexcel Chemistry differ from FSc Chemistry in both depth and how questions are phrased, and a tutor used to one can genuinely struggle to prepare a student properly for the other. This matching is something we check specifically rather than assuming any Chemistry graduate can teach any syllabus equally well.`,
       ]}
       subjectDetails={[
-        `Our <strong class="text-[#2E4F5E]">Chemistry tutors in Islamabad</strong> are subject matter experts with advanced degrees in chemistry or chemical sciences. They have extensive experience teaching Chemistry across multiple curricula <strong class="text-[#2E4F5E]">O Level</strong>, <strong class="text-[#2E4F5E]">A Level</strong>, <strong class="text-[#2E4F5E]">IGCSE</strong>, <strong class="text-[#2E4F5E]">FSc</strong>, and <strong class="text-[#2E4F5E]">MDCAT</strong> preparation. Their deep understanding of the subject enables them to explain complex chemical concepts in simple, relatable terms.`,
-        `We cover <strong class="text-[#2E4F5E]">all major Chemistry topics</strong> including organic chemistry, inorganic chemistry, physical chemistry, analytical chemistry, and biochemistry. Our tutors use practical examples, demonstrations, and real-world applications to make learning engaging and effective.`,
-        `Our tutors focus on <strong class="text-[#2E4F5E]">building strong conceptual foundations</strong> and developing <strong class="text-[#2E4F5E]">exam technique</strong>. They use past papers, practice questions, and targeted revision strategies to help students achieve their target grades. For MDCAT students, special emphasis is placed on the high-weightage Chemistry topics that appear most frequently on the exam.`,
-        `We understand that Chemistry requires a combination of theoretical understanding and problem-solving skills. That's why our tutors use <strong class="text-[#2E4F5E]">interactive teaching methods</strong> including practical demonstrations, visual models, and step-by-step problem-solving to help students master both concepts and calculations.`,
+        `Numerical Chemistry (stoichiometry, molar calculations, gas laws) is usually the first thing we diagnose, since a shaky grasp here quietly undermines performance in almost every other topic that follows. We work through calculation-heavy questions slowly at first, insisting on showing every step, before building up to exam-pace timing later in the course.`,
+        `For Organic Chemistry, our tutors draw mechanisms with the student repeatedly until the electron-pushing logic becomes automatic rather than memorised. Reaction mechanisms are one of the few Chemistry topics where genuinely understanding the "why" lets a student handle a completely unfamiliar question, so we prioritise that over covering more reactions superficially.`,
+        `MDCAT Chemistry specifically rewards speed on Physical and Inorganic Chemistry questions, since these tend to be more formulaic than Organic Chemistry questions. We track which question types cost a student the most time in practice tests and drill those specifically, rather than treating all three branches of Chemistry as equally urgent.`,
+        `Practical understanding matters even where there's no formal lab component in the exam. A tutor who can explain why a titration curve looks the way it does, not just how to read one, builds the kind of conceptual flexibility that shows up when an exam question changes the usual setup slightly.`,
       ]}
       examBoards={['CAIE (Cambridge International)', 'Edexcel', 'Oxford AQA', 'FSc (Local Boards)', 'MDCAT']}
       targetExams={['O Level', 'A Level', 'IGCSE', 'FSc', 'MDCAT']}
@@ -451,10 +452,10 @@ export default function ChemistryTutorIslamabadPage() {
         'Biochemistry & Polymers',
       ]}
       whyChoose={[
-        'Our Chemistry tutors in Islamabad are <strong>subject matter experts</strong> with advanced degrees in chemistry or chemical sciences and proven track records of helping students achieve top grades.',
-        'We provide <strong>personalised lesson plans</strong> tailored to each student\'s learning style, pace, and academic goals, ensuring efficient and effective learning of complex chemical concepts.',
-        'Our tutors use <strong>interactive teaching methods</strong> including practical examples, demonstrations, and visual models to make Chemistry engaging and easy to understand.',
-        'We offer <strong>flexible scheduling</strong> for both home tuition and online sessions, making it easy to fit Chemistry tutoring into your family\'s busy schedule.',
+        'Our Chemistry tutors are matched by exact exam board, not just subject, since CAIE, Edexcel and FSc Chemistry differ enough in depth and phrasing that board-specific experience genuinely changes teaching effectiveness.',
+        'Early sessions focus on numerical Chemistry (stoichiometry, calculations) first, since a shaky foundation there quietly undermines performance across the rest of the syllabus.',
+        'Organic mechanisms are taught through repeated hands-on drawing with the student, not passive demonstration, so the electron-pushing logic becomes something the student can apply to unfamiliar compounds.',
+        'For MDCAT students, we track which question types cost the most time in practice tests and prioritise drilling those specifically rather than treating the whole syllabus as equally urgent.',
       ]}
       faqs={[
         {
