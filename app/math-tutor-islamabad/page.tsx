@@ -1,3 +1,7 @@
+
+
+
+
 // import type { Metadata } from 'next'
 // import SubjectLandingPage from '@/components/shared/SubjectLandingPage'
 
@@ -173,9 +177,9 @@
 //       subjectIcon="📐"
 //       subjectEmoji="📊"
 //       subjectOverview={[
-//         `The <a href="/tutors?subject=Mathematics&city=Islamabad" class="text-[#E05C42] hover:underline font-black">Mathematics tutor in Islamabad</a> market is highly competitive, with students seeking expert guidance in one of the most fundamental and essential subjects. Mathematics is critical for careers in engineering, finance, technology, science, and data analytics. Our verified Mathematics tutors in Islamabad help students master everything from basic algebra to advanced calculus with clarity and confidence.`,
-//         `Whether your child is preparing for <a href="/tutors?subject=O%20Level&city=Islamabad" class="text-[#E05C42] hover:underline font-black">O Level Mathematics</a>, <a href="/tutors?subject=A%20Level&city=Islamabad" class="text-[#E05C42] hover:underline font-black">A Level Mathematics</a>, <a href="/tutors?subject=MDCAT&city=Islamabad" class="text-[#E05C42] hover:underline font-black">MDCAT Mathematics</a>, or <a href="/tutors?subject=FSc&city=Islamabad" class="text-[#E05C42] hover:underline font-black">FSc Mathematics</a>, our experienced tutors provide personalised support tailored to the specific curriculum. They understand the unique challenges of each exam board and syllabus from Cambridge CAIE and Edexcel to local Pakistani boards and help students develop strong mathematical foundations.`,
-//         `With a focus on building conceptual understanding and problem-solving skills, our <a href="/home-tutor-islamabad" class="text-[#E05C42] hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that Mathematics requires. This personalised approach is particularly effective for students who need help with complex topics like trigonometry, calculus, probability, and statistics.`,
+//         `The <a href="/tutors?subject=Mathematics&city=Islamabad" class="text-[#C43D24] hover:underline font-black">Mathematics tutor in Islamabad</a> market is highly competitive, with students seeking expert guidance in one of the most fundamental and essential subjects. Mathematics is critical for careers in engineering, finance, technology, science, and data analytics. Our verified Mathematics tutors in Islamabad help students master everything from basic algebra to advanced calculus with clarity and confidence.`,
+//         `Whether your child is preparing for <a href="/tutors?subject=O%20Level&city=Islamabad" class="text-[#C43D24] hover:underline font-black">O Level Mathematics</a>, <a href="/tutors?subject=A%20Level&city=Islamabad" class="text-[#C43D24] hover:underline font-black">A Level Mathematics</a>, <a href="/tutors?subject=MDCAT&city=Islamabad" class="text-[#C43D24] hover:underline font-black">MDCAT Mathematics</a>, or <a href="/tutors?subject=FSc&city=Islamabad" class="text-[#C43D24] hover:underline font-black">FSc Mathematics</a>, our experienced tutors provide personalised support tailored to the specific curriculum. They understand the unique challenges of each exam board and syllabus from Cambridge CAIE and Edexcel to local Pakistani boards and help students develop strong mathematical foundations.`,
+//         `With a focus on building conceptual understanding and problem-solving skills, our <a href="/home-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that Mathematics requires. This personalised approach is particularly effective for students who need help with complex topics like trigonometry, calculus, probability, and statistics.`,
 //       ]}
 //       subjectDetails={[
 //         `Our <strong class="text-[#2E4F5E]">Mathematics tutors in Islamabad</strong> are subject matter experts with advanced degrees in mathematics, engineering, or related fields. They have extensive experience teaching Mathematics across multiple curricula <strong class="text-[#2E4F5E]">O Level</strong>, <strong class="text-[#2E4F5E]">A Level</strong>, <strong class="text-[#2E4F5E]">IGCSE</strong>, <strong class="text-[#2E4F5E]">FSc</strong>, and <strong class="text-[#2E4F5E]">MDCAT</strong> preparation. Their deep understanding of the subject enables them to explain complex mathematical concepts in simple, relatable terms.`,
@@ -210,11 +214,11 @@
 //         },
 //         {
 //           q: 'Which Mathematics curricula do you offer tuition for?',
-//           a: 'We offer tuition for all major Mathematics curricula including CAIE (Cambridge International) O Level and A Level, Edexcel, Oxford AQA, IGCSE, FSc (local Pakistani boards), and MDCAT preparation. Our tutors are familiar with the specific requirements of each curriculum and exam board. If you need a specific syllabus not listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">contact us on WhatsApp</a> and we\'ll find a tutor for you.',
+//           a: 'We offer tuition for all major Mathematics curricula including CAIE (Cambridge International) O Level and A Level, Edexcel, Oxford AQA, IGCSE, FSc (local Pakistani boards), and MDCAT preparation. Our tutors are familiar with the specific requirements of each curriculum and exam board. If you need a specific syllabus not listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">contact us on WhatsApp</a> and we\'ll find a tutor for you.',
 //         },
 //         {
 //           q: 'How much do Mathematics tutors in Islamabad charge?',
-//           a: 'Mathematics tutor rates in Islamabad vary based on the curriculum, the tutor\'s experience, and the student\'s level. Typically, rates range from PKR 2,000 to 4,500 per hour for home tuition. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive rates with complete transparency and no hidden charges.',
+//           a: 'Mathematics tutor rates in Islamabad vary based on the curriculum, the tutor\'s experience, and the student\'s level. Typically, rates range from PKR 2,000 to 4,500 per hour for home tuition. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive rates with complete transparency and no hidden charges.',
 //         },
 //         {
 //           q: 'Can I get a free trial session with a Mathematics tutor?',
@@ -222,11 +226,11 @@
 //         },
 //         {
 //           q: 'Do you offer online Mathematics tutoring as well?',
-//           a: 'Yes! While we specialise in <a href="/home-tutor-islamabad" class="text-[#E05C42] hover:underline font-black">home tuition in Islamabad</a>, we also offer <a href="/tutors?subject=Mathematics" class="text-[#E05C42] hover:underline font-black">online Mathematics tutoring</a> for students who prefer the flexibility of learning from home. Our online sessions are conducted via video call with interactive whiteboards and screen sharing, making them just as effective as in-person sessions.',
+//           a: 'Yes! While we specialise in <a href="/home-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">home tuition in Islamabad</a>, we also offer <a href="/tutors?subject=Mathematics" class="text-[#C43D24] hover:underline font-black">online Mathematics tutoring</a> for students who prefer the flexibility of learning from home. Our online sessions are conducted via video call with interactive whiteboards and screen sharing, making them just as effective as in-person sessions.',
 //         },
 //         {
 //           q: 'Which areas of Islamabad do your home tutors cover?',
-//           a: 'Our Mathematics home tutors cover all major areas of Islamabad including F-5 to F-17, G-5 to G-16, E-7 to E-17, D-12, I-8 to I-14, B-10 to B-17, C-12 to C-17, H-8 to H-13, DHA Islamabad (all phases), Bahria Enclave, Gulberg Greens, Park View City, Capital Smart City, and many more. If you don\'t see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">message us on WhatsApp</a> and we\'ll confirm availability.',
+//           a: 'Our Mathematics home tutors cover all major areas of Islamabad including F-5 to F-17, G-5 to G-16, E-7 to E-17, D-12, I-8 to I-14, B-10 to B-17, C-12 to C-17, H-8 to H-13, DHA Islamabad (all phases), Bahria Enclave, Gulberg Greens, Park View City, Capital Smart City, and many more. If you don\'t see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">message us on WhatsApp</a> and we\'ll confirm availability.',
 //         },
 //       ]}
 //       areas={ISLAMABAD_AREAS}
@@ -245,6 +249,7 @@
 //     />
 //   )
 // }
+
 
 
 
@@ -428,18 +433,18 @@ export default function MathTutorIslamabadPage() {
       subjectIcon="📐"
       subjectEmoji="📊"
       subjectOverview={[
-        `The <a href="/tutors?subject=Mathematics&city=Islamabad" class="text-[#C43D24] hover:underline font-black">Mathematics tutor in Islamabad</a> market is highly competitive, with students seeking expert guidance in one of the most fundamental and essential subjects. Mathematics is critical for careers in engineering, finance, technology, science, and data analytics. Our verified Mathematics tutors in Islamabad help students master everything from basic algebra to advanced calculus with clarity and confidence.`,
-        `Whether your child is preparing for <a href="/tutors?subject=O%20Level&city=Islamabad" class="text-[#C43D24] hover:underline font-black">O Level Mathematics</a>, <a href="/tutors?subject=A%20Level&city=Islamabad" class="text-[#C43D24] hover:underline font-black">A Level Mathematics</a>, <a href="/tutors?subject=MDCAT&city=Islamabad" class="text-[#C43D24] hover:underline font-black">MDCAT Mathematics</a>, or <a href="/tutors?subject=FSc&city=Islamabad" class="text-[#C43D24] hover:underline font-black">FSc Mathematics</a>, our experienced tutors provide personalised support tailored to the specific curriculum. They understand the unique challenges of each exam board and syllabus from Cambridge CAIE and Edexcel to local Pakistani boards and help students develop strong mathematical foundations.`,
-        `With a focus on building conceptual understanding and problem-solving skills, our <a href="/home-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">home tutors in Islamabad</a> provide the undivided attention that Mathematics requires. This personalised approach is particularly effective for students who need help with complex topics like trigonometry, calculus, probability, and statistics.`,
+        `Mathematics is the subject where the gap between "I understood it in class" and "I can do it under exam pressure" shows up most clearly and most often. Our <a href="/tutors?subject=Mathematics&city=Islamabad" class="text-[#C43D24] hover:underline font-black">Mathematics tutors in Islamabad</a> see this constantly: a student follows a worked example on the board perfectly, then freezes on a near-identical question twenty minutes later because they memorised the steps rather than understood why each step happens.`,
+        `The specific pain points shift by level. <a href="/o-level-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">O Level</a> students most often struggle with algebraic manipulation and word problems, where the challenge is translating a paragraph into an equation before any actual maths begins. <a href="/a-level-tutor-islamabad" class="text-[#C43D24] hover:underline font-black">A Level</a> and Additional Mathematics students hit a different wall entirely: Calculus and Mechanics questions that combine two or three techniques in a single problem, where knowing each technique individually isn't enough.`,
+        `Because Cambridge Mathematics (CAIE, Edexcel) and FSc Mathematics diverge noticeably in both notation and question style, we specifically ask which syllabus a student follows before assigning a tutor, rather than assuming any strong Maths graduate can teach either equally well.`,
       ]}
       subjectDetails={[
-        `Our <strong class="text-[#2E4F5E]">Mathematics tutors in Islamabad</strong> are subject matter experts with advanced degrees in mathematics, engineering, or related fields. They have extensive experience teaching Mathematics across multiple curricula <strong class="text-[#2E4F5E]">O Level</strong>, <strong class="text-[#2E4F5E]">A Level</strong>, <strong class="text-[#2E4F5E]">IGCSE</strong>, <strong class="text-[#2E4F5E]">FSc</strong>, and <strong class="text-[#2E4F5E]">MDCAT</strong> preparation. Their deep understanding of the subject enables them to explain complex mathematical concepts in simple, relatable terms.`,
-        `We cover <strong class="text-[#2E4F5E]">all major Mathematics topics</strong> including algebra, geometry, trigonometry, calculus, statistics, probability, mechanics, and pure mathematics. Our tutors use practical examples, visual aids, and real-world applications to make learning engaging and effective.`,
-        `Our tutors focus on <strong class="text-[#2E4F5E]">building strong conceptual foundations</strong> and developing <strong class="text-[#2E4F5E]">problem-solving skills</strong>. They use past papers, practice questions, and targeted revision strategies to help students achieve their target grades. For MDCAT students, special emphasis is placed on the high-weightage Mathematics topics that appear most frequently on the exam.`,
-        `We understand that Mathematics requires logical thinking and consistent practice. That's why our tutors use <strong class="text-[#2E4F5E]">interactive teaching methods</strong> including step-by-step problem-solving, visual models, and practice exercises to help students master both concepts and techniques.`,
+        `Early sessions usually reveal whether a student's gaps are conceptual or procedural, and the two need completely different fixes. A student who understands differentiation conceptually but keeps making sign errors needs targeted, repetitive practice. A student who can execute the mechanics but doesn't know when to apply differentiation needs to rebuild the underlying concept first.`,
+        `For algebra and equations, we insist on students writing out every step rather than jumping ahead mentally, since skipped steps are where most careless errors hide. This feels slow at first but consistently produces fewer mistakes under timed exam conditions later.`,
+        `Word problems, particularly in Mechanics and Statistics, get dedicated attention separate from pure technique practice. The skill of translating a real-world scenario into a correct equation is genuinely distinct from the skill of solving that equation once it's set up.`,
+        `In the final weeks before an exam, we shift almost entirely to full timed past papers rather than topic drilling, since Cambridge Mathematics papers are structured to test how well a student manages time and question order under pressure, not just whether they know each topic in isolation.`,
       ]}
-      examBoards={['CAIE (Cambridge International)', 'Edexcel', 'Oxford AQA', 'FSc (Local Boards)', 'MDCAT']}
-      targetExams={['O Level', 'A Level', 'IGCSE', 'FSc', 'MDCAT']}
+      examBoards={['CAIE (Cambridge International)', 'Edexcel', 'Oxford AQA', 'FSc (Local Boards)']}
+      targetExams={['O Level', 'A Level', 'Additional Mathematics', 'IGCSE', 'FSc', 'CSS / PMS']}
       commonTopics={[
         'Algebra & Equations',
         'Geometry & Trigonometry',
@@ -453,10 +458,10 @@ export default function MathTutorIslamabadPage() {
         'Pure Mathematics',
       ]}
       whyChoose={[
-        'Our Mathematics tutors in Islamabad are <strong>subject matter experts</strong> with advanced degrees in mathematics or engineering and proven track records of helping students achieve top grades.',
-        'We provide <strong>personalised lesson plans</strong> tailored to each student\'s learning style, pace, and academic goals, ensuring efficient and effective learning of complex mathematical concepts.',
-        'Our tutors use <strong>interactive teaching methods</strong> including step-by-step problem-solving, visual models, and practice exercises to make Mathematics engaging and easy to understand.',
-        'We offer <strong>flexible scheduling</strong> for both home tuition and online sessions, making it easy to fit Mathematics tutoring into your family\'s busy schedule.',
+        'We match tutors by exact syllabus (CAIE, Edexcel, or FSc) since Mathematics notation and question style differ enough between boards that a mismatch genuinely slows a student down.',
+        'Sessions separate conceptual gaps from careless-error patterns early on, since the two require completely different fixes.',
+        'Word problems and applied questions get dedicated practice, not just pure technique drilling, since translating a scenario into an equation is a distinct skill from solving it.',
+        'In the final weeks before exams, focus shifts to full timed past papers, matching the pacing and question-order pressure of the actual exam.',
       ]}
       faqs={[
         {

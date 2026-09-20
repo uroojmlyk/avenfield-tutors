@@ -107,7 +107,7 @@
 //               alt="Avenfield Tutors"
 //               width={200}
 //               height={60}
-//               sizes="(max-width: 640px) 150px, 200px"
+//               sizes="(max-width: 640px) 160px, 250px"
 //               className="h-full w-auto object-contain"
 //               quality={60}
 //               priority
@@ -348,6 +348,7 @@
 
 
 
+
  
 'use client'
  
@@ -456,7 +457,7 @@ export default function Navbar() {
               height={60}
               sizes="(max-width: 640px) 160px, 250px"
               className="h-full w-auto object-contain"
-              quality={60}
+              quality={90}
               priority
             />
           </div>

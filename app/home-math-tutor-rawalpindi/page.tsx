@@ -1,3 +1,8 @@
+
+
+
+
+
 // import type { Metadata } from 'next'
 // import SubjectLandingPage from '@/components/shared/SubjectLandingPage'
 
@@ -177,7 +182,7 @@
 //       faqs={[
 //         {
 //           q: 'How can I hire a home math tutor in Rawalpindi?',
-//           a: 'Hiring a home math tutor in Rawalpindi is simple. Contact <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">Avenfield Tutors on WhatsApp</a> with your child\'s grade level, curriculum, and specific needs. We will match you with a qualified math tutor in your area within 24 hours. A free demo class allows you to assess the tutor before committing to regular sessions.',
+//           a: 'Hiring a home math tutor in Rawalpindi is simple. Contact <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">Avenfield Tutors on WhatsApp</a> with your child\'s grade level, curriculum, and specific needs. We will match you with a qualified math tutor in your area within 24 hours. A free demo class allows you to assess the tutor before committing to regular sessions.',
 //         },
 //         {
 //           q: 'Do you provide female math tutors in Rawalpindi?',
@@ -185,7 +190,7 @@
 //         },
 //         {
 //           q: 'What are the charges for a home math tutor in Rawalpindi?',
-//           a: 'Tuition charges for home math tutors in Rawalpindi vary based on the student\'s grade level, curriculum, and the tutor\'s experience. Typically, rates range from PKR 1,500 to 4,000 per hour. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive pricing with complete transparency and no hidden charges.',
+//           a: 'Tuition charges for home math tutors in Rawalpindi vary based on the student\'s grade level, curriculum, and the tutor\'s experience. Typically, rates range from PKR 1,500 to 4,000 per hour. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive pricing with complete transparency and no hidden charges.',
 //         },
 //         {
 //           q: 'Can I get a free demo class before hiring a tutor?',
@@ -193,11 +198,11 @@
 //         },
 //         {
 //           q: 'Do you also offer online math classes in Rawalpindi?',
-//           a: 'Yes, we offer online math classes for students who prefer the flexibility of learning from home or who live in areas where home tuition may not be available. Our <a href="/tutors" class="text-[#E05C42] hover:underline font-black">online tutors</a> are experienced in delivering engaging and effective lessons through video calls, interactive whiteboards, and screen sharing.',
+//           a: 'Yes, we offer online math classes for students who prefer the flexibility of learning from home or who live in areas where home tuition may not be available. Our <a href="/tutors" class="text-[#C43D24] hover:underline font-black">online tutors</a> are experienced in delivering engaging and effective lessons through video calls, interactive whiteboards, and screen sharing.',
 //         },
 //         {
 //           q: 'Which areas of Rawalpindi do your home tutors cover?',
-//           a: 'Our home math tutors cover all major areas of Rawalpindi including Bahria Town, DHA, Saddar, Satellite Town, Chaklala, Westridge, Gulraiz, Askari, Adiala Road, Rawat, Sixth Road, Tenant Colony, Lalazar, Peshawar Road, Fazal Town, Sadiqabad, and many more. If you do not see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">message us on WhatsApp</a> and we will confirm availability.',
+//           a: 'Our home math tutors cover all major areas of Rawalpindi including Bahria Town, DHA, Saddar, Satellite Town, Chaklala, Westridge, Gulraiz, Askari, Adiala Road, Rawat, Sixth Road, Tenant Colony, Lalazar, Peshawar Road, Fazal Town, Sadiqabad, and many more. If you do not see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">message us on WhatsApp</a> and we will confirm availability.',
 //         },
 //       ]}
 //       areas={RAWALPINDI_AREAS}
@@ -220,9 +225,6 @@
 //     />
 //   )
 // }
-
-
-
 
 
 
@@ -372,16 +374,15 @@ export default function HomeMathTutorRawalpindiPage() {
       subjectIcon="📐"
       subjectEmoji="📊"
       subjectOverview={[
-        `Mathematics is a subject that either builds confidence or creates anxiety. For many students in Rawalpindi, the difference between these two outcomes often comes down to the quality of guidance they receive. From basic arithmetic to advanced calculus, Mathematics requires a strong conceptual foundation and consistent practice. Without the right support, students can fall behind quickly, struggling to catch up as the syllabus progresses. A <a class="blog-link" href="/home-math-tutor-rawalpindi">home math tutor in Rawalpindi</a> can bridge this gap by providing personalised attention that addresses each student's unique learning needs.`,
-        `At <a class="blog-link" href="/">Avenfield Tutors</a>, we understand that every student learns differently. Some grasp concepts quickly but struggle with application, while others need more time to build their foundation. Our verified math tutors in Rawalpindi tailor their teaching approach to match each student's learning style and pace. Whether your child is preparing for <a class="blog-link" href="/tutors?subject=O%20Level">O Level Mathematics</a>, <a class="blog-link" href="/tutors?subject=A%20Level">A Level Mathematics</a>, Matric, FSc, or university-level courses, our tutors provide the support needed to excel.`,
-        `We offer both <a class="blog-link" href="/home-tutor-rawalpindi">home tuition in Rawalpindi</a> and <a class="blog-link" href="/tutors">online tutoring</a> options to suit your family's schedule and preferences. Our flexible approach allows students to learn in the environment where they feel most comfortable, whether that is at home with a visiting tutor or through interactive online sessions. The result is a learning experience that is effective, convenient, and built around the student's needs.`,
-        `What sets our <a class="blog-link" href="/home-math-tutor-rawalpindi">math tutors in Rawalpindi</a> apart is their genuine commitment to student success. They do not just teach formulas; they explain the reasoning behind them, helping students develop critical thinking skills that extend beyond the classroom. With patience, encouragement, and expertise, our tutors help students build the confidence they need to approach mathematics with a positive mindset. Whether your child is struggling to keep up or aiming for top grades, our tutors are here to help them achieve their academic goals.`,
+        `Rawalpindi's Mathematics students split fairly evenly between Cambridge (CAIE, Edexcel) and the local Punjab Board, and the two genuinely test the subject differently. Punjab Board Matric and FSc papers tend to reward correct final answers with method marks along the way, while CAIE and Edexcel place more weight on showing structured working and, at A Level, on explaining why a method was chosen. A tutor comfortable with only one of these can quietly under-prepare a student for the other, which is why we ask which board a student follows before matching them with a tutor.`,
+        `<a class="blog-link" href="/home-tutor-rawalpindi">Home tuition in Rawalpindi</a> works particularly well for Mathematics because so much of the subject depends on watching someone work through a problem step by step, catching the exact point where a student's logic goes wrong rather than just marking the final answer incorrect. For families who prefer flexibility, we also offer <a class="blog-link" href="/tutors">online sessions</a> with the same tutors.`,
+        `Across both formats, the tutors who get the best results are the ones who slow down on algebra and equation-solving fundamentals before moving to more advanced topics, since a shaky foundation there resurfaces in almost every later chapter, from coordinate geometry to calculus.`,
       ]}
       subjectDetails={[
-        `Our <strong class="text-[#2E4F5E]">home math tutors in Rawalpindi</strong> are qualified educators with extensive experience teaching Mathematics across multiple curricula. They hold advanced degrees in Mathematics, Engineering, or related fields and have a proven track record of helping students achieve top grades. Many of our tutors are also experienced in preparing students for competitive exams and university entrance tests.`,
-        `We offer tuition for <strong class="text-[#2E4F5E]">all Mathematics levels</strong> including Basic Mathematics, General Mathematics, Additional Mathematics, O Level Mathematics, A Level Mathematics, Matric Mathematics, FSc Mathematics, and University-level Mathematics. Our tutors are familiar with the specific requirements of each curriculum and exam board, including <strong class="text-[#2E4F5E]">CAIE (Cambridge International)</strong>, <strong class="text-[#2E4F5E]">Edexcel</strong>, and local Pakistani boards.`,
-        `Our tutors focus on <strong class="text-[#2E4F5E]">building strong conceptual foundations</strong> and developing <strong class="text-[#2E4F5E]">problem-solving skills</strong>. They use past papers, practice questions, and targeted revision strategies to help students achieve their target grades. Regular assessments and progress reports ensure that both parents and students stay informed about progress and areas needing improvement.`,
-        `We understand that Mathematics can be challenging and sometimes intimidating. That is why our tutors create a <strong class="text-[#2E4F5E]">supportive and encouraging learning environment</strong> where students feel comfortable asking questions and making mistakes. They break down complex problems into manageable steps, helping students build confidence gradually. With the right guidance, every student can succeed in Mathematics.`,
+        `A first session usually starts with a short diagnostic rather than new content, working through a handful of questions spanning a few different topics to see exactly where a student's understanding breaks down. Two students who both "struggle with Mathematics" often have completely different actual gaps.`,
+        `For Matric and FSc students, we pay close attention to how Punjab Board questions are phrased, since the wording and expected answer format differ from Cambridge papers even when the underlying maths topic is identical. Students who only practise from Cambridge-style resources sometimes lose marks on board exams simply from unfamiliarity with the format.`,
+        `For <a class="blog-link" href="/tutors?subject=O%20Level">O Level</a> and <a class="blog-link" href="/tutors?subject=A%20Level">A Level</a> students, past papers organised by topic (not by year) are used from early on, so a student sees how the same concept has been tested several different ways before sitting a full timed paper.`,
+        `We keep a simple running record with each student of which topics cost the most marks in practice, so revision time in the final weeks goes to genuine weak points rather than being spread evenly across a syllabus where not every topic carries equal weight.`,
       ]}
       examBoards={['CAIE (Cambridge International)', 'Edexcel', 'Oxford AQA', 'Federal Board', 'Punjab Board', 'KPK Board', 'Sindh Board', 'Balochistan Board']}
       targetExams={['O Level', 'A Level', 'Matric', 'FSc', 'IGCSE', 'University Exams', 'Entry Tests']}
@@ -398,10 +399,10 @@ export default function HomeMathTutorRawalpindiPage() {
         'Mechanics & Kinematics',
       ]}
       whyChoose={[
-        'Our math tutors in Rawalpindi are <strong>qualified and experienced educators</strong> with advanced degrees in Mathematics, Engineering, or related fields and proven track records of helping students achieve top grades.',
-        'We provide <strong>personalised lesson plans</strong> tailored to each student\'s learning style, pace, and academic goals. Every student receives the individual attention they need to succeed.',
-        'Our tutors use <strong>interactive teaching methods</strong> including practical examples, visual aids, and real-world applications to make Mathematics engaging and easy to understand.',
-        'We offer <strong>flexible scheduling</strong> for both home tuition and online sessions, making it easy to fit Mathematics tutoring into your family\'s busy schedule. Progress reports keep parents informed every step of the way.',
+        'We match tutors by exact board (CAIE, Edexcel, or Punjab Board) since Mathematics notation, expected working, and question phrasing differ enough between boards that a mismatch genuinely slows a student down.',
+        'Sessions separate conceptual gaps from careless-error patterns early on, since the two require completely different fixes.',
+        'Past papers are used topic-by-topic from early in a course, not saved until the end, so students see a concept tested several different ways before facing a full timed paper.',
+        'A running record of which topics cost the most marks in practice keeps revision time focused on genuine weak points in the final weeks.',
       ]}
       faqs={[
         {
