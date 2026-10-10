@@ -1,3 +1,7 @@
+
+
+
+
 // import type { Metadata } from 'next'
 // import SubjectLandingPage from '@/components/shared/SubjectLandingPage'
 
@@ -175,7 +179,7 @@
 //       faqs={[
 //         {
 //           q: 'How can I hire a home biology tutor in Rawalpindi?',
-//           a: 'Hiring a home biology tutor in Rawalpindi is simple. Contact <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">Avenfield Tutors on WhatsApp</a> with your child\'s grade level, curriculum, and specific needs. We will match you with a qualified biology tutor in your area within 24 hours. A free demo class allows you to assess the tutor before committing to regular sessions.',
+//           a: 'Hiring a home biology tutor in Rawalpindi is simple. Contact <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">Avenfield Tutors on WhatsApp</a> with your child\'s grade level, curriculum, and specific needs. We will match you with a qualified biology tutor in your area within 24 hours. A free demo class allows you to assess the tutor before committing to regular sessions.',
 //         },
 //         {
 //           q: 'Do you provide female biology tutors in Rawalpindi?',
@@ -183,7 +187,7 @@
 //         },
 //         {
 //           q: 'What are the charges for a home biology tutor in Rawalpindi?',
-//           a: 'Tuition charges for home biology tutors in Rawalpindi vary based on the student\'s grade level, curriculum, and the tutor\'s experience. Typically, rates range from PKR 1,500 to 4,000 per hour. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive pricing with complete transparency and no hidden charges.',
+//           a: 'Tuition charges for home biology tutors in Rawalpindi vary based on the student\'s grade level, curriculum, and the tutor\'s experience. Typically, rates range from PKR 1,500 to 4,000 per hour. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive pricing with complete transparency and no hidden charges.',
 //         },
 //         {
 //           q: 'Can I get a free demo class before hiring a tutor?',
@@ -191,11 +195,11 @@
 //         },
 //         {
 //           q: 'Do you also offer online biology classes in Rawalpindi?',
-//           a: 'Yes, we offer online biology classes for students who prefer the flexibility of learning from home or who live in areas where home tuition may not be available. Our <a href="/tutors" class="text-[#E05C42] hover:underline font-black">online tutors</a> are experienced in delivering engaging and effective lessons through video calls, interactive whiteboards, and screen sharing.',
+//           a: 'Yes, we offer online biology classes for students who prefer the flexibility of learning from home or who live in areas where home tuition may not be available. Our <a href="/tutors" class="text-[#C43D24] hover:underline font-black">online tutors</a> are experienced in delivering engaging and effective lessons through video calls, interactive whiteboards, and screen sharing.',
 //         },
 //         {
 //           q: 'Which areas of Rawalpindi do your home tutors cover?',
-//           a: 'Our home biology tutors cover all major areas of Rawalpindi including Bahria Town, DHA, Saddar, Satellite Town, Chaklala, Westridge, Gulraiz, Askari, Adiala Road, Rawat, Sixth Road, Tenant Colony, Lalazar, Peshawar Road, Fazal Town, Sadiqabad, and many more. If you do not see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">message us on WhatsApp</a> and we will confirm availability.',
+//           a: 'Our home biology tutors cover all major areas of Rawalpindi including Bahria Town, DHA, Saddar, Satellite Town, Chaklala, Westridge, Gulraiz, Askari, Adiala Road, Rawat, Sixth Road, Tenant Colony, Lalazar, Peshawar Road, Fazal Town, Sadiqabad, and many more. If you do not see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">message us on WhatsApp</a> and we will confirm availability.',
 //         },
 //       ]}
 //       areas={RAWALPINDI_AREAS}
@@ -370,16 +374,15 @@ export default function HomeBiologyTutorRawalpindiPage() {
       subjectIcon="🧬"
       subjectEmoji="🔬"
       subjectOverview={[
-        `Biology is the study of life itself — from the smallest cells to entire ecosystems. For students in Rawalpindi, Biology is often a subject of fascination, but it can also be overwhelming due to the sheer volume of content and the need to understand complex processes that are not always visible. The human body, genetics, ecology, and evolution are just a few of the topics that require deep understanding and memorisation. A <a class="blog-link" href="/home-biology-tutor-rawalpindi">home biology tutor in Rawalpindi</a> can provide the individual attention that makes all the difference.`,
-        `At <a class="blog-link" href="/">Avenfield Tutors</a>, we understand that Biology becomes accessible when taught with the right approach. Our qualified biology tutors in Rawalpindi help students build a strong conceptual foundation by breaking down complex topics into simple, relatable ideas. Whether your child is preparing for <a class="blog-link" href="/tutors?subject=O%20Level">O Level Biology</a>, <a class="blog-link" href="/tutors?subject=A%20Level">A Level Biology</a>, Matric, FSc, or university-level courses, our tutors provide the support needed to master both theory and application.`,
-        `We offer <a class="blog-link" href="/home-tutor-rawalpindi">home tuition in Rawalpindi</a> as well as <a class="blog-link" href="/tutors">online tutoring</a> options, giving families the flexibility to choose the learning format that best suits their needs. Our tutors use diagrams, models, practical examples, and interactive discussions to make Biology engaging and understandable. This approach not only helps students improve their grades but also fosters a genuine interest in the life sciences.`,
-        `Our <a class="blog-link" href="/home-biology-tutor-rawalpindi">biology tutors in Rawalpindi</a> are not just subject experts; they are patient and supportive educators who understand the challenges students face. They take the time to identify each student's weaknesses and address them systematically, building confidence with every session. With the right guidance, Biology can transform from a difficult subject into one of the most rewarding areas of study.`,
+        `Biology in Rawalpindi is studied through three quite different lenses: the Punjab Board FSc course with its long written answers and labelled diagrams, Cambridge O and A Level with structured questions and practical-skills papers, and MDCAT preparation, which is almost entirely multiple choice. A student who is strong in one format is not automatically strong in the others, and the tutor needs to know which exam is actually coming.`,
+        `With medical colleges and teaching hospitals in the twin cities, many Rawalpindi pre-medical students are really preparing for two exams at once: their board or Cambridge papers and the MDCAT. Our <a class="blog-link" href="/home-tutor-rawalpindi">home tutors in Rawalpindi</a> plan the year around both, so that written-answer practice and timed multiple-choice practice each get their own slot instead of fighting for the same one.`,
+        `For students heading toward medicine, see also our <a class="blog-link" href="/home-mdcat-tutor-rawalpindi">MDCAT tutors in Rawalpindi</a> and <a class="blog-link" href="/home-chemistry-tutor-rawalpindi">Chemistry tutors</a>, since the two subjects are usually studied together.`,
       ]}
       subjectDetails={[
-        `Our <strong class="text-[#2E4F5E]">home biology tutors in Rawalpindi</strong> are qualified educators with extensive experience teaching Biology across multiple curricula. They hold advanced degrees in Biology, Life Sciences, or related fields and have a proven track record of helping students achieve top grades. Our tutors are also experienced in preparing students for competitive exams and university entrance tests.`,
-        `We offer tuition for <strong class="text-[#2E4F5E]">all Biology levels</strong> including cell biology, human physiology, genetics, ecology, evolution, microbiology, biochemistry, and biotechnology. We cover curricula such as <strong class="text-[#2E4F5E]">CAIE (Cambridge International)</strong>, <strong class="text-[#2E4F5E]">Edexcel</strong>, Federal Board, Punjab Board, and other local boards. Our tutors are familiar with the specific requirements of each curriculum and exam board.`,
-        `Our tutors focus on <strong class="text-[#2E4F5E]">building strong conceptual understanding</strong> and developing <strong class="text-[#2E4F5E]">analytical skills</strong>. They use past papers, practice questions, and targeted revision strategies to help students achieve their target grades. Regular assessments and progress reports ensure that both parents and students stay informed about progress and areas needing improvement.`,
-        `We understand that Biology requires both theoretical understanding and practical application. That is why our tutors use <strong class="text-[#2E4F5E]">interactive teaching methods</strong> including diagrams, models, practical examples, and discussions to help students master both concepts and applications. Our tutors also provide guidance on effective study techniques and exam strategies.`,
+        `For board students, answer writing is taught as a skill. A good long answer in FSc Biology has a definition, a labelled diagram, a clear sequence of steps and the right terminology, and students practise building that structure for the common question types until it is automatic.`,
+        `Diagrams are redrawn from memory, not copied. Being able to sketch a nephron, a heart cycle or a cell division sequence and explain each label is a better test of understanding than recognising a finished picture.`,
+        `For Cambridge students, we cover the practical-skills and data-analysis questions that are often skipped: reading graphs, planning a fair test, identifying variables and judging reliability. These marks are very winnable, and students who never practise them lose them for no good reason.`,
+        `MDCAT students get timed multiple-choice sets after each chapter, with every wrong answer sorted into recall gap, misread question or time pressure, since the three need different fixes. Theory is not re-taught for topics the student already answers reliably.`,
       ]}
       examBoards={['CAIE (Cambridge International)', 'Edexcel', 'Oxford AQA', 'Federal Board', 'Punjab Board', 'KPK Board', 'Sindh Board', 'Balochistan Board']}
       targetExams={['O Level', 'A Level', 'Matric', 'FSc', 'IGCSE', 'University Exams', 'Entry Tests']}
@@ -396,10 +399,10 @@ export default function HomeBiologyTutorRawalpindiPage() {
         'Homeostasis & Excretion',
       ]}
       whyChoose={[
-        'Our biology tutors in Rawalpindi are <strong>qualified and experienced educators</strong> with advanced degrees in Biology, Life Sciences, or related fields and proven track records of helping students achieve top grades.',
-        'We provide <strong>personalised lesson plans</strong> tailored to each student\'s learning style, pace, and academic goals. Every student receives the individual attention they need to succeed.',
-        'Our tutors use <strong>interactive teaching methods</strong> including diagrams, models, practical examples, and discussions to make Biology engaging and easy to understand.',
-        'We offer <strong>flexible scheduling</strong> for both home tuition and online sessions, making it easy to fit Biology tutoring into your family\'s busy schedule. Progress reports keep parents informed every step of the way.',
+        `<strong>Matched to the exam format.</strong> FSc long answers, Cambridge structured questions and MDCAT multiple choice are taught differently, so the tutor is chosen for the exam your child is sitting.`,
+        `<strong>Two exams, one plan.</strong> Pre-medical students get a yearly plan that separates written-answer practice from timed multiple-choice practice.`,
+        `<strong>Diagrams drawn from memory.</strong> Students rebuild and label them unaided, which tests understanding and not just recognition.`,
+        `<strong>Practical and data questions covered.</strong> Graph reading, planning and evaluation questions are practised directly because they are easy marks to lose.`,
       ]}
       faqs={[
         {

@@ -1,3 +1,5 @@
+
+
 // import type { Metadata } from 'next'
 // import SubjectLandingPage from '@/components/shared/SubjectLandingPage'
 
@@ -221,7 +223,7 @@
 //       faqs={[
 //         {
 //           q: 'How can I hire a home O Level tutor in Rawalpindi?',
-//           a: 'Hiring a home O Level tutor in Rawalpindi is simple. Contact <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">Avenfield Tutors on WhatsApp</a> with your child\'s subject and specific needs. We will match you with a qualified O Level tutor in your area. A free demo class allows you to assess the tutor before committing to regular sessions.',
+//           a: 'Hiring a home O Level tutor in Rawalpindi is simple. Contact <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">Avenfield Tutors on WhatsApp</a> with your child\'s subject and specific needs. We will match you with a qualified O Level tutor in your area. A free demo class allows you to assess the tutor before committing to regular sessions.',
 //         },
 //         {
 //           q: 'Do you provide female O Level tutors in Rawalpindi?',
@@ -229,11 +231,11 @@
 //         },
 //         {
 //           q: 'Which O Level subjects do you offer tuition for?',
-//           a: 'We offer tuition for all O Level subjects including Mathematics, Physics, Chemistry, Biology, English, Urdu, Economics, Computer Science, Accounting, Business Studies, History, Geography, and more. Our tutors cover both CAIE and Edexcel exam boards. If you need a specific subject not listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">contact us on WhatsApp</a> and we will find a tutor for you.',
+//           a: 'We offer tuition for all O Level subjects including Mathematics, Physics, Chemistry, Biology, English, Urdu, Economics, Computer Science, Accounting, Business Studies, History, Geography, and more. Our tutors cover both CAIE and Edexcel exam boards. If you need a specific subject not listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">contact us on WhatsApp</a> and we will find a tutor for you.',
 //         },
 //         {
 //           q: 'What are the charges for a home O Level tutor in Rawalpindi?',
-//           a: 'Tuition charges for home O Level tutors in Rawalpindi vary based on the subject, the tutor\'s experience, and the student\'s level. Typically, rates range from PKR 1,500 to 4,000 per hour, though this can vary. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive pricing with complete transparency and no hidden charges.',
+//           a: 'Tuition charges for home O Level tutors in Rawalpindi vary based on the subject, the tutor\'s experience, and the student\'s level. Typically, rates range from PKR 1,500 to 4,000 per hour, though this can vary. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive pricing with complete transparency and no hidden charges.',
 //         },
 //         {
 //           q: 'Can I get a free demo class before hiring a tutor?',
@@ -241,7 +243,7 @@
 //         },
 //         {
 //           q: 'Which areas of Rawalpindi do your home tutors cover?',
-//           a: 'Our home O Level tutors cover all major areas of Rawalpindi including Bahria Town, DHA, Saddar, Satellite Town, Chaklala, Westridge, Gulraiz, Askari, Adiala Road, Rawat, Sixth Road, Tenant Colony, Lalazar, Peshawar Road, Fazal Town, Sadiqabad, and many more. If you do not see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">message us on WhatsApp</a> and we will confirm availability.',
+//           a: 'Our home O Level tutors cover all major areas of Rawalpindi including Bahria Town, DHA, Saddar, Satellite Town, Chaklala, Westridge, Gulraiz, Askari, Adiala Road, Rawat, Sixth Road, Tenant Colony, Lalazar, Peshawar Road, Fazal Town, Sadiqabad, and many more. If you do not see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">message us on WhatsApp</a> and we will confirm availability.',
 //         },
 //       ]}
 //       areas={RAWALPINDI_AREAS}
@@ -265,6 +267,8 @@
 //     />
 //   )
 // }
+
+
 
 
 
@@ -459,16 +463,15 @@ export default function HomeOLevelTutorRawalpindiPage() {
       subjectIcon="📚"
       subjectEmoji="📖"
       subjectOverview={[
-        `The Cambridge O Level programme is one of the most respected international qualifications, and students in Rawalpindi are increasingly choosing this pathway for their secondary education. However, the O Level curriculum is demanding — it requires students to develop critical thinking, analytical skills, and a deep understanding of their subjects. A <a class="blog-link" href="/home-tutor-rawalpindi">home tutor in Rawalpindi</a> specialising in O Level subjects can provide the personalised support needed to excel in this challenging programme.`,
-        `At <a class="blog-link" href="/">Avenfield Tutors</a>, we understand that O Level success requires more than just memorising facts. Our qualified O Level tutors in Rawalpindi help students build a strong foundation across all subjects, develop effective study habits, and master exam techniques. Whether your child is preparing for <a class="blog-link" href="/tutors?subject=O%20Level&city=Rawalpindi">O Level Mathematics</a>, <a class="blog-link" href="/tutors?subject=O%20Level&city=Rawalpindi">Physics</a>, <a class="blog-link" href="/tutors?subject=O%20Level&city=Rawalpindi">Chemistry</a>, <a class="blog-link" href="/tutors?subject=O%20Level&city=Rawalpindi">Biology</a>, or <a class="blog-link" href="/tutors?subject=O%20Level&city=Rawalpindi">English</a>, our tutors provide the support needed to achieve top grades.`,
-        `We offer <a class="blog-link" href="/home-tutor-rawalpindi">home tuition in Rawalpindi</a> as well as <a class="blog-link" href="/tutors">online tutoring</a> options, giving families the flexibility to choose the learning format that best suits their needs. Our tutors are familiar with both <a class="blog-link" href="/tutors?subject=O%20Level&board=CAIE">CAIE</a> and <a class="blog-link" href="/tutors?subject=O%20Level&board=Edexcel">Edexcel</a> exam boards, ensuring students are fully prepared for their examinations.`,
-        `Our O Level tutors in Rawalpindi are not just subject experts; they are patient and supportive educators who understand the challenges students face. They take the time to identify each student's strengths and weaknesses, building confidence with every session. With the right guidance, O Level students can achieve their full potential and build a strong foundation for <a class="blog-link" href="/home-a-level-tutor-rawalpindi">A Level</a> and beyond.`,
+        `A very common O Level story in Rawalpindi starts in Grade 8 or 9. A student who has done well in a Punjab Board or local-syllabus school moves to a Cambridge programme, and the first term feels like a different subject. The content overlaps, but how questions are phrased, how much working is expected and how marks are awarded are not the same. Our <a class="blog-link" href="/home-tutor-rawalpindi">home tutors in Rawalpindi</a> spend real time on this bridging period.`,
+        `Rawalpindi's cantonment and Askari-society schools bring a second pattern: families who relocate mid-year, so a student joins a Cambridge syllabus half-way through. For them the first job is a gap map showing which topics the previous school covered, which it skipped and which must be taught from scratch before the next mock exam. A student who is a few topics behind can usually catch up in weeks. One who is a whole unit behind needs a plan.`,
+        `We match tutors by subject and by exam board (CAIE or Edexcel), because a strong Chemistry tutor for the local board is not automatically comfortable with how Cambridge words a structured question. If your child is still deciding what to study, our guide on <a class="blog-link" href="/blog/how-to-choose-o-level-subjects-pakistan">choosing O Level subjects</a> and the <a class="blog-link" href="/blog/how-to-prepare-for-o-level-exams">O Level exam preparation guide</a> are good places to start before booking a first session.`,
       ]}
       subjectDetails={[
-        `Our <strong class="text-[#2E4F5E]">home O Level tutors in Rawalpindi</strong> are qualified educators with experience teaching the Cambridge syllabus. They hold relevant qualifications in their subject areas and have a track record of helping students achieve strong results. Our tutors are familiar with Cambridge marking and assessment approaches.`,
-        `We offer tuition for <strong class="text-[#2E4F5E]">all O Level subjects</strong> including Mathematics, Physics, Chemistry, Biology, English, Urdu, Economics, Computer Science, Accounting, Business Studies, History, Geography, and more. We cover both <strong class="text-[#2E4F5E]">CAIE (Cambridge International)</strong> and <strong class="text-[#2E4F5E]">Edexcel</strong> exam boards.`,
-        `Our tutors focus on <strong class="text-[#2E4F5E]">building strong conceptual foundations</strong> and developing <strong class="text-[#2E4F5E]">exam technique</strong>. They use past papers, practice questions, and targeted revision strategies to help students achieve their target grades. Regular assessments and progress reports ensure that both parents and students stay informed about progress and areas needing improvement.`,
-        `We understand that O Level is a significant step in a student's academic journey. That is why our tutors provide <strong class="text-[#2E4F5E]">comprehensive support</strong> — from concept building to exam preparation and study skills development. Our goal is to help every student build the confidence and competence they need to succeed.`,
+        `The first session is a short diagnostic, not a lesson. We look at recent school test papers, ask which subjects feel shaky, and check one or two foundation skills (algebra for the sciences, paragraph writing for English) that quietly affect several subjects at once. Subject-specific help is available through our <a class="blog-link" href="/home-math-tutor-rawalpindi">Mathematics</a>, <a class="blog-link" href="/home-physics-tutor-rawalpindi">Physics</a> and <a class="blog-link" href="/home-english-tutor-rawalpindi">English</a> tutors in Rawalpindi.`,
+        `Bridging students get a side-by-side comparison of how their old syllabus and the Cambridge one treat the same topic, so they know exactly what to unlearn, what to keep and what is new. This is usually faster than re-teaching the topic from the beginning.`,
+        `Past papers are organised by topic, not by year, from early in the course. Seeing the same idea asked four different ways teaches a student more about the exam than another round of textbook reading, and it is the habit that matters most in the final term.`,
+        `Mark schemes are read together with the student. Command words such as state, describe, explain and suggest each ask for a different depth of answer, and numerical questions award marks for working, so a correct answer with no working can still lose marks.`,
       ]}
       examBoards={['CAIE (Cambridge International)', 'Edexcel', 'Oxford AQA']}
       targetExams={['O Level', 'IGCSE', 'Cambridge International']}
@@ -485,10 +488,10 @@ export default function HomeOLevelTutorRawalpindiPage() {
         'Essay Writing',
       ]}
       whyChoose={[
-        'Our O Level tutors in Rawalpindi are <strong>subject specialists</strong> with experience helping students achieve strong results in Cambridge examinations.',
-        'We provide <strong>personalised lesson plans</strong> tailored to each student\'s learning style, pace, and academic goals, ensuring efficient and effective learning.',
-        'Our tutors are <strong>familiar with the specific requirements</strong> of both CAIE and Edexcel exam boards, including mark schemes, past paper patterns, and examiner expectations.',
-        'We offer <strong>flexible scheduling</strong> for both home tuition and online sessions, making it easy to fit O Level tutoring into your family\'s busy schedule.',
+        `<strong>Built for students switching boards.</strong> We map the differences between a local syllabus and Cambridge so bridging students do not waste weeks relearning what they already know.`,
+        `<strong>Gap map for mid-year arrivals.</strong> Students joining a syllabus part-way get a clear list of missing topics and a catch-up schedule before the next mock exam.`,
+        `<strong>Matched by exam board.</strong> CAIE and Edexcel students are paired with tutors who have taught that board, since question wording and mark schemes differ.`,
+        `<strong>Topic-wise past papers from the start.</strong> Students see how each concept is tested before they sit full timed papers, not after.`,
       ]}
       faqs={[
         {

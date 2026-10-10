@@ -1,3 +1,7 @@
+
+
+
+
 // import type { Metadata } from 'next'
 // import SubjectLandingPage from '@/components/shared/SubjectLandingPage'
 
@@ -227,7 +231,7 @@
 //       faqs={[
 //         {
 //           q: 'How can I hire a home A Level tutor in Rawalpindi?',
-//           a: 'Hiring a home A Level tutor in Rawalpindi is simple. Contact <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">Avenfield Tutors on WhatsApp</a> with your child\'s subject and specific needs. We will match you with a qualified A Level tutor in your area. A free demo class allows you to assess the tutor before committing to regular sessions.',
+//           a: 'Hiring a home A Level tutor in Rawalpindi is simple. Contact <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">Avenfield Tutors on WhatsApp</a> with your child\'s subject and specific needs. We will match you with a qualified A Level tutor in your area. A free demo class allows you to assess the tutor before committing to regular sessions.',
 //         },
 //         {
 //           q: 'Do you provide female A Level tutors in Rawalpindi?',
@@ -235,11 +239,11 @@
 //         },
 //         {
 //           q: 'Which A Level subjects do you offer tuition for?',
-//           a: 'We offer tuition for all A Level subjects including Mathematics, Further Mathematics, Physics, Chemistry, Biology, Economics, Accounting, Business Studies, English Literature, History, Geography, Psychology, Computer Science, and more. Our tutors cover both CAIE and Edexcel exam boards. If you need a specific subject not listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">contact us on WhatsApp</a> and we will find a tutor for you.',
+//           a: 'We offer tuition for all A Level subjects including Mathematics, Further Mathematics, Physics, Chemistry, Biology, Economics, Accounting, Business Studies, English Literature, History, Geography, Psychology, Computer Science, and more. Our tutors cover both CAIE and Edexcel exam boards. If you need a specific subject not listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">contact us on WhatsApp</a> and we will find a tutor for you.',
 //         },
 //         {
 //           q: 'What are the charges for a home A Level tutor in Rawalpindi?',
-//           a: 'Tuition charges for home A Level tutors in Rawalpindi vary based on the subject, the tutor\'s experience, and the student\'s level (AS or A2). Typically, rates range from PKR 2,000 to 4,500 per hour, though this can vary. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive pricing with complete transparency and no hidden charges.',
+//           a: 'Tuition charges for home A Level tutors in Rawalpindi vary based on the subject, the tutor\'s experience, and the student\'s level (AS or A2). Typically, rates range from PKR 2,000 to 4,500 per hour, though this can vary. <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">Contact us on WhatsApp</a> with your specific requirements for a detailed quote. We offer competitive pricing with complete transparency and no hidden charges.',
 //         },
 //         {
 //           q: 'Can I get a free demo class before hiring a tutor?',
@@ -247,7 +251,7 @@
 //         },
 //         {
 //           q: 'Which areas of Rawalpindi do your home tutors cover?',
-//           a: 'Our home A Level tutors cover all major areas of Rawalpindi including Bahria Town, DHA, Saddar, Satellite Town, Chaklala, Westridge, Gulraiz, Askari, Adiala Road, Rawat, Sixth Road, Tenant Colony, Lalazar, Peshawar Road, Fazal Town, Sadiqabad, and many more. If you do not see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#E05C42] hover:underline font-black">message us on WhatsApp</a> and we will confirm availability.',
+//           a: 'Our home A Level tutors cover all major areas of Rawalpindi including Bahria Town, DHA, Saddar, Satellite Town, Chaklala, Westridge, Gulraiz, Askari, Adiala Road, Rawat, Sixth Road, Tenant Colony, Lalazar, Peshawar Road, Fazal Town, Sadiqabad, and many more. If you do not see your area listed, <a href="https://wa.me/923095154253" target="_blank" rel="noopener noreferrer" class="text-[#C43D24] hover:underline font-black">message us on WhatsApp</a> and we will confirm availability.',
 //         },
 //       ]}
 //       areas={RAWALPINDI_AREAS}
@@ -272,8 +276,6 @@
 //     />
 //   )
 // }
-
-
 
 
 
@@ -477,16 +479,15 @@ export default function HomeALevelTutorRawalpindiPage() {
       subjectIcon="🎯"
       subjectEmoji="📘"
       subjectOverview={[
-        `The Cambridge A Level programme is a widely recognised pre-university qualification taken by students in Rawalpindi who are aiming for admission to top universities worldwide. A Level demands advanced analytical skills, independent research capabilities, and a deep understanding of chosen subjects. A <a class="blog-link" href="/home-tutor-rawalpindi">home tutor in Rawalpindi</a> specialising in A Level subjects can provide the expert guidance needed to excel in this rigorous programme.`,
-        `At <a class="blog-link" href="/">Avenfield Tutors</a>, we understand that A Level success requires more than just hard work — it requires the right strategies and expert guidance. Our qualified A Level tutors in Rawalpindi help students master complex concepts, develop critical thinking skills, and build the confidence needed to achieve strong grades. Whether your child is preparing for <a class="blog-link" href="/tutors?subject=A%20Level&city=Rawalpindi">A Level Mathematics</a>, <a class="blog-link" href="/tutors?subject=A%20Level&city=Rawalpindi">Physics</a>, <a class="blog-link" href="/tutors?subject=A%20Level&city=Rawalpindi">Chemistry</a>, <a class="blog-link" href="/tutors?subject=A%20Level&city=Rawalpindi">Biology</a>, <a class="blog-link" href="/tutors?subject=A%20Level&city=Rawalpindi">Economics</a>, or <a class="blog-link" href="/tutors?subject=A%20Level&city=Rawalpindi">English Literature</a>, our tutors provide the support needed to achieve strong results.`,
-        `We offer <a class="blog-link" href="/home-tutor-rawalpindi">home tuition in Rawalpindi</a> as well as <a class="blog-link" href="/tutors">online tutoring</a> options, giving families the flexibility to choose the learning format that best suits their needs. Our tutors are familiar with both <a class="blog-link" href="/tutors?subject=A%20Level&board=CAIE">CAIE</a> and <a class="blog-link" href="/tutors?subject=A%20Level&board=Edexcel">Edexcel</a> exam boards, ensuring students are fully prepared for their AS and A2 examinations.`,
-        `Our A Level tutors in Rawalpindi are passionate educators who understand the demands of the A Level programme. They take the time to identify each student's strengths and weaknesses, building confidence with every session. With the right guidance, A Level students can achieve their full potential and secure places at competitive universities.`,
+        `For many Rawalpindi A Level students the real question is not only which subjects to take but which door they are aiming at: a university abroad, or a local one such as NUST or a medical college, which means preparing for an entry test while still completing A Level. The two paths pull revision time in different directions, so our tutors start by asking where the student plans to apply.`,
+        `Students heading to Pakistani universities also need their Cambridge results recognised through the IBCC equivalence process, and entry tests are often built around FSc-style content. An A Level Physics student may therefore need a short bridge on topics the Cambridge syllabus handles differently. We plan that bridge from the AS year instead of leaving it to the month before the test.`,
+        `Subject depth matters more at this level than at O Level, so we usually assign one tutor per subject rather than one generalist for a student's whole combination. Sessions run as <a class="blog-link" href="/home-tutor-rawalpindi">home tuition in Rawalpindi</a> or online. If your child is moving up from O Level, our <a class="blog-link" href="/blog/o-level-to-a-level-transition-guide-pakistan">O Level to A Level transition guide</a> explains what changes.`,
       ]}
       subjectDetails={[
-        `Our <strong class="text-[#2E4F5E]">home A Level tutors in Rawalpindi</strong> are qualified educators with experience teaching the Cambridge syllabus at both AS and A2 levels. They hold relevant qualifications in their subject areas and have a track record of helping students achieve strong results. Our tutors are familiar with Cambridge marking and assessment approaches.`,
-        `We offer tuition for <strong class="text-[#2E4F5E]">all A Level subjects</strong> including Mathematics, Further Mathematics, Physics, Chemistry, Biology, Economics, Accounting, Business Studies, English Literature, History, Geography, Psychology, Computer Science, and more. We cover both <strong class="text-[#2E4F5E]">CAIE (Cambridge International)</strong> and <strong class="text-[#2E4F5E]">Edexcel</strong> exam boards.`,
-        `Our tutors focus on <strong class="text-[#2E4F5E]">building strong conceptual foundations</strong> and developing <strong class="text-[#2E4F5E]">advanced exam technique</strong>. They use past papers, practice questions, and targeted revision strategies to help students achieve their target grades. Regular assessments and progress reports ensure that both parents and students stay informed about progress and areas needing improvement.`,
-        `We understand that A Level is a significant step up from O Level. That is why our tutors provide <strong class="text-[#2E4F5E]">comprehensive support</strong> — from concept building to exam preparation and university application guidance. Our goal is to help every student build the confidence and competence they need to succeed at the highest level.`,
+        `Sessions begin with the student's most recent mock or AS results, broken down by topic. A single overall grade hides the pattern, whereas a topic list shows exactly which two or three areas are pulling the grade down.`,
+        `For students with a local entry test in mind, we build a short parallel plan: which test topics are already covered by A Level, which are missing and when to cover them. The aim is to avoid two full syllabi competing for the same evenings.`,
+        `In Economics, Business, Psychology and Literature, we practise written evaluation specifically: making a point, supporting it with evidence, weighing the other side and reaching a reasoned conclusion. Marks at A Level go to judgement, not to description.`,
+        `In Mathematics and the sciences, we move quickly from single-topic questions to mixed ones, because A Level papers often combine two or three topics in one problem. Students who only practise one topic at a time tend to freeze when a question does not announce which topic it belongs to.`,
       ]}
       examBoards={['CAIE (Cambridge International)', 'Edexcel', 'Oxford AQA']}
       targetExams={['AS Level', 'A2 Level', 'Cambridge International A Level']}
@@ -503,10 +504,10 @@ export default function HomeALevelTutorRawalpindiPage() {
         'Literary Criticism & Essay Writing',
       ]}
       whyChoose={[
-        'Our A Level tutors in Rawalpindi are <strong>subject specialists</strong> with experience helping students achieve strong results in Cambridge examinations — many tutors are familiar with Cambridge assessment approaches.',
-        'We provide <strong>personalised lesson plans</strong> tailored to each student\'s learning style, pace, and academic goals, ensuring efficient and effective learning for the demanding A Level curriculum.',
-        'Our tutors are <strong>familiar with the specific requirements</strong> of both CAIE and Edexcel exam boards, including mark schemes, past paper patterns, and examiner expectations at both AS and A2 levels.',
-        'We offer <strong>flexible scheduling</strong> for both home tuition and online sessions, making it easy to fit A Level tutoring into your family\'s busy schedule and ensure consistency throughout the two-year A Level programme.',
+        `<strong>Planning for the student's real destination.</strong> Local entry tests and overseas applications need different preparation, so we ask early and plan around the answer.`,
+        `<strong>One tutor per subject.</strong> Depth matters more than convenience at A Level, so each subject gets a tutor who has taught that exact syllabus.`,
+        `<strong>Topic-level diagnostics.</strong> We read mock results topic by topic so revision time goes to the two or three areas that are really costing marks.`,
+        `<strong>Written evaluation practice.</strong> Humanities and business students rehearse the exact structure examiners reward, not just the content.`,
       ]}
       faqs={[
         {

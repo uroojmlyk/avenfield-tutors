@@ -260,7 +260,7 @@ export default async function HomePage() {
 
               {/* H1 — SEO optimized with primary keywords */}
               <h1 className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] font-black leading-[1.08] tracking-[-0.025em] text-[#2E4F5E] mb-4 md:mb-5">
-                Online &amp; Home Tutors in Pakistan{' '}
+                Home &amp; Online Tutors in Pakistan{' '}
                 <span className="relative inline-block text-[#C43D24]">
                   <span className="relative z-10">for O Level, A Level, IELTS &amp; MDCAT</span>
                   <Wiggle color="#E8C86A" />
@@ -271,7 +271,7 @@ export default async function HomePage() {
               <div className="text-[#4a6a78] text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] leading-[1.7] md:leading-[1.75] mb-6 md:mb-8 font-semibold space-y-3">
                 <p>
                   <Link href="/" className="font-black text-[#2E4F5E]">Avenfield Tutors</Link> connects your child with verified{' '}
-                  <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">online and home tutors</Link>{' '}
+                  <Link href="/tutors" className="text-[#C43D24] hover:underline font-black">home and online tutors</Link>{' '}
                   across Pakistan, hand-checked before they ever teach a student. Whether it's{' '}
                   <Link href="/tutors?subject=O%20Level" className="text-[#C43D24] hover:underline font-black">O Level</Link>,{' '}
                   <Link href="/tutors?subject=A%20Level" className="text-[#C43D24] hover:underline font-black">A Level</Link>,{' '}
