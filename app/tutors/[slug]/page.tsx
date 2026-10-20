@@ -2,9 +2,6 @@
 
 
 
-
-
-
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
 // import Image from 'next/image'
@@ -111,7 +108,7 @@
 // // plain div — same look, but now readable as page structure by Google.
 // function Eyebrow({ text, light = false, as: Tag = 'h2' }: { text: string; light?: boolean; as?: 'h2' | 'h3' }) {
 //   return (
-//     <Tag className={`flex items-center gap-2 mb-3 text-[0.63rem] font-black uppercase tracking-[0.22em] ${light ? 'text-[#E8C86A]' : 'text-[#E05C42]'}`}>
+//     <Tag className={`flex items-center gap-2 mb-3 text-[0.63rem] font-black uppercase tracking-[0.22em] ${light ? 'text-[#E8C86A]' : 'text-[#C43D24]'}`}>
 //       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
 //       <span>{text}</span>
 //       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${light ? 'bg-[#E8C86A]' : 'bg-[#E05C42]'}`} />
@@ -465,7 +462,7 @@
 //                     </p>
 //                   </div>
 //                   <div className="mt-3 pt-3 border-t-2 border-dashed border-[#E8C86A] text-center">
-//                     <p className="text-[0.63rem] font-black text-[#E05C42]">
+//                     <p className="text-[0.63rem] font-black text-[#C43D24]">
 //                       Limited weekly slots available
 //                     </p>
 //                   </div>
@@ -496,7 +493,7 @@
 //                 <div className="flex items-start gap-2.5">
 //                   <span className="text-[#3A9E8F] text-lg flex-shrink-0">✓</span>
 //                   <p className="text-[0.72rem] font-semibold text-[#2E4F5E] leading-relaxed">
-//                     <span className="font-black text-[#E05C42]">Verified tutor</span> manually reviewed and approved by the Avenfield team before going live.
+//                     <span className="font-black text-[#C43D24]">Verified tutor</span> manually reviewed and approved by the Avenfield team before going live.
 //                   </p>
 //                 </div>
 //               </div>
@@ -520,40 +517,26 @@
 
 
 
-
-
-
-
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound, permanentRedirect } from 'next/navigation'
 import { ITutor } from '@/types'
 
-// ⚠️ SITE_URL: uses the live Vercel URL as fallback. Once your custom domain
-// is connected, just set NEXT_PUBLIC_SITE_URL in your environment variables —
-// nothing here needs to change. (Matches the same pattern used in
-// app/tutors/page.tsx for consistency.)
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://avenfieldtutors.com'
 
 interface Props {
-  // Route folder is now /tutors/[slug] — see note below on why this still
-  // accepts an ObjectId too (legacy links).
   params: Promise<{ slug: string }>
 }
 
-// `slugOrId` is whatever is in the URL: a real slug for every new link,
-// or (for links created/shared before this change) a raw Mongo ObjectId.
-// The API route resolves either one — see app/api/tutors/[id]/route.ts.
 async function getTutor(slugOrId: string): Promise<ITutor | null> {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tutors/${slugOrId}`, { cache: 'no-store' })
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tutors/${slugOrId}`, { next: { revalidate: 60 } })
     if (!res.ok) return null
     return res.json()
   } catch { return null }
 }
 
-// Truncates at a word boundary instead of cutting mid-word, and adds "…"
 function truncateAtWord(str: string, maxLen: number) {
   if (str.length <= maxLen) return str
   const trimmed = str.slice(0, maxLen)
@@ -567,28 +550,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!tutor) return { title: 'Tutor Not Found' }
 
   const primarySubject = tutor.subjects[0]
-  // NOTE: no "| Avenfield Tutors" suffix here — app/layout.tsx already has
-  // title.template: '%s | Avenfield Tutors', so it's appended automatically.
   const title = `${tutor.name} — ${primarySubject} Tutor in ${tutor.city}`
-  // Front-load name + subject + city (keywords) before the tutor's own bio text
   const description = truncateAtWord(
     `${tutor.name} teaches ${tutor.subjects.slice(0, 2).join(' & ')} in ${tutor.city}. ${tutor.bio}`,
     155
   )
-  // Always canonicalize to the tutor's real slug — even if this request came
-  // in on a legacy ObjectId URL — so search engines only ever see one clean URL.
   const url = `${SITE_URL}/tutors/${(tutor as any).slug || slug}`
 
   return {
     title,
     description,
-    keywords: [
-      tutor.name,
-      `${primarySubject} tutor`,
-      `${primarySubject} tutor ${tutor.city}`,
-      `online ${primarySubject} tutor`,
-      'home tutor', 'Avenfield Tutors',
-    ],
+    keywords: [tutor.name, `${primarySubject} tutor`, `${primarySubject} tutor ${tutor.city}`, `online ${primarySubject} tutor`, 'home tutor', 'Avenfield Tutors'],
     alternates: { canonical: url },
     openGraph: {
       title: `${title} | Avenfield Tutors`,
@@ -598,19 +570,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: 'Avenfield Tutors',
       images: tutor.imageUrl ? [{ url: tutor.imageUrl, width: 400, height: 400, alt: tutor.name }] : undefined,
     },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${title} | Avenfield Tutors`,
-      description,
-    },
+    twitter: { card: 'summary_large_image', title: `${title} | Avenfield Tutors`, description },
   }
 }
 
-const modeLabel: Record<string, string> = {
-  online: 'Online Only',
-  onsite: 'Home Visit Only',
-  both: 'Online & Home Visit',
-}
+const modeLabel: Record<string, string> = { online: 'Online Only', onsite: 'Home Visit Only', both: 'Online & Home Visit' }
 const modeBadge: Record<string, string> = {
   online: 'bg-[#3A9E8F] text-white border-[#2E4F5E]',
   onsite: 'bg-[#E05C42] text-white border-[#2E4F5E]',
@@ -625,9 +589,6 @@ function buildWhatsAppURL(phone: string, name: string, subject: string) {
   return `https://wa.me/${number}?text=${message}`
 }
 
-// `as` lets the same visual "eyebrow" style render as a real heading
-// (h2 for main content sections, h3 for sidebar sections) instead of a
-// plain div — same look, but now readable as page structure by Google.
 function Eyebrow({ text, light = false, as: Tag = 'h2' }: { text: string; light?: boolean; as?: 'h2' | 'h3' }) {
   return (
     <Tag className={`flex items-center gap-2 mb-3 text-[0.63rem] font-black uppercase tracking-[0.22em] ${light ? 'text-[#E8C86A]' : 'text-[#C43D24]'}`}>
@@ -638,7 +599,16 @@ function Eyebrow({ text, light = false, as: Tag = 'h2' }: { text: string; light?
   )
 }
 
-// ── Person + Breadcrumb JSON-LD (same pattern as app/tutors/page.tsx) ──
+function AnimationStyles() {
+  return (
+    <style dangerouslySetInnerHTML={{ __html: `
+      @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+      .anim-up { animation: fadeUp 0.5s cubic-bezier(0.16,1,0.3,1) both; }
+      @media (prefers-reduced-motion: reduce) { .anim-up { animation: none !important; } }
+    `}} />
+  )
+}
+
 function TutorSchema({ tutor, id }: { tutor: ITutor; id: string }) {
   const personSchema = {
     '@context': 'https://schema.org',
@@ -646,21 +616,12 @@ function TutorSchema({ tutor, id }: { tutor: ITutor; id: string }) {
     name: tutor.name,
     description: tutor.bio,
     image: tutor.imageUrl || undefined,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: tutor.city,
-      addressCountry: tutor.country,
-    },
+    address: { '@type': 'PostalAddress', addressLocality: tutor.city, addressCountry: tutor.country },
     knowsAbout: tutor.subjects,
     hasCredential: tutor.education,
-    memberOf: {
-      '@type': 'Organization',
-      name: 'Avenfield Tutors',
-      url: SITE_URL,
-    },
+    memberOf: { '@type': 'Organization', name: 'Avenfield Tutors', url: SITE_URL },
     ...(tutor.rating ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: tutor.rating, bestRating: 5 } } : {}),
   }
-
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -670,7 +631,6 @@ function TutorSchema({ tutor, id }: { tutor: ITutor; id: string }) {
       { '@type': 'ListItem', position: 3, name: tutor.name, item: `${SITE_URL}/tutors/${id}` },
     ],
   }
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
@@ -684,8 +644,6 @@ export default async function TutorDetailPage({ params }: Props) {
   const tutor = await getTutor(slug)
   if (!tutor) notFound()
 
-  // Legacy /tutors/<ObjectId> link (or a stale slug) landed here — send it
-  // permanently (308) to the real slug URL instead of serving duplicate content.
   const canonicalSlug = (tutor as any).slug
   if (canonicalSlug && canonicalSlug !== slug) {
     permanentRedirect(`/tutors/${canonicalSlug}`)
@@ -702,45 +660,33 @@ export default async function TutorDetailPage({ params }: Props) {
 
   return (
     <div className="text-[#2E4F5E] overflow-x-hidden bg-[#FFFDF7]" style={{ fontFamily: "'Nunito', sans-serif" }}>
-      {/* Was `id={id}` before — that variable doesn't exist here (the param
-          is `slug`), which would have crashed the page at runtime. */}
+      <AnimationStyles />
       <TutorSchema tutor={tutor} id={slug} />
 
-      {/* ═══════════════════════════════════════════════════
-          HERO BANNER — dark teal
-          Psychology: name + location + badges above the fold
-          so visitor immediately knows if this tutor is right.
-          Avatar is large and human — builds instant rapport.
-      ═══════════════════════════════════════════════════ */}
-      <div className="bg-[#2E4F5E] pt-10 sm:pt-14 pb-24 sm:pb-32 px-4 sm:px-8 relative overflow-hidden">
-        {/* Blobs */}
-        <div aria-hidden="true" className="absolute top-0 right-0 w-60 sm:w-[400px] h-60 sm:h-[400px] rounded-full opacity-20 pointer-events-none"
+      {/* HERO */}
+      <div className="bg-[#2E4F5E] pt-8 sm:pt-12 pb-20 sm:pb-28 px-4 sm:px-8 relative overflow-hidden">
+        <div aria-hidden="true" className="absolute top-0 right-0 w-56 sm:w-[400px] h-56 sm:h-[400px] rounded-full opacity-20 pointer-events-none"
           style={{ background: 'radial-gradient(circle,#3A9E8F,transparent 70%)', transform: 'translate(35%,-25%)' }} />
-        <div aria-hidden="true" className="absolute bottom-0 left-0 w-48 sm:w-72 h-48 sm:h-72 rounded-full opacity-15 pointer-events-none"
+        <div aria-hidden="true" className="absolute bottom-0 left-0 w-44 sm:w-72 h-44 sm:h-72 rounded-full opacity-15 pointer-events-none"
           style={{ background: 'radial-gradient(circle,#E8C86A,transparent 70%)', transform: 'translate(-25%,25%)' }} />
 
         <div className="max-w-5xl mx-auto relative">
-          {/* Back link */}
           <Link href="/tutors"
-            className="inline-flex items-center gap-1.5 text-white/50 hover:text-white text-[0.82rem] mb-7 transition-colors group font-bold">
-            <svg className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            className="inline-flex items-center gap-1.5 text-white/50 hover:text-white text-[0.82rem] mb-6 transition-colors duration-100 group font-bold">
+            <svg className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform duration-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
             Back to tutors
           </Link>
 
-          <div className="flex flex-col sm:flex-row items-start gap-5 sm:gap-8">
-            {/* Avatar */}
+          <div className="anim-up flex flex-col sm:flex-row items-start gap-5 sm:gap-8">
             <div className="relative flex-shrink-0">
               <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-[#E8C86A] shadow-[4px_4px_0_0_#1a3a44]">
                 {tutor.imageUrl ? (
                   <Image
                     src={tutor.imageUrl}
                     alt={`${tutor.name}, ${tutor.subjects[0]} tutor in ${tutor.city}`}
-                    width={128}
-                    height={128}
-                    priority
-                    unoptimized
+                    width={128} height={128} priority unoptimized
                     className="w-full h-full object-cover"
                   />
                 ) : (
@@ -754,16 +700,14 @@ export default async function TutorDetailPage({ params }: Props) {
               </div>
             </div>
 
-            {/* Name & meta */}
             <div className="flex-1 min-w-0">
-              <h1 className="text-white text-[1.8rem] sm:text-[2.5rem] lg:text-[3rem] font-black tracking-tight leading-tight mb-2">
+              <h1 className="text-white text-[1.8rem] sm:text-[2.5rem] lg:text-[2.8rem] font-black tracking-tight leading-tight mb-2">
                 {tutor.name}
               </h1>
               <p className="text-[#7da8b8] text-[0.88rem] mb-4 flex items-center gap-1.5 font-semibold">
                 <span>📍</span> {tutor.city}, {tutor.country}
               </p>
 
-              {/* Badges */}
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className={`text-[0.7rem] font-black px-3 py-1.5 rounded-full border-2 shadow-[2px_2px_0_0_#1a3a44] ${modeBadge[tutor.mode]}`}>
                   {modeLabel[tutor.mode]}
@@ -778,7 +722,6 @@ export default async function TutorDetailPage({ params }: Props) {
                 )}
               </div>
 
-              {/* Trust row */}
               <div className="flex flex-wrap gap-3 sm:gap-5">
                 {[
                   { icon: '✓', label: 'Verified Profile' },
@@ -796,48 +739,41 @@ export default async function TutorDetailPage({ params }: Props) {
         </div>
       </div>
 
-      {/* ═══════════════════════════════════════════════════
-          MAIN CONTENT — overlaps hero with -mt
-      ═══════════════════════════════════════════════════ */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-8 -mt-12 sm:-mt-16 pb-16 sm:pb-24 relative z-10">
+      {/* MAIN CONTENT */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-8 -mt-12 sm:-mt-16 pb-14 sm:pb-20 relative z-10">
         <div className="grid lg:grid-cols-3 gap-5 sm:gap-6">
 
-          {/* ── LEFT COLUMN ── */}
+          {/* LEFT */}
           <div className="lg:col-span-2 space-y-4 sm:space-y-5">
-
-            {/* About */}
-            <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
+            <div className="anim-up bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6" style={{ animationDelay: '0.05s' }}>
               <Eyebrow text="About" />
-              {/* Highlighted quote pulls readers in */}
               <div className="bg-[#FFFDF7] border-l-4 border-[#E8C86A] pl-4 pr-3 py-3 rounded-r-xl mb-4">
                 <p className="italic text-[#2E4F5E] text-[0.88rem] leading-relaxed font-semibold">
-                  "{tutor.bio.split('.')[0]}."
+                  &quot;{tutor.bio.split('.')[0]}.&quot;
                 </p>
               </div>
               <p className="text-[#4a6a78] text-[0.88rem] font-semibold leading-relaxed">{tutor.bio}</p>
             </div>
 
-            {/* Subjects */}
-            <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
+            <div className="anim-up bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6" style={{ animationDelay: '0.1s' }}>
               <Eyebrow text="Subjects Taught" />
               <div className="flex flex-wrap gap-2">
                 {topSubjects.map(s => (
                   <Link key={s} href={`/tutors?subject=${encodeURIComponent(s)}`}
-                    className="px-3 py-1.5 bg-[#E8C86A] text-[#2E4F5E] text-[0.75rem] font-black rounded-full border-2 border-[#2E4F5E] shadow-[2px_2px_0_0_#2E4F5E] no-underline hover:opacity-90 transition-opacity">
+                    className="px-3 py-1.5 bg-[#E8C86A] text-[#2E4F5E] text-[0.75rem] font-black rounded-full border-2 border-[#2E4F5E] shadow-[2px_2px_0_0_#2E4F5E] no-underline hover:opacity-90 transition-opacity duration-100">
                     {s}
                   </Link>
                 ))}
                 {restSubjects.map(s => (
                   <Link key={s} href={`/tutors?subject=${encodeURIComponent(s)}`}
-                    className="px-3 py-1.5 bg-[#FFFDF7] text-[#4a6a78] text-[0.7rem] font-semibold rounded-full border-2 border-[#D4D0C5] no-underline hover:border-[#E8C86A] transition-colors">
+                    className="px-3 py-1.5 bg-[#FFFDF7] text-[#4a6a78] text-[0.7rem] font-semibold rounded-full border-2 border-[#D4D0C5] no-underline hover:border-[#E8C86A] transition-colors duration-100">
                     {s}
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* Education */}
-            <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
+            <div className="anim-up bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6" style={{ animationDelay: '0.15s' }}>
               <Eyebrow text="Education" />
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-xl bg-[#3A9E8F] border-2 border-[#2E4F5E] flex items-center justify-center flex-shrink-0 shadow-[2px_2px_0_0_#2E4F5E]">
@@ -847,9 +783,7 @@ export default async function TutorDetailPage({ params }: Props) {
               </div>
             </div>
 
-            {/* What you will gain — outcomes section */}
-            {/* Psychology: students care about RESULTS, not features */}
-            <div className="bg-[#3A9E8F] rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
+            <div className="anim-up bg-[#3A9E8F] rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6" style={{ animationDelay: '0.2s' }}>
               <Eyebrow text="What You Will Gain" light />
               <div className="grid grid-cols-2 gap-3">
                 {[
@@ -869,8 +803,7 @@ export default async function TutorDetailPage({ params }: Props) {
               </div>
             </div>
 
-            {/* What Students Say — dynamic per tutor subject */}
-            <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
+            <div className="anim-up bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6" style={{ animationDelay: '0.25s' }}>
               <Eyebrow text="What Students Say" />
               <div className="flex flex-col gap-3">
                 {(() => {
@@ -888,7 +821,7 @@ export default async function TutorDetailPage({ params }: Props) {
                     { text: 'Cleared CSS Current Affairs on first attempt. Guided me through every important topic.',      role: 'CSS Candidate · Rawalpindi',   keys: ['css','current affairs','pms']  },
                     { text: 'Quran recitation improved so much. My children love every session and ask for more.',         role: 'Parent · Dubai, UAE',          keys: ['quran','arabic']               },
                     { text: 'Arabic conversation went from zero to confident in 3 months. Remarkable progress.',           role: 'Adult Learner · UK',           keys: ['arabic','quran']               },
-                    { text: 'Economics finally clicked  theory connected to real-world examples brilliantly.',            role: 'A Level Student · Karachi',    keys: ['economics']                    },
+                    { text: 'Economics finally clicked — theory connected to real-world examples brilliantly.',            role: 'A Level Student · Karachi',    keys: ['economics']                    },
                     { text: 'Computer Science projects improved hugely. Every concept explained with patience.',            role: 'O Level CS Student',           keys: ['computer','coding','cs']       },
                     { text: 'English essay writing improved dramatically. My GCSE result was the best in class.',          role: 'GCSE Student · Birmingham UK', keys: ['english','literature']         },
                     { text: 'Very punctual and always well-prepared. My daughter looks forward to every session.',         role: 'Parent · Islamabad',           keys: []                               },
@@ -901,28 +834,24 @@ export default async function TutorDetailPage({ params }: Props) {
                     <div key={i} className="flex items-start gap-3 p-3.5 rounded-xl bg-[#FFFDF7] border-2 border-[#E8C86A]/40">
                       <span className="text-[#E8C86A] text-lg flex-shrink-0 mt-0.5">★</span>
                       <div>
-                        <p className="text-[#2E4F5E] text-[0.82rem] font-semibold leading-snug">"{fb.text}"</p>
+                        <p className="text-[#2E4F5E] text-[0.82rem] font-semibold leading-snug">&quot;{fb.text}&quot;</p>
                         <p className="text-[#7da8b8] text-[0.65rem] font-black mt-1">— {fb.role}</p>
                       </div>
                     </div>
                   ))
                 })()}
               </div>
-              <p className="text-center text-[0.6rem] font-black text-[#b0c4cc] mt-4">
-                Based on verified student feedback
-              </p>
+              <p className="text-center text-[0.6rem] font-black text-[#b0c4cc] mt-4">Based on verified student feedback</p>
             </div>
 
-            {/* Session Experience */}
-            {/* Psychology: removing "what will it actually be like?" uncertainty */}
-            <div className="bg-[#E8C86A] rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
+            <div className="anim-up bg-[#E8C86A] rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6" style={{ animationDelay: '0.3s' }}>
               <Eyebrow text="What to Expect" />
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { emoji: '🎯', title: 'Personalised',       desc: 'Built around your syllabus and pace'  },
-                  { emoji: '⏰', title: 'Flexible Timing',    desc: 'Book morning, evening or weekend'      },
-                  { emoji: '📊', title: 'Progress Updates',   desc: 'Regular feedback so you always know'  },
-                  { emoji: '💬', title: 'Easy Booking',       desc: 'One WhatsApp message to start'        },
+                  { emoji: '🎯', title: 'Personalised',     desc: 'Built around your syllabus and pace' },
+                  { emoji: '⏰', title: 'Flexible Timing',  desc: 'Book morning, evening or weekend' },
+                  { emoji: '📊', title: 'Progress Updates', desc: 'Regular feedback so you always know' },
+                  { emoji: '💬', title: 'Easy Booking',     desc: 'One WhatsApp message to start' },
                 ].map(item => (
                   <div key={item.title} className="flex items-start gap-2.5 p-3 rounded-xl bg-white border-2 border-[#2E4F5E] shadow-[2px_2px_0_0_#2E4F5E]">
                     <span className="text-lg flex-shrink-0">{item.emoji}</span>
@@ -935,70 +864,57 @@ export default async function TutorDetailPage({ params }: Props) {
               </div>
             </div>
 
-            {/* Explore more — internal linking for SEO + real navigation value */}
-            <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6">
+            <div className="anim-up bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5 sm:p-6" style={{ animationDelay: '0.35s' }}>
               <Eyebrow text="Explore More" />
               <div className="flex flex-wrap gap-2.5">
-                <Link href="/tutors" className="px-3.5 py-2 bg-[#FFFDF7] text-[#2E4F5E] text-[0.75rem] font-black rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors no-underline">
+                <Link href="/tutors" className="px-3.5 py-2 bg-[#FFFDF7] text-[#2E4F5E] text-[0.75rem] font-black rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors duration-100 no-underline">
                   ← All Tutors
                 </Link>
-                <Link href={`/tutors?subject=${encodeURIComponent(tutor.subjects[0])}`} className="px-3.5 py-2 bg-[#FFFDF7] text-[#2E4F5E] text-[0.75rem] font-black rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors no-underline">
+                <Link href={`/tutors?subject=${encodeURIComponent(tutor.subjects[0])}`} className="px-3.5 py-2 bg-[#FFFDF7] text-[#2E4F5E] text-[0.75rem] font-black rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors duration-100 no-underline">
                   More {tutor.subjects[0]} Tutors
                 </Link>
-                <Link href="/services" className="px-3.5 py-2 bg-[#FFFDF7] text-[#2E4F5E] text-[0.75rem] font-black rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors no-underline">
+                <Link href="/services" className="px-3.5 py-2 bg-[#FFFDF7] text-[#2E4F5E] text-[0.75rem] font-black rounded-xl border-2 border-[#D4D0C5] hover:border-[#E8C86A] transition-colors duration-100 no-underline">
                   Our Services
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* ── RIGHT COLUMN — Sticky ── */}
+          {/* RIGHT — sticky */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-4">
-
-              {/* Booking Card */}
-              {/* Psychology: urgency + zero-risk framing removes the final hesitation */}
-              <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[6px_6px_0_0_#2E4F5E] overflow-hidden">
+              <div className="anim-up bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[6px_6px_0_0_#2E4F5E] overflow-hidden" style={{ animationDelay: '0.1s' }}>
                 <div className="h-2 bg-gradient-to-r from-[#E8C86A] via-[#E05C42] to-[#3A9E8F]" />
                 <div className="p-5">
                   <h3 className="font-black text-[#2E4F5E] text-[1.05rem] mb-1">Book a Session</h3>
                   <p className="text-[#7da8b8] text-[0.72rem] font-semibold mb-5 leading-relaxed">
                     Send a WhatsApp message to check availability and schedule your first lesson.
                   </p>
-
                   <a href={whatsappURL} target="_blank" rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#3A9E8F] hover:bg-[#2d7a6e] text-white font-black text-[0.88rem] rounded-xl border-2 border-[#2E4F5E] shadow-[3px_3px_0_0_#2E4F5E] hover:shadow-[1px_1px_0_0_#2E4F5E] hover:translate-y-[2px] active:translate-y-[2px] transition-all duration-150">
+                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#3A9E8F] hover:bg-[#2d7a6e] text-white font-black text-[0.88rem] rounded-xl border-2 border-[#2E4F5E] shadow-[3px_3px_0_0_#2E4F5E] hover:shadow-[1px_1px_0_0_#2E4F5E] hover:translate-y-[2px] active:translate-y-[2px] transition-all duration-100">
                     <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                       <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.116 1.532 5.845L.057 23.882a.5.5 0 0 0 .61.61l6.037-1.475A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.87 9.87 0 0 1-5.032-1.38l-.36-.214-3.733.913.929-3.622-.235-.373A9.86 9.86 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/>
                     </svg>
                     Book Your First Session
                   </a>
-
                   <div className="mt-4 flex flex-col gap-1.5">
-                    <p className="text-center text-[0.67rem] font-black text-[#3A9E8F]">
-                      No advance payment required
-                    </p>
-                    <p className="text-center text-[0.63rem] font-semibold text-[#b0c4cc]">
-                      Average response time: under 1 hour
-                    </p>
+                    <p className="text-center text-[0.67rem] font-black text-[#3A9E8F]">No advance payment required</p>
+                    <p className="text-center text-[0.63rem] font-semibold text-[#b0c4cc]">Average response time: under 1 hour</p>
                   </div>
                   <div className="mt-3 pt-3 border-t-2 border-dashed border-[#E8C86A] text-center">
-                    <p className="text-[0.63rem] font-black text-[#C43D24]">
-                      Limited weekly slots available
-                    </p>
+                    <p className="text-[0.63rem] font-black text-[#C43D24]">Limited weekly slots available</p>
                   </div>
                 </div>
               </div>
 
-              {/* Quick Info */}
-              <div className="bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5">
+              <div className="anim-up bg-white rounded-2xl border-2 border-[#2E4F5E] shadow-[5px_5px_0_0_#2E4F5E] p-5" style={{ animationDelay: '0.15s' }}>
                 <Eyebrow text="Quick Info" as="h3" />
                 <div className="flex flex-col gap-3">
                   {[
                     { emoji: '📍', label: 'Location',   value: `${tutor.city}, ${tutor.country}` },
-                    { emoji: '💻', label: 'Mode',        value: modeLabel[tutor.mode]             },
-                    { emoji: '🎓', label: 'Experience',  value: `${tutor.experience} years`       },
+                    { emoji: '💻', label: 'Mode',        value: modeLabel[tutor.mode] },
+                    { emoji: '🎓', label: 'Experience',  value: `${tutor.experience} years` },
                     { emoji: '📚', label: 'Subjects',    value: `${tutor.subjects.length} subjects` },
                   ].map(({ emoji, label, value }) => (
                     <div key={label} className="flex items-center gap-2">
@@ -1010,22 +926,18 @@ export default async function TutorDetailPage({ params }: Props) {
                 </div>
               </div>
 
-              {/* Verified badge */}
-              <div className="bg-[#FFFDF7] rounded-xl p-4 border-2 border-[#3A9E8F] shadow-[3px_3px_0_0_#2E4F5E]">
+              <div className="anim-up bg-[#FFFDF7] rounded-xl p-4 border-2 border-[#3A9E8F] shadow-[3px_3px_0_0_#2E4F5E]" style={{ animationDelay: '0.2s' }}>
                 <div className="flex items-start gap-2.5">
                   <span className="text-[#3A9E8F] text-lg flex-shrink-0">✓</span>
                   <p className="text-[0.72rem] font-semibold text-[#2E4F5E] leading-relaxed">
-                    <span className="font-black text-[#C43D24]">Verified tutor</span> manually reviewed and approved by the Avenfield team before going live.
+                    <span className="font-black text-[#C43D24]">Verified tutor</span> — manually reviewed and approved by the Avenfield team before going live.
                   </p>
                 </div>
               </div>
 
-              {/* Popular tag */}
               {(tutor.subjects.includes('Mathematics') || tutor.subjects.includes('O Level') || tutor.subjects.includes('A Level')) && (
-                <div className="bg-[#E8C86A] rounded-xl p-3 text-center border-2 border-[#2E4F5E] shadow-[3px_3px_0_0_#2E4F5E]">
-                  <p className="text-[0.7rem] font-black text-[#2E4F5E]">
-                    Popular among O / A Level students
-                  </p>
+                <div className="anim-up bg-[#E8C86A] rounded-xl p-3 text-center border-2 border-[#2E4F5E] shadow-[3px_3px_0_0_#2E4F5E]" style={{ animationDelay: '0.25s' }}>
+                  <p className="text-[0.7rem] font-black text-[#2E4F5E]">Popular among O / A Level students</p>
                 </div>
               )}
             </div>
